@@ -1,0 +1,14 @@
+{
+  "name": "master-study-tracker",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Final Master Study Tracker: React, Django and SQLite",
+  "scripts": {
+    "setup": "npm ci --prefix client && python3 -m venv .venv && .venv/bin/pip install -r requirements.txt",
+    "dev": ".venv/bin/python backend/manage.py runserver 127.0.0.1:8000",
+    "seed": ".venv/bin/python backend/manage.py seed_master",
+    "test": ".venv/bin/python backend/manage.py test master && .venv/bin/python scripts/check_parity.py",
+    "build": "npm run build --prefix client",
+    "start": ".venv/bin/python backend/manage.py runserver 127.0.0.1:8000 --noreload"
+  }
+}

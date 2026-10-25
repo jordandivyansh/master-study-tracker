@@ -1,0 +1,70 @@
+{
+  "dailyCap": 8,
+  "dsaWeekly": 15,
+  "buffer": 0.15,
+  "gymDaily": 3,
+  "trackerStart": "2026-10-16",
+  "trackerEnd": "2027-03-20",
+  "exams": [
+    {
+      "key": "ssc",
+      "name": "SSC CGL Tier I",
+      "date": "2026-10-28",
+      "prepBudgetH": 20,
+      "note": "Includes setup, three mocks, review and practice."
+    },
+    {
+      "key": "cat",
+      "name": "CAT",
+      "date": "2026-11-29",
+      "prepBudgetH": 24,
+      "note": "PROVISIONAL: six mocks including review."
+    },
+    {
+      "key": "uppsc",
+      "name": "UPPSC Prelims",
+      "date": "2026-12-06",
+      "prepBudgetH": null,
+      "note": null
+    },
+    {
+      "key": "apfc",
+      "name": "UPSC EPFO APFC",
+      "date": "2026-12-20",
+      "prepBudgetH": 120,
+      "note": "APFC course budget for selected gaps, PYQs, mocks and review."
+    }
+  ],
+  "pivotExam": "apfc",
+  "weight": {
+    "start": 86.6,
+    "target": 72,
+    "goalDate": "2027-03-20"
+  },
+  "cava": {
+    "newPerWeek": 2,
+    "hoursPerLecture": 3
+  },
+  "durations": {
+    "CSE": {
+      "attempt": 3,
+      "review": 1
+    },
+    "UPPSC": {
+      "attempt": 2,
+      "review": 2
+    },
+    "CAT": {
+      "attempt": 2,
+      "review": 2
+    },
+    "APFC": {
+      "attempt": 2,
+      "review": 2
+    },
+    "SSC": {
+      "attempt": 1,
+      "review": 1
+    }
+  }
+}

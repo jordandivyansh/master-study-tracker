@@ -1,0 +1,83 @@
+[
+  {
+    "num": 1,
+    "area": "English",
+    "firstCoverage": null,
+    "questionsReviewed": null,
+    "errorsCorrected": null,
+    "recallChecked": null,
+    "action": "Modules 22–23. Use SSC/CAT diagnostics to select remaining English gaps."
+  },
+  {
+    "num": 2,
+    "area": "Culture, heritage and freedom movement",
+    "firstCoverage": null,
+    "questionsReviewed": null,
+    "errorsCorrected": null,
+    "recallChecked": null,
+    "action": "History modules are empty. Use existing CSE history and culture notes."
+  },
+  {
+    "num": 3,
+    "area": "Development and economy",
+    "firstCoverage": null,
+    "questionsReviewed": null,
+    "errorsCorrected": null,
+    "recallChecked": null,
+    "action": "Use existing CSE economy notes and current affairs; check APFC development themes."
+  },
+  {
+    "num": 4,
+    "area": "Governance and Constitution",
+    "firstCoverage": null,
+    "questionsReviewed": null,
+    "errorsCorrected": null,
+    "recallChecked": null,
+    "action": "Modules 15–17. Diagnose first and revise missing facts from CSE notes."
+  },
+  {
+    "num": 5,
+    "area": "Science and computers",
+    "firstCoverage": null,
+    "questionsReviewed": null,
+    "errorsCorrected": null,
+    "recallChecked": null,
+    "action": "Modules 24–27 for science. Check computer fundamentals separately."
+  },
+  {
+    "num": 6,
+    "area": "Maths, statistics and ability",
+    "firstCoverage": null,
+    "questionsReviewed": null,
+    "errorsCorrected": null,
+    "recallChecked": null,
+    "action": "Modules 18–21. Statistics entries are present. Select weak questions and formats."
+  },
+  {
+    "num": 7,
+    "area": "IR, Labour Codes and social security",
+    "firstCoverage": null,
+    "questionsReviewed": null,
+    "errorsCorrected": null,
+    "recallChecked": null,
+    "action": "Modules 2–7. Reconcile current provisions with official sources."
+  },
+  {
+    "num": 8,
+    "area": "Accounts, audit and insurance",
+    "firstCoverage": null,
+    "questionsReviewed": null,
+    "errorsCorrected": null,
+    "recallChecked": null,
+    "action": "Modules 8–12. Cover unfamiliar concepts, solve questions and review errors."
+  },
+  {
+    "num": 9,
+    "area": "Current affairs",
+    "firstCoverage": null,
+    "questionsReviewed": null,
+    "errorsCorrected": null,
+    "recallChecked": null,
+    "action": "Modules 28–29 plus CAVA. Add APFC-specific gaps without duplicate full lectures."
+  }
+]
