@@ -5,7 +5,7 @@ from django.db import transaction
 from .models import Document, new_id
 from .schema import validate, natural_key
 
-COLLECTIONS = ['settings', 'dailyLogs', 'weeks', 'tests', 'backlog', 'apfcModules', 'syllabusAreas', 'courseEntries']
+COLLECTIONS = ['settings', 'dailyLogs', 'weeks', 'tests', 'backlog', 'apfcModules', 'syllabusAreas', 'courseEntries', 'cavaLectures', 'pyqWorkbooks']
 
 
 def create_document(user, collection, data, uid=None):

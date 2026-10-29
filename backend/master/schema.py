@@ -6,7 +6,7 @@ from .calc import STREAM_KEYS, is_num, days_between
 
 EXAMS = ['UPPSC', 'SSC', 'CAT', 'APFC', 'CSE']
 SCHEMAS = {
-    'settings': dict(dailyCap='num', dsaWeekly='num', buffer='num', gymDaily='num', trackerStart='date', trackerEnd='date', exams='list', pivotExam='text', weight='obj', cava='obj', durations='obj'),
+    'settings': dict(dailyCap='num', dsaWeekly='num', buffer='num', gymDaily='num', trackerStart='date', trackerEnd='date', exams='list', pivotExam='text', weight='obj', cava='obj', durations='obj', googleSheets='obj'),
     'dailyLogs': dict(date='date', hours='hours', dsa='num', gym='num', weight='num', notes='text'),
     'weeks': dict(start='date', end='date', phase='text', quotas='hours', notes='text'),
     'tests': dict(code='text', exam='text', paper='text', type='text', release='date', targetAttempt='date', targetReview='date', attemptStatus='text', reviewStatus='text', actualAttempt='date', actualReview='date', maxScore='num', score='signed', notes='text'),
@@ -14,6 +14,9 @@ SCHEMAS = {
     'apfcModules': dict(num='num', module='text', items='num', platformComplete='num', attachmentBadges='num', priority='text', action='text', studyStatus='text', verifiedRuntimeH='num', selectedStudyH='num', hoursDone='num', notes='text'),
     'syllabusAreas': dict(num='num', area='text', firstCoverage='date', questionsReviewed='num', errorsCorrected='date', recallChecked='date', action='text'),
     'courseEntries': dict(code='text', module='text', title='text', type='text', platformStatus='text', displayedDuration='text', observedRuntimeH='num', studyMode='text', selectedStudyH='num', hoursDone='num', reviewStatus='text', notes='text'),
+    'cavaLectures': dict(num='num', title='text', duration='num', facultyRelease='text', studyDate='date', watched='bool', notes='bool', revised='bool', status='text'),
+    'pyqWorkbooks': dict(id='text', paper='text', year='text', range='text', questions='num', pattern='text', written='bool', reviewed='bool', notesEnriched='bool'),
+    'timerSession': dict(running='bool', stream='text', startTime='text', elapsedSeconds='num', day='date'),
 }
 DEFAULTS = {
     'settings': {},
@@ -24,11 +27,17 @@ DEFAULTS = {
     'apfcModules': dict(items=0, platformComplete=0, attachmentBadges=0, priority='', action='', studyStatus='Not started', verifiedRuntimeH=None, selectedStudyH=None, hoursDone=None, notes=''),
     'syllabusAreas': dict(firstCoverage=None, questionsReviewed=None, errorsCorrected=None, recallChecked=None, action=''),
     'courseEntries': dict(type='', platformStatus='Not started', displayedDuration=None, observedRuntimeH=None, studyMode=None, selectedStudyH=None, hoursDone=None, reviewStatus='Not reviewed', notes=''),
+    'cavaLectures': dict(facultyRelease='', studyDate=None, watched=False, notes=False, revised=False, status='Delivered (Backlog)'),
+    'pyqWorkbooks': dict(written=False, reviewed=False, notesEnriched=False),
+    'timerSession': dict(running=False, stream='other', startTime=None, elapsedSeconds=0, day=None),
 }
 REQUIRED = {
-    'settings': list(SCHEMAS['settings']), 'dailyLogs': ['date'], 'weeks': ['start', 'end'],
+    'settings': ['dailyCap', 'dsaWeekly', 'buffer', 'gymDaily', 'trackerStart', 'trackerEnd', 'exams', 'pivotExam', 'weight', 'cava', 'durations'],
+    'dailyLogs': ['date'], 'weeks': ['start', 'end'],
     'tests': ['code', 'exam', 'paper'], 'backlog': ['workstream'], 'apfcModules': ['num', 'module'],
     'syllabusAreas': ['num', 'area'], 'courseEntries': ['code', 'module', 'title'],
+    'cavaLectures': ['num', 'title', 'duration'], 'pyqWorkbooks': ['id', 'paper', 'year', 'range'],
+    'timerSession': [],
 }
 ENUMS = {
     'tests': dict(exam=EXAMS, attemptStatus=['Not reported', 'Pending', 'Attempted'], reviewStatus=['Pending', 'Reviewed']),
@@ -140,8 +149,8 @@ def validate(collection, incoming, previous=None):
 
 
 def natural_key(collection, data, uid):
-    field = {'settings': None, 'dailyLogs': 'date', 'tests': 'code', 'apfcModules': 'num', 'syllabusAreas': 'num', 'courseEntries': 'code'}.get(collection)
-    value = 'singleton' if collection == 'settings' else str(data[field]) if field else uid
+    field = {'settings': None, 'dailyLogs': 'date', 'tests': 'code', 'apfcModules': 'num', 'syllabusAreas': 'num', 'courseEntries': 'code', 'cavaLectures': 'num', 'pyqWorkbooks': 'id', 'timerSession': None}.get(collection)
+    value = 'singleton' if collection in ('settings', 'timerSession') else str(data[field]) if field else uid
     if len(value) > 200:
         fail('Record identifiers must be at most 200 characters.')
     return value

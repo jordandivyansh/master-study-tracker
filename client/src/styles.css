@@ -328,3 +328,380 @@ html { scroll-behavior: smooth; }
 .auth-card [role="alert"] { color: var(--brick); }
 .auth-card .brand-mark { display: inline-block; }
 .account-block { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; padding: .75rem 0; font-size: .8rem; }
+
+
+/* ==========================================================================
+   Master Study Tracker V2 Additions: Modern UI, Timer, Badges & Sheets Sync
+   ========================================================================== */
+
+.v2-tag {
+  display: inline-block;
+  background: var(--gold);
+  color: #14213d;
+  font-size: 0.65rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  padding: 1px 6px;
+  border-radius: 4px;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+
+/* Floating Study Timer Bar */
+.timer-widget {
+  margin: 12px 14px;
+  position: relative;
+}
+
+.timer-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.timer-widget.is-running .timer-pill {
+  background: #10b981;
+  color: white;
+  border-color: #059669;
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.3);
+}
+
+.timer-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #9ca3af;
+}
+
+.timer-widget.is-running .timer-indicator {
+  background: #ffffff;
+  animation: pulse 1s infinite alternate;
+}
+
+@keyframes pulse {
+  from { opacity: 0.3; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1.1); }
+}
+
+.timer-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.timer-digits {
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-left: auto;
+}
+
+.timer-stream-badge {
+  font-size: 0.65rem;
+  background: rgba(0, 0, 0, 0.15);
+  padding: 2px 5px;
+  border-radius: 4px;
+  font-weight: 700;
+}
+
+/* Timer Modal popup */
+.timer-modal {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 290px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 16px;
+  margin-top: 8px;
+  z-index: 1000;
+}
+
+.timer-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.timer-modal-header h3 {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.btn-close {
+  background: none;
+  border: none;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.timer-modal-time {
+  text-align: center;
+  padding: 12px 0;
+}
+
+.timer-modal-time h1 {
+  margin: 0;
+  font-size: 2.2rem;
+  font-family: var(--sans);
+  letter-spacing: 0.05em;
+  color: var(--text);
+}
+
+.timer-hours-calc {
+  margin: 4px 0 0 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.timer-controls {
+  display: flex;
+  gap: 8px;
+  margin: 12px 0;
+}
+
+.timer-controls .btn {
+  flex: 1;
+}
+
+.timer-options label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.8rem;
+  margin-bottom: 8px;
+}
+
+.timer-options select, .timer-options input {
+  padding: 6px;
+  border-radius: 4px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--text);
+}
+
+.timer-save-prompt {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+}
+
+.timer-save-prompt p {
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+/* Modern Card Layouts */
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.stat-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--muted);
+  letter-spacing: 0.05em;
+  margin-bottom: 6px;
+}
+
+.stat-val {
+  font-size: 1.6rem;
+  font-weight: 800;
+  font-family: var(--sans);
+  line-height: 1.1;
+  margin-bottom: 4px;
+}
+
+.stat-val.indigo { color: #4f46e5; }
+.stat-val.emerald { color: #059669; }
+.stat-val.purple { color: #7c3aed; }
+.stat-val.amber { color: #d97706; }
+.stat-val.cyan { color: #0891b2; }
+
+.stat-sub {
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+/* Filter Bar */
+.filter-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.filter-title {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--muted);
+  margin-right: 4px;
+}
+
+.btn-pill {
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--text);
+  font-size: 0.8rem;
+  padding: 5px 12px;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.btn-pill:hover {
+  background: var(--surface-2);
+}
+
+.btn-pill.active {
+  background: #14213d;
+  color: white;
+  border-color: #14213d;
+}
+
+/* Table styling additions */
+.badge-paper {
+  background: #e0e7ff;
+  color: #3730a3;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 0.75rem;
+}
+
+.badge-yellow {
+  background: #fef3c7;
+  color: #92400e;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+.prog-pill {
+  display: inline-block;
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+
+.status-tag {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.tag-scheduled { background: #fef3c7; color: #92400e; }
+.tag-backlog { background: #e0e7ff; color: #3730a3; }
+.tag-upcoming { background: #f1f5f9; color: #475569; }
+
+/* Sheets Sync Screen */
+.card-box {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 24px;
+}
+
+.sync-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.sync-banner h3 {
+  margin: 0 0 4px 0;
+}
+
+.highlight-text {
+  color: #2563eb;
+}
+
+.notice-banner {
+  margin-top: 14px;
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+}
+
+.notice-banner.success {
+  background: #d1fae5;
+  color: #065f46;
+  border: 1px solid #a7f3d0;
+}
+
+.sheets-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.sheet-link-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sheet-badge {
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: #2563eb;
+  background: #eff6ff;
+  padding: 2px 6px;
+  border-radius: 4px;
+  width: fit-content;
+  margin-bottom: 8px;
+}
+
+.sheet-id {
+  font-size: 0.75rem;
+  color: var(--muted);
+  margin: 4px 0;
+}
+
+.sheet-desc {
+  font-size: 0.82rem;
+  color: var(--text);
+  margin-bottom: 16px;
+  flex: 1;
+}

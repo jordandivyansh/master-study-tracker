@@ -24,8 +24,8 @@
       "key": "uppsc",
       "name": "UPPSC Prelims",
       "date": "2026-12-06",
-      "prepBudgetH": null,
-      "note": null
+      "prepBudgetH": 80,
+      "note": "UPPSC Prelims GS-1 + CSAT target"
     },
     {
       "key": "apfc",
@@ -33,6 +33,13 @@
       "date": "2026-12-20",
       "prepBudgetH": 120,
       "note": "APFC course budget for selected gaps, PYQs, mocks and review."
+    },
+    {
+      "key": "mains",
+      "name": "UPSC CSE Mains & PubAd",
+      "date": "2027-03-31",
+      "prepBudgetH": 350,
+      "note": "GS 1\u20134, Essay, PubAd optional lectures, books and test series"
     }
   ],
   "pivotExam": "apfc",
@@ -66,5 +73,13 @@
       "attempt": 1,
       "review": 1
     }
+  },
+  "googleSheets": {
+    "mainsTrackerId": "1PDbPVKE09VrW1w7rR5NzNDhxg_JFBpA1NtgPlB7bI9k",
+    "studyTrackerId": "18LHy7rAuSB3JpjpBk2YGLQIBlh2tn19kOWqOnD4nXGw",
+    "pubadTrackerId": "1uzWUS92D969ofMCqsymt4BtaE0gX3z-e9jBWQTrzavM",
+    "uppscTrackerId": "1kGde8YNMN-OArIR00t00zrbMAwoC_sohT4sMmpwBZL4",
+    "epfoTrackerId": "12NNvTTR2zb6ri25AWyY1henuVnCRg8zhEo6wO8c_0Ro",
+    "syncEnabled": true
   }
 }

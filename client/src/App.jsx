@@ -9,16 +9,23 @@ import Weekly from './pages/Weekly.jsx';
 import Tests from './pages/Tests.jsx';
 import Backlog from './pages/Backlog.jsx';
 import Apfc from './pages/Apfc.jsx';
+import CavaTracker from './pages/CavaTracker.jsx';
+import PyqWorkbooks from './pages/PyqWorkbooks.jsx';
+import GoogleSheetsSync from './pages/GoogleSheetsSync.jsx';
 import Settings from './pages/Settings.jsx';
 import Guide from './pages/Guide.jsx';
+import TimerBar from './components/TimerBar.jsx';
 
 const NAV = [
   { to: '/', label: 'Dashboard', end: true },
   { to: '/daily', label: 'Daily log' },
   { to: '/weekly', label: 'Weekly plan' },
-  { to: '/tests', label: 'Tests' },
-  { to: '/backlog', label: 'CSE backlog' },
-  { to: '/apfc', label: 'APFC course' },
+  { to: '/tests', label: 'Mocks & Tests' },
+  { to: '/cava', label: 'CAVA Lectures' },
+  { to: '/pyqs', label: 'PYQ Workbooks' },
+  { to: '/backlog', label: 'CSE Backlog' },
+  { to: '/apfc', label: 'APFC Course' },
+  { to: '/sheets', label: 'Sheets Sync' },
   { to: '/settings', label: 'Settings' },
 ];
 
@@ -43,8 +50,9 @@ export default function App() {
         <nav className="side" aria-label="Main">
           <div className="brand">
             <span className="brand-mark" aria-hidden="true" />
-            <span>Master Study Tracker</span>
+            <span>Master Study Tracker <span className="v2-tag">v2</span></span>
           </div>
+          <TimerBar />
           <ul>
             {NAV.map((n) => (
               <li key={n.to}>
@@ -52,7 +60,7 @@ export default function App() {
               </li>
             ))}
           </ul>
-          <NavLink to="/guide" className="guide-link">How this app is built</NavLink>
+          <NavLink to="/guide" className="guide-link">How this app is built (V2)</NavLink>
           <div className="account-block"><span>{session.username}</span><button className="btn ghost" onClick={signOut}>Sign out</button>{error && <p role="alert">{error}</p>}</div>
         </nav>
         <main className="main">
@@ -61,8 +69,11 @@ export default function App() {
             <Route path="/daily" element={<Daily />} />
             <Route path="/weekly" element={<Weekly />} />
             <Route path="/tests" element={<Tests />} />
+            <Route path="/cava" element={<CavaTracker />} />
+            <Route path="/pyqs" element={<PyqWorkbooks />} />
             <Route path="/backlog" element={<Backlog />} />
             <Route path="/apfc" element={<Apfc />} />
+            <Route path="/sheets" element={<GoogleSheetsSync />} />
             <Route path="/settings" element={<Settings />} />
             <Route path="/guide" element={<Guide />} />
             <Route path="*" element={<p className="empty">Page not found.</p>} />

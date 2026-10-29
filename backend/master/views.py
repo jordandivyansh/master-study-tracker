@@ -156,7 +156,7 @@ def daily(request, day=None):
     return JsonResponse({'today': today(), 'cap': s['dailyCap'], 'rows': rows})
 
 
-ROUTES = {'weeks': 'weeks', 'tests': 'tests', 'backlog': 'backlog', 'apfc/modules': 'apfcModules', 'apfc/areas': 'syllabusAreas', 'apfc/entries': 'courseEntries'}
+ROUTES = {'weeks': 'weeks', 'tests': 'tests', 'backlog': 'backlog', 'apfc/modules': 'apfcModules', 'apfc/areas': 'syllabusAreas', 'apfc/entries': 'courseEntries', 'cava': 'cavaLectures', 'pyqs': 'pyqWorkbooks'}
 
 
 def derive(collection, rows, user):
@@ -165,7 +165,9 @@ def derive(collection, rows, user):
     s = settings_for(user) if collection in ('tests', 'backlog') else None
     fn = {'tests': lambda t: derive_test(t, s, today()),
           'backlog': lambda b: derive_backlog(b, s),
-          'apfcModules': derive_module, 'syllabusAreas': derive_area, 'courseEntries': derive_entry}[collection]
+          'apfcModules': derive_module, 'syllabusAreas': derive_area, 'courseEntries': derive_entry,
+          'cavaLectures': lambda c: c,
+          'pyqWorkbooks': lambda p: p}[collection]
     return [fn(row) for row in rows]
 
 
