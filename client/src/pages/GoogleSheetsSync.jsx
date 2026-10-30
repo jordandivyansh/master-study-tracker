@@ -116,6 +116,21 @@ export default function GoogleSheetsSync() {
             Open in Google Sheets ↗
           </a>
         </div>
+
+        <div className="sheet-link-card">
+          <div className="sheet-badge">SPECIALISED / RECRUITMENT</div>
+          <h3>EPFO APFC 2026 Preparation Tracker</h3>
+          <p className="sheet-id">ID: <code>{sheets.epfoTrackerId || '12NNvTTR2zb6ri25AWyY1henuVnCRg8zhEo6wO8c_0Ro'}</code></p>
+          <p className="sheet-desc">13 subjects (230 topics), 236 video lectures & notes, Full Mocks & scoring.</p>
+          <a
+            href={`https://docs.google.com/spreadsheets/d/${sheets.epfoTrackerId || '12NNvTTR2zb6ri25AWyY1henuVnCRg8zhEo6wO8c_0Ro'}/edit`}
+            target="_blank"
+            rel="noreferrer"
+            className="btn ghost small"
+          >
+            Open in Google Sheets ↗
+          </a>
+        </div>
       </div>
     </div>
   );
