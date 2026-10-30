@@ -17,16 +17,21 @@ def create_document(user, collection, data, uid=None):
 @transaction.atomic
 def seed_user(user):
     get_user_model().objects.select_for_update().get(pk=user.pk)
-    if Document.objects.filter(owner=user, collection='settings').exists():
-        return False
     directory = Path(__file__).resolve().parent / 'seed_data'
-    for collection in COLLECTIONS:
-        data = json.loads((directory / (collection + '.json')).read_text())
-        for row in [data] if collection == 'settings' else data:
-            if collection == 'backlog':
-                row = {**row, 'hoursPerUnitFromCava': row.get('workstream', '').startswith('CAVA')}
-            create_document(user, collection, row)
-    return True
+    if not Document.objects.filter(owner=user, collection='settings').exists():
+        for collection in COLLECTIONS:
+            data = json.loads((directory / (collection + '.json')).read_text())
+            for row in [data] if collection == 'settings' else data:
+                if collection == 'backlog':
+                    row = {**row, 'hoursPerUnitFromCava': row.get('workstream', '').startswith('CAVA')}
+                create_document(user, collection, row)
+        return True
+    for collection in ['cavaLectures', 'pyqWorkbooks']:
+        if not Document.objects.filter(owner=user, collection=collection).exists():
+            data = json.loads((directory / (collection + '.json')).read_text())
+            for row in data:
+                create_document(user, collection, row)
+    return False
 
 
 def documents(user, collection):

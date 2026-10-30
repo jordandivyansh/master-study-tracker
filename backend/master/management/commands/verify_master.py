@@ -17,5 +17,5 @@ class Command(BaseCommand):
                 if response.status_code != 200:
                     raise CommandError(f'{route}: {response.status_code}')
             self.stdout.write(f'Account {user.pk}: dashboard, daily log and backup work; ' +
-                              ', '.join(f'{len(documents(user, key))} {key}' for key in ['weeks', 'tests', 'courseEntries', 'dailyLogs']))
+                              ', '.join(f'{len(documents(user, key))} {key}' for key in ['weeks', 'tests', 'courseEntries', 'dailyLogs', 'cavaLectures', 'pyqWorkbooks']))
         self.stdout.write('Final tracker verification passed; no study records changed.')
