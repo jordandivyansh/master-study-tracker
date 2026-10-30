@@ -26,7 +26,7 @@ def main():
     allowed = ('backend/master/', 'client/', 'deploy/', 'scripts/', 'server/src/', 'server/test/')
     for name, digest in manifest.items():
         p = Path(name)
-        if p.is_absolute() or '..' in p.parts or not (name.startswith(allowed) or name in ['backend/config/urls.py', 'MASTER_README.md']):
+        if p.is_absolute() or '..' in p.parts or not (name.startswith(allowed) or name in ['backend/config/urls.py', 'backend/config/settings.py', 'vercel.json', 'MASTER_README.md']):
             raise SystemExit('Unsafe release filename: ' + name)
         if hashlib.sha256((release / p).read_bytes()).hexdigest() != digest:
             raise SystemExit('Release checksum failed: ' + name)
