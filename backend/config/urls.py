@@ -5,6 +5,7 @@ from master import views as v
 urlpatterns = [
     re_path(r'^api/health/?$', v.health),
     re_path(r'^api/session/?$', v.session_view),
+    re_path(r'^api/public/?$', v.public_dashboard_view),
     re_path(r'^api/login/?$', v.login_view),
     re_path(r'^api/logout/?$', v.logout_view),
     re_path(r'^api/settings/?$', v.settings_view),

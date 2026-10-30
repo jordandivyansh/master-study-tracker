@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useResource } from '../hooks.js';
 import { PageHeader, Panel, Loading, Meter, Tag, workflowTone } from '../components/ui.jsx';
-import { ExamRail, RecentBars, WeightLine } from '../components/charts.jsx';
+import { ExamRail, RecentBars, WeightLine, RadialProgressRing, StreamDonut, TrajectoryAreaChart } from '../components/charts.jsx';
 import { h, hu, pct, shortDate, longDate, STREAMS } from '../format.js';
 
 export default function Dashboard() {
@@ -12,13 +12,60 @@ export default function Dashboard() {
   const pivot = settings.exams.find((e) => e.key === settings.pivotExam);
   const todayTotal = todayLog.studyPlusDsa;
 
+  // Calculate total tests done vs total tests
+  const totalTests = Object.values(d.testsByExam || {}).reduce((acc, g) => acc + (g.total || 0), 0);
+  const doneTests = Object.values(d.testsByExam || {}).reduce((acc, g) => acc + (g.done || 0), 0);
+  const testPct = totalTests ? Math.round((doneTests / totalTests) * 100) : 0;
+  const apfcPct = d.apfc.items ? Math.round((d.apfc.platformComplete / d.apfc.items) * 100) : 0;
+
   return (
     <>
       <PageHeader title={longDate(d.today)} sub={`Day ${tracker.elapsed + 1} of ${tracker.total + 1} in this plan`}>
-        <Link className="btn primary" to="/daily">Log today</Link>
+        <div style={{ display: 'flex', gap: '8px' }}>
+          <Link className="btn" to="/public" title="View the shareable read-only public dashboard">
+            👁 Public View
+          </Link>
+          <Link className="btn primary" to="/daily">Log today</Link>
+        </div>
       </PageHeader>
 
       <ExamRail start={tracker.start} end={tracker.end} today={d.today} exams={d.exams} />
+
+      {/* Visual Progress Pillars */}
+      <div className="pillars-grid">
+        <RadialProgressRing
+          pct={d.cava?.pct || 0}
+          label="CAVA Lectures"
+          count={d.cava?.done || 0}
+          total={d.cava?.total || 36}
+          unit="lectures"
+          color="var(--gold)"
+        />
+        <RadialProgressRing
+          pct={d.pyqs?.writtenPct || 0}
+          label="PYQ Workbooks"
+          count={d.pyqs?.questionsWritten || 0}
+          total={d.pyqs?.totalQuestions || 395}
+          unit="written"
+          color="var(--sage)"
+        />
+        <RadialProgressRing
+          pct={testPct}
+          label="Mocks & Tests"
+          count={doneTests}
+          total={totalTests}
+          unit="done"
+          color="#3b82f6"
+        />
+        <RadialProgressRing
+          pct={apfcPct}
+          label="APFC Modules"
+          count={d.apfc.platformComplete}
+          total={d.apfc.items}
+          unit="entries"
+          color="#8b5cf6"
+        />
+      </div>
 
       <div className="grid three">
         <Panel title="Today" aside={todayLog.capStatus && <Tag tone={todayLog.capStatus === 'In cap' ? 'good' : 'bad'}>{todayLog.capStatus}</Tag>}>
@@ -41,6 +88,16 @@ export default function Dashboard() {
           className="span-2"
         >
           {wk ? <WeekStreams wk={wk} /> : <p className="muted">Today is outside every planned week. Add one on the Weekly plan page.</p>}
+        </Panel>
+      </div>
+
+      {/* Progress & Trajectory Visualization */}
+      <div className="grid two">
+        <Panel title="14-Day Trajectory & Velocity" aside={<span className="muted">Study & DSA consistency</span>}>
+          <TrajectoryAreaChart days={d.recent} cap={settings.dailyCap} />
+        </Panel>
+        <Panel title="Syllabus Stream Allocation" aside={<span className="muted">All-time hours breakdown</span>}>
+          <StreamDonut streamTotals={d.streamTotals} streams={d.streams} />
         </Panel>
       </div>
 

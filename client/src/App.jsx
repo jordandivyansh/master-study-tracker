@@ -14,7 +14,9 @@ import PyqWorkbooks from './pages/PyqWorkbooks.jsx';
 import GoogleSheetsSync from './pages/GoogleSheetsSync.jsx';
 import Settings from './pages/Settings.jsx';
 import Guide from './pages/Guide.jsx';
+import PublicView from './pages/PublicView.jsx';
 import TimerBar from './components/TimerBar.jsx';
+import ThemeSelector from './components/ThemeSelector.jsx';
 
 const NAV = [
   { to: '/', label: 'Dashboard', end: true },
@@ -30,6 +32,16 @@ const NAV = [
 ];
 
 export default function App() {
+  const isPublic = window.location.pathname.startsWith('/public');
+
+  if (isPublic) {
+    return (
+      <NoticeProvider>
+        <PublicView />
+      </NoticeProvider>
+    );
+  }
+
   const [session, setSession] = useState(null);
   const [error, setError] = useState('');
   useEffect(() => {
@@ -59,7 +71,13 @@ export default function App() {
                 <NavLink to={n.to} end={n.end}>{n.label}</NavLink>
               </li>
             ))}
+            <li>
+              <NavLink to="/public">Public View ↗</NavLink>
+            </li>
           </ul>
+          <div className="side-theme-box">
+            <ThemeSelector compact />
+          </div>
           <NavLink to="/guide" className="guide-link">How this app is built (V2)</NavLink>
           <div className="account-block"><span>{session.username}</span><button className="btn ghost" onClick={signOut}>Sign out</button>{error && <p role="alert">{error}</p>}</div>
         </nav>
@@ -76,6 +94,7 @@ export default function App() {
             <Route path="/sheets" element={<GoogleSheetsSync />} />
             <Route path="/settings" element={<Settings />} />
             <Route path="/guide" element={<Guide />} />
+            <Route path="/public" element={<PublicView />} />
             <Route path="*" element={<p className="empty">Page not found.</p>} />
           </Routes>
         </main>

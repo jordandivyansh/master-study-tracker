@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { api } from '../api.js';
 import { useResource } from '../hooks.js';
 import { PageHeader, Panel, Loading, useNotice } from '../components/ui.jsx';
+import ThemeSelector from '../components/ThemeSelector.jsx';
 
 export default function Settings() {
   const notify = useNotice();
@@ -55,6 +56,11 @@ export default function Settings() {
   return (
     <>
       <PageHeader title="Settings" sub="These are the inputs every calculation reads. Changing an exam date here does not move weekly rows." />
+      
+      <Panel title="Interface Theme" aside={<span className="muted">Select from 6 bespoke study environments</span>}>
+        <ThemeSelector />
+      </Panel>
+
       <form onSubmit={save} className="settings">
         <Panel title="Daily capacity">
           <div className="form-grid">

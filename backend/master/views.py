@@ -244,13 +244,163 @@ def dashboard(request):
         g['overdue'] += x['attemptOverdue'] or x['reviewOverdue']
     modules = documents(user, 'apfcModules')
     areas = documents(user, 'syllabusAreas')
-    return JsonResponse(dict(today=t, settings=s, streams=STREAMS, summary=start_summary(s, weeks, tests, backlog),
+    cava_docs = documents(user, 'cavaLectures')
+    cava_total = len(cava_docs)
+    cava_done = sum(1 for c in cava_docs if c.get('status') == 'Done')
+    cava_in_progress = sum(1 for c in cava_docs if c.get('status') == 'In progress')
+    cava_summary = {
+        'total': cava_total,
+        'done': cava_done,
+        'inProgress': cava_in_progress,
+        'pending': cava_total - cava_done - cava_in_progress,
+        'pct': round((cava_done / cava_total * 100), 1) if cava_total else 0,
+    }
+    pyq_docs = documents(user, 'pyqWorkbooks')
+    pyq_total_q = sum(p.get('totalQuestions') or 0 for p in pyq_docs)
+    pyq_written_q = sum(p.get('questionsWritten') or 0 for p in pyq_docs)
+    pyq_reviewed_q = sum(p.get('modelReviewed') or 0 for p in pyq_docs)
+    pyq_summary = {
+        'sets': len(pyq_docs),
+        'totalQuestions': pyq_total_q,
+        'questionsWritten': pyq_written_q,
+        'modelReviewed': pyq_reviewed_q,
+        'writtenPct': round((pyq_written_q / pyq_total_q * 100), 1) if pyq_total_q else 0,
+        'reviewedPct': round((pyq_reviewed_q / pyq_total_q * 100), 1) if pyq_total_q else 0,
+    }
+    stream_totals = {}
+    for st in STREAMS:
+        k = st['key']
+        stream_totals[k] = round(sum((l.get('hours') or {}).get(k, 0) or 0 for l in logs), 1)
+
+    return JsonResponse(dict(today=t, settings=s, streams=STREAMS, streamTotals=stream_totals,
+                             summary=start_summary(s, weeks, tests, backlog),
                              exams=exams, currentWeek=find_week(weeks, t), todayLog=by_date.get(t, derive_day({'date': t, 'hours': {}}, s)),
                              recent=recent, weights=weights, latestWeight=weights[-1] if weights else None,
                              streak=current_streak(logs, t, s), due=due[:12], testsByExam=groups, backlog=backlog,
+                             cava=cava_summary, pyqs=pyq_summary,
                              apfc=dict(items=sum(m.get('items') or 0 for m in modules), platformComplete=sum(m.get('platformComplete') or 0 for m in modules),
                                        cyclesComplete=sum(derive_area(a)['learningCycle'] == 'Cycle complete' for a in areas), areas=len(areas)),
                              tracker=dict(start=s['trackerStart'], end=s['trackerEnd'], elapsed=days_between(s['trackerStart'], t), total=days_between(s['trackerStart'], s['trackerEnd']))))
+
+
+@require_http_methods(['GET'])
+def public_dashboard_view(request):
+    User = get_user_model()
+    target_username = request.GET.get('u') or request.GET.get('user')
+    if target_username:
+        user = User.objects.filter(username=target_username).first()
+    else:
+        user = User.objects.filter(username='jordandivyansh').first() or User.objects.filter(is_superuser=True).first() or User.objects.first()
+
+    if not user:
+        return JsonResponse({'error': 'No public profile available.'}, status=404)
+
+    t = today()
+    s = settings_for(user)
+    public_settings = {
+        'dailyCap': s.get('dailyCap', 8),
+        'dsaWeekly': s.get('dsaWeekly', 14),
+        'buffer': s.get('buffer', 0.2),
+        'pivotExam': s.get('pivotExam', 'prelims'),
+        'trackerStart': s.get('trackerStart'),
+        'trackerEnd': s.get('trackerEnd'),
+        'exams': s.get('exams', []),
+    }
+
+    logs = sorted(documents(user, 'dailyLogs'), key=lambda r: r['date'])
+    weeks = attach_actuals(documents(user, 'weeks'), logs, s)
+    tests = [derive_test(r, s, t) for r in documents(user, 'tests')]
+    backlog = [derive_backlog(r, s) for r in sorted(documents(user, 'backlog'), key=lambda r: r.get('order') or 0)]
+    by_date = {l['date']: derive_day(l, s) for l in logs}
+
+    recent = []
+    for i in range(13, -1, -1):
+        d = add_days(t, -i)
+        row = by_date.get(d, {})
+        recent.append(dict(date=d, day=weekday(d), study=row.get('examStudy'), dsa=row.get('dsa'), gym=row.get('gym')))
+
+    exams = sorted([{**e, 'daysLeft': days_between(t, e['date'])} for e in s.get('exams', [])], key=lambda e: e['date'])
+
+    groups = {}
+    for x in tests:
+        g = groups.setdefault(x['exam'], dict(total=0, done=0, reviewPending=0, overdue=0))
+        g['total'] += 1
+        g['done'] += x['workflow'] == 'Done'
+        g['reviewPending'] += x['workflow'] == 'Review pending'
+        g['overdue'] += x['attemptOverdue'] or x['reviewOverdue']
+
+    cava_docs = documents(user, 'cavaLectures')
+    cava_total = len(cava_docs)
+    cava_done = sum(1 for c in cava_docs if c.get('status') == 'Done')
+    cava_in_progress = sum(1 for c in cava_docs if c.get('status') == 'In progress')
+    cava_summary = {
+        'total': cava_total,
+        'done': cava_done,
+        'inProgress': cava_in_progress,
+        'pending': cava_total - cava_done - cava_in_progress,
+        'pct': round((cava_done / cava_total * 100), 1) if cava_total else 0,
+        'recent': sorted(cava_docs, key=lambda c: c.get('num') or 0)[:8]
+    }
+
+    pyq_docs = documents(user, 'pyqWorkbooks')
+    pyq_sets = len(pyq_docs)
+    pyq_total_q = sum(p.get('totalQuestions') or 0 for p in pyq_docs)
+    pyq_written_q = sum(p.get('questionsWritten') or 0 for p in pyq_docs)
+    pyq_reviewed_q = sum(p.get('modelReviewed') or 0 for p in pyq_docs)
+    pyq_summary = {
+        'sets': pyq_sets,
+        'totalQuestions': pyq_total_q,
+        'questionsWritten': pyq_written_q,
+        'modelReviewed': pyq_reviewed_q,
+        'writtenPct': round((pyq_written_q / pyq_total_q * 100), 1) if pyq_total_q else 0,
+        'reviewedPct': round((pyq_reviewed_q / pyq_total_q * 100), 1) if pyq_total_q else 0,
+        'recent': pyq_docs[:6]
+    }
+
+    modules = documents(user, 'apfcModules')
+    areas = documents(user, 'syllabusAreas')
+    apfc_summary = dict(
+        items=sum(m.get('items') or 0 for m in modules),
+        platformComplete=sum(m.get('platformComplete') or 0 for m in modules),
+        cyclesComplete=sum(derive_area(a)['learningCycle'] == 'Cycle complete' for a in areas),
+        areas=len(areas)
+    )
+
+    stream_totals = {}
+    for st in STREAMS:
+        k = st['key']
+        stream_totals[k] = round(sum((l.get('hours') or {}).get(k, 0) or 0 for l in logs), 1)
+
+    summary = start_summary(s, weeks, tests, backlog)
+
+    data = dict(
+        username=user.username,
+        displayName="Divyansh",
+        isPublic=True,
+        today=t,
+        settings=public_settings,
+        streams=STREAMS,
+        streamTotals=stream_totals,
+        summary=summary,
+        exams=exams,
+        currentWeek=find_week(weeks, t),
+        todayLog=by_date.get(t, derive_day({'date': t, 'hours': {}}, s)),
+        recent=recent,
+        streak=current_streak(logs, t, s),
+        testsByExam=groups,
+        cava=cava_summary,
+        pyqs=pyq_summary,
+        apfc=apfc_summary,
+        tracker=dict(
+            start=s['trackerStart'],
+            end=s['trackerEnd'],
+            elapsed=days_between(s['trackerStart'], t),
+            total=days_between(s['trackerStart'], s['trackerEnd'])
+        )
+    )
+    res = JsonResponse(data)
+    res['Cache-Control'] = 'public, max-age=60'
+    return res
 
 
 @api

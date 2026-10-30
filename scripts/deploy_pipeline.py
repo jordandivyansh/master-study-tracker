@@ -101,19 +101,26 @@ def deploy_all(commit_message="chore: automated deployment sync"):
 
     print("\n[4/4] Syncing PythonAnywhere via API...")
     if pa_token:
-        # Key critical files to upload directly
+        # Collect all python backend files dynamically
         sync_files = [
-            ("backend/config/urls.py", "study-tracker/backend/config/urls.py"),
-            ("backend/config/settings.py", "study-tracker/backend/config/settings.py"),
-            ("backend/master/sheets_sync.py", "study-tracker/backend/master/sheets_sync.py"),
-            ("backend/master/views.py", "study-tracker/backend/master/views.py"),
-            ("backend/master/management/commands/sync_sheets.py", "study-tracker/backend/master/management/commands/sync_sheets.py"),
             ("client/dist/index.html", "study-tracker/client/dist/index.html"),
         ]
-        # Also include client/dist/assets
+        for py_file in (ROOT / "backend/config").glob("*.py"):
+            sync_files.append((f"backend/config/{py_file.name}", f"study-tracker/backend/config/{py_file.name}"))
+        for py_file in (ROOT / "backend/master").glob("*.py"):
+            sync_files.append((f"backend/master/{py_file.name}", f"study-tracker/backend/master/{py_file.name}"))
+        for cmd_file in (ROOT / "backend/master/management/commands").glob("*.py"):
+            sync_files.append((f"backend/master/management/commands/{cmd_file.name}", f"study-tracker/backend/master/management/commands/{cmd_file.name}"))
+
+        # Also include all client/dist/assets
         for asset in (ROOT / "client/dist/assets").glob("*"):
             if asset.is_file():
                 sync_files.append((f"client/dist/assets/{asset.name}", f"study-tracker/client/dist/assets/{asset.name}"))
+
+        # Also include backend/staticfiles for WhiteNoise
+        for sf in (ROOT / "backend/staticfiles").glob("*"):
+            if sf.is_file():
+                sync_files.append((f"backend/staticfiles/{sf.name}", f"study-tracker/backend/staticfiles/{sf.name}"))
 
         for local_rel, remote_rel in sync_files:
             p = ROOT / local_rel
