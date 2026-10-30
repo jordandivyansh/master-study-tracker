@@ -6,6 +6,8 @@ import logging
 import os
 import shutil
 import subprocess
+import urllib.parse
+import urllib.request
 from datetime import datetime
 from pathlib import Path
 from django.utils import timezone
@@ -19,6 +21,11 @@ MAINS_SHEET_ID = '1PDbPVKE09VrW1w7rR5NzNDhxg_JFBpA1NtgPlB7bI9k'
 PUBAD_SHEET_ID = '1uzWUS92D969ofMCqsymt4BtaE0gX3z-e9jBWQTrzavM'
 UPPSC_SHEET_ID = '1kGde8YNMN-OArIR00t00zrbMAwoC_sohT4sMmpwBZL4'
 EPFO_SHEET_ID = '12NNvTTR2zb6ri25AWyY1henuVnCRg8zhEo6wO8c_0Ro'
+
+GOOGLE_WEBHOOK_URL = os.environ.get(
+    'GOOGLE_SHEETS_WEBHOOK_URL',
+    'https://script.google.com/macros/s/AKfycbzOjzm-rDTKIfNzs8s3jpM7_6qETPrgBCBEddwylmSnV59yWAAwyovQC4C1P27l1uOR/exec'
+)
 
 GSHEETS_BIN = shutil.which('gsheets') or '/var/folders/df/mjtdfgfx1m7_0fky3lgtk5_h0000gn/T/agy-plugin-cli-1209129017/gsheets'
 
@@ -38,8 +45,60 @@ def find_gsheets_cli():
     return 'gsheets'
 
 
+def parse_range_spec(cell_range):
+    """Split range e.g. \"'CAVA Lecture Tracker'!A9:H44\" into (tab_name, range_part)."""
+    if '!' in cell_range:
+        tab, r = cell_range.split('!', 1)
+        return tab.strip("'\""), r
+    return 'CAVA Lecture Tracker', cell_range
+
+
+def read_via_webhook(sheet_id, cell_range):
+    if not GOOGLE_WEBHOOK_URL:
+        return None
+    tab, r = parse_range_spec(cell_range)
+    params = urllib.parse.urlencode({'sheetId': sheet_id, 'tab': tab, 'range': r})
+    url = f'{GOOGLE_WEBHOOK_URL}?{params}'
+    req = urllib.request.Request(url, headers={'User-Agent': 'MasterStudyTracker/2.0'})
+    try:
+        with urllib.request.urlopen(req, timeout=15) as resp:
+            data = json.loads(resp.read().decode())
+            if isinstance(data, dict) and data.get('status') == 'success':
+                return data.get('values')
+            if isinstance(data, list):
+                return data
+    except Exception as e:
+        logger.warning(f'Webhook read failed for {sheet_id} {cell_range}: {e}')
+    return None
+
+
+def write_via_webhook(sheet_id, cell_range, rows):
+    if not GOOGLE_WEBHOOK_URL:
+        return False
+    tab, r = parse_range_spec(cell_range)
+    payload = json.dumps({'sheetId': sheet_id, 'tab': tab, 'range': r, 'values': rows}).encode()
+    req = urllib.request.Request(
+        GOOGLE_WEBHOOK_URL,
+        data=payload,
+        headers={'Content-Type': 'application/json', 'User-Agent': 'MasterStudyTracker/2.0'}
+    )
+    try:
+        with urllib.request.urlopen(req, timeout=20) as resp:
+            data = json.loads(resp.read().decode())
+            return data.get('status') == 'success'
+    except Exception as e:
+        logger.warning(f'Webhook write failed for {sheet_id} {cell_range}: {e}')
+    return False
+
+
 def read_sheet_range(sheet_id, cell_range):
-    """Read a cell range as a 2D JSON array using gsheets CLI or REST API."""
+    """Read a cell range as a 2D JSON array using Webhook or CLI."""
+    # 1. First try Google Apps Script Webhook (works from PythonAnywhere, Vercel & local)
+    res = read_via_webhook(sheet_id, cell_range)
+    if res is not None:
+        return res
+
+    # 2. Fallback to gsheets CLI
     cli = find_gsheets_cli()
     try:
         proc = subprocess.run(
@@ -52,14 +111,16 @@ def read_sheet_range(sheet_id, cell_range):
         return json.loads(proc.stdout)
     except Exception as e:
         logger.warning(f'CLI read failed for {sheet_id} {cell_range}: {e}')
-        # Fallback if direct API token or credentials provided
         return None
 
 
 def write_sheet_range(sheet_id, cell_range, rows):
-    """Write 2D rows to a cell range in Google Sheets.
-    rows: list of lists (e.g. [['TRUE', 'FALSE'], ['FALSE', 'TRUE']])
-    """
+    """Write 2D rows to a cell range in Google Sheets using Webhook or CLI."""
+    # 1. First try Google Apps Script Webhook
+    if write_via_webhook(sheet_id, cell_range, rows):
+        return True
+
+    # 2. Fallback to gsheets CLI
     cli = find_gsheets_cli()
     pipe_str = '|'.join(','.join(str(val) for val in r) for r in rows)
     try:
