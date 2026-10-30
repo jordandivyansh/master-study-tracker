@@ -15,6 +15,7 @@ from .storage import COLLECTIONS, documents, settings_for, seed_user, create_doc
 from .schema import validate, natural_key, iso
 from .calc import (STREAMS, attach_actuals, derive_day, derive_test, derive_backlog, derive_module, derive_area,
                    derive_entry, start_summary, find_week, current_streak, days_between, add_days, date_range, weekday)
+from .sheets_sync import run_full_sync
 
 
 def error(message, status=400):
@@ -301,6 +302,30 @@ def restore(request):
                     uid = None
                 create_document(request.user, collection, row, uid)
     return JsonResponse({'restored': {k: len(v) for k, v in prepared.items()}})
+
+
+@api
+@require_http_methods(['GET', 'POST'])
+def sheets_sync_view(request):
+    if request.method == 'POST':
+        payload = body(request) if request.body else {}
+        direction = payload.get('direction', 'both')
+        result = run_full_sync(request.user, direction=direction)
+        return JsonResponse(result)
+
+    s = settings_for(request.user)
+    gs = s.get('googleSheets', {})
+    return JsonResponse({
+        'syncEnabled': gs.get('syncEnabled', True),
+        'lastSync': gs.get('lastSync'),
+        'sheets': {
+            'mains': gs.get('mainsTrackerId'),
+            'study': gs.get('studyTrackerId'),
+            'pubad': gs.get('pubadTrackerId'),
+            'uppsc': gs.get('uppscTrackerId'),
+            'epfo': gs.get('epfoTrackerId'),
+        }
+    })
 
 
 def unknown_api(request, route=''):

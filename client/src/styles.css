@@ -705,3 +705,26 @@ html { scroll-behavior: smooth; }
   margin-bottom: 16px;
   flex: 1;
 }
+
+.sync-stats-box {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+
+.sync-stat-item {
+  background: var(--bg);
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+}
+
+.sync-stat-item strong {
+  display: block;
+  font-size: 1.15rem;
+  color: var(--navy);
+  margin-top: 2px;
+}
