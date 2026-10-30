@@ -100,24 +100,26 @@ export default function GoogleSheetsSync() {
         {lastSync && (
           <div className="sync-stats-box">
             <div className="sync-stat-item">
-              <span style={{ color: 'var(--muted)', fontSize: '0.75rem' }}>CONNECTION STATUS</span>
-              <strong style={{ color: '#059669' }}>🟢 Connected & Live</strong>
+              <span className="sync-stat-label">Connection Status</span>
+              <strong className="sync-stat-value status-live">🟢 Connected &amp; Live</strong>
             </div>
             <div className="sync-stat-item">
-              <span style={{ color: 'var(--muted)', fontSize: '0.75rem' }}>LAST SYNCHRONIZED</span>
-              <strong>{new Date(lastSync.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</strong>
+              <span className="sync-stat-label">Last Synchronized</span>
+              <strong className="sync-stat-value">
+                {new Date(lastSync.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+              </strong>
             </div>
             <div className="sync-stat-item">
-              <span style={{ color: 'var(--muted)', fontSize: '0.75rem' }}>CAVA LECTURES</span>
-              <strong>36 Synced</strong>
+              <span className="sync-stat-label">CAVA Lectures</span>
+              <strong className="sync-stat-value">36 Synced</strong>
             </div>
             <div className="sync-stat-item">
-              <span style={{ color: 'var(--muted)', fontSize: '0.75rem' }}>PYQ WORKBOOKS</span>
-              <strong>20 Sets (395 Qs)</strong>
+              <span className="sync-stat-label">PYQ Workbooks</span>
+              <strong className="sync-stat-value">20 Sets (395 Qs)</strong>
             </div>
             <div className="sync-stat-item">
-              <span style={{ color: 'var(--muted)', fontSize: '0.75rem' }}>AWFG MOCKS</span>
-              <strong>38 Tests</strong>
+              <span className="sync-stat-label">AWFG Mocks</span>
+              <strong className="sync-stat-value">38 Tests</strong>
             </div>
           </div>
         )}
