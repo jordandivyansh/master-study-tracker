@@ -160,7 +160,7 @@ def sync_cava_lectures(user, direction='both'):
     for idx, row in enumerate(data):
         lec_num = idx + 1
         # Sheet columns: [0: Lec #, 1: Code, 2: Release, 3: Date, 4: Duration, 5: Watched, 6: Notes, 7: Revised]
-        sheet_date = row[3].strip() if len(row) > 3 else ''
+        sheet_date = str(row[3]).strip() if len(row) > 3 and row[3] is not None else ''
         sheet_watched = to_bool(row[5]) if len(row) > 5 else False
         sheet_notes = to_bool(row[6]) if len(row) > 6 else False
         sheet_revised = to_bool(row[7]) if len(row) > 7 else False
@@ -221,8 +221,8 @@ def sync_pyq_workbooks(user, direction='both'):
     sheet_rows_to_write = []
 
     for row in data:
-        paper = row[0].strip()   # e.g. 'GS-1'
-        year = row[1].strip()    # e.g. '2024'
+        paper = str(row[0]).strip() if len(row) > 0 and row[0] is not None else ''   # e.g. 'GS-1'
+        year = str(row[1]).strip() if len(row) > 1 and row[1] is not None else ''    # e.g. '2024'
         sheet_written = to_bool(row[6]) if len(row) > 6 else False
         sheet_reviewed = to_bool(row[7]) if len(row) > 7 else False
 
@@ -278,7 +278,7 @@ def sync_forumias_mocks(user, direction='both'):
     sheet_rows_to_write = []
 
     for row in data:
-        test_type = row[3].strip() if len(row) > 3 else ''
+        test_type = str(row[3]).strip() if len(row) > 3 and row[3] is not None else ''
         sheet_revised = to_bool(row[5]) if len(row) > 5 else False
         sheet_attempted = to_bool(row[6]) if len(row) > 6 else False
 
