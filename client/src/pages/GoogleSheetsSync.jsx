@@ -101,25 +101,33 @@ export default function GoogleSheetsSync() {
           <div className="sync-stats-box">
             <div className="sync-stat-item">
               <span className="sync-stat-label">Connection Status</span>
-              <strong className="sync-stat-value status-live">🟢 Connected &amp; Live</strong>
+              <div className="sync-stat-value status-live">
+                <span className="live-dot" /> Connected &amp; Live
+              </div>
             </div>
             <div className="sync-stat-item">
               <span className="sync-stat-label">Last Synchronized</span>
-              <strong className="sync-stat-value">
-                {new Date(lastSync.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
-              </strong>
+              <div className="sync-stat-value">
+                <span>{new Date(lastSync.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span>
+              </div>
             </div>
             <div className="sync-stat-item">
               <span className="sync-stat-label">CAVA Lectures</span>
-              <strong className="sync-stat-value">36 Synced</strong>
+              <div className="sync-stat-value">
+                <span>36</span> <span className="sync-unit">Synced</span>
+              </div>
             </div>
             <div className="sync-stat-item">
               <span className="sync-stat-label">PYQ Workbooks</span>
-              <strong className="sync-stat-value">20 Sets (395 Qs)</strong>
+              <div className="sync-stat-value">
+                <span>20</span> <span className="sync-unit">Sets (395 Qs)</span>
+              </div>
             </div>
             <div className="sync-stat-item">
               <span className="sync-stat-label">AWFG Mocks</span>
-              <strong className="sync-stat-value">38 Tests</strong>
+              <div className="sync-stat-value">
+                <span>38</span> <span className="sync-unit">Tests</span>
+              </div>
             </div>
           </div>
         )}
