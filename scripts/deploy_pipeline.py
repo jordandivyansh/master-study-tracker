@@ -104,6 +104,7 @@ def deploy_all(commit_message="chore: automated deployment sync"):
         # Collect all python backend files dynamically
         sync_files = [
             ("client/dist/index.html", "study-tracker/client/dist/index.html"),
+            ("backend/db.sqlite3", "study-tracker/backend/db.sqlite3"),
         ]
         for py_file in (ROOT / "backend/config").glob("*.py"):
             sync_files.append((f"backend/config/{py_file.name}", f"study-tracker/backend/config/{py_file.name}"))
