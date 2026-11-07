@@ -11,7 +11,21 @@
       "name": "SSC CGL Tier I",
       "date": "2026-10-28",
       "prepBudgetH": 20,
-      "note": "Includes setup, three mocks, review and practice."
+      "note": "Tier-1 Completed (Raw Score: 92.50)"
+    },
+    {
+      "key": "pfrda",
+      "name": "PFRDA Grade A Phase 2",
+      "date": "2026-11-20",
+      "prepBudgetH": 25,
+      "note": "Paper 1 English Descriptive + Paper 2 Commerce, Finance, Pension Sector"
+    },
+    {
+      "key": "concor",
+      "name": "CONCOR MT (Commercial & Ops)",
+      "date": "2026-11-21",
+      "prepBudgetH": 15,
+      "note": "Commercial Operations, Logistics, Supply Chain & Management"
     },
     {
       "key": "cat",
@@ -35,11 +49,11 @@
       "note": "APFC course budget for selected gaps, PYQs, mocks and review."
     },
     {
-      "key": "mains",
-      "name": "UPSC CSE Mains & PubAd",
-      "date": "2027-03-31",
-      "prepBudgetH": 350,
-      "note": "GS 1\u20134, Essay, PubAd optional lectures, books and test series"
+      "key": "interview",
+      "name": "UPSC CSE Personality Test",
+      "date": "2027-01-15",
+      "prepBudgetH": 100,
+      "note": "Target 200+ Marks: DAF-II, Vocal Pacing (125 WPM), Pub Ad & Executive Composure"
     }
   ],
   "pivotExam": "apfc",
