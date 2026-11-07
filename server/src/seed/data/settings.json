@@ -8,28 +8,28 @@
   "exams": [
     {
       "key": "ssc",
-      "name": "SSC CGL Tier I",
+      "name": "SSC CGL",
       "date": "2026-10-28",
       "prepBudgetH": 20,
-      "note": "Tier-1 Completed (Raw Score: 92.50)"
+      "note": "Tier-I Completed (Raw Score: 92.50)"
     },
     {
       "key": "pfrda",
-      "name": "PFRDA Grade A Phase 2",
+      "name": "PFRDA Phase 2",
       "date": "2026-11-20",
       "prepBudgetH": 25,
       "note": "Paper 1 English Descriptive + Paper 2 Commerce, Finance, Pension Sector"
     },
     {
       "key": "concor",
-      "name": "CONCOR MT (Commercial & Ops)",
+      "name": "CONCOR MT",
       "date": "2026-11-21",
       "prepBudgetH": 15,
-      "note": "Commercial Operations, Logistics, Supply Chain & Management"
+      "note": "Commercial Operations, Logistics, Supply Chain & Aptitude"
     },
     {
       "key": "cat",
-      "name": "CAT",
+      "name": "CAT 2026",
       "date": "2026-11-29",
       "prepBudgetH": 24,
       "note": "PROVISIONAL: six mocks including review."
@@ -38,22 +38,22 @@
       "key": "uppsc",
       "name": "UPPSC Prelims",
       "date": "2026-12-06",
-      "prepBudgetH": null,
-      "note": null
+      "prepBudgetH": 80,
+      "note": "UPPSC Prelims GS-1 + CSAT target"
     },
     {
       "key": "apfc",
-      "name": "UPSC EPFO APFC",
+      "name": "EPFO APFC",
       "date": "2026-12-20",
       "prepBudgetH": 120,
       "note": "APFC course budget for selected gaps, PYQs, mocks and review."
     },
     {
       "key": "interview",
-      "name": "UPSC CSE Personality Test",
+      "name": "CSE Interview",
       "date": "2027-01-15",
       "prepBudgetH": 100,
-      "note": "Target 200+ Marks: DAF-II, Vocal Pacing (125 WPM), Pub Ad & Executive Composure"
+      "note": "Target 200+ Marks: DAF-II, Vocal Pacing (125 WPM), Pub Ad & Poise"
     }
   ],
   "pivotExam": "apfc",

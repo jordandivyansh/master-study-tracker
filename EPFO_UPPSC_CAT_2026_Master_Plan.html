@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>2-Month Master Multi-Exam Execution Plan (Nov – Dec 2026)</title>
+<style>
+  @page {
+    size: A4 portrait;
+    margin: 8mm 10mm 8mm 10mm;
+  }
+  * {
+    box-sizing: border-box;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: #0f172a;
+    background: #ffffff;
+    line-height: 1.25;
+    font-size: 7.6pt;
+    margin: 0;
+    padding: 0;
+  }
+  .page {
+    page-break-after: always;
+    position: relative;
+    height: 280mm;
+    max-height: 280mm;
+    overflow: hidden;
+  }
+  .page:last-child {
+    page-break-after: avoid;
+  }
+  .header {
+    border-bottom: 2px solid #0f172a;
+    padding-bottom: 3px;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .header h1 {
+    font-size: 13pt;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0;
+    letter-spacing: -0.2px;
+  }
+  .header .sub {
+    font-size: 7.5pt;
+    font-weight: 600;
+    color: #475569;
+    margin-top: 1px;
+  }
+  .header .badge {
+    background: #0f172a;
+    color: #f8fafc;
+    font-size: 7pt;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  h2 {
+    font-size: 8.8pt;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 5px 0 3px 0;
+    border-left: 3px solid #2563eb;
+    padding-left: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  h3 {
+    font-size: 8pt;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 4px 0 2px 0;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 4px;
+    font-size: 7.2pt;
+  }
+  th {
+    background: #0f172a;
+    color: #ffffff;
+    font-weight: 600;
+    text-align: left;
+    padding: 2.2px 4px;
+    border: 1px solid #0f172a;
+    font-size: 7pt;
+  }
+  td {
+    padding: 1.8px 4px;
+    border: 1px solid #cbd5e1;
+    vertical-align: middle;
+  }
+  tr:nth-child(even) td {
+    background: #f8fafc;
+  }
+  .text-center { text-align: center; }
+  .text-right { text-align: right; }
+  .font-bold { font-weight: 700; }
+  .font-mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; }
+
+  /* Scorecard styling */
+  .scorecard {
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-left: 3.5px solid #059669;
+    border-radius: 3px;
+    padding: 3px 6px;
+    margin: 4px 0 5px 0;
+  }
+  .scorecard.gold {
+    border-left-color: #d97706;
+    background: #fffdf5;
+    border-color: #fde68a;
+  }
+  .scorecard.blue {
+    border-left-color: #2563eb;
+    background: #f0f7ff;
+    border-color: #bfdbfe;
+  }
+  .scorecard.purple {
+    border-left-color: #7c3aed;
+    background: #faf5ff;
+    border-color: #e9d5ff;
+  }
+  .scorecard-title {
+    font-size: 7.2pt;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2px;
+  }
+  .scorecard-title .achieved {
+    color: #059669;
+    font-size: 7pt;
+  }
+  .scorecard-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3px;
+    font-size: 7pt;
+  }
+  .scorecard-item {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    padding: 2px 4px;
+    border-radius: 2px;
+  }
+  .scorecard-item .label {
+    color: #64748b;
+    font-size: 6.2pt;
+    display: block;
+    text-transform: uppercase;
+  }
+  .scorecard-item .val {
+    font-weight: 700;
+    color: #0f172a;
+    font-size: 7.4pt;
+  }
+  .scorecard-item .pct {
+    float: right;
+    font-weight: 800;
+    color: #059669;
+    font-size: 7.2pt;
+  }
+
+  .badge-pill {
+    display: inline-block;
+    padding: 1px 4px;
+    font-size: 6.5pt;
+    font-weight: 700;
+    border-radius: 9999px;
+  }
+  .badge-green { background: #dcfce7; color: #15803d; }
+  .badge-blue { background: #dbeafe; color: #1d4ed8; }
+  .badge-amber { background: #fef3c7; color: #b45309; }
+  .badge-purple { background: #f3e8ff; color: #6b21a8; }
+  .badge-red { background: #fee2e2; color: #b91c1c; }
+
+  .callout {
+    background: #f8fafc;
+    border-left: 2.5px solid #3b82f6;
+    padding: 3px 5px;
+    font-size: 7pt;
+    margin: 3px 0;
+    border-radius: 0 3px 3px 0;
+  }
+  .callout strong { color: #1e3a8a; }
+
+  .checkbox {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border: 1.2px solid #64748b;
+    border-radius: 2px;
+    margin-right: 3px;
+    vertical-align: middle;
+  }
+  .footer-nav {
+    position: absolute;
+    bottom: 1.5mm;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    font-size: 6.5pt;
+    color: #94a3b8;
+    border-top: 1px solid #e2e8f0;
+    padding-top: 1px;
+  }
+</style>
+</head>
+<body>
+
+<!-- ================= PAGE 1 ================= -->
+<div class="page">
+  <div class="header">
+    <div>
+      <h1>MASTER MULTI-EXAM EXECUTION PLAN (NOV – DEC 2026)</h1>
+      <div class="sub">Tri-Peak Synergy: UPPSC Prelims 2026 (6 Dec) · CAT 2026 (29 Nov) · UPSC EPFO APFC (20 Dec)</div>
+    </div>
+    <div class="badge">Official War Plan · Divyansh</div>
+  </div>
+
+  <div class="callout" style="border-color: #059669; background: #ecfdf5;">
+    <strong>Strategic Core Synergy:</strong> Leveraging prior clears (UPSC Prelims 2025 & 2026, UPPSC Prelims 2024). CAT (29 Nov) secures UPPSC CSAT (Paper II) & EPFO Aptitude/English. Post-UPPSC (7–18 Dec), 100% bandwidth shifts to non-CSE EPFO modules + 44 Practice Tests/Mocks + CAPF Gym.
+  </div>
+
+  <h2>1. GLOBAL STRATEGIC TIMELINE & EXAM MILESTONES</h2>
+  <table>
+    <thead>
+      <tr>
+        <th style="width:13%">Dates</th>
+        <th style="width:19%">Phase Focus</th>
+        <th style="width:24%">Primary Daily Deliverables</th>
+        <th style="width:24%">CAT & EPFO Integration</th>
+        <th style="width:20%">CAPF & PubAd</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="font-bold font-mono">3 – 5 Nov</td>
+        <td><span class="badge-pill badge-blue">Phase 1</span> Pre-Festival Momentum</td>
+        <td>UP Budget, Eco Survey, Modern Hist Revision</td>
+        <td>CAT Slot 1 (Wed 4 Nov - 2.5h)</td>
+        <td>4.0h Fitness · PubAd Paused</td>
+      </tr>
+      <tr>
+        <td class="font-bold font-mono">6 – 10 Nov</td>
+        <td><span class="badge-pill badge-amber">Phase 2</span> Festival Season Buffer</td>
+        <td>4.0–4.5h daily minimums (Eco Notebook + 500 MCQs)</td>
+        <td>CAT Slot 2 (Sat 7 Nov) & Full Mock 2 (Sun 8 Nov)</td>
+        <td>2.0–2.5h Walk · Zero guilt</td>
+      </tr>
+      <tr>
+        <td class="font-bold font-mono">11 – 22 Nov</td>
+        <td><span class="badge-pill badge-purple">Phase 3</span> Heavyweight UPPSC Engine</td>
+        <td>6.3h/day UPPSC: Paathshaala Mocks 1–18 + Revision</td>
+        <td>CAT Slots 3, 4, 5, 6 & Full Mocks 3, 4 (Sun 15, 22 Nov)</td>
+        <td>4.0h Fitness · PubAd Paused</td>
+      </tr>
+      <tr>
+        <td class="font-bold font-mono">23 Nov</td>
+        <td><span class="badge-pill badge-green">Rest Day</span> Family Function</td>
+        <td>Full Rest / Mental Reset / Family celebration</td>
+        <td>Zero Study Guilt · Complete Cognitive Recovery</td>
+        <td>Optional 30-min walk</td>
+      </tr>
+      <tr>
+        <td class="font-bold font-mono">24 – 25 Nov</td>
+        <td><span class="badge-pill badge-blue">Phase 4</span> UPPSC 100% Lock-in</td>
+        <td>Paathshaala Mocks 19 & 20 · 100% Syllabus Lock</td>
+        <td>CAT Slot 7 Final Formula Review (Wed 25 Nov)</td>
+        <td>4.0h Fitness · PubAd Paused</td>
+      </tr>
+      <tr>
+        <td class="font-bold font-mono">26 – 29 Nov</td>
+        <td><span class="badge-pill badge-red">Phase 5</span> CAT 2026 Sprint</td>
+        <td>100% laser focus on CAT · Speed drills · Errors</td>
+        <td><strong>CAT EXAM DAY: Sunday, 29 Nov 2026</strong></td>
+        <td>Solves CSAT & EPFO Aptitude</td>
+      </tr>
+      <tr>
+        <td class="font-bold font-mono">30 Nov – 6 Dec</td>
+        <td><span class="badge-pill badge-red">Phase 6</span> UPPSC Prelims Sprint</td>
+        <td>7.0h/day GS-I: UP Special, Budget, Census, Schemes</td>
+        <td>CSAT Locked · Final Factual Blitz</td>
+        <td><strong>UPPSC EXAM: Sun 6 Dec</strong></td>
+      </tr>
+      <tr>
+        <td class="font-bold font-mono">7 – 18 Dec</td>
+        <td><span class="badge-pill badge-green">Phase 7</span> EPFO APFC 100% Sprint</td>
+        <td>86 Non-CSE Video Lecs + CGB Test Series (44 Tests)</td>
+        <td>7 Full APFC Mocks (Official PYQs + FLTs)</td>
+        <td>2.0h PubAd + 2.0h Gym</td>
+      </tr>
+      <tr>
+        <td class="font-bold font-mono">19 – 20 Dec</td>
+        <td><span class="badge-pill badge-green">Phase 8 & 9</span> Rest & APFC Exam</td>
+        <td>19 Dec: Mental decompression & formula sheets</td>
+        <td><strong>UPSC EPFO APFC EXAM: Sunday, 20 Dec 2026</strong></td>
+        <td>300 Marks · 120 Qs · Victory</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>2. PHASE 1 & PHASE 2 EXECUTION DETAILS</h2>
+
+  <h3>Phase 1: Pre-Festival Momentum (3 Nov – 5 Nov 2026) · 3 Days</h3>
+  <table>
+    <thead>
+      <tr>
+        <th style="width:14%">Date</th>
+        <th style="width:46%">Daily UPPSC GS & CA Target</th>
+        <th style="width:25%">CAT & Practice Target</th>
+        <th style="width:15%">Fitness (CAPF)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="font-bold font-mono"><span class="checkbox"></span>3 Nov (Tue)</td>
+        <td>UP Budget 2024-25 data + GoI Budget key schemes + Economic Survey</td>
+        <td>CAT Slot 0 Diagnostic / Topic recap</td>
+        <td>2h Walk + 2h Gym</td>
+      </tr>
+      <tr>
+        <td class="font-bold font-mono"><span class="checkbox"></span>4 Nov (Wed)</td>
+        <td>Modern History Revision Notebook + CA 500 MCQs (Set 1: Q1–50)</td>
+        <td><strong>CAT Slot 1 (2.5h):</strong> Quad Eq + Seating + 2 RCs</td>
+        <td>2h Walk + 2h Gym</td>
+      </tr>
+      <tr>
+        <td class="font-bold font-mono"><span class="checkbox"></span>5 Nov (Thu)</td>
+        <td>Paathshaala Mock 1 (History & CA) + In-depth Error Log audit</td>
+        <td>VARC Speed Drill (2 RC passages)</td>
+        <td>2h Walk + 2h Gym</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="scorecard blue">
+    <div class="scorecard-title">
+      <span>Phase 1 Milestone Scorecard (Target Achieved by 5 Nov)</span>
+      <span class="achieved">Status: 100% on track</span>
+    </div>
+    <div class="scorecard-grid">
+      <div class="scorecard-item"><span class="label">UPPSC GS Syllabus</span><span class="val">15.0% Covered</span><span class="pct">15%</span></div>
+      <div class="scorecard-item"><span class="label">Paathshaala Mocks</span><span class="val">Mock 1 Done</span><span class="pct">5%</span></div>
+      <div class="scorecard-item"><span class="label">CAT Readiness</span><span class="val">Slot 1 Drill Complete</span><span class="pct">14%</span></div>
+      <div class="scorecard-item"><span class="label">CAPF Physical</span><span class="val">12.0 Cumulative Hours</span><span class="pct">100%</span></div>
+    </div>
+  </div>
+
+  <h3>Phase 2: Festival Season Buffer (6 Nov – 10 Nov 2026) · 5 Days (Diwali / Chhath)</h3>
+  <table>
+    <thead>
+      <tr>
+        <th style="width:14%">Date</th>
+        <th style="width:46%">Lightweight High-Yield Target (4.0–4.5h floor)</th>
+        <th style="width:25%">CAT Scheduled Target</th>
+        <th style="width:15%">Fitness Plan</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="font-bold font-mono"><span class="checkbox"></span>6 Nov (Fri)</td>
+        <td>Economic Revision Notebook (Part 1) + The Hindu & IE editorials</td>
+        <td>Formula Sheet Review (Arithmetic)</td>
+        <td>2.0h Walk / Stretch</td>
+      </tr>
+      <tr>
+        <td class="font-bold font-mono"><span class="checkbox"></span>7 Nov (Sat)</td>
+        <td>Current Affairs 500 MCQs (Set 2: Q51–100) + UP Budget facts</td>
+        <td><strong>CAT Slot 2 (2.5h):</strong> Ineq/Log + Floor Puzzles + 2 RCs</td>
+        <td>2.0h Walk / Workout</td>
+      </tr>
+      <tr>
+        <td class="font-bold font-mono"><span class="checkbox"></span>8 Nov (Sun)</td>
+        <td>Paathshaala Mock 2 (Polity & Governance) rapid test</td>
+        <td><strong>CAT Full Mock 2 (3.0h):</strong> 2h Test + 1h Error Log</td>
+        <td>2.0h Walk / Jog</td>
+      </tr>
+      <tr>
+        <td class="font-bold font-mono"><span class="checkbox"></span>9 Nov (Mon)</td>
+        <td>Economic Revision Notebook (Part 2) + Census 2011 figures</td>
+        <td>DILR 2 Sets Review from Mock 2 Mistakes</td>
+        <td>2.0h Light Gym</td>
+      </tr>
+      <tr>
+        <td class="font-bold font-mono"><span class="checkbox"></span>10 Nov (Tue)</td>
+        <td>Paathshaala Mock 3 (Economy & Schemes) + 500 MCQs (Set 3: Q101–150)</td>
+        <td>VARC 2 Inference Passages</td>
+        <td>2.0h Walk / Reset</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="scorecard gold">
+    <div class="scorecard-title">
+      <span>Phase 2 Milestone Scorecard (Target Achieved by 10 Nov)</span>
+      <span class="achieved">Festival Target: 100% Protected</span>
+    </div>
+    <div class="scorecard-grid">
+      <div class="scorecard-item"><span class="label">UPPSC GS Syllabus</span><span class="val">30.0% Cumulative</span><span class="pct">30%</span></div>
+      <div class="scorecard-item"><span class="label">Paathshaala Mocks</span><span class="val">Mocks 1–3 Complete</span><span class="pct">15%</span></div>
+      <div class="scorecard-item"><span class="label">CAT Mocks & Slots</span><span class="val">Mock 2 + Slots 1–2</span><span class="pct">29%</span></div>
+      <div class="scorecard-item"><span class="label">Habit Discipline</span><span class="val">Guilt-Free Consistency</span><span class="pct">100%</span></div>
+    </div>
+  </div>
+
+  <div class="footer-nav">
+    <span>Page 1 of 4 · Master Multi-Exam Execution Plan</span>
+    <span>Antigravity Engine · UPSC / UPPSC / CAT 2026</span>
+  </div>
+</div>
+
+<!-- ================= PAGE 2 ================= -->
+<div class="page">
+  <div class="header">
+    <div>
+      <h1>PHASE 3 & 4: THE HEAVYWEIGHT UPPSC ENGINE (11 – 25 NOV)</h1>
+      <div class="sub">Full-Throttle Syllabus Mastery · 20 Paathshaala Mocks · CAT Integration · Family Function</div>
+    </div>
+    <div class="badge">Phase 3 & 4</div>
+  </div>
+
+  <h2>3. DAY-BY-DAY HEAVYWEIGHT SCHEDULE (6.3h UPPSC + CAT SLOTS + 4h FITNESS)</h2>
+  <table>
+    <thead>
+      <tr>
+        <th style="width:13%">Date</th>
+        <th style="width:45%">UPPSC GS Core (6.3h/day) · Mocks & Revision</th>
+        <th style="width:28%">CAT Integration (Slots & Mocks)</th>
+        <th style="width:14%">Fitness (4h)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="font-bold font-mono"><span class="checkbox"></span>11 Nov (Wed)</td>
+        <td>Paathshaala Mock 4 + Polity Revision Notebook + CA Set 4</td>
+        <td><strong>CAT Slot 3 (2.5h):</strong> Number System + Tournaments + RCs</td>
+        <td>2h Walk + 2h Gym</td>
+      </tr>
+      <tr>
+        <td class="font-bold font-mono"><span class="checkbox"></span>12 Nov (Thu)</td>
+        <td>Paathshaala Mock 5 + Geography Indian & World Notebook + CA Set 5</td>
+        <td>Quant Practice Drill (20 Qs Speed Test)</td>
+        <td>2h Walk + 2h Gym</td>
+      </tr>
+      <tr>
+        <td class="font-bold font-mono"><span class="checkbox"></span>13 Nov (Fri)</td>
+        <td>Paathshaala Mock 6 + General Science (Bio/Chem) Notebook + PYQ Drill</td>
+        <td>DILR 2 Sets (Matrix Arrangement)</td>
+        <td>2h Walk + 2h Gym</td>
+      </tr>
+      <tr>
+        <td class="font-bold font-mono"><span class="checkbox"></span>14 Nov (Sat)</td>
+        <td>Paathshaala Mock 7 + Environment Treaties & Parks Notebook</td>
+        <td><strong>CAT Slot 4 (2.5h):</strong> P&C / Probability + Matrix DI + RCs</td>
+        <td>2h Walk + 2h Gym</td>
+      </tr>
+      <tr>
+        <td class="font-bold font-mono"><span class="checkbox"></span>15 Nov (Sun)</td>
+        <td>Paathshaala Mock 8 (Environment & Ecology) + Error Audit</td>
+        <td><strong>CAT Full Mock 3 (3.0h):</strong> Strict 3-min DILR Filter + Audit</td>
+        <td>2h Walk + 2h Gym</td>
+      </tr>
+      <tr>
+        <td class="font-bold font-mono"><span class="checkbox"></span>16 Nov (Mon)</td>
+        <td>Paathshaala Mock 9 + UP Special GK (Districts, ODOP, History)</td>
+        <td>VARC Speed Reading & Question Choice Audit</td>
+        <td>2h Walk + 2h Gym</td>
+      </tr>
+      <tr>
+        <td class="font-bold font-mono"><span class="checkbox"></span>17 Nov (Tue)</td>
+        <td>Paathshaala Mock 10 + UP Special Geography & Minerals + CA Set 6</td>
+        <td>Quant Arithmetic Rapid Review</td>
+        <td>2h Walk + 2h Gym</td>
+      </tr>
+      <tr>
+        <td class="font-bold font-mono"><span class="checkbox"></span>18 Nov (Wed)</td>
+        <td>Paathshaala Mock 11 + Census 2011 (India & UP) + Schemes Blitz</td>
+        <td><strong>CAT Slot 5 (2.5h):</strong> Geometry/Mensuration + Networks + RCs</td>
+        <td>2h Walk + 2h Gym</td>
+      </tr>
+      <tr>
+        <td class="font-bold font-mono"><span class="checkbox"></span>19 Nov (Thu)</td>
+        <td>Paathshaala Mock 12 + Agriculture & Mineral Data + CA Set 7</td>
+        <td>DILR Past Mistakes Review</td>
+        <td>2h Walk + 2h Gym</td>
+      </tr>
+      <tr>
+        <td class="font-bold font-mono"><span class="checkbox"></span>20 Nov (Fri)</td>
+        <td>Paathshaala Mock 13 + Ancient & Medieval History PYQs + CA Set 8</td>
+        <td>Quant Algebra Speed Sprint</td>
+        <td>2h Walk + 2h Gym</td>
+      </tr>
+      <tr>
+        <td class="font-bold font-mono"><span class="checkbox"></span>21 Nov (Sat)</td>
+        <td>Paathshaala Mock 14 + Full Sectional Weak Spot Consolidation</td>
+        <td><strong>CAT Slot 6 (2.5h):</strong> Mixed Sprint + Past Errors + RCs</td>
+        <td>2h Walk + 2h Gym</td>
+      </tr>
+      <tr>
+        <td class="font-bold font-mono"><span class="checkbox"></span>22 Nov (Sun)</td>
+        <td>Paathshaala Full Length Mock 15 + Rapid Fact Check</td>
+        <td><strong>CAT Final Full Mock 4 (3.0h):</strong> Lock Skipping Thresholds</td>
+        <td>2h Walk + 2h Gym</td>
+      </tr>
+      <tr style="background: #dcfce7;">
+        <td class="font-bold font-mono"><span class="checkbox"></span><strong>23 Nov (Mon)</strong></td>
+        <td colspan="2" class="font-bold" style="color: #166534; text-align: center;">
+          ★ FAMILY FUNCTION REST DAY — COMPLETE RECHARGE · ZERO STUDY · FULL MENTAL RESET ★
+        </td>
+        <td class="text-center font-bold">Rest / Walk</td>
+      </tr>
+      <tr>
+        <td class="font-bold font-mono"><span class="checkbox"></span>24 Nov (Tue)</td>
+        <td>Paathshaala Full Mocks 16 & 17 + Current Affairs 500 MCQs Loop 2</td>
+        <td>CAT Mental Preparation & Strategy Audit</td>
+        <td>2h Walk + 2h Gym</td>
+      </tr>
+      <tr>
+        <td class="font-bold font-mono"><span class="checkbox"></span>25 Nov (Wed)</td>
+        <td>Paathshaala Full Mocks 18, 19, 20 + 100% UPPSC SYLLABUS LOCK-IN</td>
+        <td><strong>CAT Slot 7 (2.0h):</strong> Rapid Formula Audit · Zero New Qs</td>
+        <td>2h Walk + 2h Gym</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="scorecard purple">
+    <div class="scorecard-title">
+      <span>Phases 3 & 4 Cumulative Milestone Scorecard (Achieved by 25 Nov)</span>
+      <span class="achieved">UPPSC Syllabus 100% Locked</span>
+    </div>
+    <div class="scorecard-grid">
+      <div class="scorecard-item"><span class="label">Paathshaala Mocks</span><span class="val">20 of 20 Completed</span><span class="pct">100%</span></div>
+      <div class="scorecard-item"><span class="label">500 MCQs CA Blitz</span><span class="val">500 Solved & Rev.</span><span class="pct">100%</span></div>
+      <div class="scorecard-item"><span class="label">CAT Preparation</span><span class="val">7 Slots + 4 Full Mocks</span><span class="pct">100%</span></div>
+      <div class="scorecard-item"><span class="label">Cumulative Fitness</span><span class="val">88+ Hours Walk/Gym</span><span class="pct">100%</span></div>
+    </div>
+  </div>
+
+  <h2>4. PHASES 5 & 6: CAT EXAM (29 NOV) & UPPSC PRELIMS EXAM (6 DEC)</h2>
+  <table>
+    <thead>
+      <tr>
+        <th style="width:14%">Dates</th>
+        <th style="width:22%">Exam Milestone</th>
+        <th style="width:46%">Focus & Strategy</th>
+        <th style="width:18%">Expected Milestone</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="font-bold font-mono">26 – 28 Nov</td>
+        <td><span class="badge-pill badge-red">CAT Final Sprint</span></td>
+        <td>Formula sheets only; question skipping drills; early sleep on 28 Nov.</td>
+        <td>Mental Peak & Confidence</td>
+      </tr>
+      <tr style="background: #fee2e2;">
+        <td class="font-bold font-mono"><strong>29 Nov (Sun)</strong></td>
+        <td><strong>CAT 2026 EXAM DAY</strong></td>
+        <td><strong>Execute strict 85% accuracy and 3-minute DILR filter.</strong></td>
+        <td><strong>CSAT 100% Solved</strong></td>
+      </tr>
+      <tr>
+        <td class="font-bold font-mono">30 Nov – 5 Dec</td>
+        <td><span class="badge-pill badge-blue">UPPSC GS-I Blitz</span></td>
+        <td>7.0h/day: UP Budget, Census 2011, Forest Survey, Schemes, 500 MCQs final glance.</td>
+        <td>GS-I Factual Recall Peak</td>
+      </tr>
+      <tr style="background: #fee2e2;">
+        <td class="font-bold font-mono"><strong>6 Dec (Sun)</strong></td>
+        <td><strong>UPPSC PRELIMS EXAM</strong></td>
+        <td><strong>Paper I (GS: 200 marks) + Paper II (CSAT: Qualifying). Full victory.</strong></td>
+        <td><strong>UPPSC Prelims Cleared</strong></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="scorecard blue">
+    <div class="scorecard-title">
+      <span>Phases 5 & 6 Target Achievement Scorecard (Post-UPPSC Status on 6 Dec)</span>
+      <span class="achieved">Two Major Exams Executed</span>
+    </div>
+    <div class="scorecard-grid">
+      <div class="scorecard-item"><span class="label">CAT 2026</span><span class="val">Exam Completed</span><span class="pct">100%</span></div>
+      <div class="scorecard-item"><span class="label">UPPSC CSAT</span><span class="val">Qualifying Secured</span><span class="pct">100%</span></div>
+      <div class="scorecard-item"><span class="label">UPPSC GS-I</span><span class="val">Exam Completed (Target 130+)</span><span class="pct">100%</span></div>
+      <div class="scorecard-item"><span class="label">EPFO Aptitude Readiness</span><span class="val">Maths & English Primed</span><span class="pct">100%</span></div>
+    </div>
+  </div>
+
+  <div class="footer-nav">
+    <span>Page 2 of 4 · Master Multi-Exam Execution Plan</span>
+    <span>Antigravity Engine · UPSC / UPPSC / CAT 2026</span>
+  </div>
+</div>
+
+<!-- ================= PAGE 3 ================= -->
+<div class="page">
+  <div class="header">
+    <div>
+      <h1>PHASE 7: DEDICATED UPSC EPFO APFC SPRINT (7 – 18 DEC)</h1>
+      <div class="sub">100% Non-CSE Course Completion · 44 Practice Tests & Quizzes · 7 Full-Length APFC Mocks</div>
+    </div>
+    <div class="badge">12 Days · APFC Special</div>
+  </div>
+
+  <h2>5. THE 4 CGB MENTORS PLATFORM TRACKS & VERIFIED TARGETS</h2>
+  <table>
+    <thead>
+      <tr>
+        <th style="width:18%">CGB Mentors Track</th>
+        <th style="width:10%">Course ID</th>
+        <th style="width:15%">Total Items</th>
+        <th style="width:15%">Completed Status</th>
+        <th style="width:42%">Content & Daily Integration Architecture</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="font-bold">Crash Course (Non-CSE)</td>
+        <td class="font-mono">294171</td>
+        <td class="font-bold">99 Video Lecs</td>
+        <td><span class="badge-pill badge-green">13 Done / 86 Left</span></td>
+        <td>Accountancy (39), Labour Codes (21 rem), IR (5), Audit (2), Insurance (5), SS (4), Computer (4 rem), Stats (6). ~3.5h/day at 1.5x.</td>
+      </tr>
+      <tr>
+        <td class="font-bold">EPFO Test Series 2026</td>
+        <td class="font-mono">310600</td>
+        <td class="font-bold">17 Topic Tests</td>
+        <td><span class="badge-pill badge-amber">0 Done / 17 Left</span></td>
+        <td>Accountancy (8 tests), Labour Codes (2), Polity (2), Current Affairs (3), English (2). Daily evening subject drills.</td>
+      </tr>
+      <tr>
+        <td class="font-bold">Computers Course 2026</td>
+        <td class="font-mono">212793</td>
+        <td class="font-bold">1 PDF + 20 Sets</td>
+        <td><span class="badge-pill badge-amber">0 Done / 20 Left</span></td>
+        <td>Master Theory PDF (380m reading) + 20 Online Objective Quiz Sets (Set 1 to 20). 10 sets/day on 16 & 17 Dec.</td>
+      </tr>
+      <tr>
+        <td class="font-bold">Full Mocks & PYQs</td>
+        <td class="font-mono">231336 / Sheet</td>
+        <td class="font-bold">7 Full Mocks</td>
+        <td><span class="badge-pill badge-purple">Scheduled in Sheet</span></td>
+        <td>3 Official UPSC PYQ Papers (2023, 2021, 2015) + 4 Full Proctored Mock Tests (120 Qs / 300 Marks).</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>6. APFC DAILY TIME ARCHITECTURE (7 – 18 DEC 2026)</h2>
+  <table>
+    <thead>
+      <tr>
+        <th style="width:18%">Time Slot</th>
+        <th style="width:22%">Focus Block</th>
+        <th style="width:46%">Activity Description</th>
+        <th style="width:14%">Daily Hours</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="font-mono font-bold">1:00 PM – 2:00 PM</td>
+        <td>Wakeup + Brunch</td>
+        <td>Nutritious brunch + hydration</td>
+        <td class="text-center font-bold">1.0 h</td>
+      </tr>
+      <tr>
+        <td class="font-mono font-bold">2:00 PM – 2:30 PM</td>
+        <td>Post-Brunch Walk</td>
+        <td>Light walk after meal for digestive stamina</td>
+        <td class="text-center font-bold">0.5 h</td>
+      </tr>
+      <tr style="background: #eff6ff;">
+        <td class="font-mono font-bold">2:30 PM – 6:00 PM</td>
+        <td><strong>EPFO Video Block 1</strong></td>
+        <td><strong>Watch 3.5 to 4 lectures at 1.5x speed (Accountancy / Labour / IR / Insurance)</strong></td>
+        <td class="text-center font-bold font-mono">3.5 h</td>
+      </tr>
+      <tr>
+        <td class="font-mono font-bold">6:00 PM – 6:30 PM</td>
+        <td>Walk & Evening Reset</td>
+        <td>Mind refreshment walk + light snack</td>
+        <td class="text-center font-bold">0.5 h</td>
+      </tr>
+      <tr style="background: #ecfdf5;">
+        <td class="font-mono font-bold">6:30 PM – 8:30 PM</td>
+        <td><strong>EPFO Notes + Test Series</strong></td>
+        <td><strong>Topic Notes Revision + Solve 1–2 Tests from CGB Test Series / Computer Quizzes</strong></td>
+        <td class="text-center font-bold font-mono">2.0 h</td>
+      </tr>
+      <tr style="background: #fffbeb;">
+        <td class="font-mono font-bold">8:30 PM – 10:30 PM</td>
+        <td><strong>CAPF Physical / Gym</strong></td>
+        <td><strong>Gym workout + Post-workout dinner + Post-meal walk</strong></td>
+        <td class="text-center font-bold font-mono">2.0 h</td>
+      </tr>
+      <tr style="background: #faf5ff;">
+        <td class="font-mono font-bold">10:30 PM – 12:30 AM</td>
+        <td><strong>CAVA / PubAd Optional</strong></td>
+        <td><strong>Resumed Public Administration Optional revision / CAVA video block</strong></td>
+        <td class="text-center font-bold font-mono">2.0 h</td>
+      </tr>
+      <tr style="background: #eff6ff;">
+        <td class="font-mono font-bold">12:30 AM – 2:00 AM</td>
+        <td><strong>EPFO Video Block 2</strong></td>
+        <td><strong>Watch 3.5 to 4 lectures at 1.5x speed + Update Google Sheet Tracker</strong></td>
+        <td class="text-center font-bold font-mono">1.5 h</td>
+      </tr>
+      <tr>
+        <td class="font-mono font-bold">2:00 AM – 1:00 PM</td>
+        <td>Sleep & Deep Recovery</td>
+        <td>Solid restorative sleep for cognitive consolidation</td>
+        <td class="text-center font-bold">11.0 h</td>
+      </tr>
+      <tr style="background: #0f172a; color:#fff;">
+        <td colspan="3" class="font-bold">TOTAL DAILY OUTPUT (EPFO 7.0h + PubAd 2.0h + Gym 2.0h)</td>
+        <td class="text-center font-bold font-mono" style="color:#38bdf8;">11.0 h Total</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>7. FULL MOCK SCHEDULE (7 FULL-LENGTH TESTS IN GOOGLE SHEET)</h2>
+  <table>
+    <thead>
+      <tr>
+        <th style="width:10%">Mock #</th>
+        <th style="width:14%">Date</th>
+        <th style="width:46%">Test Paper & Source</th>
+        <th style="width:15%">Pattern</th>
+        <th style="width:15%">Target Score</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="text-center font-bold font-mono">Mock 1</td>
+        <td class="font-mono">9 Dec (Wed)</td>
+        <td>UPSC EPFO APFC 2023 Official Paper (Diagnostic Mock)</td>
+        <td>120 Qs / 300 Marks</td>
+        <td class="font-bold">175+ / 300</td>
+      </tr>
+      <tr>
+        <td class="text-center font-bold font-mono">Mock 2</td>
+        <td class="font-mono">11 Dec (Fri)</td>
+        <td>CGB Mentors Full Mock 1 (FLT-1)</td>
+        <td>120 Qs / 300 Marks</td>
+        <td class="font-bold">180+ / 300</td>
+      </tr>
+      <tr>
+        <td class="text-center font-bold font-mono">Mock 3</td>
+        <td class="font-mono">13 Dec (Sun)</td>
+        <td>UPSC EPFO EO/AO 2021 Official Paper (Benchmark Mock)</td>
+        <td>120 Qs / 300 Marks</td>
+        <td class="font-bold">185+ / 300</td>
+      </tr>
+      <tr>
+        <td class="text-center font-bold font-mono">Mock 4</td>
+        <td class="font-mono">15 Dec (Tue)</td>
+        <td>CGB Mentors Full Mock 2 (FLT-2)</td>
+        <td>120 Qs / 300 Marks</td>
+        <td class="font-bold">185+ / 300</td>
+      </tr>
+      <tr>
+        <td class="text-center font-bold font-mono">Mock 5</td>
+        <td class="font-mono">16 Dec (Wed)</td>
+        <td>UPSC EPFO APFC 2015 Official Paper (Trend Analysis Mock)</td>
+        <td>120 Qs / 300 Marks</td>
+        <td class="font-bold">190+ / 300</td>
+      </tr>
+      <tr>
+        <td class="text-center font-bold font-mono">Mock 6</td>
+        <td class="font-mono">17 Dec (Thu)</td>
+        <td>CGB Mentors Full Mock 3 (FLT-3)</td>
+        <td>120 Qs / 300 Marks</td>
+        <td class="font-bold">190+ / 300</td>
+      </tr>
+      <tr>
+        <td class="text-center font-bold font-mono">Mock 7</td>
+        <td class="font-mono">18 Dec (Fri)</td>
+        <td>CGB Mentors / ForumIAS Final Proctored All-India Mock (FLT-4)</td>
+        <td>120 Qs / 300 Marks</td>
+        <td class="font-bold">195+ / 300</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="footer-nav">
+    <span>Page 3 of 4 · Master Multi-Exam Execution Plan</span>
+    <span>Antigravity Engine · UPSC / UPPSC / CAT 2026</span>
+  </div>
+</div>
+
+<!-- ================= PAGE 4 ================= -->
+<div class="page">
+  <div class="header">
+    <div>
+      <h1>PHASE 7 DAY-BY-DAY EXECUTION MATRIX & FINAL SCORECARDS</h1>
+      <div class="sub">Non-CSE Video Lectures · CGB Test Series · Computer Quizzes · Full Mocks · Final Countdown</div>
+    </div>
+    <div class="badge">Execution Matrix</div>
+  </div>
+
+  <h2>8. DAY-BY-DAY NON-CSE LECTURE & PRACTICE SCHEDULE (7 – 18 DEC)</h2>
+  <table>
+    <thead>
+      <tr>
+        <th style="width:11%">Date</th>
+        <th style="width:35%">CGB Video Lectures Target (1.5x)</th>
+        <th style="width:25%">CGB Test Series / Quizzes</th>
+        <th style="width:20%">Full Mock Target</th>
+        <th style="width:9%">PubAd</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="font-bold font-mono"><span class="checkbox"></span>7 Dec (Mon)</td>
+        <td><strong>Accountancy Lecs 1–10:</strong> Principles, Debit/Credit, Basic Concepts, Journal & Ledger (4.5h)</td>
+        <td>Accountancy Test 1 (Basics MCQs)</td>
+        <td>Subject Onboarding</td>
+        <td>2.0h</td>
+      </tr>
+      <tr>
+        <td class="font-bold font-mono"><span class="checkbox"></span>8 Dec (Tue)</td>
+        <td><strong>Accountancy Lecs 11–20:</strong> Trial Balance, Rectification, Depreciation, BRS (4.5h)</td>
+        <td>Accountancy Tests 2 & 3 (BRS + Depr)</td>
+        <td>Topic Error Log</td>
+        <td>2.0h</td>
+      </tr>
+      <tr>
+        <td class="font-bold font-mono"><span class="checkbox"></span>9 Dec (Wed)</td>
+        <td><strong>Accountancy Lecs 21–30:</strong> Provisions, Reserves, Ratios 1 to 4, Leverage (4.5h)</td>
+        <td>Accountancy Tests 4 & 5 (Rect + Reserves)</td>
+        <td><strong>Full Mock 1 (2023 APFC)</strong></td>
+        <td>2.0h</td>
+      </tr>
+      <tr>
+        <td class="font-bold font-mono"><span class="checkbox"></span>10 Dec (Thu)</td>
+        <td><strong>Accountancy Lecs 31–39:</strong> Financial Statements, NPO, Share Capital (4.2h) <em>[ACCOUNTANCY 100%]</em></td>
+        <td>Accountancy Tests 6, 7, 8 (NPO + Marathons)</td>
+        <td>Mock 1 Analysis</td>
+        <td>2.0h</td>
+      </tr>
+      <tr>
+        <td class="font-bold font-mono"><span class="checkbox"></span>11 Dec (Fri)</td>
+        <td><strong>Labour Codes Lecs 12–21:</strong> Strikes/Lockouts, SS Code, EPF, EPS, EDLI (4.8h)</td>
+        <td>Labour Codes Test 1 (Wage Code MCQs)</td>
+        <td><strong>Full Mock 2 (CGB FLT-1)</strong></td>
+        <td>2.0h</td>
+      </tr>
+      <tr>
+        <td class="font-bold font-mono"><span class="checkbox"></span>12 Dec (Sat)</td>
+        <td><strong>Labour Codes Lecs 22–32:</strong> ESIC, Gratuity, Maternity, Gig Workers, OSHWC (4.9h) <em>[LABOUR 100%]</em></td>
+        <td>Labour Codes Test 2 (IR Code MCQs)</td>
+        <td>Mock 2 Analysis</td>
+        <td>2.0h</td>
+      </tr>
+      <tr>
+        <td class="font-bold font-mono"><span class="checkbox"></span>13 Dec (Sun)</td>
+        <td><strong>Industrial Relations Lecs 1–5:</strong> Evolution, IR Approaches, Collective Bargaining (2.3h) <em>[IR 100%]</em></td>
+        <td>English Tests 1 & 2 (Sentence + Tenses)</td>
+        <td><strong>Full Mock 3 (2021 EO/AO)</strong></td>
+        <td>2.0h</td>
+      </tr>
+      <tr>
+        <td class="font-bold font-mono"><span class="checkbox"></span>14 Dec (Mon)</td>
+        <td><strong>Insurance Lecs 1–5</strong> (1.4h) + <strong>Auditing Lecs 1–2</strong> (1.0h) <em>[INSURANCE & AUDIT 100%]</em></td>
+        <td>Polity Tests 1 & 2 (Practice MCQs)</td>
+        <td>Mock 3 Analysis</td>
+        <td>2.0h</td>
+      </tr>
+      <tr>
+        <td class="font-bold font-mono"><span class="checkbox"></span>15 Dec (Tue)</td>
+        <td><strong>Social Security Schemes Lecs 1–4</strong> + Central Welfare PDFs (2.3h) <em>[SS SCHEMES 100%]</em></td>
+        <td>Current Affairs Tests 1, 2, 3 (Aug/Sep)</td>
+        <td><strong>Full Mock 4 (CGB FLT-2)</strong></td>
+        <td>2.0h</td>
+      </tr>
+      <tr>
+        <td class="font-bold font-mono"><span class="checkbox"></span>16 Dec (Wed)</td>
+        <td><strong>Computer Applications Lecs 3–6:</strong> DBMS, Networks, Cyber Security (2.3h) <em>[COMPUTERS 100%]</em></td>
+        <td>Computer Quizzes (Sets 1 to 10) + PDF</td>
+        <td><strong>Full Mock 5 (2015 APFC)</strong></td>
+        <td>2.0h</td>
+      </tr>
+      <tr>
+        <td class="font-bold font-mono"><span class="checkbox"></span>17 Dec (Thu)</td>
+        <td><strong>Statistics Lecs 1–6:</strong> Mean, Median, Mode, SD, Variance, Skewness (2.1h) <em>[STATS 100%]</em></td>
+        <td>Computer Quizzes (Sets 11 to 20)</td>
+        <td><strong>Full Mock 6 (CGB FLT-3)</strong></td>
+        <td>2.0h</td>
+      </tr>
+      <tr>
+        <td class="font-bold font-mono"><span class="checkbox"></span>18 Dec (Fri)</td>
+        <td><strong>100% NON-CSE SYLLABUS ACHIEVED:</strong> Rapid consolidation of formula sheets & penalty sections</td>
+        <td>All 44 Practice Tests Checked</td>
+        <td><strong>Full Mock 7 (Final FLT-4)</strong></td>
+        <td>2.0h</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="scorecard" style="border-left-color: #059669; background: #ecfdf5;">
+    <div class="scorecard-title">
+      <span>Phase 7 Final Milestone Scorecard (Target Achieved by 18 Dec 2026)</span>
+      <span class="achieved">★ 100% EPFO APFC READINESS ACHIEVED ★</span>
+    </div>
+    <div class="scorecard-grid">
+      <div class="scorecard-item"><span class="label">Non-CSE Video Lectures</span><span class="val">99 of 99 Lecs Finished</span><span class="pct">100%</span></div>
+      <div class="scorecard-item"><span class="label">CGB Test Series (310600)</span><span class="val">17 of 17 Tests Done</span><span class="pct">100%</span></div>
+      <div class="scorecard-item"><span class="label">Computer Course (212793)</span><span class="val">20 Sets + PDF Done</span><span class="pct">100%</span></div>
+      <div class="scorecard-item"><span class="label">Full APFC Mocks Logged</span><span class="val">7 of 7 Full Mocks Logged</span><span class="pct">100%</span></div>
+    </div>
+  </div>
+
+  <h2>9. PHASES 8 & 9: PRE-EXAM RESET & EXAM DAY EXECUTION</h2>
+  <table>
+    <thead>
+      <tr>
+        <th style="width:18%">Date / Timeline</th>
+        <th style="width:28%">Phase & Focus</th>
+        <th style="width:54%">Actionable Protocol</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="font-bold font-mono">19 Dec (Sat)</td>
+        <td><span class="badge-pill badge-green">Phase 8: Mental Calibration</span></td>
+        <td>Zero problem solving. Review 1-page formula summary, accounting golden rules, labour code penalties, and key constitutional articles. Pack admit card & ID. Sleep by 10:30 PM.</td>
+      </tr>
+      <tr style="background: #dcfce7;">
+        <td class="font-bold font-mono"><strong>20 Dec 2026 (Sun)</strong></td>
+        <td><span class="badge-pill badge-green" style="background:#15803d; color:#fff;">Phase 9: UPSC EPFO APFC EXAM</span></td>
+        <td><strong>300 Marks · 120 Objective Questions · 2 Hours · 1/3 Negative Marking.</strong> Enforce calibrated question selection, target 100+ attempts with 85%+ accuracy. Complete mastery.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="scorecard gold">
+    <div class="scorecard-title">
+      <span>Overall Multi-Exam Campaign Completion Snapshot (Nov – Dec 2026)</span>
+      <span class="achieved">Master Goals Achieved</span>
+    </div>
+    <div class="scorecard-grid">
+      <div class="scorecard-item"><span class="label">UPPSC Prelims 2026</span><span class="val">Exam Completed (6 Dec)</span><span class="pct">100%</span></div>
+      <div class="scorecard-item"><span class="label">CAT 2026</span><span class="val">Exam Completed (29 Nov)</span><span class="pct">100%</span></div>
+      <div class="scorecard-item"><span class="label">UPSC EPFO APFC</span><span class="val">100% Course & Exam Done</span><span class="pct">100%</span></div>
+      <div class="scorecard-item"><span class="label">CAPF Medical Stamina</span><span class="val">180+ Fitness Hours</span><span class="pct">100%</span></div>
+    </div>
+  </div>
+
+  <div class="footer-nav">
+    <span>Page 4 of 4 · Master Multi-Exam Execution Plan</span>
+    <span>Antigravity Engine · UPSC / UPPSC / CAT 2026</span>
+  </div>
+</div>
+
+</body>
+</html>

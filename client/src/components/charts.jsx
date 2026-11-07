@@ -7,16 +7,49 @@ export function ExamRail({ start, end, today, exams }) {
   const span = dayNum(end) - dayNum(start);
   const pos = (iso) => Math.max(0, Math.min(100, ((dayNum(iso) - dayNum(start)) / span) * 100));
   const todayPos = pos(today);
+
+  // Stagger collision avoidance: if stops on the same side are within 18% of each other,
+  // alternate vertical tier (tier-0 at 12px, tier-1 at 62px) to prevent overlapping text.
+  let lastAbovePos = -100;
+  let lastAboveTier = 0;
+  let lastBelowPos = -100;
+  let lastBelowTier = 0;
+
+  const stops = exams.map((e, i) => {
+    const p = pos(e.date);
+    const side = i % 2 ? 'below' : 'above';
+    let tier = 0;
+    if (side === 'above') {
+      if (p - lastAbovePos < 18) {
+        tier = lastAboveTier === 0 ? 1 : 0;
+      } else {
+        tier = 0;
+      }
+      lastAbovePos = p;
+      lastAboveTier = tier;
+    } else {
+      if (p - lastBelowPos < 18) {
+        tier = lastBelowTier === 0 ? 1 : 0;
+      } else {
+        tier = 0;
+      }
+      lastBelowPos = p;
+      lastBelowTier = tier;
+    }
+    return { ...e, pos: p, side, tier };
+  });
+
   return (
     <div className="rail" aria-label="Exam timeline">
       <div className="rail-track">
         <div className="rail-done" style={{ width: `${todayPos}%` }} />
-        {exams.map((e, i) => (
+        {stops.map((e) => (
           <div
             key={e.key}
-            className={`rail-stop ${i % 2 ? 'below' : 'above'} ${e.daysLeft < 0 ? 'past' : ''} ${pos(e.date) > 75 ? 'flip' : ''}`}
-            style={{ left: `${pos(e.date)}%` }}
+            className={`rail-stop ${e.side} tier-${e.tier} ${e.daysLeft < 0 ? 'past' : ''} ${e.pos > 75 ? 'flip' : ''}`}
+            style={{ left: `${e.pos}%` }}
           >
+            <span className="rail-stem" />
             <span className="rail-dot" />
             <span className="rail-label">
               <strong>{e.name}</strong>
