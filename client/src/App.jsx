@@ -15,6 +15,7 @@ import GoogleSheetsSync from './pages/GoogleSheetsSync.jsx';
 import Settings from './pages/Settings.jsx';
 import Guide from './pages/Guide.jsx';
 import PublicView from './pages/PublicView.jsx';
+import InterviewHub from './pages/InterviewHub.jsx';
 import TimerBar from './components/TimerBar.jsx';
 import ThemeSelector from './components/ThemeSelector.jsx';
 
@@ -23,6 +24,7 @@ const NAV = [
   { to: '/daily', label: 'Daily log' },
   { to: '/weekly', label: 'Weekly plan' },
   { to: '/tests', label: 'Mocks & Tests' },
+  { to: '/interview', label: '🎯 Interview Hub' },
   { to: '/cava', label: 'CAVA Lectures' },
   { to: '/pyqs', label: 'PYQ Workbooks' },
   { to: '/backlog', label: 'CSE Backlog' },
@@ -87,6 +89,7 @@ export default function App() {
             <Route path="/daily" element={<Daily />} />
             <Route path="/weekly" element={<Weekly />} />
             <Route path="/tests" element={<Tests />} />
+            <Route path="/interview" element={<InterviewHub />} />
             <Route path="/cava" element={<CavaTracker />} />
             <Route path="/pyqs" element={<PyqWorkbooks />} />
             <Route path="/backlog" element={<Backlog />} />

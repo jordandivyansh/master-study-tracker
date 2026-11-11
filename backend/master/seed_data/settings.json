@@ -17,46 +17,46 @@
       "key": "pfrda",
       "name": "PFRDA Phase 2",
       "date": "2026-11-20",
-      "prepBudgetH": 25,
-      "note": "Paper 1 English Descriptive + Paper 2 Commerce, Finance, Pension Sector"
+      "prepBudgetH": 0,
+      "note": "SKIPPED: Full pivot to UPSC CSE Interview."
     },
     {
       "key": "concor",
       "name": "CONCOR MT",
       "date": "2026-11-21",
-      "prepBudgetH": 15,
-      "note": "Commercial Operations, Logistics, Supply Chain & Aptitude"
+      "prepBudgetH": 0,
+      "note": "SKIPPED: Full pivot to UPSC CSE Interview."
     },
     {
       "key": "cat",
       "name": "CAT 2026",
       "date": "2026-11-29",
-      "prepBudgetH": 24,
-      "note": "PROVISIONAL: six mocks including review."
+      "prepBudgetH": 0,
+      "note": "SKIPPED: Full pivot to UPSC CSE Interview."
     },
     {
       "key": "uppsc",
       "name": "UPPSC Prelims",
       "date": "2026-12-06",
-      "prepBudgetH": 80,
-      "note": "UPPSC Prelims GS-1 + CSAT target"
+      "prepBudgetH": 35,
+      "note": "Casual yet confident Prelims attempt (similar to 2024 qualifying strategy)."
     },
     {
       "key": "apfc",
       "name": "EPFO APFC",
       "date": "2026-12-20",
-      "prepBudgetH": 120,
-      "note": "APFC course budget for selected gaps, PYQs, mocks and review."
+      "prepBudgetH": 40,
+      "note": "Secondary post-interview / foundation focus."
     },
     {
       "key": "interview",
-      "name": "CSE Interview",
+      "name": "UPSC CSE Personality Test",
       "date": "2027-01-15",
-      "prepBudgetH": 100,
-      "note": "Target 200+ Marks: DAF-II, Vocal Pacing (125 WPM), Pub Ad & Poise"
+      "prepBudgetH": 220,
+      "note": "PRIMARY PIVOT: Target 200+ Marks. DAF-II, Vocal Cadence (125 WPM), Pub Ad, High-Yield Current Affairs, Mock Panels."
     }
   ],
-  "pivotExam": "apfc",
+  "pivotExam": "interview",
   "weight": {
     "start": 86.6,
     "target": 72,
@@ -94,7 +94,29 @@
     "pubadTrackerId": "1uzWUS92D969ofMCqsymt4BtaE0gX3z-e9jBWQTrzavM",
     "uppscTrackerId": "1kGde8YNMN-OArIR00t00zrbMAwoC_sohT4sMmpwBZL4",
     "epfoTrackerId": "12NNvTTR2zb6ri25AWyY1henuVnCRg8zhEo6wO8c_0Ro",
-    "webhookUrl": "https://script.google.com/macros/s/AKfycbzOjzm-rDTKIfNzs8s3jpM7_6qETPrgBCBEddwylmSnV59yWAAwyovQC4C1P27l1uOR/exec",
-    "syncEnabled": true
+    "syncEnabled": true,
+    "lastSync": {
+      "timestamp": "2026-11-01T19:51:13.776403+00:00",
+      "status": "success",
+      "cava": {
+        "status": "success",
+        "pulled": 0,
+        "pushed": 0,
+        "total": 36
+      },
+      "pyqs": {
+        "status": "success",
+        "pulled": 0,
+        "pushed": 0,
+        "total": 20
+      },
+      "mocks": {
+        "status": "success",
+        "pulled": 0,
+        "pushed": 0,
+        "total": 38
+      },
+      "message": "\u2713 Synced 36 CAVA lectures, 20 PYQ workbooks, and 38 mocks bidirectionally."
+    }
   }
 }
