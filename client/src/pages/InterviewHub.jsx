@@ -134,6 +134,30 @@ const INITIAL_COURSES = [
     notes: 'Core mentor for 2+ years. Deep Pub Ad optional, Ethics, and DAF alignment.',
   },
   {
+    id: 'lukmaan',
+    institute: 'Lukmaan IAS',
+    name: 'Interview Guidance Program (IGP) - Pub Ad & Ethics',
+    url: 'https://lukmaanias.com/interview-guidance-program-igp/',
+    lead: 'S. Ansari Sir & Senior Board Members',
+    type: 'DAF Analysis, Pub Ad Optional & 1-on-1 Mocks',
+    location: 'Pusa Road, Karol Bagh, Delhi',
+    status: 'Planned',
+    mockDate: '',
+    notes: 'Direct alignment with Public Administration optional, case-study questions, and administrative ethics.',
+  },
+  {
+    id: 'pawan-kumar',
+    institute: 'Pawan Kumar IAS',
+    name: 'Interview Guidance Program - Public Administration & Governance',
+    url: 'https://www.pavankumarias.com/',
+    lead: 'Pawan Kumar Sir',
+    type: '1-on-1 Pub Ad Optional Mentorship & Mock Interview',
+    location: 'Old Rajinder Nagar / Karol Bagh, Delhi',
+    status: 'Planned',
+    mockDate: '',
+    notes: 'Pawan Kumar Sir specialized Pub Ad conceptual defense, administrative theories applied to current governance.',
+  },
+  {
     id: 'yt-framework',
     institute: 'Interview Masterclass',
     name: 'UPSC Interview Strategy & Cadence Masterclass',
@@ -152,7 +176,20 @@ const STATUSES = ['Planned', 'Registered', 'DAF Submitted', 'Mock Scheduled', 'C
 export default function InterviewHub() {
   const [courses, setCourses] = useState(() => {
     const saved = localStorage.getItem('master_interview_courses');
-    return saved ? JSON.parse(saved) : INITIAL_COURSES;
+    if (!saved) return INITIAL_COURSES;
+    try {
+      const parsed = JSON.parse(saved);
+      const existingIds = new Set(parsed.map((c) => c.id));
+      const merged = [...parsed];
+      for (const c of INITIAL_COURSES) {
+        if (!existingIds.has(c.id)) {
+          merged.push(c);
+        }
+      }
+      return merged;
+    } catch {
+      return INITIAL_COURSES;
+    }
   });
   const [filter, setFilter] = useState('All');
   const [activeTab, setActiveTab] = useState('tracker'); // 'tracker' | 'playbook'
