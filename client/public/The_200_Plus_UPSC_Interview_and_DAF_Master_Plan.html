@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UPSC CSE 2026: 200+ Interview Thrust & Strategic Master Plan</title>
+<style>
+  :root {
+    --bg: #090d16;
+    --surface: #111827;
+    --surface-hover: #1e293b;
+    --line: #1f293d;
+    --line-active: #3b82f6;
+    --text: #f8fafc;
+    --text-muted: #94a3b8;
+    --gold: #f59e0b;
+    --gold-bg: rgba(245, 158, 11, 0.12);
+    --gold-border: rgba(245, 158, 11, 0.35);
+    --emerald: #10b981;
+    --emerald-bg: rgba(16, 185, 129, 0.12);
+    --emerald-border: rgba(16, 185, 129, 0.35);
+    --rose: #f43f5e;
+    --rose-bg: rgba(244, 63, 94, 0.12);
+    --rose-border: rgba(244, 63, 94, 0.3);
+    --blue: #38bdf8;
+    --blue-bg: rgba(56, 189, 248, 0.12);
+    --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    --serif: Georgia, Cambria, 'Times New Roman', serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font);
+    line-height: 1.5;
+    padding: 32px 20px;
+  }
+  .container { max-width: 1040px; margin: 0 auto; }
+
+  /* Header */
+  .header {
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 24px;
+    margin-bottom: 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .header h1 {
+    font-family: var(--serif);
+    font-size: 28px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: -0.5px;
+  }
+  .header p {
+    color: var(--text-muted);
+    font-size: 14px;
+    margin-top: 4px;
+  }
+  .badge-target {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--gold-bg);
+    border: 1px solid var(--gold-border);
+    color: var(--gold);
+    font-size: 13px;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 9999px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  /* Grid Layouts */
+  .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin-bottom: 28px; }
+  .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); gap: 18px; margin-bottom: 28px; }
+
+  /* Cards */
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 20px;
+    transition: transform 0.15s ease, border-color 0.15s ease;
+  }
+  .card:hover { border-color: rgba(255,255,255,0.18); }
+  .card-title {
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .card-title.gold { color: var(--gold); }
+  .card-title.emerald { color: var(--emerald); }
+  .card-title.blue { color: var(--blue); }
+  .card-title.rose { color: var(--rose); }
+
+  /* Strategic Realignment Banner */
+  .banner {
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.08), rgba(16, 185, 129, 0.08));
+    border: 1px solid var(--gold-border);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-bottom: 28px;
+  }
+  .banner h2 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 8px;
+  }
+  .banner p {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  /* Tables */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13.5px;
+    margin-top: 8px;
+  }
+  th {
+    text-align: left;
+    padding: 10px 12px;
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--text-muted);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid var(--line);
+  }
+  td {
+    padding: 12px;
+    border-bottom: 1px solid var(--line);
+    vertical-align: middle;
+  }
+  tr:last-child td { border-bottom: none; }
+  .time-col { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 12.5px; font-weight: 600; color: var(--blue); }
+  .dur-badge { background: rgba(255, 255, 255, 0.07); padding: 3px 8px; border-radius: 4px; font-size: 11px; font-weight: 600; }
+
+  /* Bullet points */
+  ul.clean-list { list-style: none; }
+  ul.clean-list li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 10px;
+    font-size: 13.5px;
+    color: #cbd5e1;
+    line-height: 1.5;
+  }
+  ul.clean-list li::before {
+    content: "•";
+    position: absolute;
+    left: 4px;
+    top: -1px;
+    font-size: 18px;
+    color: var(--gold);
+  }
+  ul.clean-list li.check::before { content: "✓"; color: var(--emerald); font-size: 14px; top: 1px; }
+  ul.clean-list li.cross::before { content: "✕"; color: var(--rose); font-size: 13px; top: 1px; }
+
+  .stat-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-top: 14px;
+  }
+  .stat-box {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--line);
+    padding: 12px 14px;
+    border-radius: 8px;
+  }
+  .stat-box .lbl { font-size: 11px; text-transform: uppercase; color: var(--text-muted); font-weight: 600; }
+  .stat-box .val { font-size: 18px; font-weight: 700; color: #fff; margin-top: 2px; }
+
+  .footer-note {
+    margin-top: 32px;
+    border-top: 1px solid var(--line);
+    padding-top: 16px;
+    font-size: 12.5px;
+    color: var(--text-muted);
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- Header -->
+  <div class="header">
+    <div>
+      <h1>UPSC CSE 2026: 200+ Interview Thrust</h1>
+      <p>Master Execution Plan & Realigned Daily Architecture • Post-Karol Bagh Recon</p>
+    </div>
+    <div class="badge-target">🎯 Target: 200+ PT Marks</div>
+  </div>
+
+  <!-- Strategic Realignment Banner -->
+  <div class="banner">
+    <h2>⚡ The Strategic Pivot: 100% Focus on the Highest-Value Asset</h2>
+    <p>
+      Following in-depth mentorship recon at <strong>ForumIAS, Smartworks Labs, Lukmaan IAS, Pawan Kumar Sir, Vajiram & Ravi, Shankar IAS, Next IAS, and Drishti IAS</strong>, secondary exam distractions have been completely stripped away. You are in the top 0.2% nationally. Securing a 200+ interview score guarantees a premier service rank (IAS/IFS/IPS).
+    </p>
+    <div class="stat-grid">
+      <div class="stat-box">
+        <div class="lbl">Primary Focus</div>
+        <div class="val" style="color: var(--gold);">UPSC PT (220h)</div>
+      </div>
+      <div class="stat-box">
+        <div class="lbl">Eliminated</div>
+        <div class="val" style="color: var(--rose);">PFRDA / CONCOR / CAT</div>
+      </div>
+      <div class="stat-box">
+        <div class="lbl">UPPSC Prelims</div>
+        <div class="val" style="color: var(--blue);">Casual (35h)</div>
+      </div>
+      <div class="stat-box">
+        <div class="lbl">Daily Non-Negotiable</div>
+        <div class="val" style="color: var(--emerald);">Newspaper + CAVA</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Core Pillars -->
+  <div class="grid-3">
+    <div class="card">
+      <div class="card-title emerald">📰 Daily Content Command</div>
+      <ul class="clean-list">
+        <li class="check"><strong>Newspaper Mastery (08:30 – 10:00 AM):</strong> The Hindu & Indian Express with interview-specific opinion formation on constitutional, administrative & geopolitical events.</li>
+        <li class="check"><strong>CAVA Current Affairs (10:00 AM – 01:00 PM):</strong> Daily mandatory 3.0h lecture. Deep policy analysis & committee takeaways.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-title gold">📋 DAF-II Forensic Precision</div>
+      <ul class="clean-list">
+        <li class="check"><strong>Tech & MBA Synergy:</strong> ABV-IIITM Gwalior pedigree connected to Digital Public Infrastructure (DPI), GovTech, and systemic efficiency.</li>
+        <li class="check"><strong>Sports & Roots:</strong> State/Zonal Basketball (team crisis management) & Moradabad/Dehradun regional economics.</li>
+        <li class="check"><strong>Pub Ad Optional:</strong> Thinker frameworks (Simon, Riggs, Ostrom) and Mission Karmayogi reforms.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-title blue">🎙️ 125 WPM Vocal Cadence</div>
+      <ul class="clean-list">
+        <li class="check"><strong>The 3-Second Rule:</strong> Mandatory thoughtful pause before delivering any answer to eliminate rushing under adrenaline.</li>
+        <li class="check"><strong>Metronome Pacing Drill:</strong> Daily 21:45 PM aloud editorial reading calibrated strictly to 125 WPM.</li>
+        <li class="check"><strong>Mirror & Recorded Drills:</strong> Self-audit posture, unhurried cadence, and firm eye contact.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Master Daily Time Architecture -->
+  <div class="card" style="margin-bottom: 28px;">
+    <div class="card-title gold">⏱️ Daily Master Time Architecture (Jaypee Aman, Noida)</div>
+    <table>
+      <thead>
+        <tr>
+          <th>Time Window (IST)</th>
+          <th>Block & Duration</th>
+          <th>Core Focus & Operational Objective</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="time-col">05:30 AM – 07:30 AM</td>
+          <td><span class="dur-badge">2.0 hrs</span> Athletic Training 1</td>
+          <td>Cardio base, agility, basketball conditioning, physical anchor.</td>
+        </tr>
+        <tr>
+          <td class="time-col">07:30 AM – 08:30 AM</td>
+          <td><span class="dur-badge">1.0 hr</span> Recovery & Breakfast</td>
+          <td>Protein refueling, cold shower, cognitive down-regulation.</td>
+        </tr>
+        <tr>
+          <td class="time-col">08:30 AM – 10:00 AM</td>
+          <td><span class="dur-badge">1.5 hrs</span> Newspaper Mastery</td>
+          <td><strong>Mandatory:</strong> The Hindu + IE editorials, national/international affairs for PT.</td>
+        </tr>
+        <tr>
+          <td class="time-col">10:00 AM – 01:00 PM</td>
+          <td><span class="dur-badge">3.0 hrs</span> CAVA Current Affairs</td>
+          <td><strong>Mandatory:</strong> High-yield lecture notes, policy depth, administrative linkages.</td>
+        </tr>
+        <tr>
+          <td class="time-col">01:00 PM – 02:00 PM</td>
+          <td><span class="dur-badge">1.0 hr</span> Lunch & Rest</td>
+          <td>Lunch, non-screen rest / 20-min NSDR reset.</td>
+        </tr>
+        <tr>
+          <td class="time-col">02:00 PM – 05:00 PM</td>
+          <td><span class="dur-badge">3.0 hrs</span> UPSC Interview Core</td>
+          <td>DAF-II questionnaire writing, Pub Ad optional revision, faculty 1-on-1 sessions.</td>
+        </tr>
+        <tr>
+          <td class="time-col">05:30 PM – 07:30 PM</td>
+          <td><span class="dur-badge">2.0 hrs</span> Athletic Training 2</td>
+          <td>Strength, hypertrophy, stamina, stress dissipation.</td>
+        </tr>
+        <tr>
+          <td class="time-col">07:30 PM – 08:30 PM</td>
+          <td><span class="dur-badge">1.0 hr</span> Post-Workout Reset</td>
+          <td>Dinner, hydration, mental transition to evening study.</td>
+        </tr>
+        <tr>
+          <td class="time-col">08:30 PM – 09:45 PM</td>
+          <td><span class="dur-badge">1.25 hrs</span> UPPSC Prelims Scan</td>
+          <td><strong>Casual & Confident:</strong> High-yield Ghatna Chakra static, UP Special & schemes.</td>
+        </tr>
+        <tr>
+          <td class="time-col">09:45 PM – 10:30 PM</td>
+          <td><span class="dur-badge">45 min</span> Vocal Cadence Drill</td>
+          <td>125 WPM speech pacing metronome practice, mirror DAF simulation, video review.</td>
+        </tr>
+        <tr>
+          <td class="time-col">10:30 PM</td>
+          <td><span class="dur-badge">7.5 hrs</span> Cellular Recovery</td>
+          <td>Sleep (phone outside bedroom). Zero late-night screen time.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 16 Curated Interview Guidance Programs & Mock Panels Matrix -->
+  <div class="card" style="margin-bottom: 28px;">
+    <div class="card-title emerald">🏛️ Curated Interview Guidance Programs & Mock Panels (16 Tracked)</div>
+    <table>
+      <thead>
+        <tr>
+          <th>Institute / Mentor</th>
+          <th>Lead / Faculty</th>
+          <th>Strategic Purpose & Focus</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong style="color: #fff;">IRS Mentorship</strong></td>
+          <td>Vignan Pattamatta, IRS C&IT (CSE 2013)</td>
+          <td><strong>1:1 Mock, DAF & WhatsApp Guidance:</strong> Next session Thu 12 Nov @ 7:30 PM. <em>(Must update DAF before 7:30 PM)</em></td>
+          <td><span class="dur-badge" style="color: var(--blue);">Mock Scheduled</span></td>
+        </tr>
+        <tr>
+          <td><strong style="color: #fff;">Decode Civils</strong></td>
+          <td>Anita Ma'am (Score 220, Rank-644)</td>
+          <td><strong>1:1 DAF Session & Free Resource:</strong> Enrolled 10 Nov 2026. Topper DAF strategies & structured 1-on-1 review</td>
+          <td><span class="dur-badge" style="color: var(--emerald);">Registered</span></td>
+        </tr>
+        <tr>
+          <td><strong style="color: #fff;">Lukmaan IAS</strong></td>
+          <td>S. Ansari Sir</td>
+          <td>Pub Ad Optional deep dive, administrative case studies, Ethics-DAF alignment</td>
+          <td><span class="dur-badge" style="color: var(--gold);">Planned</span></td>
+        </tr>
+        <tr>
+          <td><strong style="color: #fff;">Pawan Kumar IAS</strong></td>
+          <td>Pawan Kumar Sir</td>
+          <td>Pub Ad thinker theories applied to modern governance, 1-on-1 mock probe</td>
+          <td><span class="dur-badge" style="color: var(--gold);">Planned</span></td>
+        </tr>
+        <tr>
+          <td><strong style="color: #fff;">ForumIAS IGP</strong></td>
+          <td>Ayush Sinha & Mentors</td>
+          <td>DAF dissection, peer group discussions, simulation panels</td>
+          <td><span class="dur-badge" style="color: var(--emerald);">Registered</span></td>
+        </tr>
+        <tr>
+          <td><strong style="color: #fff;">Smartworks Labs</strong></td>
+          <td>Anupam Sir</td>
+          <td>Tech/MBA defense, psychological grounding, 2h 1-on-1 grilling</td>
+          <td><span class="dur-badge" style="color: var(--emerald);">Registered</span></td>
+        </tr>
+        <tr>
+          <td><strong style="color: #fff;">Tathastu ICS</strong></td>
+          <td>Dr. Manoj K. Sharma</td>
+          <td>Core mentor (2+ yrs), personalized DAF framing, emotional composure</td>
+          <td><span class="dur-badge" style="color: var(--emerald);">Registered</span></td>
+        </tr>
+        <tr>
+          <td><strong style="color: #fff;">Vajiram & Ravi</strong></td>
+          <td>Ex-UPSC Board Members</td>
+          <td>Benchmark bureaucratic simulation panel & comprehensive DAF review</td>
+          <td><span class="dur-badge" style="color: var(--gold);">Planned</span></td>
+        </tr>
+        <tr>
+          <td><strong style="color: #fff;">Drishti IAS (English)</strong></td>
+          <td>Dr. Vikas Divyakirti Panel</td>
+          <td>Full video audit, body language critique & multi-dimensional grilling</td>
+          <td><span class="dur-badge" style="color: var(--gold);">Planned</span></td>
+        </tr>
+        <tr>
+          <td><strong style="color: #fff;">Next IAS</strong></td>
+          <td>B. Singh & Panel</td>
+          <td>Engineering background defense, analytical problem-solving scrutiny</td>
+          <td><span class="dur-badge" style="color: var(--gold);">Planned</span></td>
+        </tr>
+        <tr>
+          <td><strong style="color: #fff;">PW OnlyIAS</strong></td>
+          <td>Sumit Rewri Sir</td>
+          <td>State-specific issues (UP/UK) & economic current affairs questionnaire</td>
+          <td><span class="dur-badge" style="color: var(--gold);">Planned</span></td>
+        </tr>
+        <tr>
+          <td><strong style="color: #fff;">InsightsIAS</strong></td>
+          <td>Vinay Kumar GB Sir</td>
+          <td>Ethical clarity, spontaneous thinking, unhurried composure</td>
+          <td><span class="dur-badge" style="color: var(--gold);">Planned</span></td>
+        </tr>
+        <tr>
+          <td><strong style="color: #fff;">Unacademy Last Mile</strong></td>
+          <td>Retd. Ambassadors & CS</td>
+          <td>High-level bureaucratic perspective, diplomatic tone calibration</td>
+          <td><span class="dur-badge" style="color: var(--gold);">Planned</span></td>
+        </tr>
+        <tr>
+          <td><strong style="color: #fff;">ForumIAS CA 2026</strong></td>
+          <td>Forum Faculty</td>
+          <td>High-yield current issues booklet & specialized sessions</td>
+          <td><span class="dur-badge" style="color: var(--gold);">Planned</span></td>
+        </tr>
+        <tr>
+          <td><strong style="color: #fff;">Drishti Portal</strong></td>
+          <td>Mentorship Team</td>
+          <td>Online DAF submission & personalized interview slot management</td>
+          <td><span class="dur-badge" style="color: var(--gold);">Planned</span></td>
+        </tr>
+        <tr>
+          <td><strong style="color: #fff;">Interview Masterclass</strong></td>
+          <td>Topper Framework</td>
+          <td>The 3-second pause, 125 WPM pacing, non-argumentative poise</td>
+          <td><span class="dur-badge" style="color: var(--blue);">Completed</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Decisions & Actions -->
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-title rose">🛑 Schedule Reset: Clear Past Inefficiencies</div>
+      <ul class="clean-list">
+        <li class="cross"><strong>Nov 11 Karol Bagh Offline Marathon:</strong> Discarded. The marathon sprint (9 stops) was physically excessive and not executed; zero guilt or carrying over.</li>
+        <li class="cross"><strong>PFRDA / CONCOR / CAT:</strong> Completely eliminated. Zero mental bandwidth allocated to tertiary exams.</li>
+        <li class="check"><strong>Forward Execution:</strong> Quality over frantic quantity. High-yield 1-on-1 mentorships (Vignan Sir, Dr. Manoj Sir, Anupam Sir, Ayush Sinha) take precedence.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-title blue">✅ Thursday 12 Nov Action Priorities</div>
+      <ul class="clean-list">
+        <li class="check"><strong>Morning Rhythm:</strong> 08:30 – 10:00 Newspaper + 10:00 – 13:00 CAVA Current Affairs.</li>
+        <li class="check"><strong>Afternoon Mentorship:</strong> 14:30 – 17:00 Dr. Manoj Sir (Tathastu ICS) DAF alignment.</li>
+        <li class="check"><strong>🔥 17:30 – 19:30 HARD DEADLINE:</strong> Polish & finalize DAF updates before evening session.</li>
+        <li class="check"><strong>🎯 19:30 – 20:30 Vignan Pattamatta, IRS Session:</strong> 1:1 Mock, DAF scrutiny & WhatsApp guidance.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-note">
+    Master Study Tracker V2 • Calibrated for Divyansh Kumar • ABV-IIITM Gwalior • UPSC CSE 2026 Personality Test
+  </div>
+
+</div>
+</body>
+</html>

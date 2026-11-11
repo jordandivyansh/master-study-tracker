@@ -1,752 +1,478 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Master Execution Plan (Nov 11 – Dec 20, 2026) | Target 200+ UPSC Interview</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg: #07090e;
-      --card-bg: #0f131c;
-      --card-border: #1e2638;
-      --accent-gold: #f59e0b;
-      --accent-gold-glow: rgba(245, 158, 11, 0.15);
-      --accent-blue: #3b82f6;
-      --accent-cyan: #06b6d4;
-      --accent-emerald: #10b981;
-      --accent-rose: #f43f5e;
-      --accent-purple: #a855f7;
-      --text-main: #f1f5f9;
-      --text-muted: #94a3b8;
-      --text-dim: #64748b;
-      --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-      --font-mono: 'JetBrains Mono', monospace;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UPSC CSE 2026: 200+ Interview Thrust & Strategic Master Plan</title>
+<style>
+  :root {
+    --bg: #090d16;
+    --surface: #111827;
+    --surface-hover: #1e293b;
+    --line: #1f293d;
+    --line-active: #3b82f6;
+    --text: #f8fafc;
+    --text-muted: #94a3b8;
+    --gold: #f59e0b;
+    --gold-bg: rgba(245, 158, 11, 0.12);
+    --gold-border: rgba(245, 158, 11, 0.35);
+    --emerald: #10b981;
+    --emerald-bg: rgba(16, 185, 129, 0.12);
+    --emerald-border: rgba(16, 185, 129, 0.35);
+    --rose: #f43f5e;
+    --rose-bg: rgba(244, 63, 94, 0.12);
+    --rose-border: rgba(244, 63, 94, 0.3);
+    --blue: #38bdf8;
+    --blue-bg: rgba(56, 189, 248, 0.12);
+    --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    --serif: Georgia, Cambria, 'Times New Roman', serif;
+  }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      background-color: var(--bg);
-      color: var(--text-main);
-      font-family: var(--font-sans);
-      line-height: 1.6;
-      padding: 2.5rem 1.5rem;
-      min-height: 100vh;
-    }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font);
+    line-height: 1.5;
+    padding: 32px 20px;
+  }
+  .container { max-width: 1040px; margin: 0 auto; }
 
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
+  /* Header */
+  .header {
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 24px;
+    margin-bottom: 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .header h1 {
+    font-family: var(--serif);
+    font-size: 28px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: -0.5px;
+  }
+  .header p {
+    color: var(--text-muted);
+    font-size: 14px;
+    margin-top: 4px;
+  }
+  .badge-target {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--gold-bg);
+    border: 1px solid var(--gold-border);
+    color: var(--gold);
+    font-size: 13px;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 9999px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
 
-    /* Header */
-    header {
-      margin-bottom: 2.5rem;
-      border-bottom: 1px solid var(--card-border);
-      padding-bottom: 2rem;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: flex-end;
-      gap: 1.5rem;
-    }
+  /* Grid Layouts */
+  .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin-bottom: 28px; }
+  .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); gap: 18px; margin-bottom: 28px; }
 
-    .badge-bar {
-      display: flex;
-      gap: 0.6rem;
-      flex-wrap: wrap;
-      margin-bottom: 0.8rem;
-    }
+  /* Cards */
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 20px;
+    transition: transform 0.15s ease, border-color 0.15s ease;
+  }
+  .card:hover { border-color: rgba(255,255,255,0.18); }
+  .card-title {
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .card-title.gold { color: var(--gold); }
+  .card-title.emerald { color: var(--emerald); }
+  .card-title.blue { color: var(--blue); }
+  .card-title.rose { color: var(--rose); }
 
-    .pill {
-      font-family: var(--font-mono);
-      font-size: 0.72rem;
-      font-weight: 600;
-      padding: 0.25rem 0.65rem;
-      border-radius: 9999px;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
+  /* Strategic Realignment Banner */
+  .banner {
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.08), rgba(16, 185, 129, 0.08));
+    border: 1px solid var(--gold-border);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-bottom: 28px;
+  }
+  .banner h2 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 8px;
+  }
+  .banner p {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
 
-    .pill-gold { background: var(--accent-gold-glow); color: var(--accent-gold); border: 1px solid rgba(245, 158, 11, 0.3); }
-    .pill-blue { background: rgba(59, 130, 246, 0.15); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.3); }
-    .pill-emerald { background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3); }
-    .pill-purple { background: rgba(168, 85, 247, 0.15); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.3); }
+  /* Tables */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13.5px;
+    margin-top: 8px;
+  }
+  th {
+    text-align: left;
+    padding: 10px 12px;
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--text-muted);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid var(--line);
+  }
+  td {
+    padding: 12px;
+    border-bottom: 1px solid var(--line);
+    vertical-align: middle;
+  }
+  tr:last-child td { border-bottom: none; }
+  .time-col { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 12.5px; font-weight: 600; color: var(--blue); }
+  .dur-badge { background: rgba(255, 255, 255, 0.07); padding: 3px 8px; border-radius: 4px; font-size: 11px; font-weight: 600; }
 
-    h1 {
-      font-size: 2.2rem;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      color: #ffffff;
-      line-height: 1.2;
-    }
+  /* Bullet points */
+  ul.clean-list { list-style: none; }
+  ul.clean-list li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 10px;
+    font-size: 13.5px;
+    color: #cbd5e1;
+    line-height: 1.5;
+  }
+  ul.clean-list li::before {
+    content: "•";
+    position: absolute;
+    left: 4px;
+    top: -1px;
+    font-size: 18px;
+    color: var(--gold);
+  }
+  ul.clean-list li.check::before { content: "✓"; color: var(--emerald); font-size: 14px; top: 1px; }
+  ul.clean-list li.cross::before { content: "✕"; color: var(--rose); font-size: 13px; top: 1px; }
 
-    h1 span {
-      background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
+  .stat-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-top: 14px;
+  }
+  .stat-box {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--line);
+    padding: 12px 14px;
+    border-radius: 8px;
+  }
+  .stat-box .lbl { font-size: 11px; text-transform: uppercase; color: var(--text-muted); font-weight: 600; }
+  .stat-box .val { font-size: 18px; font-weight: 700; color: #fff; margin-top: 2px; }
 
-    .subtitle {
-      color: var(--text-muted);
-      font-size: 1rem;
-      margin-top: 0.4rem;
-    }
-
-    .header-cta {
-      display: flex;
-      gap: 0.8rem;
-    }
-
-    .btn {
-      font-family: var(--font-sans);
-      font-size: 0.85rem;
-      font-weight: 600;
-      padding: 0.6rem 1.1rem;
-      border-radius: 8px;
-      text-decoration: none;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      transition: all 0.2s ease;
-      border: 1px solid transparent;
-    }
-
-    .btn-primary {
-      background: var(--accent-gold);
-      color: #000;
-      border-color: var(--accent-gold);
-    }
-    .btn-primary:hover { background: #d97706; }
-
-    .btn-secondary {
-      background: #1e2638;
-      color: var(--text-main);
-      border-color: #2e3b55;
-    }
-    .btn-secondary:hover { background: #2a3752; }
-
-    /* Key Objective Callout */
-    .north-star {
-      background: linear-gradient(135deg, rgba(245, 158, 11, 0.08) 0%, rgba(15, 19, 28, 0.9) 100%);
-      border: 1px solid rgba(245, 158, 11, 0.35);
-      border-radius: 12px;
-      padding: 1.25rem 1.5rem;
-      margin-bottom: 2.5rem;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1.2rem;
-    }
-
-    .north-star-content h3 {
-      color: var(--accent-gold);
-      font-size: 1.15rem;
-      font-weight: 700;
-      margin-bottom: 0.3rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .north-star-content p {
-      color: var(--text-muted);
-      font-size: 0.92rem;
-    }
-
-    .north-star-stat {
-      display: flex;
-      gap: 1.5rem;
-    }
-
-    .stat-item {
-      text-align: right;
-    }
-
-    .stat-num {
-      font-family: var(--font-mono);
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #fff;
-    }
-
-    .stat-label {
-      font-size: 0.72rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: var(--text-dim);
-    }
-
-    /* Timeline Rail */
-    .section-title {
-      font-size: 1.25rem;
-      font-weight: 700;
-      margin-bottom: 1.2rem;
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      color: #fff;
-    }
-
-    .section-title::before {
-      content: '';
-      display: inline-block;
-      width: 4px;
-      height: 1.1rem;
-      background: var(--accent-gold);
-      border-radius: 2px;
-    }
-
-    .timeline-rail-card {
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: 14px;
-      padding: 1.5rem;
-      margin-bottom: 2.5rem;
-      overflow-x: auto;
-    }
-
-    .timeline-nodes {
-      display: grid;
-      grid-template-columns: repeat(7, 1fr);
-      min-width: 900px;
-      position: relative;
-      padding: 2.5rem 0 1rem;
-    }
-
-    .timeline-line {
-      position: absolute;
-      top: 15px;
-      left: 30px;
-      right: 30px;
-      height: 3px;
-      background: #1e2638;
-      z-index: 1;
-    }
-
-    .timeline-progress-fill {
-      position: absolute;
-      top: 15px;
-      left: 30px;
-      width: 12%;
-      height: 3px;
-      background: linear-gradient(90deg, #10b981, #f59e0b);
-      z-index: 2;
-    }
-
-    .t-node {
-      position: relative;
-      z-index: 3;
-      padding: 0 0.5rem;
-    }
-
-    .t-dot {
-      width: 16px;
-      height: 16px;
-      border-radius: 50%;
-      background: #1e2638;
-      border: 3px solid var(--bg);
-      margin-bottom: 0.8rem;
-      transition: all 0.2s ease;
-    }
-
-    .t-node.done .t-dot { background: var(--accent-emerald); box-shadow: 0 0 10px rgba(16, 185, 129, 0.5); }
-    .t-node.active .t-dot { background: var(--accent-gold); box-shadow: 0 0 12px rgba(245, 158, 11, 0.7); transform: scale(1.25); }
-    .t-node.upcoming .t-dot { background: var(--accent-blue); }
-
-    .t-date {
-      font-family: var(--font-mono);
-      font-size: 0.75rem;
-      color: var(--text-dim);
-      margin-bottom: 0.2rem;
-    }
-
-    .t-title {
-      font-size: 0.88rem;
-      font-weight: 700;
-      color: #fff;
-      line-height: 1.25;
-      margin-bottom: 0.25rem;
-    }
-
-    .t-tag {
-      font-size: 0.7rem;
-      font-family: var(--font-mono);
-      color: var(--accent-gold);
-    }
-
-    /* Grid Layout for Blocks */
-    .grid-2 {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-      gap: 1.5rem;
-      margin-bottom: 2.5rem;
-    }
-
-    .card {
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: 14px;
-      padding: 1.5rem;
-      position: relative;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .card-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 1.2rem;
-    }
-
-    .card-title {
-      font-size: 1.15rem;
-      font-weight: 700;
-      color: #fff;
-    }
-
-    .card-desc {
-      color: var(--text-muted);
-      font-size: 0.85rem;
-      margin-top: 0.2rem;
-    }
-
-    /* Table styles */
-    .table-wrapper {
-      overflow-x: auto;
-      margin-top: 0.5rem;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.85rem;
-    }
-
-    th {
-      text-align: left;
-      padding: 0.65rem 0.8rem;
-      font-family: var(--font-mono);
-      font-size: 0.72rem;
-      color: var(--text-dim);
-      border-bottom: 1px solid var(--card-border);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-
-    td {
-      padding: 0.75rem 0.8rem;
-      border-bottom: 1px solid rgba(30, 38, 56, 0.5);
-      color: var(--text-main);
-    }
-
-    tr:last-child td { border-bottom: none; }
-    tr:hover td { background: rgba(255, 255, 255, 0.02); }
-
-    .time-slot {
-      font-family: var(--font-mono);
-      color: var(--accent-gold);
-      white-space: nowrap;
-      font-weight: 500;
-      font-size: 0.8rem;
-    }
-
-    .highlight-pill {
-      display: inline-block;
-      padding: 0.15rem 0.5rem;
-      border-radius: 4px;
-      font-size: 0.75rem;
-      font-weight: 600;
-    }
-
-    .hl-sports { background: rgba(16, 185, 129, 0.15); color: #34d399; }
-    .hl-study { background: rgba(59, 130, 246, 0.15); color: #60a5fa; }
-    .hl-interview { background: rgba(245, 158, 11, 0.15); color: #fbbf24; }
-    .hl-daf { background: rgba(168, 85, 247, 0.15); color: #c084fc; }
-
-    /* Bullet List in Cards */
-    .feature-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-    }
-
-    .feature-list li {
-      position: relative;
-      padding-left: 1.4rem;
-      font-size: 0.88rem;
-      color: var(--text-muted);
-    }
-
-    .feature-list li strong {
-      color: #fff;
-    }
-
-    .feature-list li::before {
-      content: '▹';
-      position: absolute;
-      left: 0;
-      color: var(--accent-gold);
-      font-weight: bold;
-    }
-
-    /* Footer */
-    footer {
-      margin-top: 3.5rem;
-      border-top: 1px solid var(--card-border);
-      padding-top: 1.5rem;
-      text-align: center;
-      color: var(--text-dim);
-      font-size: 0.82rem;
-    }
-
-    footer a {
-      color: var(--accent-gold);
-      text-decoration: none;
-    }
-
-    @media print {
-      body { background: #fff; color: #000; padding: 1cm; }
-      .timeline-rail-card, .card, .north-star { border: 1px solid #ddd; background: #fff; color: #000; }
-      .btn, header-cta { display: none; }
-      h1, .card-title, .section-title { color: #000; }
-      .text-muted, .text-dim { color: #555; }
-    }
-  </style>
+  .footer-note {
+    margin-top: 32px;
+    border-top: 1px solid var(--line);
+    padding-top: 16px;
+    font-size: 12.5px;
+    color: var(--text-muted);
+    text-align: center;
+  }
+</style>
 </head>
 <body>
-  <div class="container">
-    
-    <!-- Top Header -->
-    <header>
-      <div>
-        <div class="badge-bar">
-          <span class="pill pill-gold">Strategic Replan</span>
-          <span class="pill pill-emerald">Athletic Dual Block</span>
-          <span class="pill pill-blue">Multi-Exam Cluster</span>
-          <span class="pill pill-purple">Target: 200+ UPSC PT</span>
-        </div>
-        <h1>Master Execution Plan <span>2026</span></h1>
-        <p class="subtitle">Effective November 11 to December 20, 2026 | Decompression: Nov 7–10</p>
-      </div>
-      <div class="header-cta">
-        <a href="https://studytrack-dk.vercel.app" target="_blank" class="btn btn-primary">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-          Live Dashboard
-        </a>
-        <button onclick="window.print()" class="btn btn-secondary">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
-          Print / PDF
-        </button>
-      </div>
-    </header>
+<div class="container">
 
-    <!-- North Star Anchor -->
-    <div class="north-star">
-      <div class="north-star-content">
-        <h3>🎯 The North Star: 200+ in UPSC CSE Personality Test</h3>
-        <p>Every phase balances written excellence across regulatory/corporate exams with non-negotiable vocal cadence training and DAF-II mastery.</p>
-      </div>
-      <div class="north-star-stat">
-        <div class="stat-item">
-          <div class="stat-num">4.0h</div>
-          <div class="stat-label">Daily Athletics</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-num">7.5h</div>
-          <div class="stat-label">Deep Cognitive</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-num">125 WPM</div>
-          <div class="stat-label">Target Cadence</div>
-        </div>
-      </div>
+  <!-- Header -->
+  <div class="header">
+    <div>
+      <h1>UPSC CSE 2026: 200+ Interview Thrust</h1>
+      <p>Master Execution Plan & Realigned Daily Architecture • Post-Karol Bagh Recon</p>
     </div>
-
-    <!-- Timeline Rail -->
-    <div class="section-title">Master Exam & Strategic Milestones Rail</div>
-    <div class="timeline-rail-card">
-      <div class="timeline-nodes">
-        <div class="timeline-line"></div>
-        <div class="timeline-progress-fill"></div>
-
-        <div class="t-node done">
-          <div class="t-dot"></div>
-          <div class="t-date">28 OCT 2026</div>
-          <div class="t-title">SSC CGL Tier I</div>
-          <div class="t-tag">Score: 92.50 (Done)</div>
-        </div>
-
-        <div class="t-node active">
-          <div class="t-dot"></div>
-          <div class="t-date">07–10 NOV</div>
-          <div class="t-title">Reset & Recovery</div>
-          <div class="t-tag">Zero Study Guilt</div>
-        </div>
-
-        <div class="t-node upcoming">
-          <div class="t-dot"></div>
-          <div class="t-date">20 NOV 2026</div>
-          <div class="t-title">PFRDA Phase 2</div>
-          <div class="t-tag">13 Days Left</div>
-        </div>
-
-        <div class="t-node upcoming">
-          <div class="t-dot"></div>
-          <div class="t-date">21 NOV 2026</div>
-          <div class="t-title">CONCOR MT</div>
-          <div class="t-tag">14 Days Left</div>
-        </div>
-
-        <div class="t-node upcoming">
-          <div class="t-dot"></div>
-          <div class="t-date">29 NOV 2026</div>
-          <div class="t-title">CAT 2026</div>
-          <div class="t-tag">22 Days Left</div>
-        </div>
-
-        <div class="t-node upcoming">
-          <div class="t-dot"></div>
-          <div class="t-date">06 DEC 2026</div>
-          <div class="t-title">UPPSC Prelims</div>
-          <div class="t-tag">29 Days Left</div>
-        </div>
-
-        <div class="t-node upcoming">
-          <div class="t-dot"></div>
-          <div class="t-date">20 DEC 2026</div>
-          <div class="t-title">EPFO APFC</div>
-          <div class="t-tag">43 Days Left</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Daily Time Architecture -->
-    <div class="grid-2">
-      <div class="card">
-        <div class="card-header">
-          <div>
-            <div class="card-title">Daily Execution Architecture</div>
-            <div class="card-desc">7.5 Hours Study + 4 Hours Athletics (Nov 11 onwards)</div>
-          </div>
-          <span class="pill pill-gold">Fixed Tempo</span>
-        </div>
-        <div class="table-wrapper">
-          <table>
-            <thead>
-              <tr>
-                <th>Time Window</th>
-                <th>Activity Block</th>
-                <th>Discipline</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="time-slot">05:30 – 07:30 AM</td>
-                <td>Athletic Session 1: Basketball Drills / Speed Cardio</td>
-                <td><span class="highlight-pill hl-sports">Athletics</span></td>
-              </tr>
-              <tr>
-                <td class="time-slot">08:30 – 11:30 AM</td>
-                <td>Deep Cognitive Block 1: PFRDA / CONCOR / CAT Core</td>
-                <td><span class="highlight-pill hl-study">Study Core</span></td>
-              </tr>
-              <tr>
-                <td class="time-slot">11:30 – 12:30 PM</td>
-                <td>DAF-II Drafting (Nov 11–22) / Mock Pacing Drills</td>
-                <td><span class="highlight-pill hl-daf">DAF & Speech</span></td>
-              </tr>
-              <tr>
-                <td class="time-slot">01:30 – 03:30 PM</td>
-                <td>Deep Cognitive Block 2: Practice MCQs & Descriptive</td>
-                <td><span class="highlight-pill hl-study">Study Core</span></td>
-              </tr>
-              <tr>
-                <td class="time-slot">04:00 – 06:00 PM</td>
-                <td>Athletic Session 2: Heavy Strength / Hypertrophy / Recovery</td>
-                <td><span class="highlight-pill hl-sports">Athletics</span></td>
-              </tr>
-              <tr>
-                <td class="time-slot">07:00 – 09:00 PM</td>
-                <td>Deep Cognitive Block 3: Mock Error Logs & Revision</td>
-                <td><span class="highlight-pill hl-study">Study Core</span></td>
-              </tr>
-              <tr>
-                <td class="time-slot">09:00 – 09:45 PM</td>
-                <td>200+ Vocal Cadence: 125 WPM Reading + DAF Recording</td>
-                <td><span class="highlight-pill hl-interview">200+ Drill</span></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      <!-- DAF-II Action Plan -->
-      <div class="card">
-        <div class="card-header">
-          <div>
-            <div class="card-title">DAF-II Submission Roadmap</div>
-            <div class="card-desc">Portal Window: Nov 11 to Nov 25 (Lock by Nov 22)</div>
-          </div>
-          <span class="pill pill-purple">Target: Nov 22</span>
-        </div>
-        <ul class="feature-list" style="margin-top: 0.5rem;">
-          <li>
-            <strong>Phase 1: Academic & Sports Audit (Nov 11–13):</strong> Precise wording of ABV-IIITM IPG Dual Degree; verifying certificates for 3 State & 4 CBSE Zonal Basketball; competitive programming handles.
-          </li>
-          <li>
-            <strong>Phase 2: Cadre & Service Preferences (Nov 14–16):</strong> Formalizing hierarchy: IAS &rarr; IPS &rarr; IFS &rarr; IRS &rarr; IRMS. State cadre zone matrix balancing Uttar Pradesh and adjacent northern cadres.
-          </li>
-          <li>
-            <strong>Phase 3: Extracurricular Framing (Nov 17–19):</strong> Crafting authentic, grounded descriptors for athletic discipline and algorithmic logic to invite high-scoring boardroom probes.
-          </li>
-          <li>
-            <strong>Phase 4: Document Verification & Portal Lock (Nov 20–22):</strong> Complete upload audit (degrees, community/EWS proofs, DOB) and submit 3 full days ahead of the Nov 25 deadline.
-          </li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Exam-by-Exam Strategy Cards -->
-    <div class="section-title">Sprint Strategy Matrices</div>
-    <div class="grid-2">
-      
-      <!-- Sprint 1: PFRDA & CONCOR -->
-      <div class="card">
-        <div class="card-header">
-          <div>
-            <div class="card-title">Sprint 1: PFRDA Phase 2 & CONCOR MT</div>
-            <div class="card-desc">Exam Dates: Nov 20 & Nov 21, 2026</div>
-          </div>
-          <span class="pill pill-emerald">Dual Climax</span>
-        </div>
-        <ul class="feature-list">
-          <li>
-            <strong>PFRDA Paper 1 (Descriptive English):</strong> 1 hr daily typing practice. Master 3 core essay themes: <em>UPS vs NPS</em>, <em>Financial Inclusion of Gig Workers</em>, and <em>Infrastructure Asset-Liability Matching</em>.
-          </li>
-          <li>
-            <strong>PFRDA Paper 2 (Technical MCQs):</strong> High-yield focus on PFRDA Act 2013, NPS architecture, corporate governance (SEBI LODR), marginal costing, and bond valuation.
-          </li>
-          <li>
-            <strong>CONCOR MT (Commercial & Operations):</strong> Direct synergy with your <em>MBA in IT from ABV-IIITM</em>. Focus on containerization (TEUs, Reefer, CFS/ICD), Eastern/Western DFC logistics, and PM GatiShakti MMLPs.
-          </li>
-          <li>
-            <strong>Aptitude Speed Drills:</strong> Leverage SSC and CAT prep for high-speed Quant and Reasoning on Nov 18–19.
-          </li>
-        </ul>
-      </div>
-
-      <!-- Sprint 2: CAT 2026 -->
-      <div class="card">
-        <div class="card-header">
-          <div>
-            <div class="card-title">Sprint 2: CAT 2026 Final Sprint</div>
-            <div class="card-desc">Exam Date: Nov 29 / 30, 2026 (8-Day Intensive)</div>
-          </div>
-          <span class="pill pill-blue">High Percentile</span>
-        </div>
-        <ul class="feature-list">
-          <li>
-            <strong>The Algorithmic Muscle Advantage:</strong> Use your competitive programming background to maximize DILR (Games & Tournaments, Matrix Arrangements) and Quant.
-          </li>
-          <li>
-            <strong>Mock Strategy (Nov 23, 25, 27):</strong> 3 full-length simulations (08:30 AM – 10:30 AM) with strict 2-hour error log analysis.
-          </li>
-          <li>
-            <strong>VARC Optimization:</strong> 4 Reading Comprehension passages daily with focus on main idea elimination rather than speculative guessing.
-          </li>
-          <li>
-            <strong>Score Target:</strong> Execute with composure; treat CAT as high-grade cognitive conditioning.
-          </li>
-        </ul>
-      </div>
-
-      <!-- Sprint 3: UPPSC Prelims -->
-      <div class="card">
-        <div class="card-header">
-          <div>
-            <div class="card-title">Sprint 3: UPPSC Prelims 2026</div>
-            <div class="card-desc">Exam Date: Dec 6, 2026 (6-Day Revision)</div>
-          </div>
-          <span class="pill pill-gold">State Service</span>
-        </div>
-        <ul class="feature-list">
-          <li>
-            <strong>UP Special (Dec 1–2):</strong> UP Budget 2026, ODOP brassware cluster (Moradabad), UP geography, Census, and historical heritage sites.
-          </li>
-          <li>
-            <strong>High-Yield Static (Dec 3–4):</strong> Modern History facts, Polity constitutional amendments, and Environment conventions.
-          </li>
-          <li>
-            <strong>Current Affairs Marathon (Dec 5):</strong> Eye on national schemes, defense updates, and UP state awards.
-          </li>
-        </ul>
-      </div>
-
-      <!-- Sprint 4: EPFO APFC -->
-      <div class="card">
-        <div class="card-header">
-          <div>
-            <div class="card-title">Sprint 4: UPSC EPFO APFC 2026</div>
-            <div class="card-desc">Exam Date: Dec 20, 2026 (14-Day Mastery)</div>
-          </div>
-          <span class="pill pill-purple">Central Group A</span>
-        </div>
-        <ul class="feature-list">
-          <li>
-            <strong>Labor Codes & IR (Dec 7–10):</strong> Code on Wages 2019, Social Security Code 2020, IR Code 2020, and OSH Code 2020.
-          </li>
-          <li>
-            <strong>Accounting & Auditing (Dec 11–14):</strong> Depreciation, voucher audit, insurance principles, and statutory company audits.
-          </li>
-          <li>
-            <strong>Social Security Schemes (Dec 15–17):</strong> EPF, EPS, EDLI, PM-SYM, and informal sector pension frameworks.
-          </li>
-        </ul>
-      </div>
-
-    </div>
-
-    <!-- 200+ Speech Cadence Protocol -->
-    <div class="card" style="margin-bottom: 2.5rem; border-color: rgba(245, 158, 11, 0.3);">
-      <div class="card-header">
-        <div>
-          <div class="card-title" style="color: var(--accent-gold);">The 200+ Speech Cadence Protocol (Fixing the Fast Pace)</div>
-          <div class="card-desc">Daily 45-Minute Evening System (09:00 PM – 09:45 PM)</div>
-        </div>
-        <span class="pill pill-gold">Core Differentiator</span>
-      </div>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-top: 0.5rem;">
-        <div style="background: rgba(255, 255, 255, 0.02); padding: 1rem; border-radius: 8px; border: 1px solid var(--card-border);">
-          <div style="font-weight: 700; color: #fff; margin-bottom: 0.3rem;">1. The 3-Second Breather</div>
-          <div style="font-size: 0.84rem; color: var(--text-muted);">Count <em>"1-1000, 2-1000"</em> before answering any question. Drops adrenaline and prevents rush.</div>
-        </div>
-        <div style="background: rgba(255, 255, 255, 0.02); padding: 1rem; border-radius: 8px; border: 1px solid var(--card-border);">
-          <div style="font-weight: 700; color: #fff; margin-bottom: 0.3rem;">2. 125 WPM Metronome Drill</div>
-          <div style="font-size: 0.84rem; color: var(--text-muted);">Read 150 words from an editorial in exactly 65–70 seconds. Enforces deliberate full-stop pauses.</div>
-        </div>
-        <div style="background: rgba(255, 255, 255, 0.02); padding: 1rem; border-radius: 8px; border: 1px solid var(--card-border);">
-          <div style="font-weight: 700; color: #fff; margin-bottom: 0.3rem;">3. Physical Down-Regulation</div>
-          <div style="font-size: 0.84rem; color: var(--text-muted);">Drop shoulders by 1 cm, keep back supported, feet flat. Physical calm forces vocal pacing down.</div>
-        </div>
-        <div style="background: rgba(255, 255, 255, 0.02); padding: 1rem; border-radius: 8px; border: 1px solid var(--card-border);">
-          <div style="font-weight: 700; color: #fff; margin-bottom: 0.3rem;">4. Daily Unrehearsed Video</div>
-          <div style="font-size: 0.84rem; color: var(--text-muted);">Record a 2-min answer to a DAF probe. Self-audit for filler words ("basically", "so") and eye stability.</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Footer -->
-    <footer>
-      Master Study Tracker V2 | Synchronized with <a href="https://studytrack-dk.vercel.app">studytrack-dk.vercel.app</a> & <a href="https://jordandivyansh.pythonanywhere.com">jordandivyansh.pythonanywhere.com</a>
-    </footer>
-
+    <div class="badge-target">🎯 Target: 200+ PT Marks</div>
   </div>
+
+  <!-- Strategic Realignment Banner -->
+  <div class="banner">
+    <h2>⚡ The Strategic Pivot: 100% Focus on the Highest-Value Asset</h2>
+    <p>
+      Following in-depth mentorship recon at <strong>ForumIAS, Smartworks Labs, Lukmaan IAS, Pawan Kumar Sir, Vajiram & Ravi, Shankar IAS, Next IAS, and Drishti IAS</strong>, secondary exam distractions have been completely stripped away. You are in the top 0.2% nationally. Securing a 200+ interview score guarantees a premier service rank (IAS/IFS/IPS).
+    </p>
+    <div class="stat-grid">
+      <div class="stat-box">
+        <div class="lbl">Primary Focus</div>
+        <div class="val" style="color: var(--gold);">UPSC PT (220h)</div>
+      </div>
+      <div class="stat-box">
+        <div class="lbl">Eliminated</div>
+        <div class="val" style="color: var(--rose);">PFRDA / CONCOR / CAT</div>
+      </div>
+      <div class="stat-box">
+        <div class="lbl">UPPSC Prelims</div>
+        <div class="val" style="color: var(--blue);">Casual (35h)</div>
+      </div>
+      <div class="stat-box">
+        <div class="lbl">Daily Non-Negotiable</div>
+        <div class="val" style="color: var(--emerald);">Newspaper + CAVA</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Core Pillars -->
+  <div class="grid-3">
+    <div class="card">
+      <div class="card-title emerald">📰 Daily Content Command</div>
+      <ul class="clean-list">
+        <li class="check"><strong>Newspaper Mastery (08:30 – 10:00 AM):</strong> The Hindu & Indian Express with interview-specific opinion formation on constitutional, administrative & geopolitical events.</li>
+        <li class="check"><strong>CAVA Current Affairs (10:00 AM – 01:00 PM):</strong> Daily mandatory 3.0h lecture. Deep policy analysis & committee takeaways.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-title gold">📋 DAF-II Forensic Precision</div>
+      <ul class="clean-list">
+        <li class="check"><strong>Tech & MBA Synergy:</strong> ABV-IIITM Gwalior pedigree connected to Digital Public Infrastructure (DPI), GovTech, and systemic efficiency.</li>
+        <li class="check"><strong>Sports & Roots:</strong> State/Zonal Basketball (team crisis management) & Moradabad/Dehradun regional economics.</li>
+        <li class="check"><strong>Pub Ad Optional:</strong> Thinker frameworks (Simon, Riggs, Ostrom) and Mission Karmayogi reforms.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-title blue">🎙️ 125 WPM Vocal Cadence</div>
+      <ul class="clean-list">
+        <li class="check"><strong>The 3-Second Rule:</strong> Mandatory thoughtful pause before delivering any answer to eliminate rushing under adrenaline.</li>
+        <li class="check"><strong>Metronome Pacing Drill:</strong> Daily 21:45 PM aloud editorial reading calibrated strictly to 125 WPM.</li>
+        <li class="check"><strong>Mirror & Recorded Drills:</strong> Self-audit posture, unhurried cadence, and firm eye contact.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Master Daily Time Architecture -->
+  <div class="card" style="margin-bottom: 28px;">
+    <div class="card-title gold">⏱️ Daily Master Time Architecture (Jaypee Aman, Noida)</div>
+    <table>
+      <thead>
+        <tr>
+          <th>Time Window (IST)</th>
+          <th>Block & Duration</th>
+          <th>Core Focus & Operational Objective</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="time-col">05:30 AM – 07:30 AM</td>
+          <td><span class="dur-badge">2.0 hrs</span> Athletic Training 1</td>
+          <td>Cardio base, agility, basketball conditioning, physical anchor.</td>
+        </tr>
+        <tr>
+          <td class="time-col">07:30 AM – 08:30 AM</td>
+          <td><span class="dur-badge">1.0 hr</span> Recovery & Breakfast</td>
+          <td>Protein refueling, cold shower, cognitive down-regulation.</td>
+        </tr>
+        <tr>
+          <td class="time-col">08:30 AM – 10:00 AM</td>
+          <td><span class="dur-badge">1.5 hrs</span> Newspaper Mastery</td>
+          <td><strong>Mandatory:</strong> The Hindu + IE editorials, national/international affairs for PT.</td>
+        </tr>
+        <tr>
+          <td class="time-col">10:00 AM – 01:00 PM</td>
+          <td><span class="dur-badge">3.0 hrs</span> CAVA Current Affairs</td>
+          <td><strong>Mandatory:</strong> High-yield lecture notes, policy depth, administrative linkages.</td>
+        </tr>
+        <tr>
+          <td class="time-col">01:00 PM – 02:00 PM</td>
+          <td><span class="dur-badge">1.0 hr</span> Lunch & Rest</td>
+          <td>Lunch, non-screen rest / 20-min NSDR reset.</td>
+        </tr>
+        <tr>
+          <td class="time-col">02:00 PM – 05:00 PM</td>
+          <td><span class="dur-badge">3.0 hrs</span> UPSC Interview Core</td>
+          <td>DAF-II questionnaire writing, Pub Ad optional revision, faculty 1-on-1 sessions.</td>
+        </tr>
+        <tr>
+          <td class="time-col">05:30 PM – 07:30 PM</td>
+          <td><span class="dur-badge">2.0 hrs</span> Athletic Training 2</td>
+          <td>Strength, hypertrophy, stamina, stress dissipation.</td>
+        </tr>
+        <tr>
+          <td class="time-col">07:30 PM – 08:30 PM</td>
+          <td><span class="dur-badge">1.0 hr</span> Post-Workout Reset</td>
+          <td>Dinner, hydration, mental transition to evening study.</td>
+        </tr>
+        <tr>
+          <td class="time-col">08:30 PM – 09:45 PM</td>
+          <td><span class="dur-badge">1.25 hrs</span> UPPSC Prelims Scan</td>
+          <td><strong>Casual & Confident:</strong> High-yield Ghatna Chakra static, UP Special & schemes.</td>
+        </tr>
+        <tr>
+          <td class="time-col">09:45 PM – 10:30 PM</td>
+          <td><span class="dur-badge">45 min</span> Vocal Cadence Drill</td>
+          <td>125 WPM speech pacing metronome practice, mirror DAF simulation, video review.</td>
+        </tr>
+        <tr>
+          <td class="time-col">10:30 PM</td>
+          <td><span class="dur-badge">7.5 hrs</span> Cellular Recovery</td>
+          <td>Sleep (phone outside bedroom). Zero late-night screen time.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 16 Curated Interview Guidance Programs & Mock Panels Matrix -->
+  <div class="card" style="margin-bottom: 28px;">
+    <div class="card-title emerald">🏛️ Curated Interview Guidance Programs & Mock Panels (16 Tracked)</div>
+    <table>
+      <thead>
+        <tr>
+          <th>Institute / Mentor</th>
+          <th>Lead / Faculty</th>
+          <th>Strategic Purpose & Focus</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong style="color: #fff;">IRS Mentorship</strong></td>
+          <td>Vignan Pattamatta, IRS C&IT (CSE 2013)</td>
+          <td><strong>1:1 Mock, DAF & WhatsApp Guidance:</strong> Next session Thu 12 Nov @ 7:30 PM. <em>(Must update DAF before 7:30 PM)</em></td>
+          <td><span class="dur-badge" style="color: var(--blue);">Mock Scheduled</span></td>
+        </tr>
+        <tr>
+          <td><strong style="color: #fff;">Decode Civils</strong></td>
+          <td>Anita Ma'am (Score 220, Rank-644)</td>
+          <td><strong>1:1 DAF Session & Free Resource:</strong> Enrolled 10 Nov 2026. Topper DAF strategies & structured 1-on-1 review</td>
+          <td><span class="dur-badge" style="color: var(--emerald);">Registered</span></td>
+        </tr>
+        <tr>
+          <td><strong style="color: #fff;">Lukmaan IAS</strong></td>
+          <td>S. Ansari Sir</td>
+          <td>Pub Ad Optional deep dive, administrative case studies, Ethics-DAF alignment</td>
+          <td><span class="dur-badge" style="color: var(--gold);">Planned</span></td>
+        </tr>
+        <tr>
+          <td><strong style="color: #fff;">Pawan Kumar IAS</strong></td>
+          <td>Pawan Kumar Sir</td>
+          <td>Pub Ad thinker theories applied to modern governance, 1-on-1 mock probe</td>
+          <td><span class="dur-badge" style="color: var(--gold);">Planned</span></td>
+        </tr>
+        <tr>
+          <td><strong style="color: #fff;">ForumIAS IGP</strong></td>
+          <td>Ayush Sinha & Mentors</td>
+          <td>DAF dissection, peer group discussions, simulation panels</td>
+          <td><span class="dur-badge" style="color: var(--emerald);">Registered</span></td>
+        </tr>
+        <tr>
+          <td><strong style="color: #fff;">Smartworks Labs</strong></td>
+          <td>Anupam Sir</td>
+          <td>Tech/MBA defense, psychological grounding, 2h 1-on-1 grilling</td>
+          <td><span class="dur-badge" style="color: var(--emerald);">Registered</span></td>
+        </tr>
+        <tr>
+          <td><strong style="color: #fff;">Tathastu ICS</strong></td>
+          <td>Dr. Manoj K. Sharma</td>
+          <td>Core mentor (2+ yrs), personalized DAF framing, emotional composure</td>
+          <td><span class="dur-badge" style="color: var(--emerald);">Registered</span></td>
+        </tr>
+        <tr>
+          <td><strong style="color: #fff;">Vajiram & Ravi</strong></td>
+          <td>Ex-UPSC Board Members</td>
+          <td>Benchmark bureaucratic simulation panel & comprehensive DAF review</td>
+          <td><span class="dur-badge" style="color: var(--gold);">Planned</span></td>
+        </tr>
+        <tr>
+          <td><strong style="color: #fff;">Drishti IAS (English)</strong></td>
+          <td>Dr. Vikas Divyakirti Panel</td>
+          <td>Full video audit, body language critique & multi-dimensional grilling</td>
+          <td><span class="dur-badge" style="color: var(--gold);">Planned</span></td>
+        </tr>
+        <tr>
+          <td><strong style="color: #fff;">Next IAS</strong></td>
+          <td>B. Singh & Panel</td>
+          <td>Engineering background defense, analytical problem-solving scrutiny</td>
+          <td><span class="dur-badge" style="color: var(--gold);">Planned</span></td>
+        </tr>
+        <tr>
+          <td><strong style="color: #fff;">PW OnlyIAS</strong></td>
+          <td>Sumit Rewri Sir</td>
+          <td>State-specific issues (UP/UK) & economic current affairs questionnaire</td>
+          <td><span class="dur-badge" style="color: var(--gold);">Planned</span></td>
+        </tr>
+        <tr>
+          <td><strong style="color: #fff;">InsightsIAS</strong></td>
+          <td>Vinay Kumar GB Sir</td>
+          <td>Ethical clarity, spontaneous thinking, unhurried composure</td>
+          <td><span class="dur-badge" style="color: var(--gold);">Planned</span></td>
+        </tr>
+        <tr>
+          <td><strong style="color: #fff;">Unacademy Last Mile</strong></td>
+          <td>Retd. Ambassadors & CS</td>
+          <td>High-level bureaucratic perspective, diplomatic tone calibration</td>
+          <td><span class="dur-badge" style="color: var(--gold);">Planned</span></td>
+        </tr>
+        <tr>
+          <td><strong style="color: #fff;">ForumIAS CA 2026</strong></td>
+          <td>Forum Faculty</td>
+          <td>High-yield current issues booklet & specialized sessions</td>
+          <td><span class="dur-badge" style="color: var(--gold);">Planned</span></td>
+        </tr>
+        <tr>
+          <td><strong style="color: #fff;">Drishti Portal</strong></td>
+          <td>Mentorship Team</td>
+          <td>Online DAF submission & personalized interview slot management</td>
+          <td><span class="dur-badge" style="color: var(--gold);">Planned</span></td>
+        </tr>
+        <tr>
+          <td><strong style="color: #fff;">Interview Masterclass</strong></td>
+          <td>Topper Framework</td>
+          <td>The 3-second pause, 125 WPM pacing, non-argumentative poise</td>
+          <td><span class="dur-badge" style="color: var(--blue);">Completed</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Decisions & Actions -->
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-title rose">🛑 Schedule Reset: Clear Past Inefficiencies</div>
+      <ul class="clean-list">
+        <li class="cross"><strong>Nov 11 Karol Bagh Offline Marathon:</strong> Discarded. The marathon sprint (9 stops) was physically excessive and not executed; zero guilt or carrying over.</li>
+        <li class="cross"><strong>PFRDA / CONCOR / CAT:</strong> Completely eliminated. Zero mental bandwidth allocated to tertiary exams.</li>
+        <li class="check"><strong>Forward Execution:</strong> Quality over frantic quantity. High-yield 1-on-1 mentorships (Vignan Sir, Dr. Manoj Sir, Anupam Sir, Ayush Sinha) take precedence.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-title blue">✅ Thursday 12 Nov Action Priorities</div>
+      <ul class="clean-list">
+        <li class="check"><strong>Morning Rhythm:</strong> 08:30 – 10:00 Newspaper + 10:00 – 13:00 CAVA Current Affairs.</li>
+        <li class="check"><strong>Afternoon Mentorship:</strong> 14:30 – 17:00 Dr. Manoj Sir (Tathastu ICS) DAF alignment.</li>
+        <li class="check"><strong>🔥 17:30 – 19:30 HARD DEADLINE:</strong> Polish & finalize DAF updates before evening session.</li>
+        <li class="check"><strong>🎯 19:30 – 20:30 Vignan Pattamatta, IRS Session:</strong> 1:1 Mock, DAF scrutiny & WhatsApp guidance.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-note">
+    Master Study Tracker V2 • Calibrated for Divyansh Kumar • ABV-IIITM Gwalior • UPSC CSE 2026 Personality Test
+  </div>
+
+</div>
 </body>
 </html>
