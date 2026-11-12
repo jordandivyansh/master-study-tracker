@@ -178,8 +178,8 @@ const INITIAL_COURSES = [
     type: '1:1 Mock & WhatsApp Mentorship',
     location: 'WhatsApp & Online Live',
     status: 'Mock Scheduled',
-    mockDate: '2026-11-12T19:30',
-    notes: 'Next session: Thursday 12 Nov at 7:30 PM. CRITICAL: Update and polish DAF before joining at 7:30 PM!',
+    mockDate: '2026-11-12T11:00',
+    notes: 'Session TODAY: Thursday 12 Nov at 11:00 AM (rescheduled from 7:30 PM). 1:1 WhatsApp/Live guidance with Vignan Sir.',
   },
   {
     id: 'yt-framework',
