@@ -21,7 +21,13 @@ export default function Dashboard() {
   return (
     <>
       <PageHeader title={longDate(d.today)} sub={`Day ${tracker.elapsed + 1} of ${tracker.total + 1} in this plan`}>
-        <div style={{ display: 'flex', gap: '8px' }}>
+        <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+          <a className="btn" href="/plan.html" title="Open Today's Master Battleplan" style={{ borderColor: 'rgba(245, 158, 11, 0.4)', color: '#f59e0b', fontWeight: 600 }}>
+            📅 Master Plan ↗
+          </a>
+          <a className="btn" href="/uppsc.html" title="Open UPPSC 25-Day Roadmap">
+            🏛️ UPPSC Plan ↗
+          </a>
           <Link className="btn" to="/public" title="View the shareable read-only public dashboard">
             👁 Public View
           </Link>
@@ -80,6 +86,9 @@ export default function Dashboard() {
             <div><dt>Gym</dt><dd>{hu(todayLog.gym)}</dd></div>
             <div><dt>Streak</dt><dd>{d.streak} {d.streak === 1 ? 'day' : 'days'}</dd></div>
           </dl>
+          <a href="/plan.html" className="btn ghost" style={{ width: '100%', marginTop: '14px', justifyContent: 'center', fontSize: '12.5px', color: '#f59e0b', borderColor: 'rgba(245, 158, 11, 0.3)' }}>
+            📅 View Today's Schedule & Targets ↗
+          </a>
         </Panel>
 
         <Panel

@@ -23,6 +23,7 @@ import ThemeSelector from './components/ThemeSelector.jsx';
 
 const NAV = [
   { to: '/', label: 'Dashboard', end: true },
+  { href: '/plan.html', label: '📅 Master Plan ↗', highlight: true },
   { to: '/daily', label: 'Daily log' },
   { to: '/newspapers', label: '📰 Newspaper Log' },
   { to: '/uppsc', label: '🏛️ UPPSC 25-Day Plan' },
@@ -73,8 +74,14 @@ export default function App() {
           <TimerBar />
           <ul>
             {NAV.map((n) => (
-              <li key={n.to}>
-                <NavLink to={n.to} end={n.end}>{n.label}</NavLink>
+              <li key={n.to || n.href}>
+                {n.href ? (
+                  <a href={n.href} style={n.highlight ? { color: '#f59e0b', fontWeight: 600 } : undefined}>
+                    {n.label}
+                  </a>
+                ) : (
+                  <NavLink to={n.to} end={n.end}>{n.label}</NavLink>
+                )}
               </li>
             ))}
             <li>
