@@ -49,9 +49,9 @@ const INITIAL_COURSES = [
     type: 'Mock Panels & DAF Analysis',
     location: 'Old Rajinder Nagar, Delhi',
     price: '₹600',
-    status: 'Registered',
+    status: 'Planned',
     mockDate: '',
-    notes: 'Paid ₹600 & Registered. Premier mock simulation panel & comprehensive DAF questionnaire.',
+    notes: 'Registration planned post meeting with Dr. Manoj K. Sharma Sir (Sat 14 Nov). Premier simulation panel.',
   },
   {
     id: 'drishti-eng',
@@ -75,9 +75,9 @@ const INITIAL_COURSES = [
     type: 'DAF Dissection & Mock Panels',
     location: 'Pusa Road, Karol Bagh, Delhi',
     price: '₹2,000',
-    status: 'Registered',
+    status: 'Planned',
     mockDate: '',
-    notes: 'Paid ₹2,000 & Registered. Strong on engineering/technical profile defense & mock panels.',
+    notes: 'Course registration still not started; will register (₹2,000) once portal opens.',
   },
   {
     id: 'pw-onlyias',
@@ -205,9 +205,9 @@ const INITIAL_COURSES = [
     type: 'DAF Questionnaire & Panel Mock Simulation',
     location: 'Karol Bagh / Mukherjee Nagar, Delhi & Online',
     price: '₹500',
-    status: 'Registered',
+    status: 'Planned',
     mockDate: '',
-    notes: 'Paid ₹500 & Registered. Comprehensive DAF questionnaire, state-specific analysis & multi-panel mock simulations.',
+    notes: 'Registration planned post meeting with Dr. Manoj K. Sharma Sir (Sat 14 Nov). DAF questionnaire & mock simulation.',
   },
   {
     id: 'studyiq',
@@ -238,7 +238,7 @@ const INITIAL_COURSES = [
 ];
 
 const STATUSES = ['Planned', 'Registered', 'DAF Submitted', 'Mock Scheduled', 'Completed'];
-const STORAGE_KEY = 'master_interview_courses_v7';
+const STORAGE_KEY = 'master_interview_courses_v8';
 
 export default function InterviewHub() {
   const [courses, setCourses] = useState(() => {
