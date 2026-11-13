@@ -143,7 +143,7 @@ const INITIAL_COURSES = [
     location: 'Online',
     status: 'Mock Scheduled',
     mockDate: '2026-11-14T13:30',
-    notes: '1:1 Online Session on Saturday 14 Nov at 1:30 PM. Watch Sarrthi IAS video modules and current affairs analysis.',
+    notes: 'Foundational & video sessions watched and completed. 1:1 Mock & DAF Mentorship with Peeyush Kumar Sir scheduled for Saturday 14 Nov @ 1:30 PM.',
   },
   {
     id: 'vignan-irs',
@@ -189,9 +189,33 @@ const INITIAL_COURSES = [
     lead: "Anita Ma'am (Score 220, Rank-644) & Mentors",
     type: '1:1 DAF Session & Topper Guidance',
     location: 'Online Portal',
+    status: 'Completed',
+    mockDate: '',
+    notes: 'Enrolled in 1:1 DAF Session (starts 10 Nov) + Free Interview Resource with Anita Ma\'am. Foundational DAF sessions watched and completed.',
+  },
+  {
+    id: 'vision-ias',
+    institute: 'VisionIAS',
+    name: 'Interview Guidance Program & Mock Interviews 2026',
+    url: 'https://www.visionias.in/interview/',
+    lead: 'Retd. Bureaucrats, Diplomats & Ex-UPSC Board Members',
+    type: 'DAF Questionnaire & Panel Mock Simulation',
+    location: 'Karol Bagh / Mukherjee Nagar, Delhi & Online',
     status: 'Registered',
     mockDate: '',
-    notes: 'Enrolled in 1:1 DAF Session (starts 10 Nov) + Free Interview Resource with Anita Ma\'am.',
+    notes: 'Enrolled for IGP & Mock Interviews. Comprehensive DAF questionnaire, state-specific analysis & multi-panel mock simulations.',
+  },
+  {
+    id: 'studyiq',
+    institute: 'StudyIQ IAS',
+    name: 'UPSC Interview Guidance Program & Mock Interviews (Antim Pag / P2I)',
+    url: 'https://www.studyiq.com/course-detail/interview-guidance-program',
+    lead: 'Retired Senior Civil Servants & StudyIQ Expert Board',
+    type: '1:1 Mock Interview & DAF Analysis',
+    location: 'Delhi & Online',
+    status: 'Registered',
+    mockDate: '',
+    notes: 'Enrolled for IGP & Mock Interviews. Detailed Application Form scrutiny, current affairs theme classes, and 1-on-1 video-recorded mock interview.',
   },
   {
     id: 'yt-framework',
@@ -208,21 +232,26 @@ const INITIAL_COURSES = [
 ];
 
 const STATUSES = ['Planned', 'Registered', 'DAF Submitted', 'Mock Scheduled', 'Completed'];
+const STORAGE_KEY = 'master_interview_courses_v4';
 
 export default function InterviewHub() {
   const [courses, setCourses] = useState(() => {
-    const saved = localStorage.getItem('master_interview_courses');
+    const saved = localStorage.getItem(STORAGE_KEY) || localStorage.getItem('master_interview_courses');
     if (!saved) return INITIAL_COURSES;
     try {
       const parsed = JSON.parse(saved);
-      const existingIds = new Set(parsed.map((c) => c.id));
-      const merged = [...parsed];
-      for (const c of INITIAL_COURSES) {
-        if (!existingIds.has(c.id)) {
-          merged.push(c);
-        }
-      }
-      return merged;
+      const parsedMap = new Map(parsed.map((c) => [c.id, c]));
+      return INITIAL_COURSES.map((init) => {
+        const userSaved = parsedMap.get(init.id);
+        if (!userSaved) return init;
+        const isRecentlyUpdated = ['decode-civils', 'vision-ias', 'studyiq', 'sarrthi-ias'].includes(init.id);
+        return {
+          ...init,
+          status: isRecentlyUpdated ? init.status : (userSaved.status || init.status),
+          notes: isRecentlyUpdated ? init.notes : (userSaved.notes || init.notes),
+          mockDate: userSaved.mockDate || init.mockDate,
+        };
+      });
     } catch {
       return INITIAL_COURSES;
     }
@@ -231,6 +260,7 @@ export default function InterviewHub() {
   const [activeTab, setActiveTab] = useState('tracker'); // 'tracker' | 'playbook'
 
   useEffect(() => {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(courses));
     localStorage.setItem('master_interview_courses', JSON.stringify(courses));
   }, [courses]);
 
