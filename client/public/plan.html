@@ -24,6 +24,8 @@
     --rose-border: rgba(244, 63, 94, 0.3);
     --blue: #38bdf8;
     --blue-bg: rgba(56, 189, 248, 0.12);
+    --purple: #a855f7;
+    --purple-bg: rgba(168, 85, 247, 0.12);
     --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     --serif: Georgia, Cambria, 'Times New Roman', serif;
   }
@@ -36,7 +38,7 @@
     line-height: 1.5;
     padding: 32px 20px;
   }
-  .container { max-width: 1040px; margin: 0 auto; }
+  .container { max-width: 1080px; margin: 0 auto; }
 
   /* Header */
   .header {
@@ -61,6 +63,31 @@
     font-size: 14px;
     margin-top: 4px;
   }
+  .header-actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .nav-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    color: #cbd5e1;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 7px 14px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.15s ease;
+  }
+  .nav-btn:hover {
+    background: var(--surface-hover);
+    border-color: var(--blue);
+    color: #fff;
+  }
   .badge-target {
     display: inline-flex;
     align-items: center;
@@ -77,8 +104,8 @@
   }
 
   /* Grid Layouts */
-  .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin-bottom: 28px; }
-  .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); gap: 18px; margin-bottom: 28px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; margin-bottom: 28px; }
+  .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(440px, 1fr)); gap: 18px; margin-bottom: 28px; }
 
   /* Cards */
   .card {
@@ -103,6 +130,7 @@
   .card-title.emerald { color: var(--emerald); }
   .card-title.blue { color: var(--blue); }
   .card-title.rose { color: var(--rose); }
+  .card-title.purple { color: var(--purple); }
 
   /* Strategic Realignment Banner */
   .banner {
@@ -147,7 +175,7 @@
     vertical-align: middle;
   }
   tr:last-child td { border-bottom: none; }
-  .time-col { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 12.5px; font-weight: 600; color: var(--blue); }
+  .time-col { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 12.5px; font-weight: 600; color: var(--blue); white-space: nowrap; }
   .dur-badge { background: rgba(255, 255, 255, 0.07); padding: 3px 8px; border-radius: 4px; font-size: 11px; font-weight: 600; }
 
   /* Bullet points */
@@ -170,12 +198,39 @@
   }
   ul.clean-list li.check::before { content: "✓"; color: var(--emerald); font-size: 14px; top: 1px; }
   ul.clean-list li.cross::before { content: "✕"; color: var(--rose); font-size: 13px; top: 1px; }
+  ul.clean-list li.struck {
+    text-decoration: line-through;
+    opacity: 0.7;
+    color: #94a3b8;
+  }
+  ul.clean-list li.struck::before {
+    content: "✓";
+    color: var(--emerald);
+    font-size: 14px;
+    top: 1px;
+    text-decoration: none;
+  }
+
+  /* Strikethrough Table Rows */
+  tr.struck-row {
+    background: rgba(16, 185, 129, 0.04);
+  }
+  tr.struck-row td {
+    opacity: 0.72;
+  }
+  tr.struck-row td strong, tr.struck-row td span.text-content {
+    text-decoration: line-through;
+    text-decoration-color: var(--emerald);
+  }
 
   .stat-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 12px;
     margin-top: 14px;
+  }
+  @media (max-width: 768px) {
+    .stat-grid { grid-template-columns: repeat(2, 1fr); }
   }
   .stat-box {
     background: rgba(255, 255, 255, 0.02);
@@ -203,16 +258,20 @@
   <div class="header">
     <div>
       <h1>UPSC CSE 2026: 200+ Interview Thrust</h1>
-      <p>Master Execution Plan & Realigned Daily Architecture • Friday, 13 November 2026</p>
+      <p>Master Execution Plan & Daily Operational Architecture • <strong>Saturday, 14 November 2026</strong> (Jaypee Aman, Noida)</p>
     </div>
-    <div class="badge-target">🎯 Target: 200+ PT Marks</div>
+    <div class="header-actions">
+      <div class="badge-target">🎯 Target: 200+ PT Marks</div>
+      <a href="/newspapers.html" class="nav-btn">📰 Newspaper Log ↗</a>
+      <a href="/interview" class="nav-btn">🎯 Interview Hub ↗</a>
+    </div>
   </div>
 
   <!-- Strategic Realignment Banner -->
   <div class="banner">
-    <h2>⚡ The Strategic Pivot: 100% Focus on the Highest-Value Asset</h2>
+    <h2>⚡ The Strategic Command: 100% Focus on Highest-Value Assets</h2>
     <p>
-      Following in-depth mentorship recon at <strong>ForumIAS, Smartworks Labs, Lukmaan IAS, Pawan Kumar Sir, Vajiram & Ravi, Shankar IAS, Next IAS, and Drishti IAS</strong>, secondary exam distractions have been completely stripped away. You are in the top 0.2% nationally. Securing a 200+ interview score guarantees a premier service rank (IAS/IFS/IPS).
+      Yesterday (Friday 13 Nov) was fully closed out with high discipline across Newspapers (TH + IE + Mint), Vignan Sir 1:1, Lukmaan IAS Pub Ad & Chairman points, Anita Ma'am & Sarrthi sessions, and CAVA Lecture 3. Today (Saturday 14 Nov) elevates the momentum with <strong>two flagship 1-on-1 interview milestones (Peeyush Sir @ 1:30 PM & Dr. Manoj Sir @ 5:00 PM)</strong>, integrated <strong>UPPSC Prelims Day 04 execution</strong> (Constitutional Bodies + National Income + UP Budget + Lakshya 500 MCQs + Mock), and practical logistics (two printer repair visits).
     </p>
     <div class="stat-grid">
       <div class="stat-box">
@@ -224,106 +283,287 @@
         <div class="val" style="color: var(--rose);">PFRDA / CONCOR / CAT</div>
       </div>
       <div class="stat-box">
-        <div class="lbl">UPPSC Prelims</div>
-        <div class="val" style="color: var(--blue);">Casual (35h)</div>
+        <div class="lbl">UPPSC Prelims Track</div>
+        <div class="val" style="color: var(--blue);">Day 04 / 25 Days</div>
       </div>
       <div class="stat-box">
         <div class="lbl">Daily Non-Negotiable</div>
-        <div class="val" style="color: var(--emerald);">Newspaper + CAVA</div>
+        <div class="val" style="color: var(--emerald);">3 Newspapers + CAVA</div>
       </div>
     </div>
   </div>
 
-  <!-- Core Pillars -->
-  <div class="grid-3">
-    <div class="card">
-      <div class="card-title emerald">📰 Daily Content Command</div>
-      <ul class="clean-list">
-        <li class="check"><strong>Newspaper Deep-Dive (07:30 – 10:30 AM):</strong> 12th & 13th Nov The Hindu & Indian Express with interview-specific opinion formation on constitutional, administrative & geopolitical events.</li>
-        <li class="check"><strong>Lukmaan IAS & Pub Ad Mastery (02:30 – 05:00 PM):</strong> High-yield Lukmaan IAS IGP PDFs (Sep/Oct Current Issues, Pub Ad Optional, Chairman 10 Points).</li>
-      </ul>
+  <!-- TODAY'S MASTER DAILY TIME ARCHITECTURE (SATURDAY 14 NOV) -->
+  <div class="card" style="margin-bottom: 28px; border: 1px solid rgba(56, 189, 248, 0.4);">
+    <div class="card-title blue" style="font-size: 16px;">
+      <span>⏱️ Saturday 14 Nov 2026: Master Daily Time Architecture & Targets</span>
+      <span style="font-size: 11px; background: rgba(56, 189, 248, 0.15); color: var(--blue); padding: 4px 10px; border-radius: 9999px;">Today's Live Battleplan</span>
     </div>
-
-    <div class="card">
-      <div class="card-title gold">📋 DAF-II Forensic Precision</div>
-      <ul class="clean-list">
-        <li class="check"><strong>Tech & MBA Synergy:</strong> ABV-IIITM Gwalior pedigree connected to Digital Public Infrastructure (DPI), GovTech, and systemic efficiency.</li>
-        <li class="check"><strong>Sports & Roots:</strong> State/Zonal Basketball (team crisis management) & Moradabad/Dehradun regional economics.</li>
-        <li class="check"><strong>Pub Ad Optional:</strong> Thinker frameworks (Simon, Riggs, Ostrom) and Mission Karmayogi reforms.</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <div class="card-title blue">🎙️ 125 WPM Vocal Cadence</div>
-      <ul class="clean-list">
-        <li class="check"><strong>The 3-Second Rule:</strong> Mandatory thoughtful pause before delivering any answer to eliminate rushing under adrenaline.</li>
-        <li class="check"><strong>Metronome Pacing Drill:</strong> Daily 21:45 PM aloud editorial reading calibrated strictly to 125 WPM.</li>
-        <li class="check"><strong>Mirror & Recorded Drills:</strong> Self-audit posture, unhurried cadence, and firm eye contact.</li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- Master Daily Time Architecture -->
-  <div class="card" style="margin-bottom: 28px;">
-    <div class="card-title gold">⏱️ Daily Master Time Architecture (Friday 13 Nov 2026 • Jaypee Aman, Noida)</div>
     <table>
       <thead>
         <tr>
           <th>Time Window (IST)</th>
           <th>Block & Duration</th>
-          <th>Core Focus & Operational Objective</th>
+          <th>Operational Focus, Action & Deliverables</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td class="time-col">07:30 AM – 10:30 AM</td>
-          <td><span class="dur-badge" style="color: var(--emerald);">3.0 hrs</span> Newspaper Deep-Dive</td>
-          <td><strong>Mandatory:</strong> 12th & 13th Nov The Hindu + Indian Express editorials, national policy & geopolitical current affairs.</td>
+          <td class="time-col">07:30 AM – 09:30 AM</td>
+          <td><span class="dur-badge" style="color: var(--emerald);">2.0 hrs</span> Triple Newspaper Command</td>
+          <td>
+            <strong>The Hindu + Indian Express + Mint:</strong>
+            Lead editorials, constitutional issues, and macroeconomics. Tracked live in <a href="/newspapers.html" style="color: var(--blue); text-decoration: underline;">Newspaper Log</a>.
+          </td>
+        </tr>
+        <tr>
+          <td class="time-col">09:30 AM – 10:30 AM</td>
+          <td><span class="dur-badge" style="color: var(--gold);">1.0 hr</span> Printer Visit #1 + Prep</td>
+          <td>
+            <strong>🖨️ Visit 1 for Printer Repair:</strong> Drop off printer for repair/servicing at local centre (Jaypee Aman / Sec 135). Pre-session mental centering for Vignan Sir mock.
+          </td>
         </tr>
         <tr>
           <td class="time-col">10:30 AM – 11:30 AM</td>
-          <td><span class="dur-badge" style="color: var(--blue);">1.0 hr</span> Vignan Sir IRS 1:1</td>
-          <td><strong>Daily 1:1 Live Mock:</strong> Vignan Pattamatta, IRS C&IT (CSE 2013). Technical/IT background probing, state basketball defense, ethics.</td>
+          <td><span class="dur-badge" style="color: var(--blue);">1.0 hr</span> Vignan Sir IRS 1:1 Live Mock</td>
+          <td>
+            <strong>Daily 1:1 Live Mock:</strong> Vignan Pattamatta, IRS C&IT (CSE 2013). Technical/IT background probing, state basketball defense, ethics, 3-second thoughtful pause drill.
+          </td>
         </tr>
         <tr>
-          <td class="time-col">11:30 AM – 01:30 PM</td>
-          <td><span class="dur-badge" style="color: var(--blue);">2.0 hrs</span> Smartworks Labs 1:1</td>
-          <td><strong>Deep Profile Defense:</strong> Anupam Sir (Online). Tech/MBA narrative, Axtria/Novo Nordisk healthcare analytics pivot, emotional grounding.</td>
+          <td class="time-col">11:30 AM – 01:15 PM</td>
+          <td><span class="dur-badge" style="color: var(--blue);">1.75 hrs</span> UPPSC Day 04 Static Sprint</td>
+          <td>
+            <strong>IAS PCS Pathshala Day 04:</strong>
+            <ul style="margin: 4px 0 0 16px; font-size: 12.5px; color: #cbd5e1;">
+              <li><strong>Indian Polity:</strong> Constitutional Bodies (UPSC/SPSC Art 315-323, CAG Art 148, ECI Art 324, Finance Comm Art 280; UP Bodies: UPPSC & State Election Commission).</li>
+              <li><strong>Indian Economy:</strong> National Income, Indices, Inflation & Development (GDP/GVA concepts, CPI/WPI/IIP base years, HDI/MPI, GST 101st Amend).</li>
+              <li><strong>Revision Sheet:</strong> Prepare Polity Sheet 4 (Constitutional Bodies & Federalism).</li>
+            </ul>
+          </td>
         </tr>
         <tr>
-          <td class="time-col">01:30 PM – 02:30 PM</td>
-          <td><span class="dur-badge">1.0 hr</span> Lunch & Rest</td>
-          <td>Lunch, non-screen rest / 20-min NSDR cognitive reset.</td>
+          <td class="time-col">01:15 PM – 01:30 PM</td>
+          <td><span class="dur-badge">15 min</span> Lunch & Vocal Reset</td>
+          <td>Light nutritious lunch, hydration, mental alignment for Sarrthi IAS 1:1 mock.</td>
         </tr>
         <tr>
-          <td class="time-col">02:30 PM – 05:00 PM</td>
-          <td><span class="dur-badge" style="color: var(--gold);">2.5 hrs</span> Lukmaan IAS & Pub Ad</td>
-          <td><strong>High-Yield Study:</strong> Lukmaan IAS IGP PDFs (Sep/Oct Current Issues, Pub Ad Optional questions, Chairman 10 points).</td>
+          <td class="time-col">01:30 PM – 02:45 PM</td>
+          <td><span class="dur-badge" style="color: var(--purple);">1.25 hrs</span> Sarrthi IAS 1:1 Mock Panel</td>
+          <td>
+            <strong>🎯 Flagship 1:1 Mock with Peeyush Kumar Sir:</strong> Deep DAF scrutiny, Public Administration optional defense, academic background (IIITM Gwalior), and 125 WPM pacing.
+          </td>
         </tr>
         <tr>
-          <td class="time-col">05:00 PM – 07:00 PM</td>
-          <td><span class="dur-badge" style="color: var(--gold);">2.0 hrs</span> ForumIAS IGP Modules</td>
-          <td>Watch ForumIAS IGP video sessions and current affairs special analysis.</td>
+          <td class="time-col">02:45 PM – 04:15 PM</td>
+          <td><span class="dur-badge" style="color: var(--gold);">1.5 hrs</span> UP Budget 2026-27 Video Slot</td>
+          <td>
+            <strong>📺 UP Budget Deep-Dive & Scheme Extraction:</strong>
+            Study reference analysis (<a href="https://youtu.be/xptiYuULP8Y" target="_blank" style="color: var(--gold); text-decoration: underline;">youtu.be/xptiYuULP8Y</a>). Note total outlay (₹7.36L Cr+), fiscal deficit target (3.46%), CapEx, ODOP/ODOC allocations, and expressway/defence corridor nodes.
+          </td>
         </tr>
         <tr>
-          <td class="time-col">07:00 PM – 08:30 PM</td>
-          <td><span class="dur-badge">1.5 hrs</span> Athletic Conditioning</td>
-          <td>Gym / Basketball agility, physical base, stress dissipation.</td>
+          <td class="time-col">04:15 PM – 05:00 PM</td>
+          <td><span class="dur-badge" style="color: var(--gold);">45 min</span> Printer Visit #2 + Transit</td>
+          <td>
+            <strong>🖨️ Visit 2 for Printer Repair:</strong> Pick up repaired printer, verify test print. Transition & settle in for Tathastu meet with Dr. Manoj K. Sharma Sir.
+          </td>
         </tr>
         <tr>
-          <td class="time-col">08:30 PM – 09:30 PM</td>
-          <td><span class="dur-badge">1.0 hr</span> Dinner & Walk</td>
-          <td>Dinner, hydration, reflective mental walk with mother.</td>
+          <td class="time-col">05:00 PM – 06:30 PM</td>
+          <td><span class="dur-badge" style="color: var(--emerald);">1.5 hrs</span> Tathastu ICS Mentorship Meet</td>
+          <td>
+            <strong>🎯 1:1 In-Person / Online Deep Mentorship Meet with Dr. Manoj K. Sharma Sir:</strong>
+            Core mentor review (2+ yrs guidance). Personalized DAF-II framing, unhurried composure, and psychological grounding. <em>(Post-meeting registration & payment: ₹1,900)</em>.
+          </td>
+        </tr>
+        <tr>
+          <td class="time-col">06:30 PM – 08:00 PM</td>
+          <td><span class="dur-badge" style="color: var(--blue);">1.5 hrs</span> Lakshya Top 500 MCQs Magazine</td>
+          <td>
+            <strong>IAS PCS Pathshala Lakshya 2.0 Booklet:</strong> Solve Block 1 (Questions 1 to 100 with explanation notes). Fast-track coverage of UP + National factual points.
+          </td>
+        </tr>
+        <tr>
+          <td class="time-col">08:00 PM – 09:30 PM</td>
+          <td><span class="dur-badge" style="color: var(--rose);">1.5 hrs</span> Pending UPPSC Prelims Mock</td>
+          <td>
+            <strong>Pending Mock Attempt & Gap Repair:</strong> Timed test solving + analysis of incorrect/uncertain questions. Feed weak areas into revision sheets.
+          </td>
         </tr>
         <tr>
           <td class="time-col">09:30 PM – 10:30 PM</td>
-          <td><span class="dur-badge" style="color: var(--blue);">1.0 hr</span> DAF & Vocal Cadence</td>
-          <td>Rehearse 90-sec BTP/MTP pitch; 125 WPM metronome pacing drill; prep for Saturday mocks (Peeyush Sir @ 1:30 PM, Dr. Manoj Sir @ 5:00 PM).</td>
+          <td><span class="dur-badge" style="color: var(--blue);">1.0 hr</span> DAF & Vocal Cadence Drill</td>
+          <td>
+            <strong>Cadence & Pitch Drill:</strong> 90-sec BTP/MTP pitch rehearsal, 125 WPM metronome pacing drill; incorporate feedback received from Vignan Sir & Peeyush Sir.
+          </td>
         </tr>
         <tr>
           <td class="time-col">10:30 PM</td>
-          <td><span class="dur-badge">7.0 hrs</span> Cellular Recovery</td>
-          <td>Sleep (phone outside bedroom). Zero late-night screen time.</td>
+          <td><span class="dur-badge">7.5 hrs</span> Cellular Recovery</td>
+          <td>Restorative sleep. Phones outside the bedroom. Total mental quietude.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- FRIDAY 13 NOV LOG (STRIKETHROUGH & PRESERVED) -->
+  <div class="card" style="margin-bottom: 28px; border: 1px solid rgba(16, 185, 129, 0.35);">
+    <div class="card-title emerald" style="font-size: 15px;">
+      <span>✅ Friday 13 Nov 2026: Execution Log (Completed & Striked)</span>
+      <span style="font-size: 11px; background: rgba(16, 185, 129, 0.15); color: var(--emerald); padding: 4px 10px; border-radius: 9999px;">100% Preserved Record</span>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Time Window (IST)</th>
+          <th>Original Planned Block</th>
+          <th>Operational Outcome & Completion Verification</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="struck-row">
+          <td class="time-col">07:30 AM – 10:30 AM</td>
+          <td><strong>Newspaper Deep-Dive</strong></td>
+          <td><span class="text-content">The Hindu, Indian Express, and Mint all completed. Editorials on constitutional and geopolitical affairs analyzed.</span></td>
+          <td><span class="dur-badge" style="color: var(--emerald); font-weight: 700;">✓ Done (All 3)</span></td>
+        </tr>
+        <tr class="struck-row">
+          <td class="time-col">10:30 AM – 11:30 AM</td>
+          <td><strong>Vignan Sir IRS 1:1 Live Mock</strong></td>
+          <td><span class="text-content">Daily 1:1 Live Mock completed with Vignan Pattamatta, IRS C&IT (CSE 2013). Probing on technical profile, basketball & ethics + review on feedback completed.</span></td>
+          <td><span class="dur-badge" style="color: var(--emerald); font-weight: 700;">✓ Done & Reviewed</span></td>
+        </tr>
+        <tr class="struck-row">
+          <td class="time-col">11:30 AM – 01:30 PM</td>
+          <td><strong>Video Sessions & Mentorship</strong></td>
+          <td><span class="text-content">DecodeCivils (Anita Ma'am DAF Topper Strategy) + Sarrthi IAS video sessions completed. Smartworks Labs profile defense aligned.</span></td>
+          <td><span class="dur-badge" style="color: var(--emerald); font-weight: 700;">✓ Done</span></td>
+        </tr>
+        <tr class="struck-row">
+          <td class="time-col">02:30 PM – 05:00 PM</td>
+          <td><strong>Lukmaan IAS & Pub Ad Slot</strong></td>
+          <td><span class="text-content">High-Yield Study Slot completed: Chairman 10 Points + Pub Ad Core Questions fully mastered from Lukmaan IAS IGP material.</span></td>
+          <td><span class="dur-badge" style="color: var(--emerald); font-weight: 700;">✓ Done</span></td>
+        </tr>
+        <tr class="struck-row">
+          <td class="time-col">05:00 PM – 07:00 PM</td>
+          <td><strong>CAVA Course Slot & ForumIAS</strong></td>
+          <td><span class="text-content">CAVA Lecture 3 (3.0 hrs) watched, notes taken, and completed. ForumIAS IGP video sessions not released yet by the institute.</span></td>
+          <td><span class="dur-badge" style="color: var(--emerald); font-weight: 700;">✓ CAVA Lec 3 Done</span></td>
+        </tr>
+        <tr class="struck-row">
+          <td class="time-col">07:00 PM – 10:30 PM</td>
+          <td><strong>Athletic Conditioning & Recovery</strong></td>
+          <td><span class="text-content">Physical conditioning, evening walk, mental recovery and prep for Saturday flagship mocks with Peeyush Sir and Dr. Manoj Sir.</span></td>
+          <td><span class="dur-badge" style="color: var(--emerald); font-weight: 700;">✓ Done</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- UPPSC 25-DAY MASTER CHECKLIST INTEGRATION -->
+  <div class="card" style="margin-bottom: 28px; border-left: 4px solid var(--gold);">
+    <div class="card-title gold" style="font-size: 15px;">
+      <span>🏛️ UPPSC Prelims 25-Day Checklist & Modification Roadmap (14 Nov – 6 Dec 2026)</span>
+    </div>
+    <p style="font-size: 13.5px; color: var(--text-muted); margin-bottom: 14px;">
+      Modified strictly from 14 Nov to integrate the <strong>Pending UPPSC Mock</strong>, <strong>IAS PCS Pathshala Lakshya 2.0 Top 500 MCQs Magazine</strong> (500 Qs across 5 blocks), and the <strong>UP Budget 2026-27 Analysis</strong> (<a href="https://youtu.be/xptiYuULP8Y" target="_blank" style="color: var(--gold); text-decoration: underline;">YouTube Reference</a>).
+    </p>
+    <table>
+      <thead>
+        <tr>
+          <th style="width: 110px;">Day & Date</th>
+          <th style="width: 220px;">Checklist Subjects</th>
+          <th>Core Syllabus & Factual Checkpoints</th>
+          <th>Add-On Priority (Mock / 500 MCQs / UP)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="background: rgba(245, 158, 11, 0.05);">
+          <td><strong style="color: var(--gold);">Day 04 (Today)<br>14 Nov</strong></td>
+          <td><strong style="color: #fff;">Indian Polity +<br>Indian Economy</strong></td>
+          <td>
+            • <strong>Polity:</strong> Constitutional Bodies (Art, Appointment, Removal - UPSC/SPSC, CAG, ECI, Finance Comm Art 280; UP Bodies: UPPSC, State Election Comm).<br>
+            • <strong>Economy:</strong> National Income, Indices, Inflation & Development (GDP/GVA, CPI/WPI/IIP base years, HDI/MPI, GST 101st Amend).<br>
+            • <strong>Revision Sheets:</strong> Prepare Polity Sheet 4; Update Economy Sheet 2.
+          </td>
+          <td>
+            <span class="dur-badge" style="color: var(--gold);">UP Budget Video (youtu.be/xptiYuULP8Y)</span><br>
+            <span class="dur-badge" style="color: var(--blue);">Lakshya 500 MCQs: Q 1–100</span><br>
+            <span class="dur-badge" style="color: var(--emerald);">Pending Mock Attempt</span>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>Day 05<br>15 Nov</strong></td>
+          <td>Indian Polity +<br>Indian Economy</td>
+          <td>
+            • <strong>Polity:</strong> Judiciary, Basic Structure, Landmark Judgments, Federalism, Allahabad HC + Lucknow Bench.<br>
+            • <strong>Economy:</strong> Balance of Payments, Forex, FDI/FPI, RBI Tools (CRR, SLR, Repo), UP Industrial & Investment Policies.<br>
+            • <strong>Revision Sheets:</strong> Complete Polity Sheet 4 & Economy Sheets 2 & 3.
+          </td>
+          <td>
+            <span class="dur-badge" style="color: var(--blue);">Lakshya 500 MCQs: Q 101–200</span><br>
+            <span class="dur-badge">Gap Repair & Static MCQs</span>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>Day 06–08<br>16–18 Nov</strong></td>
+          <td>Geography +<br>Environment</td>
+          <td>
+            • Rivers, lakes, canals, UP Ganga-Yamuna system, Agriculture, Minerals, Critical Minerals, Power Plants.<br>
+            • Protected areas, Ramsar sites, ISFR 2023, Climate conventions, UNFCCC, COPs, UP ISFR & wildlife.
+          </td>
+          <td>
+            <span class="dur-badge" style="color: var(--blue);">Lakshya 500 MCQs: Q 201–400</span><br>
+            <span class="dur-badge" style="color: var(--gold);">Forum CA 18 Nov Registration</span>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>Day 09–11<br>19–21 Nov</strong></td>
+          <td>Geography +<br>Modern History</td>
+          <td>
+            • Atmosphere, Soils, Census (UP & National), National Movement chronologies (1917–1947), 1857 centres, UP Link (Kakori, Chauri Chaura, HRA/HSRA).
+          </td>
+          <td>
+            <span class="dur-badge" style="color: var(--blue);">Lakshya 500 MCQs: Q 401–500</span><br>
+            <span class="dur-badge">500 MCQs Revision Round</span>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>Day 12–15<br>22–25 Nov</strong></td>
+          <td>Science (Bio/Chem) +<br>Ancient & Medieval</td>
+          <td>
+            • Vitamins, diseases, human systems, chemistry in daily life.<br>
+            • Prehistoric sites (Alamgirpur, Sinauli), Buddhism/Jainism, Delhi Sultanate, Mughals, UP monuments.
+          </td>
+          <td>
+            <span class="dur-badge" style="color: var(--emerald);">Full-Length Mock Test 2</span><br>
+            <span class="dur-badge">Factual Recall Sheets 1–3</span>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>Day 16–21<br>26 Nov – 1 Dec</strong></td>
+          <td>UP Special + Science +<br>CSAT Practice</td>
+          <td>
+            • UP Geography, ODOP/ODOC, Expressways, Airports, Industrial Corridors, UP Census, CSAT timed practice sets.
+          </td>
+          <td>
+            <span class="dur-badge" style="color: var(--gold);">UP Special Revision Sheets 1–3</span><br>
+            <span class="dur-badge">CSAT Qualifying 33% Lock</span>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>Day 22–25<br>2–5 Dec</strong></td>
+          <td>Mock Rehearsal +<br>Final 3-Day Factual Drill</td>
+          <td>
+            • Day 22: Full-length GS Mock (150 Qs in 2h) + Gap Repair.<br>
+            • Days 23–25: Final Factual Revision Sheets only (Polity, Economy, Geography, Environment, UP Special).
+          </td>
+          <td>
+            <span class="dur-badge" style="color: var(--rose); font-weight: 700;">6 Dec: UPPCS Prelims D-Day</span>
+          </td>
         </tr>
       </tbody>
     </table>
@@ -348,126 +588,126 @@
           <td>Vignan Pattamatta, IRS C&IT (CSE 2013)</td>
           <td><strong>1:1 Mock, DAF & WhatsApp Guidance:</strong> Daily session @ 10:30 AM. <em>(Continuous 1-on-1 profile scrutiny & mock guidance)</em></td>
           <td><span class="dur-badge" style="color: var(--emerald);">Free</span></td>
-          <td><span class="dur-badge" style="color: var(--blue);">Mock Scheduled</span></td>
+          <td><span class="dur-badge" style="color: var(--blue);">Mock Scheduled (Daily 10:30 AM)</span></td>
         </tr>
         <tr>
           <td><strong style="color: #fff;">Sarrthi IAS</strong></td>
           <td>Peeyush Kumar Sir & Senior Faculty</td>
-          <td><strong>1:1 Mock & DAF Mentorship:</strong> 1:1 online mock scheduled Sat 14 Nov @ 1:30 PM. Foundational video modules & current affairs analysis watched and completed.</td>
+          <td><strong>1:1 Mock & DAF Mentorship:</strong> 1:1 mock scheduled Sat 14 Nov @ 1:30 PM. Foundational video modules & current affairs analysis completed 13 Nov.</td>
           <td><span class="dur-badge" style="color: var(--emerald);">Free</span></td>
-          <td><span class="dur-badge" style="color: var(--blue);">Mock Scheduled</span></td>
-        </tr>
-        <tr>
-          <td><strong style="color: #fff;">Decode Civils</strong></td>
-          <td>Anita Ma'am (Score 220, Rank-644)</td>
-          <td><strong>1:1 DAF Session & Free Resource:</strong> Enrolled 10 Nov 2026. Foundational DAF sessions & topper strategy watched and completed.</td>
-          <td><span class="dur-badge" style="color: var(--emerald);">Free</span></td>
-          <td><span class="dur-badge" style="color: var(--emerald);">Completed</span></td>
-        </tr>
-        <tr>
-          <td><strong style="color: #fff;">VisionIAS</strong></td>
-          <td>Retd. Bureaucrats, Diplomats & Ex-UPSC Board</td>
-          <td><strong>IGP & Mock Interviews 2026:</strong> Registration planned post meeting with Dr. Manoj K. Sharma Sir (Sat 14 Nov). (<a href="https://www.visionias.in/interview/" target="_blank" style="color: var(--gold); text-decoration: underline;">visionias.in/interview</a>). DAF questionnaire & mock simulation.</td>
-          <td><span class="dur-badge" style="color: var(--gold); font-weight: 700;">₹500</span></td>
-          <td><span class="dur-badge" style="color: var(--gold);">Planned</span></td>
-        </tr>
-        <tr>
-          <td><strong style="color: #fff;">StudyIQ IAS</strong></td>
-          <td>Senior Civil Servants & StudyIQ Expert Board</td>
-          <td><strong>UPSC IGP & Mock Interviews (Antim Pag / P2I):</strong> Will officially visit Delhi/Karol Bagh centre before registering. Detailed Application Form scrutiny & 1-on-1 mock.</td>
-          <td><span class="dur-badge" style="color: var(--emerald);">Free</span></td>
-          <td><span class="dur-badge" style="color: var(--gold);">Planned</span></td>
-        </tr>
-        <tr>
-          <td><strong style="color: #fff;">Lukmaan IAS</strong></td>
-          <td>S. Ansari Sir</td>
-          <td>Pub Ad Optional deep dive, administrative case studies, Ethics-DAF alignment</td>
-          <td><span class="dur-badge" style="color: var(--emerald);">Free</span></td>
-          <td><span class="dur-badge" style="color: var(--emerald);">Registered</span></td>
-        </tr>
-        <tr>
-          <td><strong style="color: #fff;">Pawan Kumar IAS</strong></td>
-          <td>Pawan Kumar Sir</td>
-          <td>Pub Ad thinker theories applied to modern governance, 1-on-1 mock probe</td>
-          <td><span class="dur-badge" style="color: var(--emerald);">Free</span></td>
-          <td><span class="dur-badge" style="color: var(--emerald);">Registered</span></td>
-        </tr>
-        <tr>
-          <td><strong style="color: #fff;">ForumIAS IGP</strong></td>
-          <td>Ayush Sinha & Mentors</td>
-          <td>Paid ₹1,180 & Registered. DAF dissection, peer group discussions, simulation panels</td>
-          <td><span class="dur-badge" style="color: var(--gold); font-weight: 700;">₹1,180</span></td>
-          <td><span class="dur-badge" style="color: var(--emerald);">Registered</span></td>
-        </tr>
-        <tr>
-          <td><strong style="color: #fff;">Smartworks Labs</strong></td>
-          <td>Anupam Sir</td>
-          <td>Registered. Tech/MBA defense, psychological grounding, 2h 1-on-1 grilling</td>
-          <td><span class="dur-badge" style="color: var(--emerald);">Free</span></td>
-          <td><span class="dur-badge" style="color: var(--blue);">Mock Scheduled</span></td>
+          <td><span class="dur-badge" style="color: var(--gold); font-weight: 700;">Today @ 1:30 PM</span></td>
         </tr>
         <tr>
           <td><strong style="color: #fff;">Tathastu ICS</strong></td>
           <td>Dr. Manoj K. Sharma</td>
-          <td>Core mentor (2+ yrs), personalized DAF framing. In-person/Online meet Sat 14 Nov @ 5 PM; register/pay ₹1,900 post-meeting.</td>
+          <td><strong>Core Mentor (2+ yrs) & DAF Framing:</strong> In-person / Online meet Sat 14 Nov @ 5:00 PM. Registration & payment (₹1,900) to be completed post-meeting.</td>
           <td><span class="dur-badge" style="color: var(--gold); font-weight: 700;">₹1,900</span></td>
-          <td><span class="dur-badge" style="color: var(--blue);">Mock Scheduled</span></td>
+          <td><span class="dur-badge" style="color: var(--gold); font-weight: 700;">Today @ 5:00 PM</span></td>
+        </tr>
+        <tr>
+          <td><strong style="color: #fff;">Decode Civils</strong></td>
+          <td>Anita Ma'am (Score 220, Rank-644)</td>
+          <td><strong>1:1 DAF Session & Free Resource:</strong> Enrolled 10 Nov 2026. Foundational DAF sessions & topper strategy completed on 13 Nov.</td>
+          <td><span class="dur-badge" style="color: var(--emerald);">Free</span></td>
+          <td><span class="dur-badge" style="color: var(--emerald);">Completed (13 Nov)</span></td>
+        </tr>
+        <tr>
+          <td><strong style="color: #fff;">ForumIAS IGP</strong></td>
+          <td>Ayush Sinha & Mentors</td>
+          <td>Paid ₹1,180 & Registered. DAF dissection, peer group discussions, simulation panels. Video sessions release awaited.</td>
+          <td><span class="dur-badge" style="color: var(--gold); font-weight: 700;">₹1,180</span></td>
+          <td><span class="dur-badge" style="color: var(--emerald);">Registered</span></td>
+        </tr>
+        <tr>
+          <td><strong style="color: #fff;">ForumIAS CA 2026</strong></td>
+          <td>Forum Faculty</td>
+          <td>Current Affairs classes for UPSC CSE 2026. Reminder scheduled for 18th Nov on Google Calendar to register & pay ₹1,500.</td>
+          <td><span class="dur-badge" style="color: var(--gold); font-weight: 700;">₹1,500</span></td>
+          <td><span class="dur-badge" style="color: var(--gold);">Planned (18 Nov)</span></td>
+        </tr>
+        <tr>
+          <td><strong style="color: #fff;">VisionIAS</strong></td>
+          <td>Retd. Bureaucrats, Diplomats & Ex-UPSC Board</td>
+          <td><strong>IGP & Mock Interviews 2026:</strong> Registration planned post meeting with Dr. Manoj K. Sharma Sir. (<a href="https://www.visionias.in/interview/" target="_blank" style="color: var(--gold); text-decoration: underline;">visionias.in/interview</a>). DAF questionnaire & mock simulation.</td>
+          <td><span class="dur-badge" style="color: var(--gold); font-weight: 700;">₹500</span></td>
+          <td><span class="dur-badge" style="color: var(--gold);">Planned (Post-Manoj Sir)</span></td>
         </tr>
         <tr>
           <td><strong style="color: #fff;">Vajiram & Ravi</strong></td>
           <td>Ex-UPSC Board Members</td>
-          <td>Registration planned post meeting with Dr. Manoj K. Sharma Sir (Sat 14 Nov). Benchmark simulation panel & DAF review.</td>
+          <td>Registration planned post meeting with Dr. Manoj K. Sharma Sir. Premier simulation panel & DAF review.</td>
           <td><span class="dur-badge" style="color: var(--gold); font-weight: 700;">₹600</span></td>
-          <td><span class="dur-badge" style="color: var(--gold);">Planned</span></td>
-        </tr>
-        <tr>
-          <td><strong style="color: #fff;">Drishti IAS (English)</strong></td>
-          <td>Dr. Vikas Divyakirti Panel</td>
-          <td>Registered. Full video audit, body language critique & multi-dimensional grilling</td>
-          <td><span class="dur-badge" style="color: var(--emerald);">Free</span></td>
-          <td><span class="dur-badge" style="color: var(--emerald);">Registered</span></td>
+          <td><span class="dur-badge" style="color: var(--gold);">Planned (Post-Manoj Sir)</span></td>
         </tr>
         <tr>
           <td><strong style="color: #fff;">Next IAS</strong></td>
           <td>B. Singh & Panel</td>
           <td>Course registration still not started; will register once portal opens. Engineering background defense & mock panels.</td>
           <td><span class="dur-badge" style="color: var(--gold); font-weight: 700;">₹2,000</span></td>
-          <td><span class="dur-badge" style="color: var(--gold);">Planned</span></td>
+          <td><span class="dur-badge" style="color: var(--gold);">Planned (Portal Awaited)</span></td>
+        </tr>
+        <tr>
+          <td><strong style="color: #fff;">StudyIQ IAS</strong></td>
+          <td>Senior Civil Servants & StudyIQ Expert Board</td>
+          <td><strong>UPSC IGP & Mock Interviews (Antim Pag / P2I):</strong> Will officially visit Delhi/Karol Bagh centre before registering. DAF scrutiny & 1-on-1 mock.</td>
+          <td><span class="dur-badge" style="color: var(--emerald);">Free</span></td>
+          <td><span class="dur-badge" style="color: var(--gold);">Planned (Centre Visit)</span></td>
+        </tr>
+        <tr>
+          <td><strong style="color: #fff;">Lukmaan IAS</strong></td>
+          <td>S. Ansari Sir</td>
+          <td>Pub Ad Optional deep dive, administrative case studies. Chairman 10 Points + Core Pub Ad completed 13 Nov.</td>
+          <td><span class="dur-badge" style="color: var(--emerald);">Free</span></td>
+          <td><span class="dur-badge" style="color: var(--emerald);">Registered & Studied</span></td>
+        </tr>
+        <tr>
+          <td><strong style="color: #fff;">Pawan Kumar IAS</strong></td>
+          <td>Pawan Kumar Sir</td>
+          <td>Pub Ad thinker theories applied to modern governance, 1-on-1 mock probe.</td>
+          <td><span class="dur-badge" style="color: var(--emerald);">Free</span></td>
+          <td><span class="dur-badge" style="color: var(--emerald);">Registered</span></td>
+        </tr>
+        <tr>
+          <td><strong style="color: #fff;">Smartworks Labs</strong></td>
+          <td>Anupam Sir</td>
+          <td>Registered. Tech/MBA defense, psychological grounding, 1-on-1 profile grilling.</td>
+          <td><span class="dur-badge" style="color: var(--emerald);">Free</span></td>
+          <td><span class="dur-badge" style="color: var(--blue);">Mock Scheduled</span></td>
+        </tr>
+        <tr>
+          <td><strong style="color: #fff;">Drishti IAS (English)</strong></td>
+          <td>Dr. Vikas Divyakirti Panel</td>
+          <td>Registered. Full video audit, body language critique & multi-dimensional grilling.</td>
+          <td><span class="dur-badge" style="color: var(--emerald);">Free</span></td>
+          <td><span class="dur-badge" style="color: var(--emerald);">Registered</span></td>
         </tr>
         <tr>
           <td><strong style="color: #fff;">PW OnlyIAS</strong></td>
           <td>Sumit Rewri Sir</td>
-          <td>Registered. State-specific issues (UP/UK) & economic current affairs questionnaire</td>
+          <td>Registered. State-specific issues (UP/UK) & economic current affairs questionnaire.</td>
           <td><span class="dur-badge" style="color: var(--emerald);">Free</span></td>
           <td><span class="dur-badge" style="color: var(--emerald);">Registered</span></td>
         </tr>
         <tr>
           <td><strong style="color: #fff;">InsightsIAS</strong></td>
           <td>Vinay Kumar GB Sir</td>
-          <td>Registered. Ethical clarity, spontaneous thinking, unhurried composure</td>
+          <td>Registered. Ethical clarity, spontaneous thinking, unhurried composure.</td>
           <td><span class="dur-badge" style="color: var(--emerald);">Free</span></td>
           <td><span class="dur-badge" style="color: var(--emerald);">Registered</span></td>
         </tr>
         <tr>
           <td><strong style="color: #fff;">Unacademy Last Mile</strong></td>
           <td>Retd. Ambassadors & CS</td>
-          <td>Registered. High-level bureaucratic perspective, diplomatic tone calibration</td>
+          <td>Registered. High-level bureaucratic perspective, diplomatic tone calibration.</td>
           <td><span class="dur-badge" style="color: var(--emerald);">Free</span></td>
           <td><span class="dur-badge" style="color: var(--emerald);">Registered</span></td>
         </tr>
         <tr>
-          <td><strong style="color: #fff;">ForumIAS CA 2026</strong></td>
-          <td>Forum Faculty</td>
-          <td>Reminder set for 18th Nov on Google Calendar to register & pay ₹1,500.</td>
-          <td><span class="dur-badge" style="color: var(--gold); font-weight: 700;">₹1,500</span></td>
-          <td><span class="dur-badge" style="color: var(--gold);">Planned</span></td>
-        </tr>
-        <tr>
-          <td><strong style="color: #fff;">Interview Masterclass</strong></td>
-          <td>Topper Framework</td>
-          <td>The 3-second pause, 125 WPM pacing, non-argumentative poise</td>
-          <td><span class="dur-badge" style="color: var(--emerald);">Free</span></td>
-          <td><span class="dur-badge" style="color: var(--blue);">Completed</span></td>
+          <td><strong style="color: #fff;">CAVA Lecture Track</strong></td>
+          <td>Current Affairs Video Analysis</td>
+          <td>Lec 1, 2, and 3 completed (Lec 3 completed 13 Nov). Ongoing 2 lectures/week track.</td>
+          <td><span class="dur-badge" style="color: var(--emerald);">Included</span></td>
+          <td><span class="dur-badge" style="color: var(--emerald);">Lec 1–3 Complete</span></td>
         </tr>
       </tbody>
     </table>
@@ -479,22 +719,23 @@
       <div class="card-title rose">🛑 Strategic Filters: Zero Baggage & Total Focus</div>
       <ul class="clean-list">
         <li class="cross"><strong>Nov 11 Karol Bagh Sprint:</strong> Discarded. Zero physical sprint fatigue or carrying over.</li>
-        <li class="cross"><strong>Yesterday (Nov 12) Lag:</strong> Closed out cleanly. No retroactive guilt; strict 100% disciplined execution starts right now.</li>
+        <li class="cross"><strong>Past Lag:</strong> Closed out cleanly. 13 Nov executed with high discipline; 14 Nov fully scheduled.</li>
         <li class="cross"><strong>Tertiary Exams:</strong> PFRDA, CONCOR, CAT completely eliminated.</li>
-        <li class="check"><strong>Forward Execution:</strong> Quality 1-on-1 mentorships (Vignan Sir, Dr. Manoj Sir, Anupam Sir, Peeyush Sir) take absolute priority.</li>
+        <li class="check"><strong>Forward Execution:</strong> Quality 1-on-1 mentorships (Vignan Sir, Peeyush Sir, Dr. Manoj Sir) take absolute priority.</li>
       </ul>
     </div>
 
     <div class="card">
-      <div class="card-title blue">⚡ Friday 13 Nov Execution Priorities & Roadmap</div>
+      <div class="card-title emerald">⚡ Saturday 14 Nov Non-Negotiables & Deliverables</div>
       <ul class="clean-list">
-        <li class="check"><strong>🎯 10:30 AM: Vignan Sir IRS 1:1 Live Mock:</strong> Daily online session on WhatsApp/Live. DAF defense & technical probing.</li>
-        <li class="check"><strong>🎯 Daytime: Anupam Sir (Smartworks Labs) 1:1:</strong> Deep profile defense, tech/MBA pivot narrative, behavioral composure.</li>
-        <li class="check"><strong>📰 07:30 – 10:30 AM: Newspaper Deep-Dive:</strong> 12th & 13th Nov The Hindu + Indian Express editorial review.</li>
-        <li class="check"><strong>📚 02:30 – 05:00 PM: Lukmaan IAS Notes:</strong> Pub Ad Optional interview themes, Current Issues (Sep/Oct), Chairman 10 points.</li>
-        <li class="check"><strong>📺 05:00 – 07:00 PM: ForumIAS IGP Modules:</strong> High-yield video sessions & current affairs analysis.</li>
-        <li class="check"><strong>✅ Completed:</strong> Decode Civils & Sarrthi IAS foundational video sessions finished.</li>
-        <li class="check"><strong>🗓️ Saturday 14 Nov Next Gates:</strong> 01:30 PM Sarrthi IAS 1:1 Mock (Peeyush Sir) • 05:00 PM Tathastu ICS Meet (Dr. Manoj Sir).</li>
+        <li class="check"><strong>📰 Triple Newspaper Reading:</strong> The Hindu, IE, and Mint logged in Newspaper Tracker.</li>
+        <li class="check"><strong>🖨️ Printer Servicing:</strong> 2 visits (Drop-off @ 09:30 AM & Pickup @ 04:15 PM) to Jaypee Aman / Sec 135 shop.</li>
+        <li class="check"><strong>🎯 10:30 AM Vignan Sir 1:1 Live Mock:</strong> Technical background, basketball & ethics defense.</li>
+        <li class="check"><strong>🎯 01:30 PM Sarrthi IAS Mock:</strong> Peeyush Kumar Sir 1:1 panel. DAF scrutiny & Pub Ad application.</li>
+        <li class="check"><strong>📺 UP Budget 2026-27 Video:</strong> Watch & extract notes from youtu.be/xptiYuULP8Y.</li>
+        <li class="check"><strong>🎯 05:00 PM Tathastu ICS Meet:</strong> Dr. Manoj K. Sharma Sir 1:1 mentorship (pay ₹1,900 post-meet).</li>
+        <li class="check"><strong>📚 Lakshya 500 MCQs Magazine:</strong> Solve & review Questions 1 to 100.</li>
+        <li class="check"><strong>📝 Pending UPPSC Mock:</strong> Timed test solving + gap analysis.</li>
       </ul>
     </div>
   </div>

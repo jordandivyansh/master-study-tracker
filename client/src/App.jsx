@@ -16,12 +16,14 @@ import Settings from './pages/Settings.jsx';
 import Guide from './pages/Guide.jsx';
 import PublicView from './pages/PublicView.jsx';
 import InterviewHub from './pages/InterviewHub.jsx';
+import NewspaperTracker from './pages/NewspaperTracker.jsx';
 import TimerBar from './components/TimerBar.jsx';
 import ThemeSelector from './components/ThemeSelector.jsx';
 
 const NAV = [
   { to: '/', label: 'Dashboard', end: true },
   { to: '/daily', label: 'Daily log' },
+  { to: '/newspapers', label: '📰 Newspaper Log' },
   { to: '/weekly', label: 'Weekly plan' },
   { to: '/tests', label: 'Mocks & Tests' },
   { to: '/interview', label: '🎯 Interview Hub' },
@@ -87,6 +89,7 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Dashboard />} />
             <Route path="/daily" element={<Daily />} />
+            <Route path="/newspapers" element={<NewspaperTracker />} />
             <Route path="/weekly" element={<Weekly />} />
             <Route path="/tests" element={<Tests />} />
             <Route path="/interview" element={<InterviewHub />} />
