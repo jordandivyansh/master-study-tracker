@@ -25,7 +25,7 @@ const INITIAL_COURSES = [
     price: '₹1,500',
     status: 'Planned',
     mockDate: '',
-    notes: 'Targeted high-yield national, constitutional and geopolitical issues.',
+    notes: 'Reminder set for 18th Nov on Google Calendar to register & pay ₹1,500.',
   },
   {
     id: 'smartworks',
@@ -38,7 +38,7 @@ const INITIAL_COURSES = [
     price: 'Free',
     status: 'Mock Scheduled',
     mockDate: '2026-11-13T12:00',
-    notes: 'Online 1:1 session on Friday 13 Nov (daytime). Deep profile defense, tech/MBA pivot, and behavioral composure.',
+    notes: 'Registered. Online 1:1 session on Friday 13 Nov (daytime). Deep profile defense, tech/MBA pivot, and behavioral composure.',
   },
   {
     id: 'vajiram',
@@ -49,9 +49,9 @@ const INITIAL_COURSES = [
     type: 'Mock Panels & DAF Analysis',
     location: 'Old Rajinder Nagar, Delhi',
     price: '₹600',
-    status: 'Planned',
+    status: 'Registered',
     mockDate: '',
-    notes: 'Premier mock simulation panel. DAF questionnaire compilation.',
+    notes: 'Paid ₹600 & Registered. Premier mock simulation panel & comprehensive DAF questionnaire.',
   },
   {
     id: 'drishti-eng',
@@ -62,9 +62,9 @@ const INITIAL_COURSES = [
     type: 'Mock Panel & Video Analysis',
     location: 'Karol Bagh / Mukherjee Nagar',
     price: 'Free',
-    status: 'Planned',
+    status: 'Registered',
     mockDate: '',
-    notes: 'Comprehensive video performance audit, posture analysis and DAF grilling.',
+    notes: 'Registered. Comprehensive video performance audit, posture analysis and DAF grilling.',
   },
   {
     id: 'nextias',
@@ -75,9 +75,9 @@ const INITIAL_COURSES = [
     type: 'DAF Dissection & Mock Panels',
     location: 'Pusa Road, Karol Bagh, Delhi',
     price: '₹2,000',
-    status: 'Planned',
+    status: 'Registered',
     mockDate: '',
-    notes: 'Strong on engineering/technical profile defense & mock panels.',
+    notes: 'Paid ₹2,000 & Registered. Strong on engineering/technical profile defense & mock panels.',
   },
   {
     id: 'pw-onlyias',
@@ -88,9 +88,9 @@ const INITIAL_COURSES = [
     type: 'DAF Review & Mock Interviews',
     location: 'Delhi (Offline & Online)',
     price: 'Free',
-    status: 'Planned',
+    status: 'Registered',
     mockDate: '',
-    notes: 'DAF questionnaire, state-specific current issues, and 1-on-1 feedback.',
+    notes: 'Registered. DAF questionnaire, state-specific current issues, and 1-on-1 feedback.',
   },
   {
     id: 'insights',
@@ -101,9 +101,9 @@ const INITIAL_COURSES = [
     type: 'Orientation & 1-on-1 Mocks',
     location: 'Delhi Centre / Online',
     price: 'Free',
-    status: 'Planned',
+    status: 'Registered',
     mockDate: '',
-    notes: 'Psychological tuning, ethical clarity, and personalized feedback.',
+    notes: 'Registered. Psychological tuning, ethical clarity, and personalized feedback.',
   },
   {
     id: 'unacademy',
@@ -114,9 +114,9 @@ const INITIAL_COURSES = [
     type: 'Star Mock Panels & DAF Audit',
     location: 'Delhi & Online',
     price: 'Free',
-    status: 'Planned',
+    status: 'Registered',
     mockDate: '',
-    notes: 'High-profile panel simulation and video recording review.',
+    notes: 'Registered. High-profile panel simulation and video recording review.',
   },
   {
     id: 'tathastu',
@@ -129,7 +129,7 @@ const INITIAL_COURSES = [
     price: '₹1,900',
     status: 'Mock Scheduled',
     mockDate: '2026-11-14T17:00',
-    notes: 'Core mentor for 2+ years. In-person/Online meet on Saturday 14 Nov around 5:00 PM.',
+    notes: 'Core mentor for 2+ years. In-person/Online meet on Sat 14 Nov around 5:00 PM; register/pay ₹1,900 post-meeting.',
   },
   {
     id: 'sarrthi-ias',
@@ -166,9 +166,9 @@ const INITIAL_COURSES = [
     type: 'DAF Analysis, Pub Ad Optional & 1-on-1 Mocks',
     location: 'Pusa Road, Karol Bagh, Delhi',
     price: 'Free',
-    status: 'Planned',
+    status: 'Registered',
     mockDate: '',
-    notes: 'Direct alignment with Public Administration optional, case-study questions, and administrative ethics.',
+    notes: 'Registered. Pub Ad Optional deep dive, administrative case studies, Ethics-DAF alignment.',
   },
   {
     id: 'pawan-kumar',
@@ -179,9 +179,9 @@ const INITIAL_COURSES = [
     type: '1-on-1 Pub Ad Optional Mentorship & Mock Interview',
     location: 'Old Rajinder Nagar / Karol Bagh, Delhi',
     price: 'Free',
-    status: 'Planned',
+    status: 'Registered',
     mockDate: '',
-    notes: 'Pawan Kumar Sir specialized Pub Ad conceptual defense, administrative theories applied to current governance.',
+    notes: 'Registered. Pawan Kumar Sir specialized Pub Ad conceptual defense & administrative theories.',
   },
   {
     id: 'decode-civils',
@@ -194,7 +194,7 @@ const INITIAL_COURSES = [
     price: 'Free',
     status: 'Completed',
     mockDate: '',
-    notes: 'Enrolled in 1:1 DAF Session (starts 10 Nov) + Free Interview Resource with Anita Ma\'am. Foundational DAF sessions watched and completed.',
+    notes: 'Registered. Enrolled in 1:1 DAF Session (starts 10 Nov) + Free Interview Resource with Anita Ma\'am. Foundational DAF sessions watched and completed.',
   },
   {
     id: 'vision-ias',
@@ -207,7 +207,7 @@ const INITIAL_COURSES = [
     price: '₹500',
     status: 'Registered',
     mockDate: '',
-    notes: 'Enrolled for IGP & Mock Interviews. Comprehensive DAF questionnaire, state-specific analysis & multi-panel mock simulations.',
+    notes: 'Paid ₹500 & Registered. Comprehensive DAF questionnaire, state-specific analysis & multi-panel mock simulations.',
   },
   {
     id: 'studyiq',
@@ -218,9 +218,9 @@ const INITIAL_COURSES = [
     type: '1:1 Mock Interview & DAF Analysis',
     location: 'Delhi & Online',
     price: 'Free',
-    status: 'Registered',
+    status: 'Planned',
     mockDate: '',
-    notes: 'Enrolled for IGP & Mock Interviews. Detailed Application Form scrutiny, current affairs theme classes, and 1-on-1 video-recorded mock interview.',
+    notes: 'Will officially visit Delhi/Karol Bagh centre before registering.',
   },
   {
     id: 'yt-framework',
@@ -238,7 +238,7 @@ const INITIAL_COURSES = [
 ];
 
 const STATUSES = ['Planned', 'Registered', 'DAF Submitted', 'Mock Scheduled', 'Completed'];
-const STORAGE_KEY = 'master_interview_courses_v6';
+const STORAGE_KEY = 'master_interview_courses_v7';
 
 export default function InterviewHub() {
   const [courses, setCourses] = useState(() => {
