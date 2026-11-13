@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>UPPCS Prelims 2026: 25-Day Master Execution & Subject Completion Roadmap</title>
+<title>UPPSC Prelims 2026: 22-Day Master Roadmap & Lakshya Mock Integration</title>
 <style>
   :root {
     --bg: #090d16;
@@ -36,7 +36,7 @@
     line-height: 1.5;
     padding: 32px 20px 80px;
   }
-  .container { max-width: 1240px; margin: 0 auto; }
+  .container { max-width: 1280px; margin: 0 auto; }
 
   /* Navigation Bar */
   .top-nav {
@@ -106,7 +106,7 @@
   .header::before {
     content: '';
     position: absolute;
-    top: 0; right: 0; width: 350px; height: 350px;
+    top: 0; right: 0; width: 400px; height: 400px;
     background: radial-gradient(circle, var(--gold-glow) 0%, transparent 70%);
     pointer-events: none;
   }
@@ -119,20 +119,21 @@
     display: flex;
     align-items: center;
     gap: 12px;
+    flex-wrap: wrap;
   }
   .header p {
     font-size: 14.5px;
     color: var(--text-muted);
-    max-width: 860px;
+    max-width: 900px;
   }
 
-  /* Realtime Countdown Ribbon */
+  /* Countdown Ribbon */
   .countdown-ribbon {
     margin-top: 20px;
-    background: rgba(0, 0, 0, 0.35);
+    background: rgba(0, 0, 0, 0.4);
     border: 1px solid var(--line);
     border-radius: 12px;
-    padding: 14px 20px;
+    padding: 16px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -151,13 +152,13 @@
     color: var(--text-muted);
   }
   .countdown-value {
-    font-size: 18px;
+    font-size: 19px;
     font-weight: 800;
     color: #fff;
   }
   .progress-wrap {
     flex: 1;
-    min-width: 220px;
+    min-width: 240px;
     display: flex;
     flex-direction: column;
     gap: 6px;
@@ -168,11 +169,10 @@
     background: rgba(255, 255, 255, 0.08);
     border-radius: 5px;
     overflow: hidden;
-    position: relative;
   }
   .progress-fill {
     height: 100%;
-    background: linear-gradient(90deg, #10b981, #38bdf8, #f59e0b);
+    background: linear-gradient(90deg, #38bdf8, #10b981, #f59e0b);
     border-radius: 5px;
     transition: width 0.3s ease;
   }
@@ -196,9 +196,9 @@
     border-color: rgba(255, 255, 255, 0.2);
   }
   .kpi-card .lbl {
-    font-size: 11.5px;
+    font-size: 11px;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.6px;
     color: var(--text-muted);
   }
   .kpi-card .val {
@@ -213,7 +213,7 @@
     margin-top: 4px;
   }
 
-  /* Visual Section Completion Milestones Matrix */
+  /* Section Milestones Matrix */
   .section-title {
     font-size: 18px;
     font-weight: 800;
@@ -247,42 +247,38 @@
     top: 0; left: 0; right: 0; height: 3px;
   }
   .milestone-card.polity::before { background: #38bdf8; }
-  .milestone-card.economy::before { background: #10b981; }
-  .milestone-card.env::before { background: #34d399; }
-  .milestone-card.geo::before { background: #60a5fa; }
-  .milestone-card.modern::before { background: #fb923c; }
   .milestone-card.ancient::before { background: #e879f9; }
   .milestone-card.medieval::before { background: #f472b6; }
-  .milestone-card.science::before { background: #a78bfa; }
+  .milestone-card.modern::before { background: #fb923c; }
+  .milestone-card.geo::before { background: #60a5fa; }
+  .milestone-card.env::before { background: #34d399; }
   .milestone-card.upspecial::before { background: #facc15; }
-  .milestone-card.csat::before { background: #38bdf8; }
-  .milestone-card.mock::before { background: #f43f5e; }
+  .milestone-card.economy::before { background: #10b981; }
+  .milestone-card.science::before { background: #a78bfa; }
+  .milestone-card.flt::before { background: #f43f5e; }
   .milestone-card.final::before { background: #10b981; }
 
   .milestone-header {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
   }
   .milestone-name {
-    font-size: 15px;
+    font-size: 14.5px;
     font-weight: 700;
     color: #fff;
-    display: flex;
-    align-items: center;
-    gap: 8px;
   }
   .milestone-days {
     font-size: 11px;
     font-weight: 700;
     background: rgba(255, 255, 255, 0.06);
-    padding: 3px 8px;
-    border-radius: 6px;
+    padding: 2px 7px;
+    border-radius: 4px;
     color: #94a3b8;
   }
   .milestone-desc {
-    font-size: 12.5px;
+    font-size: 12px;
     color: var(--text-muted);
     line-height: 1.45;
     margin-bottom: 12px;
@@ -300,16 +296,11 @@
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    padding: 4px 10px;
-    border-radius: 6px;
+    padding: 3px 8px;
+    border-radius: 5px;
     display: inline-flex;
     align-items: center;
     gap: 5px;
-  }
-  .badge-done {
-    background: rgba(16, 185, 129, 0.15);
-    color: #10b981;
-    border: 1px solid rgba(16, 185, 129, 0.4);
   }
   .badge-active {
     background: rgba(56, 189, 248, 0.15);
@@ -317,66 +308,18 @@
     border: 1px solid rgba(56, 189, 248, 0.4);
     box-shadow: 0 0 10px rgba(56, 189, 248, 0.2);
   }
+  .badge-target {
+    background: rgba(245, 158, 11, 0.15);
+    color: var(--gold);
+    border: 1px solid rgba(245, 158, 11, 0.4);
+  }
   .badge-upcoming {
     background: rgba(255, 255, 255, 0.05);
     color: #cbd5e1;
     border: 1px solid var(--line);
   }
 
-  /* Phase Stepper Flow Graphic */
-  .phase-stepper {
-    background: var(--surface);
-    border: 1px solid var(--line);
-    border-radius: 16px;
-    padding: 24px;
-    margin-bottom: 36px;
-  }
-  .stepper-track {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-    gap: 12px;
-    margin-top: 16px;
-  }
-  .step-node {
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid var(--line);
-    border-radius: 10px;
-    padding: 12px;
-    text-align: center;
-    position: relative;
-    transition: all 0.15s ease;
-  }
-  .step-node:hover {
-    border-color: rgba(255, 255, 255, 0.2);
-    background: rgba(255, 255, 255, 0.04);
-  }
-  .step-node.active {
-    border-color: var(--blue);
-    background: rgba(56, 189, 248, 0.08);
-  }
-  .step-node.completed {
-    border-color: rgba(16, 185, 129, 0.4);
-    background: rgba(16, 185, 129, 0.05);
-  }
-  .step-phase {
-    font-size: 10px;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    color: var(--text-muted);
-  }
-  .step-title {
-    font-size: 12.5px;
-    font-weight: 700;
-    color: #fff;
-    margin: 4px 0 2px;
-  }
-  .step-dates {
-    font-size: 11px;
-    color: var(--text-sub);
-  }
-
-  /* Interactive Master Table Section */
+  /* Table Styles */
   .controls-bar {
     display: flex;
     justify-content: space-between;
@@ -420,9 +363,7 @@
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     margin-bottom: 32px;
   }
-  .table-wrap {
-    overflow-x: auto;
-  }
+  .table-wrap { overflow-x: auto; }
   table {
     width: 100%;
     border-collapse: collapse;
@@ -452,24 +393,9 @@
     background: rgba(56, 189, 248, 0.08) !important;
     border-left: 4px solid var(--blue);
   }
-  tr.today-row td {
-    border-bottom: 1px solid rgba(56, 189, 248, 0.3);
-  }
-  tr.struck-row {
-    opacity: 0.65;
-    background: rgba(16, 185, 129, 0.02);
-  }
-  tr.struck-row td {
-    text-decoration: none;
-  }
-  tr.mock-row {
-    background: rgba(244, 63, 94, 0.05);
-  }
-  tr.final-row {
-    background: rgba(16, 185, 129, 0.04);
-  }
+  tr.today-row td { border-bottom: 1px solid rgba(56, 189, 248, 0.3); }
 
-  /* Cell Badges */
+  /* Badges */
   .day-badge {
     display: inline-block;
     font-weight: 800;
@@ -481,39 +407,28 @@
     color: var(--text-muted);
     margin-top: 2px;
   }
-  .subject-pill {
-    display: inline-block;
-    padding: 2px 7px;
-    border-radius: 4px;
-    font-size: 11px;
-    font-weight: 700;
-    text-transform: uppercase;
-    margin-bottom: 4px;
-  }
-  .sub-polity { background: rgba(56, 189, 248, 0.15); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.3); }
-  .sub-economy { background: rgba(16, 185, 129, 0.15); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.3); }
-  .sub-geo { background: rgba(96, 165, 250, 0.15); color: #60a5fa; border: 1px solid rgba(96, 165, 250, 0.3); }
-  .sub-env { background: rgba(52, 211, 153, 0.15); color: #34d399; border: 1px solid rgba(52, 211, 153, 0.3); }
-  .sub-modern { background: rgba(251, 146, 60, 0.15); color: #fb923c; border: 1px solid rgba(251, 146, 60, 0.3); }
-  .sub-ancient { background: rgba(232, 121, 249, 0.15); color: #e879f9; border: 1px solid rgba(232, 121, 249, 0.3); }
-  .sub-medieval { background: rgba(244, 114, 182, 0.15); color: #f472b6; border: 1px solid rgba(244, 114, 182, 0.3); }
-  .sub-science { background: rgba(167, 139, 250, 0.15); color: #a78bfa; border: 1px solid rgba(167, 139, 250, 0.3); }
-  .sub-up { background: rgba(250, 204, 21, 0.15); color: #facc15; border: 1px solid rgba(250, 204, 21, 0.3); }
-  .sub-csat { background: rgba(56, 189, 248, 0.15); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.3); }
-  .sub-mock { background: rgba(244, 63, 94, 0.15); color: #f43f5e; border: 1px solid rgba(244, 63, 94, 0.3); }
-
-  .milestone-tag {
+  .mock-pill {
     display: inline-flex;
     align-items: center;
-    gap: 4px;
-    background: rgba(245, 158, 11, 0.15);
-    border: 1px solid rgba(245, 158, 11, 0.4);
-    color: var(--gold);
-    padding: 3px 8px;
+    gap: 6px;
+    background: rgba(244, 63, 94, 0.15);
+    border: 1px solid rgba(244, 63, 94, 0.4);
+    color: #fb7185;
+    padding: 4px 8px;
     border-radius: 5px;
-    font-size: 11px;
+    font-size: 11.5px;
     font-weight: 700;
-    margin-top: 6px;
+    margin-bottom: 6px;
+  }
+  .flt-pill {
+    background: rgba(168, 85, 247, 0.15);
+    border-color: rgba(168, 85, 247, 0.4);
+    color: #c084fc;
+  }
+  .drishti-pill {
+    background: rgba(245, 158, 11, 0.15);
+    border-color: rgba(245, 158, 11, 0.4);
+    color: #f59e0b;
   }
 
   .topic-list {
@@ -523,9 +438,9 @@
     line-height: 1.45;
   }
   .topic-list li {
-    margin-bottom: 3px;
+    margin-bottom: 2px;
     position: relative;
-    padding-left: 12px;
+    padding-left: 10px;
   }
   .topic-list li::before {
     content: "•";
@@ -534,22 +449,6 @@
     color: var(--text-sub);
   }
 
-  /* Checkbox styling */
-  .plan-check {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    cursor: pointer;
-    user-select: none;
-  }
-  .plan-check input[type="checkbox"] {
-    width: 18px;
-    height: 18px;
-    accent-color: var(--emerald);
-    cursor: pointer;
-  }
-
-  /* Footer */
   .footer-note {
     text-align: center;
     font-size: 12.5px;
@@ -562,7 +461,7 @@
 
 <div class="container">
 
-  <!-- Navigation -->
+  <!-- Top Navigation -->
   <div class="top-nav">
     <div class="nav-brand">
       <span class="brand-dot"></span>
@@ -574,39 +473,43 @@
       <a href="/plan.html" class="nav-btn">📅 Master Plan</a>
       <a href="/newspapers.html" class="nav-btn">📰 Newspaper Log</a>
       <a href="/interview" class="nav-btn">🎯 Interview Hub</a>
-      <a href="/uppsc.html" class="nav-btn active">🏛️ UPPSC 25-Day Plan</a>
+      <a href="/uppsc.html" class="nav-btn active">🏛️ UPPSC 22-Day Plan</a>
     </div>
   </div>
 
   <!-- Header -->
   <div class="header">
-    <h1>🏛️ UPPSC Prelims 2026: 25-Day Master Execution & Subject Completion Roadmap</h1>
+    <h1>🏛️ UPPSC Prelims 2026: 22-Day Master Execution & Lakshya Mock Integration</h1>
     <p>
-      Complete day-by-day roadmap (11 Nov – 5 Dec 2026) calibrated from the <em>IAS PCS Pathshala 25-Day Master Checklist</em>.
-      Every subject section is mapped to its exact starting date, daily revision sheets, and verified completion milestone.
+      Calibrated start from <strong>Saturday, 14 November 2026 (Day 01)</strong> through <strong>Saturday, 5 December 2026 (Day 22)</strong>.
+      Fresh baseline execution (zero past completion assumed) with <strong>100% Calendar Sync of IAS PCS Pathshala Lakshya 2.0 Mocks</strong> and zero CSAT mock clutter.
     </p>
 
     <!-- Real-time Progress & Countdown Ribbon -->
     <div class="countdown-ribbon">
       <div class="countdown-item">
-        <span class="countdown-label">Today's Milestone</span>
-        <span class="countdown-value" style="color: var(--blue);">Day 04 / 25 (Sat 14 Nov)</span>
+        <span class="countdown-label">Current Timeline</span>
+        <span class="countdown-value" style="color: var(--blue);">Day 01 / 22 (Sat 14 Nov - Today)</span>
       </div>
       <div class="countdown-item">
-        <span class="countdown-label">Days to D-Day</span>
-        <span class="countdown-value" style="color: var(--gold);">22 Days Remaining</span>
+        <span class="countdown-label">Baseline State</span>
+        <span class="countdown-value" style="color: var(--gold);">Fresh Start (0% Done)</span>
       </div>
       <div class="countdown-item">
-        <span class="countdown-label">Exam Date</span>
+        <span class="countdown-label">Calendar Mocks Synced</span>
+        <span class="countdown-value" style="color: var(--rose);">17 Lakshya Mocks</span>
+      </div>
+      <div class="countdown-item">
+        <span class="countdown-label">D-Day Exam</span>
         <span class="countdown-value" style="color: var(--emerald);">Sunday, 6 Dec 2026</span>
       </div>
       <div class="progress-wrap">
         <div style="display: flex; justify-content: space-between; font-size: 11px; color: var(--text-muted);">
-          <span>Master Progress</span>
-          <span id="progress-pct">16% Completed (4 of 25 Days Active)</span>
+          <span>Sprint Progress</span>
+          <span>Day 01 of 22 Active • 22 Days to D-Day</span>
         </div>
         <div class="progress-bar">
-          <div class="progress-fill" style="width: 16%;"></div>
+          <div class="progress-fill" style="width: 5%;"></div>
         </div>
       </div>
     </div>
@@ -615,132 +518,47 @@
   <!-- KPI Grid -->
   <div class="kpi-grid">
     <div class="kpi-card">
-      <div class="lbl">Phase Breakdown</div>
-      <div class="val" style="color: var(--blue);">21 + 1 + 3</div>
-      <div class="sub">21 Subject Days • 1 Mock Day • 3 Final Recall</div>
+      <div class="lbl">Total Calendar Mocks</div>
+      <div class="val" style="color: var(--rose);">17 Mocks</div>
+      <div class="sub">8 Sectional + 6 FLTs + 3 Imtihaan PYQ Open</div>
     </div>
     <div class="kpi-card">
-      <div class="lbl">Today's Operational Track</div>
-      <div class="val" style="color: var(--gold);">Polity + Economy</div>
-      <div class="sub">Constitutional Bodies + National Income + UP Budget</div>
+      <div class="lbl">CSAT Strategy</div>
+      <div class="val" style="color: var(--emerald);">Zero Mocks</div>
+      <div class="sub">100% Focus on GS-I Merit • CSAT Qualifying Only</div>
     </div>
     <div class="kpi-card">
-      <div class="lbl">First Section Complete</div>
-      <div class="val" style="color: var(--emerald);">Tomorrow (15 Nov)</div>
-      <div class="sub">Polity & Economy 100% wrapped on Day 05</div>
+      <div class="lbl">Today's Launch (14 Nov)</div>
+      <div class="val" style="color: var(--gold);">Day 01 (Fresh)</div>
+      <div class="sub">Polity Core + Economy + Lakshya 500 MCQs + UP Budget</div>
     </div>
     <div class="kpi-card">
-      <div class="lbl">Final Full Rehearsal</div>
-      <div class="val" style="color: var(--purple);">Day 22 (2 Dec)</div>
-      <div class="sub">All-India Full-Length Mock + Gap Repair</div>
+      <div class="lbl">First Section Finish</div>
+      <div class="val" style="color: var(--blue);">Tomorrow (15 Nov)</div>
+      <div class="sub">Ancient History Completes on Day 02</div>
     </div>
   </div>
 
-  <!-- Subject Completion Milestones Matrix -->
+  <!-- Subject Completion Milestone Matrix -->
   <div class="section-title">
     <span>🏁 Where Each Subject Section Gets Completed</span>
-    <span style="font-size: 11px; font-weight: 600; color: var(--text-muted); background: rgba(255,255,255,0.06); padding: 3px 8px; border-radius: 6px;">Zero Drift Architecture</span>
+    <span style="font-size: 11px; font-weight: 600; color: var(--text-muted); background: rgba(255,255,255,0.06); padding: 3px 8px; border-radius: 6px;">Calendar Synced Milestones</span>
   </div>
 
   <div class="milestones-grid">
-    <!-- Indian Polity -->
-    <div class="milestone-card polity">
-      <div>
-        <div class="milestone-header">
-          <div class="milestone-name">🏛️ Indian Polity</div>
-          <span class="milestone-days">Days 01–05 + Day 17</span>
-        </div>
-        <p class="milestone-desc">
-          Articles, Parts & Schedules, Local Govt, Preamble, FRs, DPSP, Judiciary, Basic Structure, Parliament, Union/State Executive & Constitutional Bodies.
-        </p>
-      </div>
-      <div class="milestone-footer">
-        <span class="completion-badge badge-active">🏁 Completes: Day 05 (15 Nov)</span>
-        <span style="font-size: 11px; color: var(--text-sub);">Sheets 1–4</span>
-      </div>
-    </div>
-
-    <!-- Indian Economy -->
-    <div class="milestone-card economy">
-      <div>
-        <div class="milestone-header">
-          <div class="milestone-name">📈 Indian Economy</div>
-          <span class="milestone-days">Days 01–05 + 18, 21</span>
-        </div>
-        <p class="milestone-desc">
-          Welfare Schemes Chronology, Union & UP Budget, Poverty & Unemployment, GDP/GVA, Inflation, Banking, External Sector & Infra.
-        </p>
-      </div>
-      <div class="milestone-footer">
-        <span class="completion-badge badge-active">🏁 Completes: Day 05 (15 Nov)</span>
-        <span style="font-size: 11px; color: var(--text-sub);">Sheets 1–3</span>
-      </div>
-    </div>
-
-    <!-- Environment & Ecology -->
-    <div class="milestone-card env">
-      <div>
-        <div class="milestone-header">
-          <div class="milestone-name">🌿 Environment & Ecology</div>
-          <span class="milestone-days">Days 06–08</span>
-        </div>
-        <p class="milestone-desc">
-          Acts, Wildlife Projects, Conventions/COPs, Ramsar Sites, National Parks, Biosphere Reserves, ISFR 2023, SDGs, Pollution & GHGs.
-        </p>
-      </div>
-      <div class="milestone-footer">
-        <span class="completion-badge badge-upcoming">🏁 Completes: Day 08 (18 Nov)</span>
-        <span style="font-size: 11px; color: var(--text-sub);">Sheets 1–3</span>
-      </div>
-    </div>
-
-    <!-- Indian & World Geography -->
-    <div class="milestone-card geo">
-      <div>
-        <div class="milestone-header">
-          <div class="milestone-name">🌍 Geography (Ind & World)</div>
-          <span class="milestone-days">Days 06–11 + Day 19</span>
-        </div>
-        <p class="milestone-desc">
-          Rivers, Lakes, Chokepoints, Agriculture, Minerals, Oceans, Peaks, Passes, Deserts, Census, Climate, Winds, Soil & Atmosphere.
-        </p>
-      </div>
-      <div class="milestone-footer">
-        <span class="completion-badge badge-upcoming">🏁 Completes: Day 11 (21 Nov)</span>
-        <span style="font-size: 11px; color: var(--text-sub);">Sheets 1–4</span>
-      </div>
-    </div>
-
-    <!-- Modern History -->
-    <div class="milestone-card modern">
-      <div>
-        <div class="milestone-header">
-          <div class="milestone-name">⚔️ Modern Indian History</div>
-          <span class="milestone-days">Days 09–11 + Day 20</span>
-        </div>
-        <p class="milestone-desc">
-          1917–1947 Chronologies, Revolutionary Orgs, Wars/Treaties, 1857, Early Nationalism, Peasant/Tribal Revolts, Reform Movements, Books.
-        </p>
-      </div>
-      <div class="milestone-footer">
-        <span class="completion-badge badge-upcoming">🏁 Completes: Day 11 (21 Nov)</span>
-        <span style="font-size: 11px; color: var(--text-sub);">Sheets 1–3</span>
-      </div>
-    </div>
-
     <!-- Ancient History -->
     <div class="milestone-card ancient">
       <div>
         <div class="milestone-header">
-          <div class="milestone-name">🏺 Ancient Indian History</div>
-          <span class="milestone-days">Days 12–13</span>
+          <div class="milestone-name">🏺 Ancient History</div>
+          <span class="milestone-days">Day 02 (15 Nov)</span>
         </div>
         <p class="milestone-desc">
-          Harappan & Prehistoric Sites, Archaeological Cultures, Buddhism & Jainism, Rulers, Inscriptions & Foreign Travellers.
+          Harappan sites, Vedic literature, Buddhism/Jainism, Mauryas, Guptas, Inscriptions & Travellers. Tested in Lakshya Test 02 (08:30 AM).
         </p>
       </div>
       <div class="milestone-footer">
-        <span class="completion-badge badge-upcoming">🏁 Completes: Day 13 (23 Nov)</span>
+        <span class="completion-badge badge-active">🏁 Completes: Day 02 (15 Nov)</span>
         <span style="font-size: 11px; color: var(--text-sub);">Sheets 1–3</span>
       </div>
     </div>
@@ -749,15 +567,100 @@
     <div class="milestone-card medieval">
       <div>
         <div class="milestone-header">
-          <div class="milestone-name">🏰 Medieval Indian History</div>
-          <span class="milestone-days">Days 14–15</span>
+          <div class="milestone-name">🏰 Medieval History</div>
+          <span class="milestone-days">Day 03 (16 Nov)</span>
         </div>
         <p class="milestone-desc">
-          Delhi Sultanate Admin Terms, Battles in Sequence, Mughal & Maratha Succession, Temples & Indo-Islamic Architecture.
+          Delhi Sultanate administrative terms, battle chronology, Mughals & Marathas succession, architecture. Tested in Lakshya Test 04 (08:30 AM).
         </p>
       </div>
       <div class="milestone-footer">
-        <span class="completion-badge badge-upcoming">🏁 Completes: Day 15 (25 Nov)</span>
+        <span class="completion-badge badge-upcoming">🏁 Completes: Day 03 (16 Nov)</span>
+        <span style="font-size: 11px; color: var(--text-sub);">Sheets 1–3</span>
+      </div>
+    </div>
+
+    <!-- Modern History -->
+    <div class="milestone-card modern">
+      <div>
+        <div class="milestone-header">
+          <div class="milestone-name">⚔️ Modern History</div>
+          <span class="milestone-days">Day 04 (17 Nov)</span>
+        </div>
+        <p class="milestone-desc">
+          1917–1947 chronology, 1857, early nationalism, British expansion, tribal/peasant revolts, social reforms. Tested in Lakshya Test 07 (13:00 PM).
+        </p>
+      </div>
+      <div class="milestone-footer">
+        <span class="completion-badge badge-upcoming">🏁 Completes: Day 04 (17 Nov)</span>
+        <span style="font-size: 11px; color: var(--text-sub);">Sheets 1–3</span>
+      </div>
+    </div>
+
+    <!-- Geography -->
+    <div class="milestone-card geo">
+      <div>
+        <div class="milestone-header">
+          <div class="milestone-name">🌍 Geography (Ind & World)</div>
+          <span class="milestone-days">Day 05 (18 Nov)</span>
+        </div>
+        <p class="milestone-desc">
+          Rivers, lakes, chokepoints, agriculture, minerals, oceans, peaks, passes, climatology, soils, census. Tested in Lakshya Test 05 (13:00 PM).
+        </p>
+      </div>
+      <div class="milestone-footer">
+        <span class="completion-badge badge-upcoming">🏁 Completes: Day 05 (18 Nov)</span>
+        <span style="font-size: 11px; color: var(--text-sub);">Sheets 1–4</span>
+      </div>
+    </div>
+
+    <!-- Environment -->
+    <div class="milestone-card env">
+      <div>
+        <div class="milestone-header">
+          <div class="milestone-name">🌿 Environment & Ecology</div>
+          <span class="milestone-days">Day 06 (19 Nov)</span>
+        </div>
+        <p class="milestone-desc">
+          Acts & wildlife projects, Ramsar sites, national parks, ISFR 2023 rankings, SDGs, pollution & GHGs. Tested in Lakshya Test 06 (13:00 PM).
+        </p>
+      </div>
+      <div class="milestone-footer">
+        <span class="completion-badge badge-upcoming">🏁 Completes: Day 06 (19 Nov)</span>
+        <span style="font-size: 11px; color: var(--text-sub);">Sheets 1–3</span>
+      </div>
+    </div>
+
+    <!-- UP Special -->
+    <div class="milestone-card upspecial">
+      <div>
+        <div class="milestone-header">
+          <div class="milestone-name">🏛️ UP Special (Complete)</div>
+          <span class="milestone-days">Day 03 & Day 07 (20 Nov)</span>
+        </div>
+        <p class="milestone-desc">
+          ODOP, 75 districts, 18 divisions, UP Ramsar, UP budget 2026-27, expressways, agriculture. Tested in Lakshya Test 09 (UP GK).
+        </p>
+      </div>
+      <div class="milestone-footer">
+        <span class="completion-badge badge-upcoming">🏁 Completes: Day 07 (20 Nov)</span>
+        <span style="font-size: 11px; color: var(--text-sub);">Sheets 1–3</span>
+      </div>
+    </div>
+
+    <!-- Indian Economy -->
+    <div class="milestone-card economy">
+      <div>
+        <div class="milestone-header">
+          <div class="milestone-name">📈 Indian Economy</div>
+          <span class="milestone-days">Day 08 & Day 09 (22 Nov)</span>
+        </div>
+        <p class="milestone-desc">
+          National income, GDP/GVA, inflation indices, poverty committees, banking, external sector, schemes. Tested in Lakshya Test 03 (08:30 AM).
+        </p>
+      </div>
+      <div class="milestone-footer">
+        <span class="completion-badge badge-upcoming">🏁 Completes: Day 09 (22 Nov)</span>
         <span style="font-size: 11px; color: var(--text-sub);">Sheets 1–3</span>
       </div>
     </div>
@@ -766,139 +669,50 @@
     <div class="milestone-card science">
       <div>
         <div class="milestone-header">
-          <div class="milestone-name">🔬 General Science (All)</div>
-          <span class="milestone-days">Days 12–16</span>
+          <div class="milestone-name">🔬 General Science</div>
+          <span class="milestone-days">Day 10 (23 Nov)</span>
         </div>
         <p class="milestone-desc">
-          • Bio (Vitamins, Organs, Diseases): Completes Day 14 (24 Nov)<br>
-          • Chem (Fuels, Alloys, Formulas): Completes Day 15 (25 Nov)<br>
-          • Physics & S&T (Light, Sound, EM, Space): Completes Day 16 (26 Nov)
+          Biology (vitamins, organs, diseases), Chemistry (fuels, alloys, formulas), Physics (optics, sound, EM, space). Tested in Lakshya Test 08.
         </p>
       </div>
       <div class="milestone-footer">
-        <span class="completion-badge badge-upcoming">🏁 Completes: Day 16 (26 Nov)</span>
+        <span class="completion-badge badge-upcoming">🏁 Completes: Day 10 (23 Nov)</span>
         <span style="font-size: 11px; color: var(--text-sub);">Sheets 1–3</span>
       </div>
     </div>
 
-    <!-- Uttar Pradesh Special -->
-    <div class="milestone-card upspecial">
+    <!-- Full-Length Mocks Block -->
+    <div class="milestone-card flt">
       <div>
         <div class="milestone-header">
-          <div class="milestone-name">🏛️ UP Special (Complete)</div>
-          <span class="milestone-days">Days 16–18</span>
+          <div class="milestone-name">📝 Full-Length Mocks & Imtihaan</div>
+          <span class="milestone-days">Days 11–21 (24 Nov–04 Dec)</span>
         </div>
         <p class="milestone-desc">
-          ODOP & ODOC, UP Census & Divisions, UP Ramsar Sites, UP Forest Report, UP Budget 2026-27, Expressways, Agriculture & Minerals.
+          6 Full-Length Tests (FLT 1 to 6) + 3 Drishti Imtihaan Open PYQ Mocks under strict exam timings (13:00 PM).
         </p>
       </div>
       <div class="milestone-footer">
-        <span class="completion-badge badge-upcoming">🏁 Completes: Day 17 (27 Nov)</span>
-        <span style="font-size: 11px; color: var(--text-sub);">Sheets 1–3</span>
+        <span class="completion-badge badge-upcoming">🏁 Completes: Day 21 (04 Dec)</span>
+        <span style="font-size: 11px; color: var(--text-sub);">17/17 Mocks</span>
       </div>
     </div>
 
-    <!-- CSAT Paper II -->
-    <div class="milestone-card csat">
-      <div>
-        <div class="milestone-header">
-          <div class="milestone-name">📊 CSAT (Paper II)</div>
-          <span class="milestone-days">Days 18–21</span>
-        </div>
-        <p class="milestone-desc">
-          Comprehension & Interpersonal Skills, Elementary Mathematics (Arithmetic, Algebra, Geometry, Stats), Reasoning & Decision Making.
-        </p>
-      </div>
-      <div class="milestone-footer">
-        <span class="completion-badge badge-upcoming">🏁 Completes: Day 21 (01 Dec)</span>
-        <span style="font-size: 11px; color: var(--text-sub);">Practice Sets</span>
-      </div>
-    </div>
-
-    <!-- Full Mock Test Rehearsal -->
-    <div class="milestone-card mock">
-      <div>
-        <div class="milestone-header">
-          <div class="milestone-name">📝 Full Mock & Gap Repair</div>
-          <span class="milestone-days">Day 22 (02 Dec)</span>
-        </div>
-        <p class="milestone-desc">
-          Single full dress rehearsal under timed exam conditions (GS + CSAT) with instant mistake classification and final gap remediation.
-        </p>
-      </div>
-      <div class="milestone-footer">
-        <span class="completion-badge badge-upcoming">🏁 Completes: Day 22 (02 Dec)</span>
-        <span style="font-size: 11px; color: var(--text-sub);">Rehearsal Done</span>
-      </div>
-    </div>
-
-    <!-- The Finish Line -->
+    <!-- Final Rapid Recall -->
     <div class="milestone-card final">
       <div>
         <div class="milestone-header">
-          <div class="milestone-name">🎯 The Finish Line (3-Day Recall)</div>
-          <span class="milestone-days">Days 23–25 (03–05 Dec)</span>
+          <div class="milestone-name">🎯 Final Factual Recall & D-Day</div>
+          <span class="milestone-days">Day 22 (05 Dec)</span>
         </div>
         <p class="milestone-desc">
-          • Day 23: Polity + Economy + Modern History<br>
-          • Day 24: Geography + Environment + Science<br>
-          • Day 25: UP Special + Ancient + Medieval + Rapid CA
+          High-speed sheet review of all 8 core subjects, admit card & gear pack, early sleep by 10:00 PM. D-Day exam on Sunday 6 Dec!
         </p>
       </div>
       <div class="milestone-footer">
-        <span class="completion-badge badge-done" style="background: rgba(245,158,11,0.2); color: var(--gold); border-color: var(--gold);">🚀 Exam: Sun 6 Dec 2026</span>
-        <span style="font-size: 11px; color: var(--text-sub);">Ready for D-Day</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- Phase Stepper Graphic -->
-  <div class="phase-stepper">
-    <div class="section-title" style="margin-bottom: 6px;">
-      <span>🗺️ 25-Day Chronological Phase Stepper</span>
-    </div>
-    <p style="font-size: 12.5px; color: var(--text-muted); margin-bottom: 12px;">Visual progression through the 8 execution blocks leading to Prelims D-Day.</p>
-    
-    <div class="stepper-track">
-      <div class="step-node active">
-        <span class="step-phase">Phase 1 (Active)</span>
-        <div class="step-title">Polity + Economy</div>
-        <span class="step-dates">Days 01–05 (11–15 Nov)</span>
-      </div>
-      <div class="step-node">
-        <span class="step-phase">Phase 2</span>
-        <div class="step-title">Geo + Environment</div>
-        <span class="step-dates">Days 06–08 (16–18 Nov)</span>
-      </div>
-      <div class="step-node">
-        <span class="step-phase">Phase 3</span>
-        <div class="step-title">Geo + Modern Hist</div>
-        <span class="step-dates">Days 09–11 (19–21 Nov)</span>
-      </div>
-      <div class="step-node">
-        <span class="step-phase">Phase 4</span>
-        <div class="step-title">Science + Ancient/Med</div>
-        <span class="step-dates">Days 12–15 (22–25 Nov)</span>
-      </div>
-      <div class="step-node">
-        <span class="step-phase">Phase 5</span>
-        <div class="step-title">Physics + UP Special</div>
-        <span class="step-dates">Days 16–17 (26–27 Nov)</span>
-      </div>
-      <div class="step-node">
-        <span class="step-phase">Phase 6</span>
-        <div class="step-title">Subject Rev + CSAT</div>
-        <span class="step-dates">Days 18–21 (28 Nov–01 Dec)</span>
-      </div>
-      <div class="step-node">
-        <span class="step-phase">Phase 7</span>
-        <div class="step-title">Full Mock Rehearsal</div>
-        <span class="step-dates">Day 22 (02 Dec)</span>
-      </div>
-      <div class="step-node">
-        <span class="step-phase">Phase 8</span>
-        <div class="step-title">3-Day Rapid Recall</div>
-        <span class="step-dates">Days 23–25 (03–05 Dec)</span>
+        <span class="completion-badge badge-target">🚀 Exam: Sun 6 Dec 2026</span>
+        <span style="font-size: 11px; color: var(--text-sub);">Ready for Merit</span>
       </div>
     </div>
   </div>
@@ -906,18 +720,16 @@
   <!-- Master Interactive Calendar Table -->
   <div class="controls-bar">
     <div class="section-title" style="margin-bottom: 0;">
-      <span>📅 Complete Day-by-Day Master Checklist (25 Days)</span>
+      <span>📅 22-Day Master Schedule with Calendar Lakshya Mocks</span>
     </div>
     <div class="filter-pills">
-      <button class="filter-pill active" onclick="filterTable('all')">All 25 Days</button>
-      <button class="filter-pill" onclick="filterTable('today')">Today (Day 04)</button>
-      <button class="filter-pill" onclick="filterTable('polity')">Polity</button>
-      <button class="filter-pill" onclick="filterTable('economy')">Economy</button>
-      <button class="filter-pill" onclick="filterTable('geo')">Geography</button>
+      <button class="filter-pill active" onclick="filterTable('all')">All 22 Days</button>
+      <button class="filter-pill" onclick="filterTable('today')">Today (14 Nov)</button>
+      <button class="filter-pill" onclick="filterTable('mocks')">Calendar Mocks</button>
       <button class="filter-pill" onclick="filterTable('history')">History</button>
+      <button class="filter-pill" onclick="filterTable('geo')">Geography/Env</button>
       <button class="filter-pill" onclick="filterTable('science')">Science</button>
-      <button class="filter-pill" onclick="filterTable('upspecial')">UP Special</button>
-      <button class="filter-pill" onclick="filterTable('final')">Final Sprint</button>
+      <button class="filter-pill" onclick="filterTable('flt')">FLTs (Complete)</button>
     </div>
   </div>
 
@@ -927,865 +739,751 @@
         <thead>
           <tr>
             <th style="width: 140px;">Day & Date</th>
-            <th style="width: 250px;">Subject 1 Focus</th>
-            <th style="width: 250px;">Subject 2 Focus</th>
-            <th style="width: 260px;">Recall, Sheet & Special Deliverables</th>
-            <th style="width: 170px;">Section Milestone</th>
-            <th style="width: 100px; text-align: center;">Status</th>
+            <th style="width: 280px;">🎯 Google Calendar Lakshya Mock</th>
+            <th style="width: 320px;">Subject & Topic Deep-Dive</th>
+            <th style="width: 250px;">Sheets & Special Deliverables</th>
+            <th style="width: 180px;">Section Completion</th>
+            <th style="width: 80px; text-align: center;">Status</th>
           </tr>
         </thead>
         <tbody>
 
-          <!-- DAY 01 -->
-          <tr class="struck-row" data-tags="polity economy">
-            <td>
-              <span class="day-badge">Day 01</span>
-              <div class="date-sub">Wed, 11 Nov 2026<br><span style="color: var(--emerald);">25 Days to D-Day</span></div>
-            </td>
-            <td>
-              <span class="subject-pill sub-polity">Polity</span>
-              <ul class="topic-list">
-                <li>Articles, Provisions, Parts & Schedules</li>
-                <li>Constitutional Amendments (1st to 106th)</li>
-              </ul>
-            </td>
-            <td>
-              <span class="subject-pill sub-economy">Economy</span>
-              <ul class="topic-list">
-                <li>Major Welfare Schemes Chronology</li>
-                <li>Launch years, ministries & key beneficiaries</li>
-              </ul>
-            </td>
-            <td>
-              <div style="font-size: 12px; color: var(--text-muted);">
-                <strong>Morning Recall:</strong> Parts, Schedules & Major Schemes from memory.<br>
-                <strong>Deliverable:</strong> Polity Sheet 1 + Economy Sheet 1.
-              </div>
-            </td>
-            <td>–</td>
-            <td style="text-align: center;">
-              <span class="completion-badge badge-done">✓ Done</span>
-            </td>
-          </tr>
-
-          <!-- DAY 02 -->
-          <tr class="struck-row" data-tags="polity economy">
-            <td>
-              <span class="day-badge">Day 02</span>
-              <div class="date-sub">Thu, 12 Nov 2026<br><span style="color: var(--emerald);">24 Days to D-Day</span></div>
-            </td>
-            <td>
-              <span class="subject-pill sub-polity">Polity</span>
-              <ul class="topic-list">
-                <li>Local Govt: Panchayats (73rd) & Municipalities (74th)</li>
-                <li>Preamble, Fundamental Rights & Writs</li>
-                <li>Fundamental Duties & DPSP (Art 36–51)</li>
-              </ul>
-            </td>
-            <td>
-              <span class="subject-pill sub-economy">Economy</span>
-              <ul class="topic-list">
-                <li>Union Budget 2026-27 & Economic Survey</li>
-                <li>UP Budget & Economic Survey indicators</li>
-              </ul>
-            </td>
-            <td>
-              <div style="font-size: 12px; color: var(--text-muted);">
-                <strong>Morning Recall:</strong> Article-Provision & Amendment numbers.<br>
-                <strong>Deliverable:</strong> Polity Sheet 2 + Economy Sheet 2.
-              </div>
-            </td>
-            <td>–</td>
-            <td style="text-align: center;">
-              <span class="completion-badge badge-done">✓ Done</span>
-            </td>
-          </tr>
-
-          <!-- DAY 03 -->
-          <tr class="struck-row" data-tags="polity economy">
-            <td>
-              <span class="day-badge">Day 03</span>
-              <div class="date-sub">Fri, 13 Nov 2026<br><span style="color: var(--emerald);">23 Days to D-Day</span></div>
-            </td>
-            <td>
-              <span class="subject-pill sub-polity">Polity</span>
-              <ul class="topic-list">
-                <li>Parliament & State Legislature (Bills, Committees)</li>
-                <li>Union Executive (President, VP, PM, Council)</li>
-                <li>State Executive (Governor vs President powers)</li>
-              </ul>
-            </td>
-            <td>
-              <span class="subject-pill sub-economy">Economy</span>
-              <ul class="topic-list">
-                <li>Unemployment types & measurements</li>
-                <li>Poverty Committees (Lakdawala, Tendulkar, Rangarajan)</li>
-                <li>Multidimensional Poverty Index (MPI)</li>
-              </ul>
-            </td>
-            <td>
-              <div style="font-size: 12px; color: var(--text-muted);">
-                <strong>Morning Recall:</strong> Local Govt Committees & FR Articles.<br>
-                <strong>Deliverable:</strong> Polity Sheet 3 + Economy Sheet 3.
-              </div>
-            </td>
-            <td>–</td>
-            <td style="text-align: center;">
-              <span class="completion-badge badge-done">✓ Done</span>
-            </td>
-          </tr>
-
-          <!-- DAY 04 (TODAY) -->
-          <tr class="today-row" data-tags="today polity economy">
+          <!-- DAY 01 (TODAY) -->
+          <tr class="today-row" data-tags="today mocks polity">
             <td>
               <div style="display: flex; align-items: center; gap: 6px;">
-                <span class="day-badge" style="color: var(--blue);">Day 04</span>
+                <span class="day-badge" style="color: var(--blue);">Day 01</span>
                 <span style="background: var(--blue); color: #000; font-size: 10px; font-weight: 800; padding: 2px 6px; border-radius: 4px;">TODAY</span>
               </div>
               <div class="date-sub"><strong>Sat, 14 Nov 2026</strong><br><span style="color: var(--gold);">22 Days to D-Day</span></div>
             </td>
             <td>
-              <span class="subject-pill sub-polity">Polity</span>
-              <ul class="topic-list">
-                <li>Constitutional Bodies (UPSC/SPSC Art 315-323, CAG 148, ECI 324, FC 280)</li>
-                <li>UP Bodies: UPPSC & State Election Commission</li>
-                <li>Federalism & Inter-State Relations (Art 262, 263)</li>
-              </ul>
+              <span class="mock-pill">📝 Pending Mock | Polity</span>
+              <p style="font-size: 12px; color: #fff;">
+                <strong>UPPSC Lakshya Test 01 (Indian Polity):</strong><br>
+                Timed test attempt (2h) + mistake classification into revision sheets.
+              </p>
             </td>
             <td>
-              <span class="subject-pill sub-economy">Economy</span>
-              <ul class="topic-list">
-                <li>National Income, GDP/GVA, Factor Cost vs Market Price</li>
-                <li>CPI, WPI, IIP base years & weightages</li>
-                <li>Inflation types, HDI, MPI & Development metrics</li>
+              <strong style="color: #38bdf8; font-size: 13px;">Indian Polity + Indian Economy:</strong>
+              <ul class="topic-list" style="margin-top: 4px;">
+                <li>Constitutional Bodies (UPSC/SPSC Art 315–323, CAG 148, ECI 324, FC 280)</li>
+                <li>National Income, GDP/GVA, CPI/WPI Base Years, Inflation</li>
+                <li>Poverty Committees & Welfare Schemes</li>
               </ul>
             </td>
             <td>
               <div style="font-size: 12px; color: #cbd5e1;">
                 <strong>📺 Special:</strong> UP Budget Video (<a href="https://youtu.be/xptiYuULP8Y" target="_blank" style="color: var(--gold);">youtu.be/xptiYuULP8Y</a>)<br>
                 <strong>📚 Special:</strong> Lakshya 500 MCQs (Q1–100)<br>
-                <strong>📝 Special:</strong> Pending UPPSC Full Mock Attempt<br>
-                <strong>Deliverable:</strong> Polity Sheet 4 (Bodies & Federalism).
+                <strong>Deliverables:</strong> Polity Sheets 1–4 + Economy Sheet 1.
               </div>
             </td>
             <td>
-              <span class="milestone-tag">⚡ Penultimate Core Day</span>
+              <span class="completion-badge badge-active">⚡ Fresh Sprint Launch</span>
             </td>
             <td style="text-align: center;">
-              <span class="completion-badge badge-active">In Progress</span>
+              <span class="completion-badge badge-active">Active</span>
+            </td>
+          </tr>
+
+          <!-- DAY 02 -->
+          <tr data-tags="mocks history">
+            <td>
+              <span class="day-badge">Day 02</span>
+              <div class="date-sub">Sun, 15 Nov 2026<br><span style="color: var(--text-sub);">21 Days to D-Day</span></div>
+            </td>
+            <td>
+              <span class="mock-pill">📝 Calendar Mock | 08:30 AM</span>
+              <p style="font-size: 12px; color: #fff;">
+                <strong>UPPSC Test 02 | Ancient History:</strong><br>
+                Attempt 2h + Analysis 3h (IAS PCS Pathshala Lakshya 2.0 Batch 2).
+              </p>
+            </td>
+            <td>
+              <strong style="color: #e879f9; font-size: 13px;">Ancient Indian History:</strong>
+              <ul class="topic-list" style="margin-top: 4px;">
+                <li>Harappan Sites, Findings, River Banks & Archaeological Cultures</li>
+                <li>Buddhism & Jainism: Doctrines, Councils, Symbols, Literature</li>
+                <li>Mauryan & Gupta Empires: Rulers, Inscriptions & Foreign Travellers</li>
+              </ul>
+            </td>
+            <td>
+              <div style="font-size: 12px; color: var(--text-muted);">
+                <strong>📚 Special:</strong> Lakshya 500 MCQs (Q101–175)<br>
+                <strong>Deliverables:</strong> Ancient History Sheets 1–3.
+              </div>
+            </td>
+            <td>
+              <span class="completion-badge badge-target" style="display: block; text-align: center;">🏁 ANCIENT HIST COMPLETE</span>
+            </td>
+            <td style="text-align: center;">
+              <input type="checkbox" style="cursor: pointer; width: 16px; height: 16px;">
+            </td>
+          </tr>
+
+          <!-- DAY 03 -->
+          <tr data-tags="mocks history upspecial">
+            <td>
+              <span class="day-badge">Day 03</span>
+              <div class="date-sub">Mon, 16 Nov 2026<br><span style="color: var(--text-sub);">20 Days to D-Day</span></div>
+            </td>
+            <td>
+              <span class="mock-pill">📝 Mock 1 | 08:30 AM</span>
+              <p style="font-size: 12px; color: #fff; margin-bottom: 6px;">
+                <strong>UPPSC Test 04 | Medieval History:</strong> Attempt 2h + Analysis 3h.
+              </p>
+              <span class="mock-pill" style="background: rgba(250, 204, 21, 0.15); border-color: rgba(250, 204, 21, 0.4); color: #facc15;">📝 Mock 2 | 14:00 PM</span>
+              <p style="font-size: 12px; color: #fff;">
+                <strong>UPPSC Test 09 | UP GK:</strong> Attempt 2h + Analysis 3h.
+              </p>
+            </td>
+            <td>
+              <strong style="color: #f472b6; font-size: 13px;">Medieval History + UP Special:</strong>
+              <ul class="topic-list" style="margin-top: 4px;">
+                <li>Delhi Sultanate Admin Terms, Battles in Chronology</li>
+                <li>Mughals & Marathas Succession, Temples & Architecture</li>
+                <li>UP 75 Districts, 18 Divisions, ODOP Mapping & UP Ramsar</li>
+              </ul>
+            </td>
+            <td>
+              <div style="font-size: 12px; color: var(--text-muted);">
+                <strong>📚 Special:</strong> Lakshya 500 MCQs (Q176–250)<br>
+                <strong>Deliverables:</strong> Medieval History Sheets 1–3 + UP Sheet 1.
+              </div>
+            </td>
+            <td>
+              <span class="completion-badge badge-target" style="display: block; text-align: center;">🏁 MEDIEVAL HIST COMPLETE</span>
+            </td>
+            <td style="text-align: center;">
+              <input type="checkbox" style="cursor: pointer; width: 16px; height: 16px;">
+            </td>
+          </tr>
+
+          <!-- DAY 04 -->
+          <tr data-tags="mocks history">
+            <td>
+              <span class="day-badge">Day 04</span>
+              <div class="date-sub">Tue, 17 Nov 2026<br><span style="color: var(--text-sub);">19 Days to D-Day</span></div>
+            </td>
+            <td>
+              <span class="mock-pill">📝 Calendar Mock | 13:00 PM</span>
+              <p style="font-size: 12px; color: #fff;">
+                <strong>UPPSC Test 07 | Modern History:</strong><br>
+                Attempt 2h + Analysis 3h (Lakshya 2.0 Test 07).
+              </p>
+            </td>
+            <td>
+              <strong style="color: #fb923c; font-size: 13px;">Modern Indian History:</strong>
+              <ul class="topic-list" style="margin-top: 4px;">
+                <li>1917–1947 Chronology: Champaran to Independence</li>
+                <li>1857 Revolt, Early Nationalism & Congress Sessions</li>
+                <li>British Wars & Treaties, Governors-General Policies, Books</li>
+              </ul>
+            </td>
+            <td>
+              <div style="font-size: 12px; color: var(--text-muted);">
+                <strong>📚 Special:</strong> Lakshya 500 MCQs (Q251–325)<br>
+                <strong>Deliverables:</strong> Modern History Sheets 1–3.
+              </div>
+            </td>
+            <td>
+              <span class="completion-badge badge-target" style="display: block; text-align: center;">🏁 MODERN HIST COMPLETE</span>
+            </td>
+            <td style="text-align: center;">
+              <input type="checkbox" style="cursor: pointer; width: 16px; height: 16px;">
             </td>
           </tr>
 
           <!-- DAY 05 -->
-          <tr data-tags="polity economy">
+          <tr data-tags="mocks geo">
             <td>
               <span class="day-badge">Day 05</span>
-              <div class="date-sub">Sun, 15 Nov 2026<br><span style="color: var(--text-sub);">21 Days to D-Day</span></div>
+              <div class="date-sub">Wed, 18 Nov 2026<br><span style="color: var(--text-sub);">18 Days to D-Day</span></div>
             </td>
             <td>
-              <span class="subject-pill sub-polity">Polity</span>
-              <ul class="topic-list">
-                <li>Judiciary: Supreme Court & High Courts</li>
-                <li>Basic Structure Doctrine & Landmark Judgments</li>
-                <li>Final Constitutional Consolidation</li>
-              </ul>
+              <span class="mock-pill">📝 Calendar Mock | 13:00 PM</span>
+              <p style="font-size: 12px; color: #fff;">
+                <strong>UPPSC Test 05 | Geography:</strong><br>
+                Attempt 2h + Analysis 3h (Lakshya 2.0 Test 05).
+              </p>
             </td>
             <td>
-              <span class="subject-pill sub-economy">Economy</span>
-              <ul class="topic-list">
-                <li>External Sector, BOP, Forex & Trade Policy</li>
-                <li>Banking, RBI Monetary Policy, Financial Inclusion</li>
-                <li>Industrial & Infrastructure Policy</li>
+              <strong style="color: #60a5fa; font-size: 13px;">Indian & World Geography:</strong>
+              <ul class="topic-list" style="margin-top: 4px;">
+                <li>Indian River Systems, Lakes, Canals & Global Chokepoints</li>
+                <li>Crops, Minerals Distribution & Industrial Belts</li>
+                <li>Oceans, Peaks, Passes, Climatology, Soils & Census 2011</li>
               </ul>
             </td>
             <td>
               <div style="font-size: 12px; color: var(--text-muted);">
-                <strong>Morning Recall:</strong> Constitutional Bodies appointment/removal.<br>
-                <strong>Deliverable:</strong> Polity Sheets 1–4 Final Review + Economy Sheets 1–3 Final Review.
+                <strong>📚 Special:</strong> Lakshya 500 MCQs (Q326–400)<br>
+                <strong>Deliverables:</strong> Geography Sheets 1–4.
               </div>
             </td>
             <td>
-              <span class="completion-badge badge-done" style="display: block; text-align: center; margin-bottom: 4px;">🏁 POLITY COMPLETE</span>
-              <span class="completion-badge badge-done" style="display: block; text-align: center;">🏁 ECONOMY COMPLETE</span>
+              <span class="completion-badge badge-target" style="display: block; text-align: center;">🏁 GEOGRAPHY COMPLETE</span>
             </td>
             <td style="text-align: center;">
-              <label class="plan-check"><input type="checkbox" onchange="toggleDay('day-05')"> <span>Log</span></label>
+              <input type="checkbox" style="cursor: pointer; width: 16px; height: 16px;">
             </td>
           </tr>
 
           <!-- DAY 06 -->
-          <tr data-tags="geo env">
+          <tr data-tags="mocks geo">
             <td>
               <span class="day-badge">Day 06</span>
-              <div class="date-sub">Mon, 16 Nov 2026<br><span style="color: var(--text-sub);">20 Days to D-Day</span></div>
+              <div class="date-sub">Thu, 19 Nov 2026<br><span style="color: var(--text-sub);">17 Days to D-Day</span></div>
             </td>
             <td>
-              <span class="subject-pill sub-geo">Geography</span>
-              <ul class="topic-list">
-                <li>Indian River Systems (Himalayan & Peninsular)</li>
-                <li>Major Lakes, Waterfalls, Canals & Chokepoints</li>
-                <li>Global Straits & Sea Routes</li>
-              </ul>
+              <span class="mock-pill">📝 Calendar Mock | 13:00 PM</span>
+              <p style="font-size: 12px; color: #fff;">
+                <strong>UPPSC Test 06 | Environment:</strong><br>
+                Attempt 2h + Analysis 3h (Lakshya 2.0 Test 06).
+              </p>
             </td>
             <td>
-              <span class="subject-pill sub-env">Environment</span>
-              <ul class="topic-list">
+              <strong style="color: #34d399; font-size: 13px;">Environment & Ecology:</strong>
+              <ul class="topic-list" style="margin-top: 4px;">
                 <li>Environmental Acts & Laws Chronology (EPA 1986, WPA 1972)</li>
-                <li>Key Wildlife Projects (Tiger 1973, Elephant 1992, Rhino)</li>
-                <li>International Conventions (Ramsar, CITES, CMS, Basel)</li>
+                <li>National Parks, Biosphere Reserves, Ramsar Sites (UP 10)</li>
+                <li>ISFR 2023 State Rankings, SDGs, Pollution & GHGs</li>
               </ul>
             </td>
             <td>
               <div style="font-size: 12px; color: var(--text-muted);">
-                <strong>Morning Recall:</strong> Polity & Economy Sheets rapid recall.<br>
-                <strong>Deliverable:</strong> Geography Sheet 1 + Environment Sheet 1.
+                <strong>📚 Special:</strong> Lakshya 500 MCQs (Q401–500 Complete!)<br>
+                <strong>Deliverables:</strong> Environment Sheets 1–3.
               </div>
             </td>
-            <td>–</td>
+            <td>
+              <span class="completion-badge badge-target" style="display: block; text-align: center;">🏁 ENVIRONMENT COMPLETE</span>
+            </td>
             <td style="text-align: center;">
-              <label class="plan-check"><input type="checkbox" onchange="toggleDay('day-06')"> <span>Log</span></label>
+              <input type="checkbox" style="cursor: pointer; width: 16px; height: 16px;">
             </td>
           </tr>
 
           <!-- DAY 07 -->
-          <tr data-tags="geo env">
+          <tr data-tags="polity upspecial">
             <td>
               <span class="day-badge">Day 07</span>
-              <div class="date-sub">Tue, 17 Nov 2026<br><span style="color: var(--text-sub);">19 Days to D-Day</span></div>
+              <div class="date-sub">Fri, 20 Nov 2026<br><span style="color: var(--text-sub);">16 Days to D-Day</span></div>
             </td>
             <td>
-              <span class="subject-pill sub-geo">Geography</span>
-              <ul class="topic-list">
-                <li>Agriculture: Crops, Cropping Seasons, Production Ranks</li>
-                <li>Minerals: Metallic & Non-metallic distribution</li>
-                <li>Critical Minerals & Major Industrial Belts</li>
-              </ul>
+              <span class="mock-pill" style="background: rgba(56, 189, 248, 0.15); border-color: rgba(56, 189, 248, 0.4); color: #38bdf8;">🔄 Revision & Analysis Day</span>
+              <p style="font-size: 12px; color: #fff;">
+                Remediate all errors from Tests 02, 04, 07, 05, 06, 09 into sheets.
+              </p>
             </td>
             <td>
-              <span class="subject-pill sub-env">Environment</span>
-              <ul class="topic-list">
-                <li>National Parks & Wildlife Sanctuaries</li>
-                <li>Biosphere Reserves (18 in India, MAB Network)</li>
-                <li>Ramsar Sites of India (Special focus on UP's 10 sites)</li>
+              <strong style="color: #38bdf8; font-size: 13px;">Polity Consolidation + UP Special:</strong>
+              <ul class="topic-list" style="margin-top: 4px;">
+                <li>Articles 1–395 rapid quiz, Amendments, Judiciary, Federalism</li>
+                <li>UP Budget 2026-27 allocations, Expressways & Corridors</li>
               </ul>
             </td>
             <td>
               <div style="font-size: 12px; color: var(--text-muted);">
-                <strong>Morning Recall:</strong> River tributaries & Environmental Acts.<br>
-                <strong>Deliverable:</strong> Geography Sheet 2 + Environment Sheet 2.
+                <strong>Deliverables:</strong> UP Special Sheets 2 & 3.
               </div>
             </td>
-            <td>–</td>
+            <td>
+              <span class="completion-badge badge-target" style="display: block; text-align: center;">🏁 UP SPECIAL COMPLETE</span>
+            </td>
             <td style="text-align: center;">
-              <label class="plan-check"><input type="checkbox" onchange="toggleDay('day-07')"> <span>Log</span></label>
+              <input type="checkbox" style="cursor: pointer; width: 16px; height: 16px;">
             </td>
           </tr>
 
           <!-- DAY 08 -->
-          <tr data-tags="geo env">
+          <tr data-tags="economy">
             <td>
               <span class="day-badge">Day 08</span>
-              <div class="date-sub">Wed, 18 Nov 2026<br><span style="color: var(--text-sub);">18 Days to D-Day</span></div>
+              <div class="date-sub">Sat, 21 Nov 2026<br><span style="color: var(--text-sub);">15 Days to D-Day</span></div>
             </td>
             <td>
-              <span class="subject-pill sub-geo">Geography</span>
-              <ul class="topic-list">
-                <li>Oceans, Ocean Currents, Trenches & Ridges</li>
-                <li>World Mountain Peaks, Ranges & Passes</li>
-                <li>Major Deserts, Plateaus & Volcanoes</li>
-              </ul>
+              <span class="mock-pill" style="background: rgba(16, 185, 129, 0.15); border-color: rgba(16, 185, 129, 0.4); color: #10b981;">📈 Economy Deep Sprint</span>
+              <p style="font-size: 12px; color: #fff;">
+                Pre-test mastery of all Macro, Banking, and Budget figures.
+              </p>
             </td>
             <td>
-              <span class="subject-pill sub-env">Environment</span>
-              <ul class="topic-list">
-                <li>India State of Forest Report (ISFR 2023) State Rankings</li>
-                <li>Ecological Concepts, Food Webs, Biomagnification</li>
-                <li>SDGs (1 to 17), Pollution, GHGs & Ozone Depletion</li>
+              <strong style="color: #10b981; font-size: 13px;">Indian Economy Macroeconomics:</strong>
+              <ul class="topic-list" style="margin-top: 4px;">
+                <li>GDP/GVA, Factor Cost, National Income calculations</li>
+                <li>Banking: CRR, SLR, Repo, Reverse Repo, Financial Inclusion</li>
+                <li>Union Budget 2026-27 & Economic Survey figures</li>
               </ul>
             </td>
             <td>
               <div style="font-size: 12px; color: var(--text-muted);">
-                <strong>Morning Recall:</strong> Protected areas & crop production data.<br>
-                <strong>Deliverable:</strong> Geography Sheet 3 + Environment Sheet 3.
+                <strong>Deliverables:</strong> Economy Sheets 1–3 review.
               </div>
             </td>
             <td>
-              <span class="completion-badge badge-done" style="display: block; text-align: center;">🏁 ENVIRONMENT COMPLETE</span>
+              <span class="completion-badge badge-upcoming">Pre-Mock Mastered</span>
             </td>
             <td style="text-align: center;">
-              <label class="plan-check"><input type="checkbox" onchange="toggleDay('day-08')"> <span>Log</span></label>
+              <input type="checkbox" style="cursor: pointer; width: 16px; height: 16px;">
             </td>
           </tr>
 
           <!-- DAY 09 -->
-          <tr data-tags="geo history">
+          <tr data-tags="mocks economy">
             <td>
               <span class="day-badge">Day 09</span>
-              <div class="date-sub">Thu, 19 Nov 2026<br><span style="color: var(--text-sub);">17 Days to D-Day</span></div>
+              <div class="date-sub">Sun, 22 Nov 2026<br><span style="color: var(--text-sub);">14 Days to D-Day</span></div>
             </td>
             <td>
-              <span class="subject-pill sub-geo">Geography</span>
-              <ul class="topic-list">
-                <li>Census 2011 Data: India & UP comparison</li>
-                <li>Population density, sex ratio, literacy & urbanization</li>
-                <li>Countries, Capitals & Major Border Disputes</li>
-              </ul>
+              <span class="mock-pill">📝 Calendar Mock | 08:30 AM</span>
+              <p style="font-size: 12px; color: #fff;">
+                <strong>UPPSC Test 03 | Economy:</strong><br>
+                Attempt 2h + Analysis 3h (Lakshya 2.0 Test 03).
+              </p>
             </td>
             <td>
-              <span class="subject-pill sub-modern">Modern History</span>
-              <ul class="topic-list">
-                <li>Chronologies 1917–1947 (Champaran to Independence)</li>
-                <li>Rowlatt, Non-Cooperation, Civil Disobedience, Quit India</li>
-                <li>Revolutionary & Left Organizations (HRA, HSRA, CPI)</li>
+              <strong style="color: #10b981; font-size: 13px;">Economy Testing & Scheme Mastery:</strong>
+              <ul class="topic-list" style="margin-top: 4px;">
+                <li>Full post-test analysis of Test 03 questions</li>
+                <li>Patching scheme launch years & ministry questions</li>
               </ul>
             </td>
             <td>
               <div style="font-size: 12px; color: var(--text-muted);">
-                <strong>Morning Recall:</strong> ISFR data & World peaks/deserts.<br>
-                <strong>Deliverable:</strong> Geography Sheet 4 + Modern History Sheet 1.
+                <strong>Deliverables:</strong> Economy Error Log.
               </div>
             </td>
-            <td>–</td>
+            <td>
+              <span class="completion-badge badge-target" style="display: block; text-align: center;">🏁 ECONOMY COMPLETE</span>
+            </td>
             <td style="text-align: center;">
-              <label class="plan-check"><input type="checkbox" onchange="toggleDay('day-09')"> <span>Log</span></label>
+              <input type="checkbox" style="cursor: pointer; width: 16px; height: 16px;">
             </td>
           </tr>
 
           <!-- DAY 10 -->
-          <tr data-tags="geo history">
+          <tr data-tags="mocks science">
             <td>
               <span class="day-badge">Day 10</span>
-              <div class="date-sub">Fri, 20 Nov 2026<br><span style="color: var(--text-sub);">16 Days to D-Day</span></div>
+              <div class="date-sub">Mon, 23 Nov 2026<br><span style="color: var(--text-sub);">13 Days to D-Day</span></div>
             </td>
             <td>
-              <span class="subject-pill sub-geo">Geography</span>
-              <ul class="topic-list">
-                <li>Climatology: Pressure Belts, Winds, Monsoons</li>
-                <li>Natural Vegetation, Forests & World Grasslands</li>
-                <li>Ocean Currents (Warm vs Cold)</li>
-              </ul>
+              <span class="mock-pill">📝 Calendar Mock | 13:00 PM</span>
+              <p style="font-size: 12px; color: #fff;">
+                <strong>UPPSC Test 08 | General Science:</strong><br>
+                Attempt 2h + Analysis 3h (Lakshya 2.0 Test 08).
+              </p>
             </td>
             <td>
-              <span class="subject-pill sub-modern">Modern History</span>
-              <ul class="topic-list">
-                <li>Anglo-Carnatic, Maratha, Mysore, Sikh Wars & Treaties</li>
-                <li>Governors-General & Viceroys key policies</li>
-                <li>Early Nationalism: Congress Sessions & 1857 Revolt</li>
+              <strong style="color: #a78bfa; font-size: 13px;">General Science (Bio + Chem + Physics):</strong>
+              <ul class="topic-list" style="margin-top: 4px;">
+                <li>Vitamins, Deficiency Diseases, Glands, Hormones, Pathogens</li>
+                <li>Acids, Bases, Salts, Alloys, Fuels, Chemical Formulas</li>
+                <li>Optics, Sound, EM Spectrum, ISRO & Space Missions</li>
               </ul>
             </td>
             <td>
               <div style="font-size: 12px; color: var(--text-muted);">
-                <strong>Morning Recall:</strong> Census numbers & Freedom movement timeline.<br>
-                <strong>Deliverable:</strong> Modern History Sheet 2.
+                <strong>Deliverables:</strong> Science Sheets 1–3.
               </div>
             </td>
-            <td>–</td>
+            <td>
+              <span class="completion-badge badge-target" style="display: block; text-align: center;">🏁 SCIENCE (ALL) COMPLETE</span>
+            </td>
             <td style="text-align: center;">
-              <label class="plan-check"><input type="checkbox" onchange="toggleDay('day-10')"> <span>Log</span></label>
+              <input type="checkbox" style="cursor: pointer; width: 16px; height: 16px;">
             </td>
           </tr>
 
           <!-- DAY 11 -->
-          <tr data-tags="geo history">
+          <tr data-tags="mocks flt">
             <td>
               <span class="day-badge">Day 11</span>
-              <div class="date-sub">Sat, 21 Nov 2026<br><span style="color: var(--text-sub);">15 Days to D-Day</span></div>
+              <div class="date-sub">Tue, 24 Nov 2026<br><span style="color: var(--text-sub);">12 Days to D-Day</span></div>
             </td>
             <td>
-              <span class="subject-pill sub-geo">Geography</span>
-              <ul class="topic-list">
-                <li>Atmosphere layers, Insolation & Heat Budget</li>
-                <li>Major Tribes (India & World) & Settlements</li>
-                <li>Indian Soils classification & erosion</li>
-              </ul>
+              <span class="mock-pill drishti-pill">📝 Drishti Open Mock | 13:00 PM</span>
+              <p style="font-size: 12px; color: #fff;">
+                <strong>Imtihaan 1 | Drishti Open Mock (PYQ Based):</strong><br>
+                Attempt 2h + Analysis 3h.
+              </p>
             </td>
             <td>
-              <span class="subject-pill sub-modern">Modern History</span>
-              <ul class="topic-list">
-                <li>Tribal & Peasant Revolts (Santhal, Munda, Indigo, Pabna)</li>
-                <li>Social, Caste & Women's Reform Movements</li>
-                <li>Historical Books, Journals, Newspapers & Founders</li>
+              <strong style="color: #c084fc; font-size: 13px;">PYQ Pattern Alignment:</strong>
+              <ul class="topic-list" style="margin-top: 4px;">
+                <li>Exam-hall simulation on past trends & question framing</li>
+                <li>Review high-yield PYQ traps in History & Polity</li>
               </ul>
             </td>
             <td>
               <div style="font-size: 12px; color: var(--text-muted);">
-                <strong>Morning Recall:</strong> Monsoon mechanisms & British treaties.<br>
-                <strong>Deliverable:</strong> Modern History Sheet 3.
+                <strong>Deliverables:</strong> Imtihaan 1 Diagnostic Score.
               </div>
             </td>
             <td>
-              <span class="completion-badge badge-done" style="display: block; text-align: center; margin-bottom: 4px;">🏁 GEOGRAPHY COMPLETE</span>
-              <span class="completion-badge badge-done" style="display: block; text-align: center;">🏁 MODERN HIST COMPLETE</span>
+              <span class="completion-badge badge-upcoming">PYQ Rehearsal 1 Done</span>
             </td>
             <td style="text-align: center;">
-              <label class="plan-check"><input type="checkbox" onchange="toggleDay('day-11')"> <span>Log</span></label>
+              <input type="checkbox" style="cursor: pointer; width: 16px; height: 16px;">
             </td>
           </tr>
 
           <!-- DAY 12 -->
-          <tr data-tags="science history">
+          <tr data-tags="mocks flt">
             <td>
               <span class="day-badge">Day 12</span>
-              <div class="date-sub">Sun, 22 Nov 2026<br><span style="color: var(--text-sub);">14 Days to D-Day</span></div>
+              <div class="date-sub">Wed, 25 Nov 2026<br><span style="color: var(--text-sub);">11 Days to D-Day</span></div>
             </td>
             <td>
-              <span class="subject-pill sub-science">Science (Bio)</span>
-              <ul class="topic-list">
-                <li>Vitamins (Sources, Deficiency Diseases, Chemical names)</li>
-                <li>Nutrition: Carbohydrates, Proteins, Lipids, Minerals</li>
-                <li>Human Digestive & Circulatory Systems</li>
-              </ul>
+              <span class="mock-pill flt-pill">📝 FLT 1 | 13:00 PM</span>
+              <p style="font-size: 12px; color: #fff;">
+                <strong>UPPSC Test 10 | FLT 1 (Complete Syllabus):</strong><br>
+                Attempt 2h + Analysis 3h (150 Questions, 200 Marks).
+              </p>
             </td>
             <td>
-              <span class="subject-pill sub-ancient">Ancient History</span>
-              <ul class="topic-list">
-                <li>Harappan Sites, Findings, River Banks & Excavators</li>
-                <li>Prehistoric & Chalcolithic Cultures in India</li>
-                <li>Vedic Literature, Epics & Mahajanapadas</li>
+              <strong style="color: #c084fc; font-size: 13px;">Full Syllabus Rehearsal 1:</strong>
+              <ul class="topic-list" style="margin-top: 4px;">
+                <li>Strict time management: 150 Qs in 120 minutes</li>
+                <li>Immediate gap analysis across all 8 subjects</li>
               </ul>
             </td>
             <td>
               <div style="font-size: 12px; color: var(--text-muted);">
-                <strong>Morning Recall:</strong> Geography maps & Modern history books.<br>
-                <strong>Deliverable:</strong> Science Sheet 1 (Bio) + Ancient History Sheet 1.
+                <strong>Deliverables:</strong> FLT 1 Mistake Log.
               </div>
             </td>
-            <td>–</td>
+            <td>
+              <span class="completion-badge badge-upcoming">FLT 1 Complete</span>
+            </td>
             <td style="text-align: center;">
-              <label class="plan-check"><input type="checkbox" onchange="toggleDay('day-12')"> <span>Log</span></label>
+              <input type="checkbox" style="cursor: pointer; width: 16px; height: 16px;">
             </td>
           </tr>
 
           <!-- DAY 13 -->
-          <tr data-tags="science history">
+          <tr data-tags="mocks flt">
             <td>
               <span class="day-badge">Day 13</span>
-              <div class="date-sub">Mon, 23 Nov 2026<br><span style="color: var(--text-sub);">13 Days to D-Day</span></div>
+              <div class="date-sub">Thu, 26 Nov 2026<br><span style="color: var(--text-sub);">10 Days to D-Day</span></div>
             </td>
             <td>
-              <span class="subject-pill sub-science">Science (Bio)</span>
-              <ul class="topic-list">
-                <li>Human Organs, Glands, Hormones & Enzymes</li>
-                <li>Nervous System, Brain Structure, Excretory System</li>
-                <li>Genetics, DNA/RNA, Blood Groups</li>
-              </ul>
+              <span class="mock-pill drishti-pill">📝 Drishti Open Mock | 13:00 PM</span>
+              <p style="font-size: 12px; color: #fff;">
+                <strong>Imtihaan 2 | Drishti Open Mock (PYQ Based):</strong><br>
+                Attempt 2h + Analysis 3h.
+              </p>
             </td>
             <td>
-              <span class="subject-pill sub-ancient">Ancient History</span>
-              <ul class="topic-list">
-                <li>Buddhism & Jainism (Doctrines, Councils, Symbols)</li>
-                <li>Mauryan & Gupta Dynasties (Rulers, Admin, Inscriptions)</li>
-                <li>Foreign Travellers (Megasthenes, Fa-Hien, Hiuen Tsang)</li>
+              <strong style="color: #c084fc; font-size: 13px;">PYQ Pattern Alignment 2:</strong>
+              <ul class="topic-list" style="margin-top: 4px;">
+                <li>Elimination technique polish on tricky assertion-reason Qs</li>
               </ul>
             </td>
             <td>
               <div style="font-size: 12px; color: var(--text-muted);">
-                <strong>Morning Recall:</strong> Vitamins & Harappan findings.<br>
-                <strong>Deliverable:</strong> Ancient History Sheets 2 & 3.
+                <strong>Deliverables:</strong> Imtihaan 2 Diagnostic Score.
               </div>
             </td>
             <td>
-              <span class="completion-badge badge-done" style="display: block; text-align: center;">🏁 ANCIENT HIST COMPLETE</span>
+              <span class="completion-badge badge-upcoming">PYQ Rehearsal 2 Done</span>
             </td>
             <td style="text-align: center;">
-              <label class="plan-check"><input type="checkbox" onchange="toggleDay('day-13')"> <span>Log</span></label>
+              <input type="checkbox" style="cursor: pointer; width: 16px; height: 16px;">
             </td>
           </tr>
 
           <!-- DAY 14 -->
-          <tr data-tags="science history">
+          <tr data-tags="mocks flt">
             <td>
               <span class="day-badge">Day 14</span>
-              <div class="date-sub">Tue, 24 Nov 2026<br><span style="color: var(--text-sub);">12 Days to D-Day</span></div>
+              <div class="date-sub">Fri, 27 Nov 2026<br><span style="color: var(--text-sub);">9 Days to D-Day</span></div>
             </td>
             <td>
-              <span class="subject-pill sub-science">Science (Bio)</span>
-              <ul class="topic-list">
-                <li>Diseases (Bacterial, Viral, Fungal, Protozoan)</li>
-                <li>Pathogens, Vectors, Incubation & Vaccines</li>
-                <li>Plant Physiology, Photosynthesis, Plant Hormones</li>
-              </ul>
+              <span class="mock-pill flt-pill">📝 FLT 2 | 13:00 PM</span>
+              <p style="font-size: 12px; color: #fff;">
+                <strong>UPPSC Test 11 | FLT 2 (Complete Syllabus):</strong><br>
+                Attempt 2h + Analysis 3h (Lakshya 2.0 Test 11).
+              </p>
             </td>
             <td>
-              <span class="subject-pill sub-medieval">Medieval History</span>
-              <ul class="topic-list">
-                <li>Delhi Sultanate: Slave, Khalji, Tughlaq, Sayyid, Lodi</li>
-                <li>Administrative Terms (Iqta, Diwan-i-Arz, etc.)</li>
-                <li>Important Battles in chronological sequence</li>
+              <strong style="color: #c084fc; font-size: 13px;">Full Syllabus Rehearsal 2:</strong>
+              <ul class="topic-list" style="margin-top: 4px;">
+                <li>Second full benchmark; target 100+ net score</li>
               </ul>
             </td>
             <td>
               <div style="font-size: 12px; color: var(--text-muted);">
-                <strong>Morning Recall:</strong> Glands/hormones & Buddhist councils.<br>
-                <strong>Deliverable:</strong> Medieval History Sheet 1.
+                <strong>Deliverables:</strong> FLT 2 Mistake Log.
               </div>
             </td>
             <td>
-              <span class="completion-badge badge-done" style="display: block; text-align: center;">🏁 BIOLOGY COMPLETE</span>
+              <span class="completion-badge badge-upcoming">FLT 2 Complete</span>
             </td>
             <td style="text-align: center;">
-              <label class="plan-check"><input type="checkbox" onchange="toggleDay('day-14')"> <span>Log</span></label>
+              <input type="checkbox" style="cursor: pointer; width: 16px; height: 16px;">
             </td>
           </tr>
 
           <!-- DAY 15 -->
-          <tr data-tags="science history">
+          <tr data-tags="history polity">
             <td>
               <span class="day-badge">Day 15</span>
-              <div class="date-sub">Wed, 25 Nov 2026<br><span style="color: var(--text-sub);">11 Days to D-Day</span></div>
+              <div class="date-sub">Sat, 28 Nov 2026<br><span style="color: var(--text-sub);">8 Days to D-Day</span></div>
             </td>
             <td>
-              <span class="subject-pill sub-science">Science (Chem)</span>
-              <ul class="topic-list">
-                <li>Everyday Chemistry: Acids, Bases, Salts, pH scale</li>
-                <li>Alloy Compositions (Brass, Bronze, Duralumin, Solder)</li>
-                <li>Fuels, Polymers, Common Chemical Formulas (Bleaching powder, Plaster of Paris)</li>
-              </ul>
+              <span class="mock-pill" style="background: rgba(56, 189, 248, 0.15); border-color: rgba(56, 189, 248, 0.4); color: #38bdf8;">🔄 Consolidation Sprint 1</span>
+              <p style="font-size: 12px; color: #fff;">
+                Polity Sheets 1–4 + History Sheets 1–3 deep flip.
+              </p>
             </td>
             <td>
-              <span class="subject-pill sub-medieval">Medieval History</span>
-              <ul class="topic-list">
-                <li>Mughal Empire: Babur to Aurangzeb, Succession & Policies</li>
-                <li>Marathas: Shivaji, Ashtapradhan, Peshwa succession</li>
-                <li>Temples, Indo-Islamic Architecture & Monuments</li>
+              <strong style="color: #38bdf8; font-size: 13px;">Polity & History Rapid Consolidation:</strong>
+              <ul class="topic-list" style="margin-top: 4px;">
+                <li>Articles, Parts, Schedules, Constitutional bodies</li>
+                <li>Modern history 1857–1947 timeline, Congress sessions</li>
               </ul>
             </td>
             <td>
               <div style="font-size: 12px; color: var(--text-muted);">
-                <strong>Morning Recall:</strong> Diseases & Sultanate administration.<br>
-                <strong>Deliverable:</strong> Science Sheet 2 (Chem) + Medieval History Sheets 2 & 3.
+                <strong>Deliverables:</strong> High-speed sheet review.
               </div>
             </td>
             <td>
-              <span class="completion-badge badge-done" style="display: block; text-align: center; margin-bottom: 4px;">🏁 CHEMISTRY COMPLETE</span>
-              <span class="completion-badge badge-done" style="display: block; text-align: center;">🏁 MEDIEVAL HIST COMPLETE</span>
+              <span class="completion-badge badge-upcoming">Consolidation Done</span>
             </td>
             <td style="text-align: center;">
-              <label class="plan-check"><input type="checkbox" onchange="toggleDay('day-15')"> <span>Log</span></label>
+              <input type="checkbox" style="cursor: pointer; width: 16px; height: 16px;">
             </td>
           </tr>
 
           <!-- DAY 16 -->
-          <tr data-tags="science upspecial">
+          <tr data-tags="geo science">
             <td>
               <span class="day-badge">Day 16</span>
-              <div class="date-sub">Thu, 26 Nov 2026<br><span style="color: var(--text-sub);">10 Days to D-Day</span></div>
+              <div class="date-sub">Sun, 29 Nov 2026<br><span style="color: var(--text-sub);">7 Days to D-Day</span></div>
             </td>
             <td>
-              <span class="subject-pill sub-science">Science (Physics)</span>
-              <ul class="topic-list">
-                <li>Optics: Reflection, Refraction, Total Internal Reflection, Lenses</li>
-                <li>Sound, Wave motion, Doppler Effect, Ultrasound</li>
-                <li>Electromagnetic Spectrum order & Current S&T / ISRO</li>
-              </ul>
+              <span class="mock-pill" style="background: rgba(96, 165, 250, 0.15); border-color: rgba(96, 165, 250, 0.4); color: #60a5fa;">🔄 Consolidation Sprint 2</span>
+              <p style="font-size: 12px; color: #fff;">
+                Geography Sheets 1–4 + Science Sheets 1–3 deep flip.
+              </p>
             </td>
             <td>
-              <span class="subject-pill sub-up">UP Special</span>
-              <ul class="topic-list">
-                <li>One District One Product (ODOP) & ODOC mapping</li>
-                <li>75 Districts, 18 Divisions, Boundaries with states</li>
-                <li>UP Ramsar Sites (10), Bird Sanctuaries, Forests (ISFR)</li>
+              <strong style="color: #60a5fa; font-size: 13px;">Geo, Env & Science Atlas/Data Review:</strong>
+              <ul class="topic-list" style="margin-top: 4px;">
+                <li>River tributaries, passes, world straits, ISFR rankings</li>
+                <li>Vitamins, diseases, chemical formulas, optics</li>
               </ul>
             </td>
             <td>
               <div style="font-size: 12px; color: var(--text-muted);">
-                <strong>Morning Recall:</strong> Chemical formulas & Mughal monuments.<br>
-                <strong>Deliverable:</strong> Science Sheet 3 (Physics) + UP Special Sheet 1.
+                <strong>Deliverables:</strong> High-speed sheet review.
               </div>
             </td>
             <td>
-              <span class="completion-badge badge-done" style="display: block; text-align: center;">🏁 SCIENCE (ALL) COMPLETE</span>
+              <span class="completion-badge badge-upcoming">Consolidation Done</span>
             </td>
             <td style="text-align: center;">
-              <label class="plan-check"><input type="checkbox" onchange="toggleDay('day-16')"> <span>Log</span></label>
+              <input type="checkbox" style="cursor: pointer; width: 16px; height: 16px;">
             </td>
           </tr>
 
           <!-- DAY 17 -->
-          <tr data-tags="polity upspecial">
+          <tr data-tags="mocks flt">
             <td>
               <span class="day-badge">Day 17</span>
-              <div class="date-sub">Fri, 27 Nov 2026<br><span style="color: var(--text-sub);">9 Days to D-Day</span></div>
+              <div class="date-sub">Mon, 30 Nov 2026<br><span style="color: var(--text-sub);">6 Days to D-Day</span></div>
             </td>
             <td>
-              <span class="subject-pill sub-polity">Revise Polity</span>
-              <ul class="topic-list">
-                <li>Comprehensive Polity Sheet Review (Sheets 1 to 4)</li>
-                <li>Rapid quiz on Articles 1 to 395, Amendments, Writs</li>
-                <li>Constitutional bodies & Federal provisions</li>
-              </ul>
+              <span class="mock-pill drishti-pill">📝 Drishti Open Mock | 13:00 PM</span>
+              <p style="font-size: 12px; color: #fff;">
+                <strong>Imtihaan 3 | Drishti Open Mock (PYQ Based):</strong><br>
+                Attempt 2h + Analysis 3h.
+              </p>
             </td>
             <td>
-              <span class="subject-pill sub-up">UP Special</span>
-              <ul class="topic-list">
-                <li>UP Budget 2026-27 & Schemes Analysis</li>
-                <li>UP Agriculture, Crops, Soils, Irrigation & Minerals</li>
-                <li>Expressways, Airports & Defence Corridor nodes</li>
+              <strong style="color: #c084fc; font-size: 13px;">Final PYQ Open Rehearsal:</strong>
+              <ul class="topic-list" style="margin-top: 4px;">
+                <li>Final testing of high-probability PYQ recurring areas</li>
               </ul>
             </td>
             <td>
               <div style="font-size: 12px; color: var(--text-muted);">
-                <strong>Morning Recall:</strong> Optics applications & UP ODOP districts.<br>
-                <strong>Deliverable:</strong> UP Special Sheets 2 & 3.
+                <strong>Deliverables:</strong> Imtihaan 3 Diagnostic Score.
               </div>
             </td>
             <td>
-              <span class="completion-badge badge-done" style="display: block; text-align: center;">🏁 UP SPECIAL COMPLETE</span>
+              <span class="completion-badge badge-target">🏁 ALL 3 IMTIHAAN DONE</span>
             </td>
             <td style="text-align: center;">
-              <label class="plan-check"><input type="checkbox" onchange="toggleDay('day-17')"> <span>Log</span></label>
+              <input type="checkbox" style="cursor: pointer; width: 16px; height: 16px;">
             </td>
           </tr>
 
           <!-- DAY 18 -->
-          <tr data-tags="economy csat">
+          <tr data-tags="mocks flt">
             <td>
               <span class="day-badge">Day 18</span>
-              <div class="date-sub">Sat, 28 Nov 2026<br><span style="color: var(--text-sub);">8 Days to D-Day</span></div>
+              <div class="date-sub">Tue, 01 Dec 2026<br><span style="color: var(--text-sub);">5 Days to D-Day</span></div>
             </td>
             <td>
-              <span class="subject-pill sub-economy">Revise Economy</span>
-              <ul class="topic-list">
-                <li>Comprehensive Economy Sheet Review (Sheets 1 to 3)</li>
-                <li>Welfare Schemes launch years & key figures</li>
-                <li>Union Budget & Economic Survey numbers refresh</li>
-              </ul>
+              <span class="mock-pill flt-pill">📝 FLT 3 | 13:00 PM</span>
+              <p style="font-size: 12px; color: #fff;">
+                <strong>UPPSC Test 13 | FLT 3 (Complete Syllabus):</strong><br>
+                Attempt 2h + Analysis 3h (Lakshya 2.0 Test 13).
+              </p>
             </td>
             <td>
-              <span class="subject-pill sub-csat">CSAT (Paper II)</span>
-              <ul class="topic-list">
-                <li>Reading Comprehension (English & Hindi)</li>
-                <li>Interpersonal Skills & Communication</li>
-                <li>Past 5 years UPPCS CSAT questions</li>
+              <strong style="color: #c084fc; font-size: 13px;">Full Syllabus Rehearsal 3:</strong>
+              <ul class="topic-list" style="margin-top: 4px;">
+                <li>Accuracy calibration under pressure; reducing negative marking</li>
               </ul>
             </td>
             <td>
               <div style="font-size: 12px; color: var(--text-muted);">
-                <strong>Morning Recall:</strong> Polity core articles & UP Budget figures.<br>
-                <strong>Deliverable:</strong> CSAT Practice Set 1 (Target: 45+ Net Score).
+                <strong>Deliverables:</strong> FLT 3 Mistake Log.
               </div>
             </td>
-            <td>–</td>
+            <td>
+              <span class="completion-badge badge-upcoming">FLT 3 Complete</span>
+            </td>
             <td style="text-align: center;">
-              <label class="plan-check"><input type="checkbox" onchange="toggleDay('day-18')"> <span>Log</span></label>
+              <input type="checkbox" style="cursor: pointer; width: 16px; height: 16px;">
             </td>
           </tr>
 
           <!-- DAY 19 -->
-          <tr data-tags="geo csat">
+          <tr data-tags="mocks flt">
             <td>
               <span class="day-badge">Day 19</span>
-              <div class="date-sub">Sun, 29 Nov 2026<br><span style="color: var(--text-sub);">7 Days to D-Day</span></div>
+              <div class="date-sub">Wed, 02 Dec 2026<br><span style="color: var(--text-sub);">4 Days to D-Day</span></div>
             </td>
             <td>
-              <span class="subject-pill sub-geo">Revise Geography</span>
-              <ul class="topic-list">
-                <li>Comprehensive Geography Sheets Review (Sheets 1 to 4)</li>
-                <li>Atlas drill: River tributaries, passes, world straits</li>
-                <li>Census data & mineral rankings speed drill</li>
-              </ul>
+              <span class="mock-pill flt-pill">📝 FLT 4 | 13:00 PM</span>
+              <p style="font-size: 12px; color: #fff;">
+                <strong>UPPSC Test 14 | FLT 4 (Complete Syllabus):</strong><br>
+                Attempt 2h + Analysis 3h (Lakshya 2.0 Test 14).
+              </p>
             </td>
             <td>
-              <span class="subject-pill sub-csat">CSAT (Paper II)</span>
-              <ul class="topic-list">
-                <li>Elementary Mathematics: Number System, Percentages</li>
-                <li>Profit & Loss, Ratio & Proportion, Time & Work</li>
-                <li>Speed, Distance & Simple/Compound Interest</li>
+              <strong style="color: #c084fc; font-size: 13px;">Full Syllabus Rehearsal 4:</strong>
+              <ul class="topic-list" style="margin-top: 4px;">
+                <li>Pacing drill: 1st round (70 mins), 2nd round (35 mins), OMR bubble (15 mins)</li>
               </ul>
             </td>
             <td>
               <div style="font-size: 12px; color: var(--text-muted);">
-                <strong>Morning Recall:</strong> Economy indices & CSAT formula sheet.<br>
-                <strong>Deliverable:</strong> CSAT Practice Set 2.
+                <strong>Deliverables:</strong> FLT 4 Mistake Log.
               </div>
             </td>
-            <td>–</td>
+            <td>
+              <span class="completion-badge badge-upcoming">FLT 4 Complete</span>
+            </td>
             <td style="text-align: center;">
-              <label class="plan-check"><input type="checkbox" onchange="toggleDay('day-19')"> <span>Log</span></label>
+              <input type="checkbox" style="cursor: pointer; width: 16px; height: 16px;">
             </td>
           </tr>
 
           <!-- DAY 20 -->
-          <tr data-tags="history csat">
+          <tr data-tags="mocks flt">
             <td>
               <span class="day-badge">Day 20</span>
-              <div class="date-sub">Mon, 30 Nov 2026<br><span style="color: var(--text-sub);">6 Days to D-Day</span></div>
+              <div class="date-sub">Thu, 03 Dec 2026<br><span style="color: var(--emerald);">3 Days to D-Day</span></div>
             </td>
             <td>
-              <span class="subject-pill sub-modern">Revise Modern Hist</span>
-              <ul class="topic-list">
-                <li>Modern History Sheets Review (Sheets 1 to 3)</li>
-                <li>Congress Sessions, Presidents & Resolutions</li>
-                <li>Chronology check: 1857 to 1947 events</li>
-              </ul>
+              <span class="mock-pill flt-pill">📝 FLT 5 | 13:00 PM</span>
+              <p style="font-size: 12px; color: #fff;">
+                <strong>UPPSC Test 15 | FLT 5 (Complete Syllabus):</strong><br>
+                Attempt 2h + Analysis 3h (Lakshya 2.0 Test 15).
+              </p>
             </td>
             <td>
-              <span class="subject-pill sub-csat">CSAT (Paper II)</span>
-              <ul class="topic-list">
-                <li>Analytical Reasoning & Logical Deduction</li>
-                <li>Coding-Decoding, Blood Relations, Direction Sense</li>
-                <li>Decision Making & Problem Solving scenarios</li>
+              <strong style="color: #10b981; font-size: 13px;">FINAL FACTUAL REVISION 1 (Polity & Economy):</strong>
+              <ul class="topic-list" style="margin-top: 4px;">
+                <li>Polity Sheets 1–4: Articles, Writs, Bodies, Amendments</li>
+                <li>Economy Sheets 1–3: Schemes, Budget figures, Poverty committees</li>
               </ul>
             </td>
             <td>
               <div style="font-size: 12px; color: var(--text-muted);">
-                <strong>Morning Recall:</strong> Geography map coordinates & Math formulas.<br>
-                <strong>Deliverable:</strong> CSAT Practice Set 3.
+                <strong>Rule:</strong> High-speed sheet flipping only. Zero fresh books.
               </div>
             </td>
-            <td>–</td>
+            <td>
+              <span class="completion-badge badge-upcoming">FLT 5 + Recall 1 Done</span>
+            </td>
             <td style="text-align: center;">
-              <label class="plan-check"><input type="checkbox" onchange="toggleDay('day-20')"> <span>Log</span></label>
+              <input type="checkbox" style="cursor: pointer; width: 16px; height: 16px;">
             </td>
           </tr>
 
           <!-- DAY 21 -->
-          <tr data-tags="economy csat">
+          <tr data-tags="mocks flt">
             <td>
               <span class="day-badge">Day 21</span>
-              <div class="date-sub">Tue, 01 Dec 2026<br><span style="color: var(--text-sub);">5 Days to D-Day</span></div>
+              <div class="date-sub">Fri, 04 Dec 2026<br><span style="color: var(--emerald);">2 Days to D-Day</span></div>
             </td>
             <td>
-              <span class="subject-pill sub-economy">Revise Economy</span>
-              <ul class="topic-list">
-                <li>Final macroeconomic numbers check</li>
-                <li>Poverty/Unemployment statistics & welfare targets</li>
-                <li>Banking terms (CRR, SLR, Repo, Reverse Repo)</li>
-              </ul>
+              <span class="mock-pill flt-pill">📝 FLT 6 (Final Mock) | 13:00 PM</span>
+              <p style="font-size: 12px; color: #fff;">
+                <strong>UPPSC Test 17 | FLT 6 (Complete Syllabus):</strong><br>
+                Final full dress rehearsal test.
+              </p>
             </td>
             <td>
-              <span class="subject-pill sub-csat">CSAT (Paper II)</span>
-              <ul class="topic-list">
-                <li>Algebra, Geometry, Mensuration & Statistics</li>
-                <li>Mean, Median, Mode, Variance for UPPCS</li>
-                <li>Full 100-question timed CSAT rehearsal</li>
+              <strong style="color: #10b981; font-size: 13px;">FINAL FACTUAL REVISION 2 (Geo, Env & Science):</strong>
+              <ul class="topic-list" style="margin-top: 4px;">
+                <li>Geography Sheets 1–4: Rivers, passes, minerals, census data</li>
+                <li>Environment Sheets 1–3: Acts, Ramsar, ISFR, wildlife projects</li>
+                <li>Science Sheets 1–3: Vitamins, diseases, formulas, optics</li>
               </ul>
             </td>
             <td>
               <div style="font-size: 12px; color: var(--text-muted);">
-                <strong>Morning Recall:</strong> Modern history chronologies.<br>
-                <strong>Deliverable:</strong> Full CSAT Paper II Diagnostic (> 66% qualifying benchmark secured).
+                <strong>Deliverables:</strong> Final Mock Complete!
               </div>
             </td>
             <td>
-              <span class="completion-badge badge-done" style="display: block; text-align: center;">🏁 CSAT COMPLETE</span>
+              <span class="completion-badge badge-target" style="display: block; text-align: center;">🏁 ALL 17 MOCKS COMPLETE</span>
             </td>
             <td style="text-align: center;">
-              <label class="plan-check"><input type="checkbox" onchange="toggleDay('day-21')"> <span>Log</span></label>
+              <input type="checkbox" style="cursor: pointer; width: 16px; height: 16px;">
             </td>
           </tr>
 
           <!-- DAY 22 -->
-          <tr class="mock-row" data-tags="final">
+          <tr data-tags="history upspecial">
             <td>
-              <span class="day-badge" style="color: var(--rose);">Day 22</span>
-              <div class="date-sub">Wed, 02 Dec 2026<br><span style="color: var(--gold);">4 Days to D-Day</span></div>
-            </td>
-            <td colspan="2">
-              <span class="subject-pill sub-mock">MOCK TEST + GAP REPAIR</span>
-              <p style="font-size: 12.5px; color: #fff; margin-top: 4px;">
-                <strong>The One Full Dress Rehearsal Before Final Factual Revision:</strong><br>
-                Attempt 1 Full-Length GS Paper I (150 Questions, 200 Marks) under strict exam timings (09:30 AM – 11:30 AM).<br>
-                Attempt 1 Full-Length CSAT Paper II (100 Questions) under exam timings (02:30 PM – 04:30 PM).<br>
-                Immediate error classification: Factual lapses, misread questions, or conceptual blindspots.
-              </p>
-            </td>
-            <td>
-              <div style="font-size: 12px; color: var(--text-muted);">
-                <strong>Deliverable:</strong> Mistake analysis log + Immediate revision sheet patching. No fresh books.
-              </div>
-            </td>
-            <td>
-              <span class="completion-badge badge-done" style="display: block; text-align: center;">🏁 FULL MOCK COMPLETE</span>
-            </td>
-            <td style="text-align: center;">
-              <label class="plan-check"><input type="checkbox" onchange="toggleDay('day-22')"> <span>Log</span></label>
-            </td>
-          </tr>
-
-          <!-- DAY 23 -->
-          <tr class="final-row" data-tags="final polity economy history">
-            <td>
-              <span class="day-badge" style="color: var(--emerald);">Day 23</span>
-              <div class="date-sub">Thu, 03 Dec 2026<br><span style="color: var(--emerald);">3 Days to D-Day</span></div>
-            </td>
-            <td colspan="2">
-              <span class="subject-pill" style="background: rgba(16,185,129,0.15); color: #10b981; border: 1px solid rgba(16,185,129,0.3);">FINAL FACTUAL REVISION — DAY 1</span>
-              <p style="font-size: 12.5px; color: #fff; margin-top: 4px;">
-                <strong>Polity • Economy • Modern History</strong><br>
-                Quick factual recall only. Read revision sheets, test yourself, move on.<br>
-                • Polity: Articles, Parts, Schedules, Amendments, Bodies, Writs.<br>
-                • Economy: Schemes chronology, Budget 26-27 figures, Poverty committees.<br>
-                • Modern: 1917–47 events, treaties, governors-general, books & newspapers.
-              </p>
-            </td>
-            <td>
-              <div style="font-size: 12px; color: var(--text-muted);">
-                <strong>Rule:</strong> No fresh learning. High-speed sheet flipping only.
-              </div>
-            </td>
-            <td>
-              <span class="milestone-tag">Sprint Phase 1 Done</span>
-            </td>
-            <td style="text-align: center;">
-              <label class="plan-check"><input type="checkbox" onchange="toggleDay('day-23')"> <span>Log</span></label>
-            </td>
-          </tr>
-
-          <!-- DAY 24 -->
-          <tr class="final-row" data-tags="final geo env science">
-            <td>
-              <span class="day-badge" style="color: var(--emerald);">Day 24</span>
-              <div class="date-sub">Fri, 04 Dec 2026<br><span style="color: var(--emerald);">2 Days to D-Day</span></div>
-            </td>
-            <td colspan="2">
-              <span class="subject-pill" style="background: rgba(16,185,129,0.15); color: #10b981; border: 1px solid rgba(16,185,129,0.3);">FINAL FACTUAL REVISION — DAY 2</span>
-              <p style="font-size: 12.5px; color: #fff; margin-top: 4px;">
-                <strong>Geography • Environment • Science</strong><br>
-                • Geography: Rivers, chokepoints, census data, ocean currents, tribes, minerals.<br>
-                • Environment: Acts, Ramsar sites, ISFR state rankings, SDGs, wildlife projects.<br>
-                • Science: Vitamins, diseases/vectors, alloys, chemical formulas, optics.
-              </p>
-            </td>
-            <td>
-              <div style="font-size: 12px; color: var(--text-muted);">
-                <strong>Rule:</strong> Fast memorization & memory retrieval drills.
-              </div>
-            </td>
-            <td>
-              <span class="milestone-tag">Sprint Phase 2 Done</span>
-            </td>
-            <td style="text-align: center;">
-              <label class="plan-check"><input type="checkbox" onchange="toggleDay('day-24')"> <span>Log</span></label>
-            </td>
-          </tr>
-
-          <!-- DAY 25 -->
-          <tr class="final-row" data-tags="final upspecial history">
-            <td>
-              <span class="day-badge" style="color: var(--emerald);">Day 25</span>
+              <span class="day-badge" style="color: var(--emerald);">Day 22</span>
               <div class="date-sub">Sat, 05 Dec 2026<br><span style="color: var(--emerald);">1 Day to D-Day</span></div>
             </td>
-            <td colspan="2">
-              <span class="subject-pill" style="background: rgba(16,185,129,0.15); color: #10b981; border: 1px solid rgba(16,185,129,0.3);">FINAL FACTUAL REVISION — DAY 3</span>
-              <p style="font-size: 12.5px; color: #fff; margin-top: 4px;">
-                <strong>UP Special • Ancient • Medieval • Rapid CA</strong><br>
-                • UP Special: ODOP districts, UP budget, forest data, expressways.<br>
-                • Ancient: Harappan sites, Buddhism/Jainism, inscriptions, foreign travellers.<br>
-                • Medieval: Sultanate admin terms, battle chronologies, Mughal/Maratha succession.<br>
-                • Rapid CA: Awards, appointments, sports, summits & defense exercises.
+            <td>
+              <span class="mock-pill" style="background: rgba(16, 185, 129, 0.15); border-color: rgba(16, 185, 129, 0.4); color: #10b981;">🌿 Total Gear & Mental Rest</span>
+              <p style="font-size: 12px; color: #fff;">
+                No mocks today. Early dinner, quietude, restful sleep.
               </p>
             </td>
             <td>
+              <strong style="color: #10b981; font-size: 13px;">FINAL FACTUAL REVISION 3 (UP, Ancient, Medieval, Rapid CA):</strong>
+              <ul class="topic-list" style="margin-top: 4px;">
+                <li>UP Special Sheets: ODOP, UP budget, forest report, expressways</li>
+                <li>Ancient & Medieval Sheets: Sites, inscriptions, battle dates</li>
+                <li>Rapid Current Affairs: Awards, appointments, sports, summits</li>
+              </ul>
+            </td>
+            <td>
               <div style="font-size: 12px; color: var(--text-muted);">
-                <strong>Evening Protocol:</strong> Early dinner, pack admit card, original ID, black ballpoint pens, restful sleep by 10:00 PM.
+                <strong>Evening Checklist:</strong> Admit card, Original Govt Photo ID, Black ballpoint pens (2), Watch, Water bottle. Sleep by 10:00 PM.
               </div>
             </td>
             <td>
-              <span class="completion-badge badge-done" style="display: block; text-align: center;">🏁 100% PREP COMPLETE</span>
+              <span class="completion-badge badge-target" style="display: block; text-align: center;">🏁 100% PREP COMPLETE</span>
             </td>
             <td style="text-align: center;">
-              <label class="plan-check"><input type="checkbox" onchange="toggleDay('day-25')"> <span>Log</span></label>
+              <input type="checkbox" style="cursor: pointer; width: 16px; height: 16px;">
             </td>
           </tr>
 
@@ -1799,14 +1497,14 @@
               <div style="padding: 6px 0;">
                 <h4 style="color: var(--gold); font-size: 15px; margin-bottom: 4px;">🎯 UPPCS PRELIMS 2026 EXAMINATION</h4>
                 <p style="font-size: 13px; color: #cbd5e1; line-height: 1.5;">
-                  <strong>Paper I (General Studies):</strong> 09:30 AM – 11:30 AM (150 Questions • 200 Marks)<br>
-                  <strong>Paper II (CSAT):</strong> 02:30 PM – 04:30 PM (100 Questions • 200 Marks • Qualifying 33%)<br>
+                  <strong>Paper I (General Studies - Merit):</strong> 09:30 AM – 11:30 AM (150 Questions • 200 Marks • Target: 105+ Net)<br>
+                  <strong>Paper II (CSAT - Qualifying Only):</strong> 02:30 PM – 04:30 PM (100 Questions • 200 Marks • Need 33% = 66 Marks)<br>
                   <em>Execute with calm composure, decisive elimination, and unshakable confidence.</em>
                 </p>
               </div>
             </td>
             <td style="text-align: center;">
-              <span class="completion-badge badge-active" style="background: var(--gold); color: #000; border-color: var(--gold);">TARGET 2026</span>
+              <span class="completion-badge badge-target" style="background: var(--gold); color: #000; border-color: var(--gold);">TARGET 2026</span>
             </td>
           </tr>
 
@@ -1816,13 +1514,12 @@
   </div>
 
   <div class="footer-note">
-    Master Study Tracker V2 • Calibrated for Divyansh Kumar • ABV-IIITM Gwalior • UPPCS Prelims 2026 Blueprint
+    Master Study Tracker V2 • Calibrated for Divyansh Kumar • ABV-IIITM Gwalior • UPPCS Prelims 2026 Lakshya Roadmap
   </div>
 
 </div>
 
 <script>
-  // Filter Table functionality
   function filterTable(tag) {
     const pills = document.querySelectorAll('.filter-pill');
     pills.forEach(p => p.classList.remove('active'));
@@ -1840,31 +1537,6 @@
       }
     });
   }
-
-  // LocalStorage persistence for plan checkboxes
-  const STORAGE_KEY = 'mst_uppsc_plan_checklist_v1';
-  function loadChecklist() {
-    try {
-      const data = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
-      Object.keys(data).forEach(id => {
-        const cb = document.querySelector(`input[onchange*="${id}"]`);
-        if (cb) cb.checked = !!data[id];
-      });
-    } catch(e) {}
-  }
-
-  function toggleDay(id) {
-    try {
-      const data = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
-      const cb = document.querySelector(`input[onchange*="${id}"]`);
-      if (cb) {
-        data[id] = cb.checked;
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
-      }
-    } catch(e) {}
-  }
-
-  document.addEventListener('DOMContentLoaded', loadChecklist);
 </script>
 </body>
 </html>
