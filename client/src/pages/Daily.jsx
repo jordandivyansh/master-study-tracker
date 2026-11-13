@@ -85,7 +85,7 @@ export default function Daily() {
           </div>
 
           <fieldset className="log-grid">
-            <legend>Exam study hours</legend>
+            <legend>Exam & Interview Study Hours</legend>
             {STREAMS.map((s) => (
               <label key={s.key}>
                 <span>{s.label}</span>

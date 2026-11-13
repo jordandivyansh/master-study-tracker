@@ -4,6 +4,7 @@
     "end": "2026-10-22",
     "phase": "Foundational Prep",
     "quotas": {
+      "interview": 0,
       "cat": 0,
       "uppsc": 6,
       "apfc": 10,
@@ -20,6 +21,7 @@
     "end": "2026-10-27",
     "phase": "Foundational Prep",
     "quotas": {
+      "interview": 0,
       "cat": 4,
       "uppsc": 0,
       "apfc": 6,
@@ -36,6 +38,7 @@
     "end": "2026-11-03",
     "phase": "CAT and UPPSC",
     "quotas": {
+      "interview": 0,
       "cat": 4,
       "uppsc": 12,
       "apfc": 9.5,
@@ -52,6 +55,7 @@
     "end": "2026-11-10",
     "phase": "CAT and UPPSC",
     "quotas": {
+      "interview": 0,
       "cat": 4,
       "uppsc": 12,
       "apfc": 9.5,
@@ -68,6 +72,7 @@
     "end": "2026-11-17",
     "phase": "CAT and UPPSC",
     "quotas": {
+      "interview": 0,
       "cat": 4,
       "uppsc": 8,
       "apfc": 10.5,
@@ -84,6 +89,7 @@
     "end": "2026-11-24",
     "phase": "CAT and UPPSC",
     "quotas": {
+      "interview": 0,
       "cat": 4,
       "uppsc": 8,
       "apfc": 10.5,
@@ -100,6 +106,7 @@
     "end": "2026-11-28",
     "phase": "CAT and UPPSC",
     "quotas": {
+      "interview": 0,
       "cat": 4,
       "uppsc": 2,
       "apfc": 7,
@@ -116,6 +123,7 @@
     "end": "2026-12-05",
     "phase": "UPPSC final week",
     "quotas": {
+      "interview": 0,
       "cat": 0,
       "uppsc": 18,
       "apfc": 6,
@@ -132,6 +140,7 @@
     "end": "2026-12-12",
     "phase": "APFC priority",
     "quotas": {
+      "interview": 0,
       "cat": 0,
       "uppsc": 0,
       "apfc": 25.5,
@@ -148,6 +157,7 @@
     "end": "2026-12-19",
     "phase": "APFC priority",
     "quotas": {
+      "interview": 0,
       "cat": 0,
       "uppsc": 0,
       "apfc": 25.5,
@@ -164,6 +174,7 @@
     "end": "2026-12-26",
     "phase": "CSE checkpoint",
     "quotas": {
+      "interview": 0,
       "cat": 0,
       "uppsc": 0,
       "apfc": 0,
@@ -180,6 +191,7 @@
     "end": "2027-01-02",
     "phase": "CSE checkpoint",
     "quotas": {
+      "interview": 0,
       "cat": 0,
       "uppsc": 0,
       "apfc": 0,
@@ -196,6 +208,7 @@
     "end": "2027-01-09",
     "phase": "CSE checkpoint",
     "quotas": {
+      "interview": 0,
       "cat": 0,
       "uppsc": 0,
       "apfc": 0,
@@ -212,6 +225,7 @@
     "end": "2027-01-16",
     "phase": "CSE checkpoint",
     "quotas": {
+      "interview": 0,
       "cat": 0,
       "uppsc": 0,
       "apfc": 0,
@@ -228,6 +242,7 @@
     "end": "2027-01-23",
     "phase": "CSE checkpoint",
     "quotas": {
+      "interview": 0,
       "cat": 0,
       "uppsc": 0,
       "apfc": 0,
@@ -244,6 +259,7 @@
     "end": "2027-01-30",
     "phase": "CSE checkpoint",
     "quotas": {
+      "interview": 0,
       "cat": 0,
       "uppsc": 0,
       "apfc": 0,
@@ -260,6 +276,7 @@
     "end": "2027-02-06",
     "phase": "CSE checkpoint",
     "quotas": {
+      "interview": 0,
       "cat": 0,
       "uppsc": 0,
       "apfc": 0,
@@ -276,6 +293,7 @@
     "end": "2027-02-13",
     "phase": "CSE checkpoint",
     "quotas": {
+      "interview": 0,
       "cat": 0,
       "uppsc": 0,
       "apfc": 0,
@@ -292,6 +310,7 @@
     "end": "2027-02-20",
     "phase": "CSE checkpoint",
     "quotas": {
+      "interview": 0,
       "cat": 0,
       "uppsc": 0,
       "apfc": 0,
@@ -308,6 +327,7 @@
     "end": "2027-02-27",
     "phase": "CSE checkpoint",
     "quotas": {
+      "interview": 0,
       "cat": 0,
       "uppsc": 0,
       "apfc": 0,
@@ -324,6 +344,7 @@
     "end": "2027-03-06",
     "phase": "CSE checkpoint",
     "quotas": {
+      "interview": 0,
       "cat": 0,
       "uppsc": 0,
       "apfc": 0,
@@ -340,6 +361,7 @@
     "end": "2027-03-13",
     "phase": "CSE checkpoint",
     "quotas": {
+      "interview": 0,
       "cat": 0,
       "uppsc": 0,
       "apfc": 0,
@@ -356,6 +378,7 @@
     "end": "2027-03-20",
     "phase": "CSE checkpoint",
     "quotas": {
+      "interview": 0,
       "cat": 0,
       "uppsc": 0,
       "apfc": 0,

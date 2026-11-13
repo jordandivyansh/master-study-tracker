@@ -110,6 +110,7 @@ export default function TimerBar({ onLogSaved }) {
             <label>
               Study Stream:
               <select value={stream} onChange={(e) => setStream(e.target.value)} disabled={running}>
+                <option value="interview">Interview Preparation</option>
                 <option value="cava">CAVA (Current Affairs)</option>
                 <option value="pubad">PubAd Optional</option>
                 <option value="mains">Mains Writing / Mocks</option>

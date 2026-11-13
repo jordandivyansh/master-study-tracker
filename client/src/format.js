@@ -1,6 +1,7 @@
 export const STREAMS = [
-  { key: 'cat', label: 'CAT' },
+  { key: 'interview', label: 'Interview Preparation', short: 'Interview' },
   { key: 'uppsc', label: 'UPPSC' },
+  { key: 'cat', label: 'CAT' },
   { key: 'apfc', label: 'APFC' },
   { key: 'cava', label: 'CAVA' },
   { key: 'pubad', label: 'Pub Ad', short: 'PubAd' },

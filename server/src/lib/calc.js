@@ -11,8 +11,9 @@ import { daysBetween, addDays } from './dates.js';
 
 /** Study streams in display order. Daily newspaper and gym are tracked separately. */
 export const STREAMS = [
-  { key: 'cat', label: 'CAT' },
+  { key: 'interview', label: 'Interview Preparation' },
   { key: 'uppsc', label: 'UPPSC' },
+  { key: 'cat', label: 'CAT' },
   { key: 'apfc', label: 'APFC' },
   { key: 'cava', label: 'CAVA' },
   { key: 'pubad', label: 'Pub Ad' },
