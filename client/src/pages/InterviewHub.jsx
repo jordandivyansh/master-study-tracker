@@ -9,6 +9,7 @@ const INITIAL_COURSES = [
     lead: 'Ayush Sinha & Senior Mentors',
     type: 'DAF & 1-on-1 Sessions',
     location: 'Karol Bagh (Offline) & Online',
+    price: 'Free (Mains Qualified)',
     status: 'Registered',
     mockDate: '',
     notes: 'Attended Nov 11 offline orientation with Ayush Sinha. Group formation and DAF discussion.',
@@ -21,6 +22,7 @@ const INITIAL_COURSES = [
     lead: 'ForumIAS Faculty',
     type: 'Current Affairs Special',
     location: 'Online',
+    price: 'Free (with IGP)',
     status: 'Planned',
     mockDate: '',
     notes: 'Targeted high-yield national, constitutional and geopolitical issues.',
@@ -33,6 +35,7 @@ const INITIAL_COURSES = [
     lead: 'Anupam Sir',
     type: 'Mentorship & Profile Defense',
     location: 'Online & Karol Bagh',
+    price: 'Free (Mains Qualified)',
     status: 'Mock Scheduled',
     mockDate: '2026-11-13T12:00',
     notes: 'Online 1:1 session on Friday 13 Nov (daytime). Deep profile defense, tech/MBA pivot, and behavioral composure.',
@@ -45,6 +48,7 @@ const INITIAL_COURSES = [
     lead: 'Ex-UPSC Board Members & Senior Bureaucrats',
     type: 'Mock Panels & DAF Analysis',
     location: 'Old Rajinder Nagar, Delhi',
+    price: 'Free (Mains Qualified)',
     status: 'Planned',
     mockDate: '',
     notes: 'Premier mock simulation panel. DAF questionnaire compilation.',
@@ -57,6 +61,7 @@ const INITIAL_COURSES = [
     lead: 'Dr. Vikas Divyakirti & Senior Board',
     type: 'Mock Panel & Video Analysis',
     location: 'Karol Bagh / Mukherjee Nagar',
+    price: 'Free (Mains Qualified)',
     status: 'Planned',
     mockDate: '',
     notes: 'Comprehensive video performance audit, posture analysis and DAF grilling.',
@@ -69,6 +74,7 @@ const INITIAL_COURSES = [
     lead: 'B. Singh Sir & Panel of Bureaucrats',
     type: 'DAF Dissection & Mock Panels',
     location: 'Pusa Road, Karol Bagh, Delhi',
+    price: 'Free (Mains Qualified)',
     status: 'Planned',
     mockDate: '',
     notes: 'Strong on engineering/technical profile defense & mock panels.',
@@ -81,6 +87,7 @@ const INITIAL_COURSES = [
     lead: 'Sumit Rewri Sir & Expert Panel',
     type: 'DAF Review & Mock Interviews',
     location: 'Delhi (Offline & Online)',
+    price: 'Free (Mains Qualified)',
     status: 'Planned',
     mockDate: '',
     notes: 'DAF questionnaire, state-specific current issues, and 1-on-1 feedback.',
@@ -93,6 +100,7 @@ const INITIAL_COURSES = [
     lead: 'Vinay Kumar GB Sir',
     type: 'Orientation & 1-on-1 Mocks',
     location: 'Delhi Centre / Online',
+    price: 'Free (Mains Qualified)',
     status: 'Planned',
     mockDate: '',
     notes: 'Psychological tuning, ethical clarity, and personalized feedback.',
@@ -105,6 +113,7 @@ const INITIAL_COURSES = [
     lead: 'Drishti Mentorship Team',
     type: 'Portal / Slot Allocation',
     location: 'Online Portal',
+    price: 'Free (Portal)',
     status: 'Planned',
     mockDate: '',
     notes: 'Direct online registration and upload of DAF for personalized slot booking.',
@@ -117,6 +126,7 @@ const INITIAL_COURSES = [
     lead: 'Retd. Ambassadors, Chief Secretaries, Top Faculty',
     type: 'Star Mock Panels & DAF Audit',
     location: 'Delhi & Online',
+    price: 'Free (Mains Qualified)',
     status: 'Planned',
     mockDate: '',
     notes: 'High-profile panel simulation and video recording review.',
@@ -129,6 +139,7 @@ const INITIAL_COURSES = [
     lead: 'Dr. Manoj K. Sharma Sir',
     type: 'Personal 1-on-1 DAF Mentorship',
     location: 'Greater Noida & Delhi',
+    price: 'Free (Mentorship)',
     status: 'Mock Scheduled',
     mockDate: '2026-11-14T17:00',
     notes: 'Core mentor for 2+ years. In-person/Online meet on Saturday 14 Nov around 5:00 PM.',
@@ -141,6 +152,7 @@ const INITIAL_COURSES = [
     lead: 'Peeyush Kumar Sir & Senior Faculty',
     type: '1:1 Mock & Recorded Video Sessions',
     location: 'Online',
+    price: 'Free (Mains Qualified)',
     status: 'Mock Scheduled',
     mockDate: '2026-11-14T13:30',
     notes: 'Foundational & video sessions watched and completed. 1:1 Mock & DAF Mentorship with Peeyush Kumar Sir scheduled for Saturday 14 Nov @ 1:30 PM.',
@@ -153,6 +165,7 @@ const INITIAL_COURSES = [
     lead: 'Vignan Pattamatta, IRS C&IT (CSE 2013)',
     type: 'Daily 1:1 Mock & WhatsApp Mentorship',
     location: 'WhatsApp & Online Live',
+    price: 'Free (Pro-Bono)',
     status: 'Mock Scheduled',
     mockDate: 'Daily 10:30 AM',
     notes: 'Daily 1:1 online sessions with Vignan Sir at 10:30 AM. Continuous DAF refinement and probing.',
@@ -165,6 +178,7 @@ const INITIAL_COURSES = [
     lead: 'S. Ansari Sir & Senior Board Members',
     type: 'DAF Analysis, Pub Ad Optional & 1-on-1 Mocks',
     location: 'Pusa Road, Karol Bagh, Delhi',
+    price: 'Free (Mains Qualified)',
     status: 'Planned',
     mockDate: '',
     notes: 'Direct alignment with Public Administration optional, case-study questions, and administrative ethics.',
@@ -177,6 +191,7 @@ const INITIAL_COURSES = [
     lead: 'Pawan Kumar Sir',
     type: '1-on-1 Pub Ad Optional Mentorship & Mock Interview',
     location: 'Old Rajinder Nagar / Karol Bagh, Delhi',
+    price: 'Free (Mains Qualified)',
     status: 'Planned',
     mockDate: '',
     notes: 'Pawan Kumar Sir specialized Pub Ad conceptual defense, administrative theories applied to current governance.',
@@ -189,6 +204,7 @@ const INITIAL_COURSES = [
     lead: "Anita Ma'am (Score 220, Rank-644) & Mentors",
     type: '1:1 DAF Session & Topper Guidance',
     location: 'Online Portal',
+    price: 'Free (Enrolled)',
     status: 'Completed',
     mockDate: '',
     notes: 'Enrolled in 1:1 DAF Session (starts 10 Nov) + Free Interview Resource with Anita Ma\'am. Foundational DAF sessions watched and completed.',
@@ -201,6 +217,7 @@ const INITIAL_COURSES = [
     lead: 'Retd. Bureaucrats, Diplomats & Ex-UPSC Board Members',
     type: 'DAF Questionnaire & Panel Mock Simulation',
     location: 'Karol Bagh / Mukherjee Nagar, Delhi & Online',
+    price: 'Free (Mains Qualified)',
     status: 'Registered',
     mockDate: '',
     notes: 'Enrolled for IGP & Mock Interviews. Comprehensive DAF questionnaire, state-specific analysis & multi-panel mock simulations.',
@@ -213,6 +230,7 @@ const INITIAL_COURSES = [
     lead: 'Retired Senior Civil Servants & StudyIQ Expert Board',
     type: '1:1 Mock Interview & DAF Analysis',
     location: 'Delhi & Online',
+    price: 'Free (Mains Qualified)',
     status: 'Registered',
     mockDate: '',
     notes: 'Enrolled for IGP & Mock Interviews. Detailed Application Form scrutiny, current affairs theme classes, and 1-on-1 video-recorded mock interview.',
@@ -225,6 +243,7 @@ const INITIAL_COURSES = [
     lead: 'Toppers & Senior Mentors',
     type: 'Video Masterclass',
     location: 'Digital Resource',
+    price: 'Free (YouTube)',
     status: 'Completed',
     mockDate: '',
     notes: 'Pacing, body language, 3-sec pause, and avoiding argumentative traps.',
@@ -232,11 +251,11 @@ const INITIAL_COURSES = [
 ];
 
 const STATUSES = ['Planned', 'Registered', 'DAF Submitted', 'Mock Scheduled', 'Completed'];
-const STORAGE_KEY = 'master_interview_courses_v4';
+const STORAGE_KEY = 'master_interview_courses_v5';
 
 export default function InterviewHub() {
   const [courses, setCourses] = useState(() => {
-    const saved = localStorage.getItem(STORAGE_KEY) || localStorage.getItem('master_interview_courses');
+    const saved = localStorage.getItem(STORAGE_KEY) || localStorage.getItem('master_interview_courses_v4') || localStorage.getItem('master_interview_courses');
     if (!saved) return INITIAL_COURSES;
     try {
       const parsed = JSON.parse(saved);
@@ -247,6 +266,7 @@ export default function InterviewHub() {
         const isRecentlyUpdated = ['decode-civils', 'vision-ias', 'studyiq', 'sarrthi-ias'].includes(init.id);
         return {
           ...init,
+          price: userSaved.price || init.price || 'Free',
           status: isRecentlyUpdated ? init.status : (userSaved.status || init.status),
           notes: isRecentlyUpdated ? init.notes : (userSaved.notes || init.notes),
           mockDate: userSaved.mockDate || init.mockDate,
@@ -375,6 +395,7 @@ export default function InterviewHub() {
                 <tr style={{ borderBottom: '1px solid var(--line)', textAlign: 'left', color: 'var(--muted)', fontSize: 11, textTransform: 'uppercase' }}>
                   <th style={{ padding: '8px 10px' }}>Institute & Course</th>
                   <th style={{ padding: '8px 10px' }}>Faculty / Format</th>
+                  <th style={{ padding: '8px 10px' }}>Fee / Price</th>
                   <th style={{ padding: '8px 10px' }}>Status</th>
                   <th style={{ padding: '8px 10px' }}>Mock / Date</th>
                   <th style={{ padding: '8px 10px' }}>Personal Strategy & Notes</th>
@@ -384,17 +405,35 @@ export default function InterviewHub() {
               <tbody>
                 {visibleCourses.map((c) => (
                   <tr key={c.id} style={{ borderBottom: '1px solid var(--line)' }}>
-                    <td style={{ padding: '12px 10px', verticalAlign: 'top', width: '22%' }}>
+                    <td style={{ padding: '12px 10px', verticalAlign: 'top', width: '20%' }}>
                       <strong style={{ display: 'block', color: 'var(--text)', fontSize: 13.5 }}>{c.institute}</strong>
                       <span style={{ fontSize: 12, color: 'var(--muted)' }}>{c.name}</span>
                     </td>
-                    <td style={{ padding: '12px 10px', verticalAlign: 'top', width: '20%' }}>
+                    <td style={{ padding: '12px 10px', verticalAlign: 'top', width: '17%' }}>
                       <span style={{ display: 'block', color: 'var(--text)' }}>{c.lead}</span>
                       <span style={{ fontSize: 11, color: 'var(--gold)', background: 'rgba(245, 158, 11, 0.1)', padding: '1px 6px', borderRadius: 4 }}>
                         {c.type}
                       </span>
                     </td>
-                    <td style={{ padding: '12px 10px', verticalAlign: 'top', width: '13%' }}>
+                    <td style={{ padding: '12px 10px', verticalAlign: 'top', width: '12%' }}>
+                      <input
+                        type="text"
+                        placeholder="Free"
+                        value={c.price || 'Free'}
+                        onChange={(e) => updateCourse(c.id, 'price', e.target.value)}
+                        style={{
+                          width: '100%',
+                          background: 'var(--surface-2)',
+                          border: '1px solid var(--line)',
+                          color: c.price && !c.price.toLowerCase().includes('free') ? 'var(--gold)' : '#10b981',
+                          fontWeight: 600,
+                          padding: '4px 8px',
+                          borderRadius: 4,
+                          fontSize: 12,
+                        }}
+                      />
+                    </td>
+                    <td style={{ padding: '12px 10px', verticalAlign: 'top', width: '11%' }}>
                       <button
                         onClick={() => cycleStatus(c.id)}
                         style={{
