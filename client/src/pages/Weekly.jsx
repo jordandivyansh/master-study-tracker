@@ -15,6 +15,7 @@ export default function Weekly() {
   const today = todayISO();
   const sum = (f) => weeks.reduce((s, w) => s + (f(w) || 0), 0);
   const anyActual = weeks.some((w) => w.actualStudy !== null);
+  const currentWeek = weeks.find((w) => w.start <= today && today <= w.end);
 
   async function addWeek() {
     const last = weeks[weeks.length - 1];
@@ -42,6 +43,40 @@ export default function Weekly() {
       <PageHeader title="Weekly plan" sub="Quotas are editable. Spare is capacity minus planned; a negative spare means the week is overloaded. Click a period to change its dates.">
         <button className="btn" onClick={addWeek}>Add week</button>
       </PageHeader>
+
+      {currentWeek && (
+        <div style={{ background: 'linear-gradient(135deg, rgba(245, 158, 11, 0.08), rgba(56, 189, 248, 0.08))', border: '1px solid rgba(245, 158, 11, 0.3)', borderRadius: '12px', padding: '16px 20px', marginBottom: '20px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '14px' }}>
+          <div>
+            <div style={{ fontSize: '11px', textTransform: 'uppercase', color: 'var(--gold)', fontWeight: 800, letterSpacing: '0.5px' }}>
+              📍 Current Active Period ({shortDate(currentWeek.start)} – {shortDate(currentWeek.end)})
+            </div>
+            <div style={{ fontSize: '18px', fontWeight: 800, color: '#fff', marginTop: '3px' }}>
+              {currentWeek.phase}
+            </div>
+            <div style={{ fontSize: '13px', color: 'var(--text-muted)', marginTop: '4px' }}>
+              {currentWeek.notes || 'Interview mocks & Pub Ad Optional focus.'}
+            </div>
+          </div>
+          <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+            <div style={{ background: 'rgba(255, 255, 255, 0.04)', border: '1px solid var(--line)', borderRadius: '8px', padding: '8px 14px' }}>
+              <div style={{ fontSize: '11px', color: 'var(--text-muted)', textTransform: 'uppercase' }}>Capacity</div>
+              <div style={{ fontSize: '16px', fontWeight: 700, color: '#fff' }}>{h(currentWeek.capacity)}h</div>
+            </div>
+            <div style={{ background: 'rgba(255, 255, 255, 0.04)', border: '1px solid var(--line)', borderRadius: '8px', padding: '8px 14px' }}>
+              <div style={{ fontSize: '11px', color: 'var(--text-muted)', textTransform: 'uppercase' }}>Planned Study</div>
+              <div style={{ fontSize: '16px', fontWeight: 700, color: 'var(--blue)' }}>{h(currentWeek.planned)}h</div>
+            </div>
+            <div style={{ background: 'rgba(255, 255, 255, 0.04)', border: '1px solid var(--line)', borderRadius: '8px', padding: '8px 14px' }}>
+              <div style={{ fontSize: '11px', color: 'var(--text-muted)', textTransform: 'uppercase' }}>Logged Study</div>
+              <div style={{ fontSize: '16px', fontWeight: 700, color: 'var(--emerald)' }}>{h(currentWeek.actualStudy, { dash: '0' })}h</div>
+            </div>
+            <div style={{ background: 'rgba(255, 255, 255, 0.04)', border: '1px solid var(--line)', borderRadius: '8px', padding: '8px 14px' }}>
+              <div style={{ fontSize: '11px', color: 'var(--text-muted)', textTransform: 'uppercase' }}>Daily Newspaper</div>
+              <div style={{ fontSize: '16px', fontWeight: 700, color: 'var(--gold)' }}>{h(currentWeek.actualDsa, { dash: '0' })} / {h(currentWeek.dsaQuota)}h</div>
+            </div>
+          </div>
+        </div>
+      )}
 
       <Panel>
         <div className="table-wrap">
