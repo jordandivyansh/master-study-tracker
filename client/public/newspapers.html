@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Daily Newspaper Tracker: The Hindu • Indian Express • Mint | UPSC CSE 2026</title>
+<title>Daily Newspaper & Current Affairs Tracker: TH • IE • Mint • Unacademy CA | UPSC CSE 2026</title>
 <style>
   :root {
     --bg: #090d16;
@@ -38,7 +38,7 @@
     line-height: 1.5;
     padding: 32px 20px;
   }
-  .container { max-width: 1100px; margin: 0 auto; }
+  .container { max-width: 1140px; margin: 0 auto; }
 
   /* Header */
   .header {
@@ -106,15 +106,15 @@
   /* Stat Grid */
   .stat-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 16px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 14px;
     margin-bottom: 28px;
   }
   .stat-card {
     background: var(--surface);
     border: 1px solid var(--line);
     border-radius: 12px;
-    padding: 18px 20px;
+    padding: 16px 18px;
     transition: transform 0.15s ease, border-color 0.15s ease;
   }
   .stat-card:hover { border-color: rgba(255,255,255,0.18); }
@@ -126,7 +126,7 @@
     letter-spacing: 0.5px;
   }
   .stat-card .val {
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 800;
     color: #fff;
     margin-top: 4px;
@@ -140,21 +140,24 @@
   /* Pillar Guidelines */
   .pillars {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
     margin-bottom: 28px;
   }
-  @media (max-width: 860px) {
+  @media (max-width: 960px) {
+    .pillars { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 600px) {
     .pillars { grid-template-columns: 1fr; }
   }
   .pillar-card {
     background: var(--surface);
     border: 1px solid var(--line);
     border-radius: 12px;
-    padding: 18px;
+    padding: 16px;
   }
   .pillar-title {
-    font-size: 14px;
+    font-size: 13.5px;
     font-weight: 700;
     display: flex;
     align-items: center;
@@ -162,7 +165,7 @@
     margin-bottom: 8px;
   }
   .pillar-card p {
-    font-size: 13px;
+    font-size: 12.5px;
     color: var(--text-muted);
     line-height: 1.5;
   }
@@ -188,7 +191,7 @@
   table {
     width: 100%;
     border-collapse: collapse;
-    font-size: 13.5px;
+    font-size: 13px;
   }
   th {
     text-align: left;
@@ -201,7 +204,7 @@
     border-bottom: 1px solid var(--line);
   }
   td {
-    padding: 14px;
+    padding: 12px 14px;
     border-bottom: 1px solid var(--line);
     vertical-align: middle;
   }
@@ -228,17 +231,17 @@
   .paper-check {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
     cursor: pointer;
     user-select: none;
   }
   .paper-check input[type="checkbox"] {
     appearance: none;
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
     background: rgba(255, 255, 255, 0.05);
     border: 1.5px solid rgba(255, 255, 255, 0.2);
-    border-radius: 6px;
+    border-radius: 5px;
     cursor: pointer;
     position: relative;
     outline: none;
@@ -253,13 +256,13 @@
     position: absolute;
     color: #000;
     font-weight: 900;
-    font-size: 13px;
+    font-size: 12px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
   .paper-label {
-    font-size: 13px;
+    font-size: 12.5px;
     color: #cbd5e1;
   }
   .paper-check input[type="checkbox"]:checked + .paper-label {
@@ -271,10 +274,10 @@
     display: inline-flex;
     align-items: center;
     gap: 4px;
-    padding: 4px 10px;
-    border-radius: 6px;
-    font-size: 12px;
-    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 700;
   }
   .badge-done {
     background: var(--emerald-bg);
@@ -297,7 +300,7 @@
     border: 1px solid var(--line);
     border-radius: 6px;
     color: #cbd5e1;
-    font-size: 12.5px;
+    font-size: 12px;
     padding: 6px 10px;
     outline: none;
     transition: border-color 0.15s;
@@ -322,8 +325,8 @@
   <!-- Header -->
   <div class="header">
     <div>
-      <h1>📰 Daily Newspaper Completion Tracker</h1>
-      <p>Continuous Triple-Source Command: <strong>The Hindu</strong> • <strong>Indian Express (IE)</strong> • <strong>Mint</strong></p>
+      <h1>📰 Daily Current Affairs & Newspaper Tracker</h1>
+      <p>Continuous 4-Target Command: <strong>The Hindu</strong> • <strong>Indian Express (IE)</strong> • <strong>Mint</strong> • <strong>Unacademy CA Explanation</strong> (from 14 Nov)</p>
     </div>
     <div class="header-actions">
       <span class="badge-target">🎯 Daily Non-Negotiable</span>
@@ -337,56 +340,66 @@
     <div class="stat-card">
       <div class="lbl">Starting Baseline</div>
       <div class="val" style="color: var(--gold);">13 Nov 2026</div>
-      <div class="sub">3 / 3 Sources Completed on Day 1</div>
+      <div class="sub">Completed on Day 1</div>
     </div>
     <div class="stat-card">
       <div class="lbl">The Hindu Status</div>
       <div class="val" id="count-th" style="color: var(--blue);">1 Day</div>
-      <div class="sub">Editorials & Constitutional analysis</div>
+      <div class="sub">Constitutional & IR focus</div>
     </div>
     <div class="stat-card">
       <div class="lbl">Indian Express Status</div>
       <div class="val" id="count-ie" style="color: var(--emerald);">1 Day</div>
-      <div class="sub">Explained & Governance opinions</div>
+      <div class="sub">Explained & Governance</div>
     </div>
     <div class="stat-card">
       <div class="lbl">Mint Status</div>
       <div class="val" id="count-mint" style="color: var(--purple);">1 Day</div>
-      <div class="sub">Macroeconomics, Banking & Trade</div>
+      <div class="sub">Macro, Banking & Deficit</div>
+    </div>
+    <div class="stat-card">
+      <div class="lbl">Unacademy CA Video</div>
+      <div class="val" id="count-unac" style="color: var(--gold);">0 Days</div>
+      <div class="sub">Active from today (14 Nov)</div>
     </div>
   </div>
 
   <!-- Editorial Pillars -->
   <div class="pillars">
     <div class="pillar-card" style="border-top: 3px solid var(--blue);">
-      <div class="pillar-title" style="color: var(--blue);">🏛️ The Hindu (Lead & Op-Ed)</div>
-      <p>Focus on Constitutional jurisprudence, Supreme Court orders, Union-State relations, Foreign Policy & Global multilateral engagements.</p>
+      <div class="pillar-title" style="color: var(--blue);">🏛️ The Hindu</div>
+      <p>Constitutional jurisprudence, Supreme Court orders, Union-State relations, Foreign Policy & Global treaties.</p>
     </div>
     <div class="pillar-card" style="border-top: 3px solid var(--emerald);">
-      <div class="pillar-title" style="color: var(--emerald);">🗞️ Indian Express (Explained & Op-Ed)</div>
-      <p>Focus on 'Explained' section, internal security, electoral reforms, administrative innovation, and balanced contrarian views.</p>
+      <div class="pillar-title" style="color: var(--emerald);">🗞️ Indian Express</div>
+      <p>Explained section, internal security, electoral reforms, administrative innovation, and balanced contrarian views.</p>
     </div>
     <div class="pillar-card" style="border-top: 3px solid var(--purple);">
-      <div class="pillar-title" style="color: var(--purple);">📈 Mint (Macro & Policy)</div>
-      <p>Focus on RBI monetary stance, inflation & fiscal deficit dynamics, corporate governance, tech/AI policy, and public finance.</p>
+      <div class="pillar-title" style="color: var(--purple);">📈 Mint</div>
+      <p>RBI monetary stance, inflation & fiscal deficit dynamics, corporate governance, tech/AI policy, public finance.</p>
+    </div>
+    <div class="pillar-card" style="border-top: 3px solid var(--gold);">
+      <div class="pillar-title" style="color: var(--gold);">🎓 Unacademy CA Video</div>
+      <p>Daily comprehensive video breakdown: static-current linkage, Prelims factual MCQs, and interview opinion framing.</p>
     </div>
   </div>
 
   <!-- Newspaper Master Table -->
   <div class="table-card">
     <h2>
-      <span>📅 Daily Newspaper Completion Log (Starting 13 Nov 2026)</span>
+      <span>📅 Daily Current Affairs Completion Log (Starting 13 Nov 2026)</span>
       <span style="font-size: 12px; font-weight: normal; color: var(--text-muted);">Auto-saved locally in browser</span>
     </h2>
     <table>
       <thead>
         <tr>
-          <th style="width: 140px;">Date & Day</th>
-          <th style="width: 190px;">The Hindu</th>
-          <th style="width: 190px;">Indian Express (IE)</th>
-          <th style="width: 190px;">Mint</th>
-          <th style="width: 120px;">Daily Status</th>
-          <th>Key Topics & Editorials Studied</th>
+          <th style="width: 130px;">Date & Day</th>
+          <th style="width: 150px;">The Hindu</th>
+          <th style="width: 165px;">Indian Express (IE)</th>
+          <th style="width: 140px;">Mint</th>
+          <th style="width: 175px;">Unacademy CA</th>
+          <th style="width: 110px;">Status</th>
+          <th>Key Topics / Editorials Studied</th>
         </tr>
       </thead>
       <tbody id="newspaper-rows">
@@ -396,15 +409,15 @@
   </div>
 
   <div class="footer-note">
-    Master Study Tracker V2 • Newspaper Completion Command • Divyansh Kumar (UPSC CSE 2026)
+    Master Study Tracker V2 • Daily Current Affairs Command • Divyansh Kumar (UPSC CSE 2026)
   </div>
 
 </div>
 
 <script>
   const DATES = [
-    { date: '2026-11-13', day: 'Friday', note: 'All 3 completed: TH + IE + Mint editorials. Geopolitics & Macro analysis.' },
-    { date: '2026-11-14', day: 'Saturday (Today)', note: 'Target: Constitutional bodies, UP Budget linkage, and RBI liquidity stance.' },
+    { date: '2026-11-13', day: 'Friday', note: 'All completed: TH + IE + Mint editorials. Geopolitics & Macro analysis.' },
+    { date: '2026-11-14', day: 'Saturday (Today)', note: 'Target: Constitutional bodies, UP Budget linkage, RBI liquidity & Unacademy CA breakdown.' },
     { date: '2026-11-15', day: 'Sunday', note: '' },
     { date: '2026-11-16', day: 'Monday', note: '' },
     { date: '2026-11-17', day: 'Tuesday', note: '' },
@@ -429,17 +442,23 @@
     { date: '2026-12-06', day: 'Sunday (UPPCS D-Day)', note: '' }
   ];
 
-  // Storage key
-  const STORAGE_KEY = 'mst_newspaper_tracker_v1';
+  const STORAGE_KEY = 'mst_newspaper_tracker_v2';
 
   function loadState() {
     try {
       const saved = localStorage.getItem(STORAGE_KEY);
       if (saved) return JSON.parse(saved);
+      const v1 = localStorage.getItem('mst_newspaper_tracker_v1');
+      if (v1) {
+        const parsed = JSON.parse(v1);
+        return {
+          ...parsed,
+          '2026-11-13': { th: true, ie: true, mint: true, unacademy: true, note: 'All completed: TH + IE + Mint editorials. Geopolitics & Macro analysis.' }
+        };
+      }
     } catch(e) {}
-    // Default initial state: 13 Nov all completed
     return {
-      '2026-11-13': { th: true, ie: true, mint: true, note: 'All 3 completed: TH + IE + Mint editorials. Geopolitics & Macro analysis.' }
+      '2026-11-13': { th: true, ie: true, mint: true, unacademy: true, note: 'All completed: TH + IE + Mint editorials. Geopolitics & Macro analysis.' }
     };
   }
 
@@ -450,16 +469,23 @@
     updateCounts(state);
   }
 
+  function isComplete(date, d) {
+    if (date === '2026-11-13') return d.th && d.ie && d.mint;
+    return d.th && d.ie && d.mint && d.unacademy;
+  }
+
   function updateCounts(state) {
-    let thCount = 0, ieCount = 0, mintCount = 0;
-    Object.values(state).forEach(d => {
+    let thCount = 0, ieCount = 0, mintCount = 0, unacCount = 0;
+    Object.entries(state).forEach(([date, d]) => {
       if (d.th) thCount++;
       if (d.ie) ieCount++;
       if (d.mint) mintCount++;
+      if (date >= '2026-11-14' && d.unacademy) unacCount++;
     });
     document.getElementById('count-th').textContent = `${thCount} Day${thCount === 1 ? '' : 's'}`;
     document.getElementById('count-ie').textContent = `${ieCount} Day${ieCount === 1 ? '' : 's'}`;
     document.getElementById('count-mint').textContent = `${mintCount} Day${mintCount === 1 ? '' : 's'}`;
+    document.getElementById('count-unac').textContent = `${unacCount} Day${unacCount === 1 ? '' : 's'}`;
   }
 
   function renderTable() {
@@ -468,14 +494,15 @@
     tbody.innerHTML = '';
 
     DATES.forEach(item => {
-      const dayState = state[item.date] || { th: false, ie: false, mint: false, note: item.note || '' };
+      const dayState = state[item.date] || { th: false, ie: false, mint: false, unacademy: false, note: item.note || '' };
       const isToday = item.date === '2026-11-14';
-      const allDone = dayState.th && dayState.ie && dayState.mint;
-      const anyDone = dayState.th || dayState.ie || dayState.mint;
+      const isFirstDay = item.date === '2026-11-13';
+      const complete = isComplete(item.date, dayState);
+      const anyDone = dayState.th || dayState.ie || dayState.mint || dayState.unacademy;
 
       const tr = document.createElement('tr');
       if (isToday) tr.className = 'today-row';
-      else if (allDone) tr.className = 'completed-row';
+      else if (complete) tr.className = 'completed-row';
 
       tr.innerHTML = `
         <td class="date-cell">
@@ -501,12 +528,21 @@
           </label>
         </td>
         <td>
-          <span class="status-badge ${allDone ? 'badge-done' : (isToday ? 'badge-today' : 'badge-upcoming')}" id="status-${item.date}">
-            ${allDone ? '✓ All Done' : (isToday ? (anyDone ? '⏳ In Progress' : '🎯 Today') : (anyDone ? 'Partially Done' : 'Pending'))}
+          ${isFirstDay ?
+            '<span style="color: #64748b; font-size: 11px; font-style: italic;">– Baseline Day –</span>' :
+            `<label class="paper-check">
+              <input type="checkbox" data-date="${item.date}" data-paper="unacademy" ${dayState.unacademy ? 'checked' : ''}>
+              <span class="paper-label" style="color: ${dayState.unacademy ? '#f59e0b' : '#cbd5e1'}; font-weight: ${dayState.unacademy ? '600' : '400'};">Unacademy CA</span>
+            </label>`
+          }
+        </td>
+        <td>
+          <span class="status-badge ${complete ? 'badge-done' : (isToday ? 'badge-today' : 'badge-upcoming')}" id="status-${item.date}">
+            ${complete ? '✓ All Done' : (isToday ? (anyDone ? '⏳ In Progress' : '🎯 Today') : (anyDone ? 'Partial' : 'Pending'))}
           </span>
         </td>
         <td>
-          <input type="text" class="note-input" data-date="${item.date}" placeholder="Key editorials / issues read..." value="${dayState.note || ''}">
+          <input type="text" class="note-input" data-date="${item.date}" placeholder="Key editorials, video takeaways, concepts read..." value="${dayState.note || ''}">
         </td>
       `;
       tbody.appendChild(tr);
@@ -518,19 +554,18 @@
         const date = e.target.getAttribute('data-date');
         const paper = e.target.getAttribute('data-paper');
         const currentState = loadState();
-        if (!currentState[date]) currentState[date] = { th: false, ie: false, mint: false, note: '' };
+        if (!currentState[date]) currentState[date] = { th: false, ie: false, mint: false, unacademy: false, note: '' };
         currentState[date][paper] = e.target.checked;
         saveState(currentState);
 
-        // Update row styling & badge immediately
         const d = currentState[date];
         const row = e.target.closest('tr');
         const statusBadge = document.getElementById(`status-${date}`);
         const isToday = date === '2026-11-14';
-        const allDone = d.th && d.ie && d.mint;
-        const anyDone = d.th || d.ie || d.mint;
+        const complete = isComplete(date, d);
+        const anyDone = d.th || d.ie || d.mint || d.unacademy;
 
-        if (allDone) {
+        if (complete) {
           row.className = isToday ? 'today-row completed-row' : 'completed-row';
           statusBadge.className = 'status-badge badge-done';
           statusBadge.textContent = '✓ All Done';
@@ -541,7 +576,7 @@
         } else {
           row.className = '';
           statusBadge.className = 'status-badge badge-upcoming';
-          statusBadge.textContent = anyDone ? 'Partially Done' : 'Pending';
+          statusBadge.textContent = anyDone ? 'Partial' : 'Pending';
         }
       });
     });
@@ -550,7 +585,7 @@
       input.addEventListener('change', (e) => {
         const date = e.target.getAttribute('data-date');
         const currentState = loadState();
-        if (!currentState[date]) currentState[date] = { th: false, ie: false, mint: false, note: '' };
+        if (!currentState[date]) currentState[date] = { th: false, ie: false, mint: false, unacademy: false, note: '' };
         currentState[date].note = e.target.value;
         saveState(currentState);
       });
