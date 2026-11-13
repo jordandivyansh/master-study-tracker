@@ -117,7 +117,6 @@ export default function TimerBar({ onLogSaved }) {
                 <option value="uppsc">UPPSC Prelims</option>
                 <option value="apfc">EPFO APFC</option>
                 <option value="cat">CAT</option>
-                <option value="ssc">SSC</option>
                 <option value="other">Other Study</option>
               </select>
             </label>

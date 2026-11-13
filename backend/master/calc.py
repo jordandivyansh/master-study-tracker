@@ -3,7 +3,7 @@ import math
 from datetime import date, timedelta
 
 STREAMS = [{'key': key, 'label': label} for key, label in [
-    ('ssc', 'SSC'), ('cat', 'CAT'), ('uppsc', 'UPPSC'), ('apfc', 'APFC'), ('cava', 'CAVA'),
+    ('cat', 'CAT'), ('uppsc', 'UPPSC'), ('apfc', 'APFC'), ('cava', 'CAVA'),
     ('pubad', 'Pub Ad'), ('mains', 'Mains writing'), ('books', 'Books / revision'), ('other', 'Other study')]]
 STREAM_KEYS = [s['key'] for s in STREAMS]
 

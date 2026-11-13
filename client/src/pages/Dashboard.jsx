@@ -71,12 +71,12 @@ export default function Dashboard() {
         <Panel title="Today" aside={todayLog.capStatus && <Tag tone={todayLog.capStatus === 'In cap' ? 'good' : 'bad'}>{todayLog.capStatus}</Tag>}>
           <div className="figure">
             <span className="figure-num">{h(todayTotal, { dash: '0' })}</span>
-            <span className="figure-unit">of {settings.dailyCap}h study + DSA</span>
+            <span className="figure-unit">of {settings.dailyCap}h study + Newspaper</span>
           </div>
           <Meter value={todayTotal} max={settings.dailyCap} label="Today against daily cap" />
           <dl className="facts">
             <div><dt>Exam study</dt><dd>{hu(todayLog.examStudy)}</dd></div>
-            <div><dt>DSA</dt><dd>{hu(todayLog.dsa)}</dd></div>
+            <div><dt>Newspaper</dt><dd>{hu(todayLog.dsa)}</dd></div>
             <div><dt>Gym</dt><dd>{hu(todayLog.gym)}</dd></div>
             <div><dt>Streak</dt><dd>{d.streak} {d.streak === 1 ? 'day' : 'days'}</dd></div>
           </dl>
@@ -93,7 +93,7 @@ export default function Dashboard() {
 
       {/* Progress & Trajectory Visualization */}
       <div className="grid two">
-        <Panel title="14-Day Trajectory & Velocity" aside={<span className="muted">Study & DSA consistency</span>}>
+        <Panel title="14-Day Trajectory & Velocity" aside={<span className="muted">Study & Newspaper consistency</span>}>
           <TrajectoryAreaChart days={d.recent} cap={settings.dailyCap} />
         </Panel>
         <Panel title="Syllabus Stream Allocation" aside={<span className="muted">All-time hours breakdown</span>}>
@@ -102,7 +102,7 @@ export default function Dashboard() {
       </div>
 
       <div className="grid three">
-        <Panel title="Last 14 days" className="span-2" aside={<span className="legend"><i className="k-study" />Study <i className="k-dsa" />DSA</span>}>
+        <Panel title="Last 14 days" className="span-2" aside={<span className="legend"><i className="k-study" />Study <i className="k-dsa" />Newspaper</span>}>
           <RecentBars days={d.recent} cap={settings.dailyCap} />
         </Panel>
         <Panel title="Due and overdue tests" aside={<Link to="/tests">All tests</Link>}>
@@ -137,7 +137,7 @@ export default function Dashboard() {
               <tr className="em"><td>Unallocated</td><td className="r">{h(summary.preUnallocated)}h</td><td className="r">{h(summary.postUnallocated)}h</td></tr>
             </tbody>
           </table>
-          <p className="note">After DSA and a {Math.round(settings.buffer * 100)}% buffer you have about {h(summary.availablePerDay)}h a day for exam study.</p>
+          <p className="note">After Daily Newspaper (2h/day) and a {Math.round(settings.buffer * 100)}% buffer you have about {h(summary.availablePerDay)}h a day for exam study.</p>
         </Panel>
 
         <Panel title="Tests by exam">
@@ -210,7 +210,7 @@ function WeekStreams({ wk }) {
           <span className="figure-num">{h(wk.actualStudy, { dash: '0' })}</span>
           <span className="figure-unit">of {h(wk.planned)}h planned exam study, {wk.daysLogged} of {wk.days} days logged</span>
         </div>
-        <span className="muted">Capacity {h(wk.capacity)}h, DSA {h(wk.actualDsa, { dash: '0' })} of {h(wk.dsaQuota)}h</span>
+        <span className="muted">Capacity {h(wk.capacity)}h, Newspaper {h(wk.actualDsa, { dash: '0' })} of {h(wk.dsaQuota)}h</span>
       </div>
       <ul className="bars">
         {rows.map((s) => {

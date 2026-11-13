@@ -53,7 +53,7 @@ export default function Guide() {
           <li><strong>Smartwork Labs PYQ Workbooks (2020–2024):</strong> 20 sets covering 395 questions across GS 1–4 with 3-stage tracking (Written, Model Review, Notes Enriched).</li>
           <li><strong>Video Lecture Cadence:</strong> CAVA (Current Affairs Video Analysis, 36 lectures scheduled and delivered via Google Sheets), World History (Lec 10–16), PubAd Foundation (137 lectures) & Enrichment (33 lectures).</li>
           <li><strong>Reading & Backlogs:</strong> 4 PubAd books reading tracker with rate table (pages/hr), September & October newspaper backlog queues.</li>
-          <li><strong>Cognitive Protection:</strong> Strict daily capacity ceiling (8h/day study + DSA) with a 15% buffer to safeguard against mental burnout.</li>
+          <li><strong>Cognitive Protection:</strong> Strict daily capacity ceiling (8h/day study + Newspaper) with a 15% buffer to safeguard against mental burnout.</li>
         </ul>
 
         {/* Section 2: Directory Tree */}
@@ -125,7 +125,7 @@ export default function Guide() {
             <strong><code>backend/master/models.py</code>:</strong> Contains the <code>Document</code> model. Instead of dozens of rigid relational tables, records are stored in a flexible <code>data = models.JSONField()</code> with indexed <code>collection</code> (e.g. <code>cavaLectures</code>), <code>natural_key</code> (unique identifier within collection), and foreign key <code>owner</code>.
           </li>
           <li>
-            <strong><code>backend/master/calc.py</code>:</strong> Pure functional computational engine. Calculates weekly capacities, study versus DSA hours, pacing against daily caps, and test overdue flags. Never mutates input records; always returns derived dicts.
+            <strong><code>backend/master/calc.py</code>:</strong> Pure functional computational engine. Calculates weekly capacities, study versus Newspaper hours, pacing against daily caps, and test overdue flags. Never mutates input records; always returns derived dicts.
           </li>
           <li>
             <strong><code>backend/master/sheets_sync.py</code>:</strong> Implements bidirectional sync between SQLite documents and Google Spreadsheets. Supports both the local <code>gsheets</code> CLI tool and the cloud Google Apps Script Webhook API.
@@ -144,7 +144,7 @@ export default function Guide() {
             <strong><code>client/src/components/ThemeSelector.jsx</code>:</strong> Provides 6 curated visual environments (System, Studio Dark, Clean Light, Midnight OLED, Forest Emerald, Warm Amber). Reads/writes to <code>localStorage</code> and toggles <code>data-theme</code> on <code>&lt;html&gt;</code> with zero flash.
           </li>
           <li>
-            <strong><code>client/src/components/charts.jsx</code>:</strong> Pure SVG visual charts without external heavy charting libraries. Includes <code>StreamDonut</code> (radial time distribution), <code>TrajectoryAreaChart</code> (14-day study + DSA trend against cap), <code>RadialProgressRing</code>, and <code>ExamRail</code>.
+            <strong><code>client/src/components/charts.jsx</code>:</strong> Pure SVG visual charts without external heavy charting libraries. Includes <code>StreamDonut</code> (radial time distribution), <code>TrajectoryAreaChart</code> (14-day study + Newspaper trend against cap), <code>RadialProgressRing</code>, and <code>ExamRail</code>.
           </li>
           <li>
             <strong><code>client/src/pages/PublicView.jsx</code>:</strong> Dedicated read-only view. Allows friends, mentors, or peers to inspect preparation consistency, CAVA lectures, PYQ questions, and test scores with zero edit permissions.
@@ -261,7 +261,7 @@ const x = (index) => padding.left + (index / (numPoints - 1)) * (Width - padding
               <tr><td><code>POST</code></td><td><code>/api/login/</code></td><td>None</td><td>Authenticates user session with username and password.</td></tr>
               <tr><td><code>POST</code></td><td><code>/api/logout/</code></td><td>Required</td><td>Terminates authenticated session and clears session cookie.</td></tr>
               <tr><td><code>GET</code></td><td><code>/api/dashboard/</code></td><td>Required</td><td>Full calculation summary, today log, streak, and recent logs.</td></tr>
-              <tr><td><code>GET, PUT, DEL</code></td><td><code>/api/daily/[YYYY-MM-DD]/</code></td><td>Required</td><td>Read, record, or clear daily study and DSA hours.</td></tr>
+              <tr><td><code>GET, PUT, DEL</code></td><td><code>/api/daily/[YYYY-MM-DD]/</code></td><td>Required</td><td>Read, record, or clear daily study and Newspaper hours.</td></tr>
               <tr><td><code>GET, PUT</code></td><td><code>/api/settings/</code></td><td>Required</td><td>Get or update system preferences (daily cap, exams, buffer).</td></tr>
               <tr><td><code>GET, POST</code></td><td><code>/api/:resource/</code></td><td>Required</td><td>Collection queries (weeks, tests, cava, pyqs, backlog, apfc).</td></tr>
               <tr><td><code>PATCH, DEL</code></td><td><code>/api/:resource/:uid/</code></td><td>Required</td><td>Modify or delete a specific document by its 24-character UID.</td></tr>

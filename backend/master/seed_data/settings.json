@@ -1,32 +1,11 @@
 {
   "dailyCap": 8,
-  "dsaWeekly": 15,
+  "dsaWeekly": 14,
   "buffer": 0.15,
   "gymDaily": 3,
   "trackerStart": "2026-10-16",
   "trackerEnd": "2027-03-20",
   "exams": [
-    {
-      "key": "ssc",
-      "name": "SSC CGL",
-      "date": "2026-10-28",
-      "prepBudgetH": 20,
-      "note": "Tier-I Completed (Raw Score: 92.50)"
-    },
-    {
-      "key": "pfrda",
-      "name": "PFRDA Phase 2",
-      "date": "2026-11-20",
-      "prepBudgetH": 0,
-      "note": "SKIPPED: Full pivot to UPSC CSE Interview."
-    },
-    {
-      "key": "concor",
-      "name": "CONCOR MT",
-      "date": "2026-11-21",
-      "prepBudgetH": 0,
-      "note": "SKIPPED: Full pivot to UPSC CSE Interview."
-    },
     {
       "key": "cat",
       "name": "CAT 2026",
@@ -82,10 +61,6 @@
     "APFC": {
       "attempt": 2,
       "review": 2
-    },
-    "SSC": {
-      "attempt": 1,
-      "review": 1
     }
   },
   "googleSheets": {

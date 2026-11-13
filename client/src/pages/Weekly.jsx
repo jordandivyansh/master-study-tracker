@@ -50,13 +50,13 @@ export default function Weekly() {
               <tr>
                 <th>Period</th>
                 <th>Phase</th>
-                <th className="r" title="Capacity after DSA quota and buffer">Cap.</th>
+                <th className="r" title="Capacity after Newspaper quota and buffer">Cap.</th>
                 {STREAMS.map((s) => <th key={s.key} className="r" title={s.label}>{s.short || s.label}</th>)}
                 <th className="r">Planned</th>
                 <th className="r" title="Capacity minus planned">Spare</th>
                 <th className="r">Actual</th>
                 <th className="r">vs plan</th>
-                <th className="r">DSA</th>
+                <th className="r">Newspaper</th>
                 <th>Notes</th>
                 <th />
               </tr>
@@ -113,7 +113,7 @@ export default function Weekly() {
           </table>
         </div>
         <p className="note">
-          Capacity = days × daily cap, minus the DSA quota, minus the buffer. Changing an exam date does not move these rows; edit the periods here when the plan changes.
+          Capacity = days × daily cap, minus the Newspaper quota (14h/week), minus the buffer. Changing an exam date does not move these rows; edit the periods here when the plan changes.
         </p>
       </Panel>
     </>

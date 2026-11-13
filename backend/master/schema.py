@@ -4,7 +4,7 @@ from datetime import date
 from django.core.exceptions import ValidationError
 from .calc import STREAM_KEYS, is_num, days_between
 
-EXAMS = ['UPPSC', 'SSC', 'CAT', 'APFC', 'CSE']
+EXAMS = ['UPPSC', 'CAT', 'APFC', 'CSE']
 SCHEMAS = {
     'settings': dict(dailyCap='num', dsaWeekly='num', buffer='num', gymDaily='num', trackerStart='date', trackerEnd='date', exams='list', pivotExam='text', weight='obj', cava='obj', durations='obj', googleSheets='obj'),
     'dailyLogs': dict(date='date', hours='hours', dsa='num', gym='num', weight='num', notes='text'),
@@ -104,7 +104,7 @@ def validate(collection, incoming, previous=None):
         for k, low, high in [('dailyCap', 0, 24), ('dsaWeekly', 0, 168), ('buffer', 0, .9), ('gymDaily', 0, 24)]:
             number(result[k], k, low, high)
         if result['dsaWeekly'] > result['dailyCap'] * 7:
-            fail('DSA hours cannot exceed weekly study capacity.')
+            fail('Newspaper hours cannot exceed weekly study capacity.')
         if not 0 <= days_between(result['trackerStart'], result['trackerEnd']) <= 3660:
             fail('Choose a plan spanning at most ten years, with the end on or after the start.')
         keys = set()

@@ -126,7 +126,7 @@ export default function PublicView() {
             <div className="stat-card">
               <span className="stat-label">⏱ Today's Logged</span>
               <strong className="stat-value">{hu(data.todayLog?.studyPlusDsa)}</strong>
-              <span className="stat-sub">Study: {hu(data.todayLog?.examStudy)} · DSA: {hu(data.todayLog?.dsa)}</span>
+              <span className="stat-sub">Study: {hu(data.todayLog?.examStudy)} · Newspaper: {hu(data.todayLog?.dsa)}</span>
             </div>
             <div className="stat-card">
               <span className="stat-label">📅 Tracker Progress</span>
@@ -181,7 +181,7 @@ export default function PublicView() {
             <section className="panel">
               <div className="panel-head">
                 <h2>14-Day Trajectory & Consistency</h2>
-                <span className="panel-aside">Daily study + DSA against cap</span>
+                <span className="panel-aside">Daily study + Newspaper against cap</span>
               </div>
               <TrajectoryAreaChart days={data.recent} cap={settings.dailyCap} />
             </section>

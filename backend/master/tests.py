@@ -21,7 +21,7 @@ class TrackerTests(TestCase):
 
     def test_new_project_counts_and_blank_history(self):
         self.assertEqual(len(documents(self.user, 'weeks')), 23)
-        self.assertEqual(len(documents(self.user, 'tests')), 78)
+        self.assertEqual(len(documents(self.user, 'tests')), 75)
         self.assertEqual(len(documents(self.user, 'cavaLectures')), 36)
         self.assertEqual(len(documents(self.user, 'pyqWorkbooks')), 40)
         self.assertEqual(len(documents(self.user, 'courseEntries')), 377)

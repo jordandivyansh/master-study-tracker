@@ -95,9 +95,9 @@ export default function Daily() {
           </fieldset>
 
           <fieldset className="log-grid">
-            <legend>Outside exam study</legend>
+            <legend>Newspaper & Lifestyle</legend>
             <label>
-              <span>DSA (counts toward cap)</span>
+              <span>Daily Newspaper (2h, counts toward cap)</span>
               <input type="number" step="0.25" min="0" max="24" value={form.dsa ?? ''} onChange={(e) => setForm({ ...form, dsa: toNum(e.target.value) })} />
             </label>
             <label>
@@ -117,7 +117,7 @@ export default function Daily() {
           <div className="log-foot">
             <div className="log-total">
               <span>
-                <strong>{h(total, { dash: '0' })}h</strong> of {cap}h cap ({h(examStudy, { dash: '0' })}h study + {h(form.dsa, { dash: '0' })}h DSA)
+                <strong>{h(total, { dash: '0' })}h</strong> of {cap}h cap ({h(examStudy, { dash: '0' })}h study + {h(form.dsa, { dash: '0' })}h Newspaper)
               </span>
               <Meter value={total} max={cap} label="Day total against cap" />
             </div>
@@ -135,7 +135,7 @@ export default function Daily() {
                 <th>Date</th>
                 {STREAMS.map((s) => <th key={s.key} className="r" title={s.label}>{s.short || s.label}</th>)}
                 <th className="r">Study</th>
-                <th className="r">DSA</th>
+                <th className="r">Newspaper</th>
                 <th className="r">Gym</th>
                 <th className="r">Kg</th>
                 <th>Cap</th>

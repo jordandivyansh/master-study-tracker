@@ -1,5 +1,4 @@
 export const STREAMS = [
-  { key: 'ssc', label: 'SSC' },
   { key: 'cat', label: 'CAT' },
   { key: 'uppsc', label: 'UPPSC' },
   { key: 'apfc', label: 'APFC' },

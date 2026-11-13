@@ -80,7 +80,7 @@ export function ExamRail({ start, end, today, exams }) {
   );
 }
 
-/** Last N days: stacked study (navy) + DSA (gold), dashed line at the daily cap. */
+/** Last N days: stacked study (navy) + Newspaper (gold), dashed line at the daily cap. */
 export function RecentBars({ days, cap }) {
   const W = 560;
   const H = 150;
@@ -89,7 +89,7 @@ export function RecentBars({ days, cap }) {
   const bw = (W - pad.l - pad.r) / days.length;
   const y = (v) => H - pad.b - (v / max) * (H - pad.t - pad.b);
   return (
-    <svg viewBox={`0 0 ${W} ${H}`} className="chart" role="img" aria-label="Study and DSA hours, last 14 days">
+    <svg viewBox={`0 0 ${W} ${H}`} className="chart" role="img" aria-label="Study and Newspaper hours, last 14 days">
       {[0, Math.round(max / 2), Math.round(max)].map((v) => (
         <g key={v}>
           <line x1={pad.l} x2={W - pad.r} y1={y(v)} y2={y(v)} className="grid" />
@@ -103,7 +103,7 @@ export function RecentBars({ days, cap }) {
         const blank = d.study === null && d.dsa === null;
         return (
           <g key={d.date}>
-            <title>{`${shortDate(d.date)}: ${blank ? 'not logged' : `${s}h study, ${k}h DSA`}`}</title>
+            <title>{`${shortDate(d.date)}: ${blank ? 'not logged' : `${s}h study, ${k}h Newspaper`}`}</title>
             {blank ? (
               <rect x={x} y={y(0) - 2} width={bw - 6} height={2} className="bar-blank" />
             ) : (
@@ -376,7 +376,7 @@ export function TrajectoryAreaChart({ days = [], cap = 8 }) {
           const cy = y(tot);
           return (
             <g key={d.date}>
-              <title>{`${shortDate(d.date)}: ${tot}h total (${d.study || 0}h study + ${d.dsa || 0}h DSA)`}</title>
+              <title>{`${shortDate(d.date)}: ${tot}h total (${d.study || 0}h study + ${d.dsa || 0}h Newspaper)`}</title>
               <line x1={cx} x2={cx} y1={y(0)} y2={cy} stroke="var(--gold)" strokeWidth="4" strokeLinecap="round" />
               <circle cx={cx} cy={cy} r="3" fill="var(--gold)" />
               <text x={cx} y={H - 6} className="axis" textAnchor="middle">

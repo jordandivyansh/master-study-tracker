@@ -4,7 +4,7 @@ import { useResource, usePatchRow } from '../hooks.js';
 import { PageHeader, Panel, Loading, Chips, Tag, workflowTone, NumCell, TextCell, DateCell, SelectCell, useNotice } from '../components/ui.jsx';
 import { h, pct, shortDate, todayISO } from '../format.js';
 
-const EXAMS = ['UPPSC', 'SSC', 'CAT', 'APFC', 'CSE'];
+const EXAMS = ['UPPSC', 'CAT', 'APFC', 'CSE'];
 const VIEWS = [
   { value: 'open', label: 'Open' },
   { value: 'overdue', label: 'Overdue' },
@@ -29,6 +29,7 @@ export default function Tests() {
   const visible = useMemo(() => {
     if (!tests) return [];
     return tests.filter((t) => {
+      if (t.exam === 'SSC') return false;
       if (exam !== 'All' && t.exam !== exam) return false;
       if (view === 'open') return t.workflow !== 'Done';
       if (view === 'overdue') return t.attemptOverdue || t.reviewOverdue;

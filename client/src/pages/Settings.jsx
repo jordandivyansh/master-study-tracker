@@ -64,8 +64,8 @@ export default function Settings() {
       <form onSubmit={save} className="settings">
         <Panel title="Daily capacity">
           <div className="form-grid">
-            <Field label="Study + DSA cap, hours a day" value={form.dailyCap} onChange={(v) => set(['dailyCap'], n(v))} step="0.5" />
-            <Field label="DSA, hours a week" value={form.dsaWeekly} onChange={(v) => set(['dsaWeekly'], n(v))} step="0.5" />
+            <Field label="Study + Newspaper cap, hours a day" value={form.dailyCap} onChange={(v) => set(['dailyCap'], n(v))} step="0.5" />
+            <Field label="Newspaper, hours a week (14h = 2h/day)" value={form.dsaWeekly} onChange={(v) => set(['dsaWeekly'], n(v))} step="0.5" />
             <Field label="Buffer, % of capacity" value={Math.round(form.buffer * 100)} onChange={(v) => set(['buffer'], n(v) / 100)} step="1" />
             <Field label="Gym, hours a day (outside cap)" value={form.gymDaily} onChange={(v) => set(['gymDaily'], n(v))} step="0.5" />
             <Field label="Plan starts" type="date" value={form.trackerStart} onChange={(v) => set(['trackerStart'], v)} />
