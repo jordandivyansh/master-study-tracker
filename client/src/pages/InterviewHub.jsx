@@ -223,6 +223,32 @@ const INITIAL_COURSES = [
     notes: 'Will officially visit Delhi/Karol Bagh centre before registering.',
   },
   {
+    id: 'vajirao-institute',
+    institute: 'Vajirao IAS Academy',
+    name: 'IAS Mock Interview & Guidance Program',
+    url: 'https://www.vajiraoinstitute.com/ias_mock_interview.aspx#mock-registration',
+    lead: 'Retd. Civil Servants, Ex-UPSC Board Members & Psychologists',
+    type: 'Mock Panels & DAF Questionnaire Analysis',
+    location: 'Delhi & Online',
+    price: 'Free',
+    status: 'Planned',
+    mockDate: '',
+    notes: 'Online mock registration portal. Formal board interview simulation with video recording and psychologist feedback.',
+  },
+  {
+    id: 'samkalp-ias',
+    institute: 'Samkalp IAS',
+    name: 'Interview Guidance Program (IGP) & Mock Interview',
+    url: 'https://igp.samkalpias.com/website_online_booking.aspx',
+    lead: 'Former Governors, Ambassadors, Bureaucrats & Educationalists',
+    type: '1:1 Mock Interview & DAF Analysis Panel',
+    location: 'Delhi (Palam / RK Puram / Mukherjee Nagar) & Online',
+    price: 'Free',
+    status: 'Planned',
+    mockDate: '',
+    notes: 'Online booking portal at igp.samkalpias.com (main site samkalpias.com). Grounded, ethical, and veteran panel interview simulation.',
+  },
+  {
     id: 'yt-framework',
     institute: 'Interview Masterclass',
     name: 'UPSC Interview Strategy & Cadence Masterclass',
@@ -238,7 +264,7 @@ const INITIAL_COURSES = [
 ];
 
 const STATUSES = ['Planned', 'Registered', 'DAF Submitted', 'Mock Scheduled', 'Completed'];
-const STORAGE_KEY = 'master_interview_courses_v8';
+const STORAGE_KEY = 'master_interview_courses_v9';
 
 export default function InterviewHub() {
   const [courses, setCourses] = useState(() => {
